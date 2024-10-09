@@ -35,7 +35,7 @@ def get_club_info(club_url): #takes in a specific club url.
 
     club_membership = constitution.find('section', attrs={'id':"membership_structure"})
     club_membership_layer2 = club_membership.find('section', attrs={'id':"membership_structure"})
-    club_membership_type = club_membership_layer2.find('span', attrs={'class':"lead rounded-display"})
+    club_membership_type = club_membership_layer2.find('div', attrs={'class':"alert alert-secondary"}) #fix this
 
     club_info['names'] = club_name.text
     club_info['membership_type'] = club_membership_type.text
@@ -52,16 +52,46 @@ def get_club_info(club_url): #takes in a specific club url.
     return club_info
 
 
-club_numbers = []
-club_data = []
-for i in range(20):
-    club_numbers.append(get_club_links(f'https://clubs.wusa.ca/club_listings?page={i+1}'))
-    for k in range(len(club_numbers[i])):
-        club_data.append(get_club_info(club_numbers[i][k]))
-print(club_data)
+# club_numbers = []
+# club_data = []
+# for i in range(20):
+#     club_numbers.append(get_club_links(f'https://clubs.wusa.ca/club_listings?page={i+1}'))
+#     for k in range(len(club_numbers[i])):
+#         club_data.append(get_club_info(club_numbers[i][k]))
+# print(club_data)
 
-with open('club_info.json', 'w') as json_file:
-    json.dump(club_data, json_file, indent=4)
+# with open('club_info.json', 'w') as json_file:
+#     json.dump(club_data, json_file, indent=4)
+
+
+
+def get_designTeam_info(url):
+    page_to_scrape=requests.get(url)
+    soup = BeautifulSoup(page_to_scrape.text, 'html.parser')
+
+    all_design_info=[]
+
+
+    all_teams = soup.findAll('details', attrs={'class':"uw-details"})
+    for team in all_teams:
+        
+        design_info = {
+            'name': "",
+            "img_url": "",
+            "description": "",
+            "links": [],
+        }
+        name_temp = team.find('summary', attrs={'class':"details__summary"})
+        design_info['name'] = name_temp.find('h2').text
+
+        content = team.find('div', attrs={'class':"uw-copy-text"})
+        img_url_temp = content.find('img')
+        design_info['img_url'] = img_url_temp.get('src')
+
+
+    return all_design_info
+
+print(get_designTeam_info('https://uwaterloo.ca/sedra-student-design-centre/directory-teams'))
 
 
 
