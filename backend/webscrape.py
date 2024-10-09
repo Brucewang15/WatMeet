@@ -35,7 +35,7 @@ def get_club_info(club_url): #takes in a specific club url.
 
     club_membership = constitution.find('section', attrs={'id':"membership_structure"})
     club_membership_layer2 = club_membership.find('section', attrs={'id':"membership_structure"})
-    club_membership_type = club_membership_layer2.find('div', attrs={'class':"alert alert-secondary"})
+    club_membership_type = club_membership_layer2.find('span', attrs={'class':"lead rounded-display"})
 
     club_info['names'] = club_name.text
     club_info['membership_type'] = club_membership_type.text
