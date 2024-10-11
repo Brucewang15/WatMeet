@@ -1,5 +1,4 @@
-﻿# WatClub
-# UWFlow but for clubs!
+﻿# WatClub. UWFlow but for clubs!
 
 ## Our vision
 
