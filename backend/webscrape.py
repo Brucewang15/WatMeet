@@ -86,12 +86,16 @@ def get_designTeam_info(url):
 
         content = team.find('div', attrs={'class':"uw-copy-text"})
         img_url_temp = content.find('img')
-        design_info['img_url'] = img_url_temp.get('src')
+        if img_url_temp != None:
+            design_info['img_url'] = img_url_temp.get('src')
+        
+
+        all_design_info.append(design_info)
 
 
     return all_design_info
 
-print(get_designTeam_info('https://uwaterloo.ca/sedra-student-design-centre/directory-teams'))
+design_team_data = get_designTeam_info('https://uwaterloo.ca/sedra-student-design-centre/directory-teams')
 
-
-
+with open('design_team_data.json', 'w') as json_file:
+    json.dump(design_team_data, json_file, indent=4)
