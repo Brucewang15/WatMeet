@@ -4,6 +4,7 @@ CREATE TABLE users (
     last_name varchar(100) NOT NULL,
     password_name varchar(100) NOT NULL,
     email varchar(100) NOT NULL,
+    verification_code varchar(100) NOT NULL,
     created_at Datetime NOT NULL DEFAULT CURRENT_TIMESTAMP 
 );
 
@@ -22,7 +23,7 @@ CREATE TABLE orginizations (
     overview text NOT NULL,
     star_rating float NOT NULL,
     ranking_num int NOT NULL,
-    org_type set("club", "intramural", "design", "society") NOT NULL,
+    org_type set("club", "intramural", "design", "society", "sportclub") NOT NULL,
     constitution text NOT NULL,
     created_at Datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(user_id) UPDATE CASCADE
