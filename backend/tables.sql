@@ -7,7 +7,7 @@ CREATE TABLE users (
     created_at Datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE orginizations (
+CREATE TABLE organizations (
     org_id int PRIMARY KEY NOT NULL,
     org_name varchar(100) NOT NULL,
     user_id int NOT NULL,
