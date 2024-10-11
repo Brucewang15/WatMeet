@@ -2,10 +2,10 @@
 
 ## Our vision
 
-- **Club Ratings**
-- **Club Reccommendations, with AI powered search engine**
-- **Including Design teams, Intramurals, Sports and Organizations** 
-- **Make getting involved on campus easier for everyone!**
+- Club Ratings
+- Club Reccommendations, with AI powered search engine
+- Including Design teams, Intramurals, Sports and Organizations 
+- Make getting involved on campus easier for everyone!
 
 ## Our mission
 
