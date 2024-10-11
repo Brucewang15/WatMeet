@@ -16,13 +16,8 @@ CREATE TABLE userorg (
     FOREIGN KEY (org_id) REFERENCES orginizations(org_id) UPDATE CASCADE
 );
 
-<<<<<<< HEAD
-CREATE TABLE organizations (
-    org_id int PRIMARY KEY NOT NULL,
-=======
 CREATE TABLE orginizations (
     org_id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
->>>>>>> d38a2e77c096246498fb17fdb845cfe9ea1f18f3
     org_name varchar(100) NOT NULL,
     user_id int NOT NULL,
     overview text NOT NULL,
