@@ -84,14 +84,26 @@ def get_designTeam_info(url):
         name_temp = team.find('summary', attrs={'class':"details__summary"})
         design_info['name'] = name_temp.find('h2').text
 
-        content = team.find('div', attrs={'class':"uw-copy-text"})
-        img_url_temp = content.find('img')
+        
+        img_url_temp = team.find('img')
         if img_url_temp != None:
             design_info['img_url'] = img_url_temp.get('src')
+
+        description_temp = team.find('p')
+        description_to_append = ""
+        for p in description_temp:
+            description_to_append += p.text
+        design_info['description'] = description_to_append
+
+        links_temp = team.findAll('li')
+        for li in links_temp:
+            temp = li.find('a')
+            if temp != None:
+                design_info['links'].append(temp.get('href'))
         
 
         all_design_info.append(design_info)
-
+            
 
     return all_design_info
 
