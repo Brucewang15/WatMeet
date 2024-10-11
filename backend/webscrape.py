@@ -107,7 +107,7 @@ def get_designTeam_info(url):
 
     return all_design_info
 
-design_team_data = get_designTeam_info('https://uwaterloo.ca/sedra-student-design-centre/directory-teams')
+# design_team_data = get_designTeam_info('https://uwaterloo.ca/sedra-student-design-centre/directory-teams')
 
-with open('design_team_data.json', 'w') as json_file:
-    json.dump(design_team_data, json_file, indent=4)
+# with open('design_team_data.json', 'w') as json_file:
+#     json.dump(design_team_data, json_file, indent=4)
