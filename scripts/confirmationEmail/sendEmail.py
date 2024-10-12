@@ -6,7 +6,6 @@ from config import qanyi_password
 
 
 # app name: Python
-# app password: rlpa ysbp lxcb aglm
 
 eSender = "qanyi27@gmail.com"
 ePassword = qanyi_password
