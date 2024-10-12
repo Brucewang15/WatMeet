@@ -2,14 +2,14 @@ import smtplib
 import ssl
 
 from email.message import EmailMessage
-
+from config import qanyi_password
 
 
 # app name: Python
 # app password: rlpa ysbp lxcb aglm
 
 eSender = "qanyi27@gmail.com"
-ePassword = "rlpa ysbp lxcb aglm"
+ePassword = qanyi_password
 
 eReceiver = "pdsalex2018@gmail.com"
 
