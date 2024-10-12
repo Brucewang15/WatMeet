@@ -1,5 +1,5 @@
 from django.db import models
-
+from users.models import User
 class Organization(models.Model):
     org_id = models.AutoField(primary_key=True)
     org_name = models.CharField(max_length=100)

@@ -1,5 +1,6 @@
 from django.db import models
-
+from organizations.models import Organization
+from users.models import User
 # Create your models here.
 class Comment(models.Model):
     comment_id = models.AutoField(primary_key=True)
