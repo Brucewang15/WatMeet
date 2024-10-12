@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class WatclubappConfig(AppConfig):
+class CommentsAndRatingsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'watclubapp'
+    name = 'comments_and_ratings'
