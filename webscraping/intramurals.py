@@ -10,11 +10,11 @@ class_names = soup.find_all("h4", class_= '')
 file = open("intramurals.csv", "w")
 writer = csv.writer(file)
 
-writer.writerow("Programs", "Classes")
+writer.writerow(["Programs", "Classes"])
 
 for programs, classes in zip(program_names, class_names):
     print(programs.text + " " + classes.text)
     writer.writerow([programs.text, classes.text])
-    
+
 file.close()
 
