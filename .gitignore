@@ -1,2 +1,2 @@
 venv/
-backend/scripts/confirmationEmail/passwords.py
+users/scripts/confirmationEmail/passwords.py
