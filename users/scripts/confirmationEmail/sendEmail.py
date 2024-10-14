@@ -2,7 +2,7 @@ import smtplib
 import ssl
 
 from email.message import EmailMessage
-from config import qanyi_password
+from passwords import qanyi_password
 
 
 # app name: Python
