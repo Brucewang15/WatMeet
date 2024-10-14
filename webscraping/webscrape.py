@@ -15,7 +15,7 @@ def get_club_links(url): #takes in wusa club page url and returns a list of link
         club_links.append(link_temp.get('href'))
     return club_links
 
-def get_club_info(club_url): #takes in a specific club url. 
+def get_club_info(club_url): #takes in a specific club url.
     
     page_to_scrape=requests.get(f'https://clubs.wusa.ca{club_url}')
     page_to_scrape2 = requests.get(f'https://clubs.wusa.ca{club_url}/constitution')
