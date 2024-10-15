@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from users.models import User
 from .scripts.confirmationEmail.sendEmail import sendEmail
+from .scripts.confirmationEmail.CreateNumber import CreateNumber
 
 # Create your views here.
 
@@ -21,4 +22,16 @@ def index(request):
                 email = email, password_name = password_name, verification_code = verification_code)
         s.save()
     return render(request, '/templates/2_signup_page.html')
+
+
+
+# return the varification page after the "create account" button is pressed
+def varify(request):
+    variCode = CreateNumber()
+
+    sendEmail("qanyi27@gmail.com", variCode)
+    return HttpResponse("email sent")
+
+
+
 

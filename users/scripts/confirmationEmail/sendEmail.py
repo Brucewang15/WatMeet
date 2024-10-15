@@ -8,14 +8,14 @@ from .passwords import qanyi_password
 # app name: Python
 
 
-def sendEmail(reciever, link):
+def sendEmail(reciever, code):
     eSender = "qanyi27@gmail.com"
     ePassword = qanyi_password
 
     eReceiver = reciever 
 
     subject = "test"
-    body = "test"
+    body = str(code)
 
     em = EmailMessage()
 
