@@ -27,25 +27,30 @@ const Signup = () => {
             alert('All fields are required');
             return false;
         }
-
         console.log(email, username, password, confirmPassword);
-        const response = await fetch('http://127.0.0.1:8000/user/confirmationEmail', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: {
-                email: email,
-                username: username,
-                password: password,
-            },
-        })
-        if(!response.ok) {
-            alert('Failed to sign up. Please try again.');
-            return false;
+        try {
+            const response = await fetch('http://127.0.0.1:8000/users/confirmationEmail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: {
+                    email: email,
+                    username: username,
+                    password: password,
+                },
+            })
+            if(!response.ok) {
+                alert('Failed to sign up. Please try again. 1');
+                return false;
+            }
+            if (response.ok) {
+                console.log('ok');
+            }
         }
-        if (response.ok) {
-            console.log('ok');
+        catch(error) {
+            console.error('Error:', error);
+            alert('Failed to sign up. Please try again. 2');
         }
 
     }

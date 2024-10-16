@@ -36,8 +36,6 @@ const Login = () => {
                     <a rel="noopener noreferrer" href="/signup" class="">Sign up</a>
                 </p>
             </div>
-
-
         </div>
     );
 

@@ -12,7 +12,7 @@ def sendEmail(reciever, code):
     eSender = "qanyi27@gmail.com"
     ePassword = qanyi_password
 
-    eReceiver = reciever 
+    eReceiver = reciever
 
     subject = "test"
     body = str(code)
