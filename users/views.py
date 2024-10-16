@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import JsonResponse
 from users.models import User
 from .scripts.confirmationEmail.CreateNumber import CreateNumber
 from .scripts.confirmationEmail.sendEmail import sendEmail
+from django.middleware.csrf import get_token
+
 
 # Create your views here.
 
@@ -30,5 +33,15 @@ def verify(request):
 
 #def add(request):
     
+def getCSRF(request):
+    
+    token = get_token(request)
+    print(token)
+    response = JsonResponse({'token': token})
+    response.set_cookie('csrftoken', token, 
+                        path='/',
+                        samesite='Strict')
+    return response
+
 
 
