@@ -1,14 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from users.models import User
-from .scripts.confirmationEmail.sendEmail import sendEmail
 from .scripts.confirmationEmail.CreateNumber import CreateNumber
+from .scripts.confirmationEmail.sendEmail import sendEmail
 
 # Create your views here.
-
-def send_email(request):
-    sendEmail("jonathangong2005@gmail.com", "hi")
-    return HttpResponse('email sent')
 
 def index(request):
     if request.method == "POST":
@@ -26,12 +22,13 @@ def index(request):
 
 
 # return the varification page after the "create account" button is pressed
-def varify(request):
+def verify(request):
     variCode = CreateNumber()
 
-    sendEmail("qanyi27@gmail.com", variCode)
-    return HttpResponse("email sent")
+    sendEmail("b225wang@uwaterloo.ca", variCode)
+    return render(request, '../templates/1_signup_page.html')
 
-
+def add(request):
+    
 
 
