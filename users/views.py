@@ -29,8 +29,9 @@ def index(request):
 def verify(request):
     variCode = CreateNumber()
 
-    
-    sendEmail(request.get('email'), variCode)
+    body_unicode = request.body.decode('utf-8')
+    body_data = json.loads(body_unicode)    
+    sendEmail(body_data.get('email'), variCode)
     return render(request, '../templates/1_signup_page.html')
 
 #def add(request):

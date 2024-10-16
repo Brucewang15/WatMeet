@@ -38,6 +38,7 @@ const Signup = () => {
             })
             if (response.ok) {
                 console.log('ok');
+                window.location.href ='/confirmEmail'
             }
         }
         catch (error) {
