@@ -21,7 +21,7 @@ const Signup = () => {
             alert('All fields are required');
             return false;
         }
-        console.log(email, username, password, confirmPassword);
+        console.log(username, email, password, confirmPassword);
         try {
             const response = await fetch('http://127.0.0.1:8000/users/confirmationEmail/', {
                 method: 'POST',

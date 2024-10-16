@@ -1,4 +1,5 @@
 from django.shortcuts import render
+import json
 from django.http import HttpResponse
 from django.http import JsonResponse
 from users.models import User
@@ -28,7 +29,8 @@ def index(request):
 def verify(request):
     variCode = CreateNumber()
 
-    sendEmail("b225wang@uwaterloo.ca", variCode)
+    
+    sendEmail(request.get('email'), variCode)
     return render(request, '../templates/1_signup_page.html')
 
 #def add(request):
