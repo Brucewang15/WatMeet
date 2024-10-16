@@ -5,7 +5,6 @@ const ConfirmEmail = () => {
     const [code, setCode] = useState('')
 
     const submitCode = async () => {
-        console.log(window.location.search.split('=')[1]);
         try {
             const response = await fetch('http://127.0.0.1:8000/users/verify-email/', {
                 method: 'POST',
@@ -13,7 +12,8 @@ const ConfirmEmail = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    veriCode: code, email: window.location.search.split('=')[1],
+                    veriCode: code,
+                    email: localStorage.getItem('email'),
                 })
             });
             if (response.ok) {

@@ -7,6 +7,8 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
+    const [usernameTaken, setUsernameTaken] = useState(false);
+    const [emailTaken, setEmailTaken] = useState(false);
 
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
@@ -37,8 +39,22 @@ const Signup = () => {
                 }),
             })
             if (response.ok) {
-                console.log('ok');
-                window.location.href = `/confirmEmail?email=${encodeURIComponent(email)}`
+                response.json().then(data => {  
+                    if (data.success) {
+                        localStorage.setItem('email', email)
+                        window.location.href = `/confirmEmail`
+                    }
+                    else {
+                        console.log(data.reason)
+                        if (data.reason === 'username_taken') {
+                            setUsernameTaken(true);
+                        }
+                        if (data.reason === 'email_taken') {
+                            setEmailTaken(true);
+                        }
+                    }
+                }
+            )
             }
         }
         catch (error) {
@@ -50,6 +66,8 @@ const Signup = () => {
         <div className='main-Container'>
             <div className="form-container">
                 <p className="title">Sign Up</p>
+                {usernameTaken && <p className="error">Username is already taken</p>}
+                {emailTaken && <p className="error">Email is already taken</p>}
                 <div className="form">
                     <div className="input-group">
                         <label htmlFor="username">Username</label>

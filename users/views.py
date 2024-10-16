@@ -30,7 +30,7 @@ def index(request):
 def verify(request):
     variCode = CreateNumber()
 
-    body_unicode = request.body.decode('utf-8')
+    body_unicode = request.body
     body_data = json.loads(body_unicode)
 
     username = body_data.get('username')
@@ -39,10 +39,21 @@ def verify(request):
     email = body_data.get('email')
     password = body_data.get('password')
     
-    sendEmail(email, variCode)
+    if User.objects.filter(username=username).exists():
+        print('Username already exists')
+        return JsonResponse({'success': False, 'reason': 'username_taken'})
+    elif User.objects.filter(email=email).exists():
+        print('Email already exists')
+        return JsonResponse({'success': False, 'reason': 'email_taken'})
+    else:
+        sendEmail(email, variCode)
     s = User(first_name = first_name, last_name = last_name, username = username, email = email, password = password, verification_code = variCode)
     s.save()
-    return render(request, '../templates/1_signup_page.html')
+    request.session['email'] = email
+    print(request.session['email'], 'email')
+
+    return JsonResponse({'success': True})
+    #return render(request, '../templates/1_signup_page.html')
 
 #def add(request):
     
@@ -57,11 +68,13 @@ def getCSRF(request):
     return response
 
 def verify_email(request):
-    body_unicode = request.body.decode('utf-8')
+    body_unicode = request.body
     body_data = json.loads(body_unicode)
-    decoded_email = urllib.parse.unquote(body_data.get('email'))
 
-    user = User.objects.get(email=decoded_email)
+    
+
+    user = User.objects.get(email=body_data.get('email'))
+    
     actualCode = user.verification_code
     enteredCode = body_data.get('veriCode')
     if enteredCode == actualCode:
