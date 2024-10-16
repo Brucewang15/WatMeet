@@ -37,7 +37,6 @@ def verify(request):
     last_name = 'hi'
     email = body_data.get('email')
     password = body_data.get('password')
-
     sendEmail(email, variCode)
     s = User(first_name = first_name, last_name = last_name, username = username, email = email, password = password, verification_code = variCode)
     s.save()
@@ -65,6 +64,8 @@ def verify_email(request):
     enteredCode = body_data.get('veriCode')
     if enteredCode == actualCode:
         print('good code')
+        user.verified = True
+        user.save()
         return JsonResponse({'success': True})
     else:
         print('bad code')
