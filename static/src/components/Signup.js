@@ -13,10 +13,10 @@ const Signup = () => {
         form.addEventListener('submit', function (event) {
             event.preventDefault();
         });
-    });    
+    });
 
     const confirmEmail = async () => {
-        
+
         if (email === '' || username === '' || password === '' || confirmPassword === '') {
             alert('All fields are required');
             return false;
@@ -38,7 +38,7 @@ const Signup = () => {
             })
             if (response.ok) {
                 console.log('ok');
-                window.location.href =`/confirmEmail?email=${encodeURIComponent(email)}`
+                window.location.href = `/confirmEmail?email=${encodeURIComponent(email)}`
             }
         }
         catch (error) {
@@ -52,38 +52,38 @@ const Signup = () => {
                 <p className="title">Sign Up</p>
                 <div className="form">
                     <div className="input-group">
-                        <label for="username">Username</label>
+                        <label htmlFor="username">Username</label>
                         <input type="text" name="username" id="username" placeholder=""
-                            onChange={(e) => { setUsername(e.target.value) }}></input>
+                            onChange={(e) => { setUsername(e.target.value) }} />
                     </div>
 
                     <div className="input-group">
-                        <label for="username">Email</label>
-                        <input type="text" name="username" id="username" placeholder=""
-                            onChange={(e) => { setEmail(e.target.value) }}></input>
+                        <label htmlFor="email">Email</label>
+                        <input type="text" name="email" id="email" placeholder=""
+                            onChange={(e) => { setEmail(e.target.value) }} />
                     </div>
 
-                    <div class="input-group">
-                        <label for="password">Password</label>
+                    <div className="input-group">
+                        <label htmlFor="password">Password</label>
                         <input type="password" name="password" id="password" placeholder=""
-                            onChange={(e) => { setPassword(e.target.value) }}></input>
+                            onChange={(e) => { setPassword(e.target.value) }} />
                     </div>
 
                     <div className="input-group">
-                        <label for="username">Re-enter Password</label>
-                        <input type="password" name="username" id="username" placeholder=""
-                            onChange={(e) => { setConfirmPassword(e.target.value) }}></input>
+                        <label htmlFor="confirmPassword">Re-enter Password</label>
+                        <input type="password" name="confirmPassword" id="confirmPassword" placeholder=""
+                            onChange={(e) => { setConfirmPassword(e.target.value) }} />
                     </div>
-                    <button class="sign" onClick={confirmEmail}>Sign Up</button>
+
+                    <button className="sign" onClick={confirmEmail}>Sign Up</button>
                 </div>
 
-                <p class="signup">Have an account?
-                    <a rel="noopener noreferrer" href="/login" class="">Login</a>
+                <p className="signup">Have an account?
+                    <a rel="noopener noreferrer" href="/login" className="">Login</a>
                 </p>
             </div>
-
-
         </div>
+
     );
 
 }

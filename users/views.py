@@ -32,11 +32,13 @@ def verify(request):
 
     body_unicode = request.body.decode('utf-8')
     body_data = json.loads(body_unicode)
+
     username = body_data.get('username')
     first_name = 'hi'
     last_name = 'hi'
     email = body_data.get('email')
     password = body_data.get('password')
+    
     sendEmail(email, variCode)
     s = User(first_name = first_name, last_name = last_name, username = username, email = email, password = password, verification_code = variCode)
     s.save()
