@@ -13,7 +13,7 @@ const Login = () => {
         }); 
     });
     return (
-        <div>
+        <div className='main-Container'>
 
             <div className="form-container">
                 <p className="title">Login</p>
