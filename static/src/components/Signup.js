@@ -38,7 +38,7 @@ const Signup = () => {
             })
             if (response.ok) {
                 console.log('ok');
-                window.location.href ='/confirmEmail'
+                window.location.href =`/confirmEmail?email=${encodeURIComponent(email)}`
             }
         }
         catch (error) {

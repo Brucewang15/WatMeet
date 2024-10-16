@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'comments_and_ratings',
     'organizations',
     'users',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [

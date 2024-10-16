@@ -1,8 +1,39 @@
-import React from'react';
+import React, { useState } from 'react';
 import './Login.css';
 
 const ConfirmEmail = () => {
-    return(
+    const [code, setCode] = useState('')
+
+    const submitCode = async () => {
+        console.log(window.location.search.split('=')[1]);
+        try {
+            const response = await fetch('http://127.0.0.1:8000/users/verify-email/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    veriCode: code, email: window.location.search.split('=')[1],
+                })
+            });
+            if (response.ok) {
+                response.json().then(data => {
+                    if (data.success) {
+                        console.log('ok code');
+                    }
+                    else {
+                        console.log('not ok code')
+                    }
+                }
+                )
+            }
+        }
+        catch (error) {
+            console.error('Error:', error);
+        }
+
+    }
+    return (
         <div className='main-Container'>
 
             <div className="form-container">
@@ -10,9 +41,10 @@ const ConfirmEmail = () => {
                 <div className="form">
                     <div className="input-group">
                         <label for="username">Enter Your Code</label>
-                        <input type="text" name="username" id="username" placeholder=""></input>
+                        <input type="text" name="username" id="username" placeholder=""
+                            onChange={(e) => { setCode(e.target.value) }}></input>
                     </div>
-                    <button class="sign">Create your account</button>
+                    <button class="sign" onClick={submitCode}>Create your account</button>
                 </div>
 
                 <p class="signup">Didn't receive a code?
