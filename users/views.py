@@ -28,7 +28,7 @@ def verify(request):
     sendEmail("b225wang@uwaterloo.ca", variCode)
     return render(request, '../templates/1_signup_page.html')
 
-def add(request):
+#def add(request):
     
 
 
