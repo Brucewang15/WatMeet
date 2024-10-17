@@ -5,10 +5,10 @@ import time
 import json
 
 # Incorporates Selenium Manager, if driver isn't found on system path, 
-#  Selenium Manager will automatically download it
+# Selenium Manager will automatically download it
 service = Service()
 options = webdriver.ChromeOptions()
-#driver = webdriver.Chrome(service=service, options=options)
+driver = webdriver.Chrome(service=service, options=options)
 
 # Set up the Selenium WebDriver (use the path where you installed ChromeDriver)
 driver = webdriver.Chrome(executable_path="C:\Users\PC\Documents\GitHub\WatMeet\google chromedriver\chromedriver-win64\chromedriver-win64\chromedriver.exe")
