@@ -1,28 +1,52 @@
-from bs4 import BeautifulSoup
 import requests
-import csv
+from bs4 import BeautifulSoup
+import json
 
-#def get_instructional_classes_links(url):
-    #page_to_scrape=requests.get(url)
-    #soup = BeautifulSoup(page_to_scrape.text, "html.parser")
+url = 'https://athletics.uwaterloo.ca/sports/2022/4/27/intramurals.aspx'
 
-    #instructional_classes = soup.findAll("span", attrs={"class":"flex-item-1"})
+# Send a GET request to fetch the HTML content
+response = requests.get(url)
+if response.status_code != 200:
+    print(f"Failed to retrieve the webpage. Status code: {response.status_code}")
+    exit()
 
-    #return get_instructional_classes_links
+# HTML parser to parse page content
+soup = BeautifulSoup(response.content, 'html.parser')
 
-url = "https://athletics.uwaterloo.ca/sports/2010/7/21/Instructional_Classes.aspx"
-page_to_scrape = requests.get(url)
-soup = BeautifulSoup(page_to_scrape.text, "html.parser")
-program_names = soup.findAll("span", attrs={"class":"flex-item-1"})
-class_names = soup.find_all("h4", attrs={})
+# Finds relavent information to sports offered
+sports_data = []
+sections = soup.find_all('div', class_='content')
 
-file = open("intramurals.csv", "w")
-writer = csv.writer(file)
+for section in sections:
+    # Extract sports name (headers/titles)
+    title = section.find('h2')
+    if title:
+        sport_name = title.text.strip()
 
-writer.writerow(["PROGRAMS", "CLASSES"])
+        # Extracts sport descriptions
+        description = section.find('p')
+        if description:
+            sport_description = description.text.strip()
+        else:
+            sport_description = 'No description available.'
 
-for programs, classes in zip(program_names, class_names):
-    print(programs.text + " " + classes.text)
-    writer.writerow([programs.text, classes.text])
+        # Extracts links related to the sport
+        link = section.find('a')
+        if link:
+            sport_link = link['href']
+        else:
+            sport_link = 'No link available.'
 
-file.close()
+        # Collects data for each sport
+        sports_data.append({
+            'name': sport_name,
+            'description': sport_description,
+            'link': sport_link
+        })
+
+# Writes data into JSON file
+with open('intramurals.json', 'w') as json_file:
+    json.dump(sports_data, json_file, indent=4)
+
+print("Scraping complete. Data has been saved to uwaterloo_intramurals.json")
+
