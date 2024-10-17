@@ -30,7 +30,7 @@ sections = driver.find_elements(By.CSS_SELECTOR, 'div.some-class')  # Adjust 'di
 
 for section in sections:
     # Extract the sport name
-    title_elem = section.find_element(By.TAG_NAME, 'li')  # Adjust 'li' based on webpage structure
+    title_elem = section.find_element(By.TAG_NAME, 'h2')  # Adjust 'li' based on webpage structure
     sport_name = title_elem.text if title_elem else 'Unknown Sport'
     
     # Extract the sport description
