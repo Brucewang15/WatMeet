@@ -1,7 +1,14 @@
-from selenium import webdriver #make sure to pip install selenium
+from selenium import webdriver #make sure to pip install selenium to use this
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import time
 import json
+
+# Incorporates Selenium Manager, if driver isn't found on system path, 
+#  Selenium Manager will automatically download it
+service = Service()
+options = webdriver.ChromeOptions()
+#driver = webdriver.Chrome(service=service, options=options)
 
 # Set up the Selenium WebDriver (use the path where you installed ChromeDriver)
 driver = webdriver.Chrome(executable_path="C:\Users\PC\Documents\GitHub\WatMeet\google chromedriver\chromedriver-win64\chromedriver-win64\chromedriver.exe")
@@ -41,10 +48,10 @@ for section in sections:
         'link': sport_link
     })
 
-# Close the browser
+# Closes the browser
 driver.quit()
 
-# Write the collected data into a JSON file
+# Writes data into JSON file
 with open('intramurals.json', 'w') as json_file:
     json.dump(sports_data, json_file, indent=4)
 
