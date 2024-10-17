@@ -1,7 +1,7 @@
-from selenium import webdriver #make sure to pip install selenium to use this
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 # make sure python version and selenium matches up (compare pip -V and Python Interpreter)
-from selenium.webdriver.common.by import By
 import time
 import json
 
@@ -19,26 +19,26 @@ url = 'https://athletics.uwaterloo.ca/sports/2022/4/27/intramurals.aspx'
 # Open the webpage
 driver.get(url)
 
-# Wait for the page to fully load
-time.sleep(5)  # Adjust this based on the complexity of the page
+# Wait for the page to fully load (adjust time if necessary)
+time.sleep(5)
 
 # Scrape the sport details from the page
 sports_data = []
 
-# Example: Inspect the page for actual CSS selectors
-sections = driver.find_elements(By.CSS_SELECTOR, 'div.some-class')  # Adjust 'div.some-class'
+# Example: Locate the correct sections (adjust CSS selector based on the exact page structure)
+sections = driver.find_elements(By.CSS_SELECTOR, 'div.sidearm-schedule-game')  # Example of a container for each sport
 
 for section in sections:
-    # Extract the sport name
-    title_elem = section.find_element(By.TAG_NAME, 'h2')  # Adjust 'li' based on webpage structure
+    # Extract the sport name (adjust based on the correct HTML tag, e.g., h3, h2)
+    title_elem = section.find_element(By.TAG_NAME, 'h3')  # Check if h3 contains the title
     sport_name = title_elem.text if title_elem else 'Unknown Sport'
     
     # Extract the sport description
-    description_elem = section.find_element(By.TAG_NAME, 'p')  # Adjust 'p'
+    description_elem = section.find_element(By.TAG_NAME, 'p')  # Description in a paragraph tag
     sport_description = description_elem.text if description_elem else 'No description available.'
     
     # Extract links, if available
-    link_elem = section.find_element(By.TAG_NAME, 'a')  # Adjust 'a'
+    link_elem = section.find_element(By.TAG_NAME, 'a')  # Links for more info
     sport_link = link_elem.get_attribute('href') if link_elem else 'No link available.'
 
     # Store the data
@@ -48,11 +48,11 @@ for section in sections:
         'link': sport_link
     })
 
-# Closes the browser
+# Close the browser
 driver.quit()
 
-# Writes data into JSON file
+# Write the collected data into a JSON file
 with open('intramurals.json', 'w') as json_file:
-    json.dump(sports_data, json_file, indent=4) 
+    json.dump(sports_data, json_file, indent=4)
 
 print("Scraping complete. Data has been saved to intramurals.json")
