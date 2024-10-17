@@ -1,4 +1,4 @@
-from selenium import webdriver
+from selenium import webdriver #make sure to pip install selenium
 from selenium.webdriver.common.by import By
 import time
 import json
