@@ -45,7 +45,7 @@ for section in sections:
 driver.quit()
 
 # Write the collected data into a JSON file
-with open('uwaterloo_intramurals.json', 'w') as json_file:
+with open('intramurals.json', 'w') as json_file:
     json.dump(sports_data, json_file, indent=4)
 
 print("Scraping complete. Data has been saved to uwaterloo_intramurals.json")
