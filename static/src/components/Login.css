@@ -27,6 +27,10 @@
   margin-top: 1.5rem;
 }
 
+.horizontal {
+  display: flex;
+  flex-direction: row;
+}
 .input-group {
   margin-top: 0.25rem;
   font-size: 0.875rem;

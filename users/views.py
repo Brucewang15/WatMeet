@@ -7,7 +7,7 @@ from .scripts.confirmationEmail.CreateNumber import CreateNumber
 from .scripts.confirmationEmail.sendEmail import sendEmail
 from django.middleware.csrf import get_token
 import urllib.parse
-
+from rest_framework_simplejwt.tokens import RefreshToken
 
 # Create your views here.
 
@@ -33,21 +33,19 @@ def verify(request):
     body_unicode = request.body
     body_data = json.loads(body_unicode)
 
-    username = body_data.get('username')
-    first_name = 'hi'
-    last_name = 'hi'
+    
+    first_name = body_data.get('firstName')
+    last_name = body_data.get('lastName')
     email = body_data.get('email')
     password = body_data.get('password')
     
-    if User.objects.filter(username=username).exists():
-        print('Username already exists')
-        return JsonResponse({'success': False, 'reason': 'username_taken'})
-    elif User.objects.filter(email=email).exists():
+    
+    if User.objects.filter(email=email).exists():
         print('Email already exists')
         return JsonResponse({'success': False, 'reason': 'email_taken'})
     else:
         sendEmail(email, variCode)
-    s = User(first_name = first_name, last_name = last_name, username = username, email = email, password = password, verification_code = variCode)
+    s = User(first_name = first_name, last_name = last_name, email = email, password = password, verification_code = variCode)
     s.save()
     request.session['email'] = email
     print(request.session['email'], 'email')
@@ -66,7 +64,14 @@ def getCSRF(request):
                         path='/',
                         samesite='Strict')
     return response
-
+# Generates jwt tokens for the user
+def get_tokens_for_user(user):
+    refresh = RefreshToken.for_user(user)
+    return {
+        'refresh': str(refresh),
+        'access': str(refresh.access_token),
+    }
+# Verify the email entered by the user in the verification page
 def verify_email(request):
     body_unicode = request.body
     body_data = json.loads(body_unicode)
@@ -85,5 +90,6 @@ def verify_email(request):
     else:
         print('bad code')
         return JsonResponse({'success': False})
+
 
 
