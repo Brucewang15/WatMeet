@@ -30,7 +30,7 @@ sections = driver.find_elements(By.CSS_SELECTOR, 'div.some-class')  # Adjust 'di
 
 for section in sections:
     # Extract the sport name
-    title_elem = section.find_element(By.TAG_NAME, 'h2')  # Adjust 'h2' based on structure
+    title_elem = section.find_element(By.TAG_NAME, 'li')  # Adjust 'li' based on webpage structure
     sport_name = title_elem.text if title_elem else 'Unknown Sport'
     
     # Extract the sport description
@@ -53,6 +53,6 @@ driver.quit()
 
 # Writes data into JSON file
 with open('intramurals.json', 'w') as json_file:
-    json.dump(sports_data, json_file, indent=4)
+    json.dump(sports_data, json_file, indent=4) 
 
-print("Scraping complete. Data has been saved to uwaterloo_intramurals.json")
+print("Scraping complete. Data has been saved to intramurals.json")
