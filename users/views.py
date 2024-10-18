@@ -64,16 +64,12 @@ def getCSRF(request):
                         path='/',
                         samesite='Strict')
     return response
-# Generates jwt tokens for the user
-def get_tokens_for_user(user):
-    refresh = RefreshToken.for_user(user)
-    return {
-        'refresh': str(refresh),
-        'access': str(refresh.access_token),
-    }
-# Verify the email entered by the user in the verification page
+
+
+
+
 def verify_email(request):
-    body_unicode = request.body
+    body_unicode = request.body # users code
     body_data = json.loads(body_unicode)
 
     
