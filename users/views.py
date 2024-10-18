@@ -24,6 +24,12 @@ def index(request):
         s.save()
     return render(request, '/templates/2_signup_page.html')
 
+# Custom JWT token
+from rest_framework_simplejwt.views import TokenObtainPairView
+from .serializers import CustomTokenObtainPairSerializer
+
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer
 
 
 # return the varification page after the "create account" button is pressed
@@ -38,6 +44,7 @@ def verify(request):
     last_name = body_data.get('lastName')
     email = body_data.get('email')
     password = body_data.get('password')
+    username=email
     
     
     if User.objects.filter(email=email).exists():
@@ -45,7 +52,7 @@ def verify(request):
         return JsonResponse({'success': False, 'reason': 'email_taken'})
     else:
         sendEmail(email, variCode)
-    s = User(first_name = first_name, last_name = last_name, email = email, password = password, verification_code = variCode)
+    s = User(first_name = first_name, last_name = last_name, username=username, email = email, password = password, verification_code = variCode)
     s.save()
     request.session['email'] = email
     print(request.session['email'], 'email')
@@ -80,7 +87,7 @@ def verify_email(request):
     enteredCode = body_data.get('veriCode')
     if enteredCode == actualCode:
         print('good code')
-        user.verified = True
+        user.is_active = True
         user.save()
         return JsonResponse({'success': True})
     else:

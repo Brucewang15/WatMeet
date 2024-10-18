@@ -8,7 +8,7 @@ class User(models.Model):
     password = models.CharField(max_length=100)
     email = models.EmailField(max_length=100, unique=True)
     verification_code = models.CharField(max_length=100)
-    verified = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

@@ -34,6 +34,7 @@ const Signup = () => {
                 //credentials: 'include',
                 body: JSON.stringify({
                     email: email,
+                    username: email,
                     firstName: firstName,
                     lastName: lastName,
                     password: password,
