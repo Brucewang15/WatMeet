@@ -7,7 +7,7 @@ import json
 
 # Incorporates Selenium Manager, if driver isn't found on system path, 
 # Selenium Manager will automatically download it
-service = Service(executable_path="C:/Users/PC/Documents/GitHub/WatMeet/google chromedriver/chromedriver-win64/chromedriver-win64/chromedriver.exe")
+service = Service(executable_path="C:\\Users\\PC\\Documents\\GitHub\\WatMeet\\chromedriver\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe")
 options = webdriver.ChromeOptions()
 
 # Set up the Selenium WebDriver (use the path where you installed ChromeDriver)
@@ -55,7 +55,7 @@ for rule in rules_links:
 driver.quit()
 
 # Write the collected data into a JSON file
-with open('uwaterloo_intramurals.json', 'w') as json_file:
+with open('intramurals.json', 'w') as json_file:
     json.dump(sports_data, json_file, indent=4)
 
-print("Scraping complete. Data has been saved to uwaterloo_intramurals.json")
+print("Scraping complete. Data has been saved to intramurals.json")
