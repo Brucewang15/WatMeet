@@ -13,7 +13,30 @@ const MainClubPage = () => {
     }
 
     const handleSubmit = async () => {
-        
+
+        console.log(email, comment, stars)
+        try {
+            const response = await fetch('http://127.0.0.1:8000/comments/post_comment/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email,
+                    stars: stars,
+                    comment: comment,
+
+                    org_id: 0,
+                    user_id: 0,
+                })
+            })
+            if (response.ok) {
+                console.log('added')
+            }
+        }
+        catch (err) {
+            console.log('error', err)
+        }        
     }
 
 
@@ -48,16 +71,18 @@ const MainClubPage = () => {
             <div className="form">
                 <div className="group">
                     {/* <Stars className='stars' sendStarToParent = {handleStarChange}/> */}
+                    <input placeholder="" type="rating" id="rating" name="rating" onChange={(e) => {setStars(e.target.value)}} required />
+                    <label htmlFor="rating" >Rating</label>
                 </div>
                 <div className="group">
-                    <input placeholder="" type="email" id="email" name="email" required />
-                    <label htmlFor="email">Email</label>
+                    <input placeholder="" type="email" id="email" name="email" onChange={(e) => {setEmail(e.target.value)}} required />
+                    <label htmlFor="email" >Email</label>
                 </div>
                 <div className="group">
-                    <textarea placeholder="" id="comment" name="comment" rows="5" required />
-                    <label htmlFor="comment" onChange={(e) => {setComment(e.target.value)}}>Comment</label>
+                    <textarea placeholder="" id="comment" name="comment" rows="5" onChange={(e) => {setComment(e.target.value)}} required />
+                    <label htmlFor="comment" >Comment</label>
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" onClick={handleSubmit}>Submit</button>
             </div>
         </div>
 
