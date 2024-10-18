@@ -4,6 +4,7 @@ import './Login.css';
 const ConfirmEmail = () => {
     const [code, setCode] = useState('')
 
+    
     const submitCode = async () => {
         try {
             const response = await fetch('http://127.0.0.1:8000/users/verify-email/', {

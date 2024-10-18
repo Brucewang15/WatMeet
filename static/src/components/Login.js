@@ -12,6 +12,10 @@ const Login = () => {
             event.preventDefault(); 
         }); 
     });
+
+    const handleLogin = async () => {
+        
+    }
     return (
         <div className='main-Container'>
 
@@ -29,7 +33,7 @@ const Login = () => {
                             <a rel="noopener noreferrer" href="#">Forgot Password ?</a>
                         </div>
                     </div>
-                    <button class="sign">Sign in</button>
+                    <button class="sign" onClick={handleLogin}>Sign in</button>
                 </div>
 
                 <p class="signup">Don't have an account?

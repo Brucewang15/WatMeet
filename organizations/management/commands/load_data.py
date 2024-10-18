@@ -34,5 +34,6 @@ class Command(BaseCommand):
                 ranking_num = 3,
                 org_type = 'club',
                 constitution = "bruh",
+                user_id=19
             )
         self.stdout.write(self.style.SUCCESS('Data loaded successfully'))

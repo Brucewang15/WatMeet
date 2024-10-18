@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<MainPage/>}   />
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<Signup/>} />
-          <Route path="/confirmEmail" element={<ConfirmEmail/>} />
+          {/* <Route path="/confirmEmail" element={<ConfirmEmail/>} /> */}
           <Route path="/organizations" element={<MainClubPage/>} />
         </Routes>
       </Router>

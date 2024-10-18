@@ -46,14 +46,19 @@ def verify(request):
     password = body_data.get('password')
     username=email
     
-    
-    if User.objects.filter(email=email).exists():
+    user = User.objects.filter(email=email)
+    if not user.exists():
+        s = User(first_name = first_name, last_name = last_name, username=username, email = email, password = password, verification_code = variCode)
+        s.save()
+    elif User.objects.get(email=email).is_active:
         print('Email already exists')
         return JsonResponse({'success': False, 'reason': 'email_taken'})
-    else:
-        sendEmail(email, variCode)
-    s = User(first_name = first_name, last_name = last_name, username=username, email = email, password = password, verification_code = variCode)
-    s.save()
+    elif not User.objects.get(email=email).is_active:
+        print('Verify your email')
+        user.verification_code = variCode
+        user.save()
+    
+    sendEmail(email, variCode)
     request.session['email'] = email
     print(request.session['email'], 'email')
 
