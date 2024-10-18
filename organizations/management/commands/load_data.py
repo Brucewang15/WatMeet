@@ -11,7 +11,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         # Load data from the JSON file
-        with open('./organizations/club_info.json', 'r') as file:
+        with open('./organizations/info/club_info.json', 'r') as file:
             data = json.load(file)
 
         random_user = User.objects.create(
