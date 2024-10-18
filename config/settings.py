@@ -40,11 +40,7 @@ INSTALLED_APPS = [
 
     'comments_and_ratings',
     'organizations',
-    'users',
-
-    'rest_framework',
-    'rest_framework_simplejwt',
-    
+    'users',    
 ]
 
 MIDDLEWARE = [

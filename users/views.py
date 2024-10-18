@@ -7,7 +7,7 @@ from .scripts.confirmationEmail.CreateNumber import CreateNumber
 from .scripts.confirmationEmail.sendEmail import sendEmail
 from django.middleware.csrf import get_token
 import urllib.parse
-from rest_framework_simplejwt.tokens import RefreshToken
+
 
 # Create your views here.
 

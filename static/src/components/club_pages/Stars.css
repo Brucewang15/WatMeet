@@ -1,0 +1,28 @@
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    cursor: pointer;
+    color: #ccc;
+    font-size: 30px;
+    transition: color 0.3s;
+    padding: 0 5px;
+}
+
+.rating label:before {
+    content: '\2605';
+}
+
+.rating input:checked~label,
+.rating label:hover,
+.rating label:hover~label {
+    color: orange;
+    transition: color 0.3s;
+}
