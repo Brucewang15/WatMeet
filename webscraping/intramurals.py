@@ -23,36 +23,39 @@ driver.get(url)
 time.sleep(5)
 
 # Scrape the sport details from the page
-sports_data = []
+sports_data = {
+    'fall_sports': [],
+    'winter_sports': [],
+    'sport_rules_links': []
+}
 
-# Example: Locate the correct sections (adjust CSS selector based on the exact page structure)
-sections = driver.find_elements(By.CSS_SELECTOR, 'div.sidearm-schedule-game')  # Example of a container for each sport
+# Extract the fall sports list (adjust based on your inspection)
+fall_sports_section = driver.find_element(By.XPATH, "//h3[text()='Fall']/following-sibling::ul")
+fall_sports = fall_sports_section.find_elements(By.TAG_NAME, 'li')
+for sport in fall_sports:
+    sports_data['fall_sports'].append(sport.text)
 
-for section in sections:
-    # Extract the sport name (adjust based on the correct HTML tag, e.g., h3, h2)
-    title_elem = section.find_element(By.TAG_NAME, 'h3')  # Check if h3 contains the title
-    sport_name = title_elem.text if title_elem else 'Unknown Sport'
-    
-    # Extract the sport description
-    description_elem = section.find_element(By.TAG_NAME, 'p')  # Description in a paragraph tag
-    sport_description = description_elem.text if description_elem else 'No description available.'
-    
-    # Extract links, if available
-    link_elem = section.find_element(By.TAG_NAME, 'a')  # Links for more info
-    sport_link = link_elem.get_attribute('href') if link_elem else 'No link available.'
+# Extract the winter sports list (adjust based on your inspection)
+winter_sports_section = driver.find_element(By.XPATH, "//h3[text()='Winter']/following-sibling::ul")
+winter_sports = winter_sports_section.find_elements(By.TAG_NAME, 'li')
+for sport in winter_sports:
+    sports_data['winter_sports'].append(sport.text)
 
-    # Store the data
-    sports_data.append({
-        'name': sport_name,
-        'description': sport_description,
-        'link': sport_link
-    })
+# Extract the links to the intramural sport rules (adjust based on your inspection)
+rules_section = driver.find_element(By.XPATH, "//ul[preceding-sibling::h3[text()='Intramural Rules']]")
+rules_links = rules_section.find_elements(By.TAG_NAME, 'a')
+for rule in rules_links:
+    rule_data = {
+        'name': rule.text,
+        'link': rule.get_attribute('href')
+    }
+    sports_data['sport_rules_links'].append(rule_data)
 
 # Close the browser
 driver.quit()
 
 # Write the collected data into a JSON file
-with open('intramurals.json', 'w') as json_file:
+with open('uwaterloo_intramurals.json', 'w') as json_file:
     json.dump(sports_data, json_file, indent=4)
 
-print("Scraping complete. Data has been saved to intramurals.json")
+print("Scraping complete. Data has been saved to uwaterloo_intramurals.json")
