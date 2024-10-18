@@ -1,12 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
-# make sure python version and selenium matches up (compare pip -V and Python Interpreter)
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 import json
 
-# Incorporates Selenium Manager, if driver isn't found on system path, 
-# Selenium Manager will automatically download it
+# Incorporates Selenium Manager, if driver isn't found on system path
 service = Service(executable_path="C:\\Users\\PC\\Documents\\GitHub\\WatMeet\\chromedriver\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe")
 options = webdriver.ChromeOptions()
 
@@ -19,8 +19,8 @@ url = 'https://athletics.uwaterloo.ca/sports/2022/4/27/intramurals.aspx'
 # Open the webpage
 driver.get(url)
 
-# Wait for the page to fully load (adjust time if necessary)
-time.sleep(5)
+# Use WebDriverWait instead of time.sleep to wait for elements to load
+wait = WebDriverWait(driver, 10)
 
 # Scrape the sport details from the page
 sports_data = {
@@ -29,27 +29,36 @@ sports_data = {
     'sport_rules_links': []
 }
 
-# Extract the fall sports list (adjust based on your inspection)
-fall_sports_section = driver.find_element(By.XPATH, "//h3[text()='Fall']/following-sibling::ul")
-fall_sports = fall_sports_section.find_elements(By.TAG_NAME, 'li')
-for sport in fall_sports:
-    sports_data['fall_sports'].append(sport.text)
+# Find the fall sports section (adjust based on your inspection)
+try:
+    fall_sports_section = wait.until(EC.presence_of_element_located((By.XPATH, "//h2[text()='Fall']/following-sibling::ul")))  # Adjust based on the correct structure
+    fall_sports = fall_sports_section.find_elements(By.TAG_NAME, 'li')
+    for sport in fall_sports:
+        sports_data['fall_sports'].append(sport.text)
+except Exception as e:
+    print(f"Failed to scrape fall sports: {e}")
 
-# Extract the winter sports list (adjust based on your inspection)
-winter_sports_section = driver.find_element(By.XPATH, "//h3[text()='Winter']/following-sibling::ul")
-winter_sports = winter_sports_section.find_elements(By.TAG_NAME, 'li')
-for sport in winter_sports:
-    sports_data['winter_sports'].append(sport.text)
+# Find the winter sports section (adjust based on your inspection)
+try:
+    winter_sports_section = wait.until(EC.presence_of_element_located((By.XPATH, "//h2[text()='Winter']/following-sibling::ul")))  # Adjust based on the correct structure
+    winter_sports = winter_sports_section.find_elements(By.TAG_NAME, 'li')
+    for sport in winter_sports:
+        sports_data['winter_sports'].append(sport.text)
+except Exception as e:
+    print(f"Failed to scrape winter sports: {e}")
 
 # Extract the links to the intramural sport rules (adjust based on your inspection)
-rules_section = driver.find_element(By.XPATH, "//ul[preceding-sibling::h3[text()='Intramural Rules']]")
-rules_links = rules_section.find_elements(By.TAG_NAME, 'a')
-for rule in rules_links:
-    rule_data = {
-        'name': rule.text,
-        'link': rule.get_attribute('href')
-    }
-    sports_data['sport_rules_links'].append(rule_data)
+try:
+    rules_section = wait.until(EC.presence_of_element_located((By.XPATH, "//ul[preceding-sibling::h2[text()='Intramural Rules']]")))
+    rules_links = rules_section.find_elements(By.TAG_NAME, 'a')
+    for rule in rules_links:
+        rule_data = {
+            'name': rule.text,
+            'link': rule.get_attribute('href')
+        }
+        sports_data['sport_rules_links'].append(rule_data)
+except Exception as e:
+    print(f"Failed to scrape intramural rules links: {e}")
 
 # Close the browser
 driver.quit()
