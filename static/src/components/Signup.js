@@ -79,7 +79,7 @@ const Signup = () => {
                     },
                     body: JSON.stringify({
                         veriCode: code,
-                        email: localStorage.getItem('email'),
+                        email: email,
                     }),
                 }
             );

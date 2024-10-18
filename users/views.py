@@ -68,7 +68,6 @@ def verify(request):
 #def add(request):
     
 def getCSRF(request):
-    
     token = get_token(request)
     print(token)
     response = JsonResponse({'token': token})
@@ -84,8 +83,6 @@ def verify_email(request):
     body_unicode = request.body # users code
     body_data = json.loads(body_unicode)
 
-    
-
     user = User.objects.get(email=body_data.get('email'))
     
     actualCode = user.verification_code
@@ -100,4 +97,16 @@ def verify_email(request):
         return JsonResponse({'success': False})
 
 
+def login(request):
+    body_unicode = request.body # users code
+    body_data = json.loads(body_unicode)
 
+    email = body_data.get('email')
+    password = body_data.get('password')
+    find_user = User.objects.filter(email=email)
+    if not find_user.exists():
+        return JsonResponse({'success': False, 'reason': 'Email or password Incorrect'})
+    user = User.objects.get(email=email)
+    if user.password != password:
+        return JsonResponse({'success': False, 'reason': 'Email or password Incorrect'})
+    return JsonResponse({'success': True})
