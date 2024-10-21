@@ -76,9 +76,6 @@ def getCSRF(request):
                         samesite='Strict')
     return response
 
-
-
-
 def verify_email(request):
     body_unicode = request.body # users code
     body_data = json.loads(body_unicode)
@@ -96,7 +93,6 @@ def verify_email(request):
         print('bad code')
         return JsonResponse({'success': False})
 
-
 def login(request):
     body_unicode = request.body # users code
     body_data = json.loads(body_unicode)
@@ -107,6 +103,12 @@ def login(request):
     if not find_user.exists():
         return JsonResponse({'success': False, 'reason': 'Email or password Incorrect'})
     user = User.objects.get(email=email)
+    if not user.is_active:
+        variCode = CreateNumber()
+        user.verification_code = variCode
+        user.save()
+        sendEmail(email, variCode)
+        return JsonResponse({'success': False, 'reason': 'Verify email'})
     if user.password != password:
         return JsonResponse({'success': False, 'reason': 'Email or password Incorrect'})
     return JsonResponse({'success': True})

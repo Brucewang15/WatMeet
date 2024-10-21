@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import "./Login.css";
+import ConfirmEmail from './ConfirmEmail';
 
 const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const [isEmailSent, setIsEmailSent] = useState(false)
 
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
@@ -54,6 +57,11 @@ const Login = () => {
                         console.log('Failed to obtain JWT token');
                     }
                 }
+                else if (data.reason === 'Verify email') {
+                    setIsEmailSent(true)
+                    console.log('email is sent')
+                }
+
                 else {
                     console.log(data.reason)
                 }
@@ -67,7 +75,8 @@ const Login = () => {
     }
     return (
         <div className='main-Container'>
-            <div className="form-container">
+            {!isEmailSent ? (
+                <div className="form-container">
                 <p className="title">Login</p>
                 <div className="form">
                     <div className="input-group">
@@ -88,6 +97,7 @@ const Login = () => {
                     <a rel="noopener noreferrer" href="/signup" class="">Sign up</a>
                 </p>
             </div>
+            ) : (<ConfirmEmail email={email} password = {password} />)}
         </div>
     );
 
