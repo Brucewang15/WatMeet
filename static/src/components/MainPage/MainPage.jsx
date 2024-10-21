@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Search from "../Search/Search";
 import ClubsDisplay from "./ClubsDisplay/ClubsDisplay";
@@ -13,13 +13,35 @@ const MainPage = () => {
         ["hi1", "hi2", "hi3"],
         ["bruh", "bruh", "bruh"]
     ]);
+    useEffect(() => {
+        const get_club_data = async () => {
+            const response = await fetch('http://127.0.0.1:8000/organizations/get_club_data', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+            if (response.ok) {
+                try {
+                    const data = await response.json();
+                    console.log(data);
+                    setClubs(data);
+                } catch (error) {
+                    console.error('Error parsing JSON:', error);
+                }
+            }
+        }
+        get_club_data()
+    }, [])
 
     return (
         <div className="mainContainer">
-            <Search/>
+            <Search />
             <div className="clubsContainer">
                 {clubs.map((club, index) => (
-                    <ClubsDisplay title={club[0]} membershipType={club[1]} discription={club[2]} key={index}/>
+                    <ClubsDisplay title={club.org_name} membershipType={club[1]} 
+                    description={club.overview} ranking_num = {club.ranking_num} 
+                    star_rating={club.star_rating} key={index} />
                 ))}
             </div>
         </div>

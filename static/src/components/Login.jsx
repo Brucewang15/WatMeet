@@ -52,7 +52,7 @@ const Login = () => {
                         localStorage.setItem('refresh_token', tokenData.refresh);
 
                         // Redirect to the dashboard or protected route
-                        // window.location.href = '/';
+                        window.location.href = '/';
                     } else {
                         console.log('Failed to obtain JWT token');
                     }
