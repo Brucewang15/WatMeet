@@ -10,6 +10,7 @@ import Search from './components/Search/Search';
 import MainPage from './components/MainPage/MainPage';
 
 import MainClubPage from './components/club_pages/MainClubPage';
+import IndividualClubPage from './components/MainPage/IndividualClubPage';
 function App() {
   return (
     <div>
@@ -20,6 +21,7 @@ function App() {
           <Route path="/signup" element={<Signup/>} />
           {/* <Route path="/confirmEmail" element={<ConfirmEmail/>} /> */}
           <Route path="/organizations" element={<MainClubPage/>} />
+          <Route path="/organizations/:id/" element={<IndividualClubPage />} />
         </Routes>
       </Router>
       

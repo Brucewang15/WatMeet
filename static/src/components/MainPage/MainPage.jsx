@@ -41,7 +41,7 @@ const MainPage = () => {
                 {clubs.map((club, index) => (
                     <ClubsDisplay title={club.org_name} membershipType={club[1]} 
                     description={club.overview} ranking_num = {club.ranking_num} 
-                    star_rating={club.star_rating} key={index} />
+                    star_rating={club.star_rating} org_id = {club.org_id} key={index} />
                 ))}
             </div>
         </div>
