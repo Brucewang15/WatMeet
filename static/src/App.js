@@ -21,7 +21,7 @@ function App() {
           <Route path="/signup" element={<Signup/>} />
           {/* <Route path="/confirmEmail" element={<ConfirmEmail/>} /> */}
           <Route path="/organizations" element={<MainClubPage/>} />
-          <Route path="/organizations/:id/" element={<IndividualClubPage />} />
+          <Route path="/organizations/:orgId/" element={<IndividualClubPage />} />
         </Routes>
       </Router>
       
