@@ -3,16 +3,14 @@ import React, { useState, useEffect } from 'react';
 import Search from "../Search/Search";
 import ClubsDisplay from "./ClubsDisplay/ClubsDisplay";
 import "./MainPage.css"
+import Header from '../Header';
 
 //import clubs_info from "..../webscraping/club_info.json";
 
 
 const MainPage = () => {
 
-    const [clubs, setClubs] = useState([
-        ["hi1", "hi2", "hi3"],
-        ["bruh", "bruh", "bruh"]
-    ]);
+    const [clubs, setClubs] = useState([]);
     useEffect(() => {
         const get_club_data = async () => {
             const response = await fetch('http://127.0.0.1:8000/organizations/get_club_data', {
@@ -34,9 +32,9 @@ const MainPage = () => {
         get_club_data()
     }, [])
 
-    return (
+    return <>
+        <Header />
         <div className="mainContainer">
-            <Search />
             <div className="clubsContainer">
                 {clubs.map((club, index) => (
                     <ClubsDisplay title={club.org_name} membershipType={club[1]} 
@@ -45,7 +43,7 @@ const MainPage = () => {
                 ))}
             </div>
         </div>
-    );
+    </>
 }
 
 export default MainPage

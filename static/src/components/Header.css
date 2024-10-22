@@ -1,0 +1,38 @@
+.mainContainerHeader {
+    max-height: 150px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+    position: fixed;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    gap: 40px;
+    top: 0;
+}
+.individualContainer {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.individualContainer a {
+    text-decoration: none;
+    color: none;
+    font-size: 25px; /* Adjust size as needed */
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Define your gradient colors */
+    -webkit-background-clip: text; /* Required for text gradient effect */
+    background-clip: text;
+    color: transparent; /* Make the text itself transparent to show the gradient */
+    text-align: center;
+}
+.individualContainer:nth-child(1):hover, .individualContainer:nth-child(3):hover {
+    cursor: pointer;
+}
+.individualContainer:nth-child(2) {
+    width: 100%;
+}

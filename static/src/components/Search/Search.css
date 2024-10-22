@@ -1,16 +1,15 @@
 /* From Uiverse.io by OnlyCodeChannel */ 
 .searchBox {
     display: flex;
-    max-width: 500px;
+    width: 100%;
+    max-width: 700px;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
     background: #2f3640;
     border-radius: 50px;
     position: relative;
-
     margin: auto;
-    margin-top: 30px;
     
   }
   

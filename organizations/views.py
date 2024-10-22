@@ -5,6 +5,5 @@ from organizations.models import Organization
 
 # Create your views here.
 def get_club_data(request):
-    print('This works')
     data = Organization.objects.all().values()
     return JsonResponse(list(data), safe=False)
