@@ -10,7 +10,7 @@ import Search from './components/Search/Search';
 import MainPage from './components/MainPage/MainPage';
 
 import MainClubPage from './components/club_pages/MainClubPage';
-import IndividualClubPage from './components/MainPage/IndividualClubPage';
+import IndividualClubPage from './components/MainPage/ClubsDisplay/IndividualClubPage';
 function App() {
   return (
     <div>
