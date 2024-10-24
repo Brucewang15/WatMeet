@@ -5,13 +5,19 @@ from comments_and_ratings.models import Comment
 import json
 # Create your views here.
 def get_comments(request):
-    all_comments = Comment.objects.all()
+    body_unicode = request.body.decode('utf-8')
+    body_data = json.loads(body_unicode)
+    org_id = body_data.get('org_id')
+    all_comments = Comment.objects.filter(org_id=org_id)
     comments_data = []
     for comment in all_comments:
         comments_data.append({
             'comment_id': comment.comment_id,
             'comment_title': comment.comment_title,
             'comment_body': comment.comment_body,
+            'comment_user_id': comment.user_id,
+            'comment_star_rating': comment.star_rating,
+            'comment_created_at': comment.created_at,
         })
     return JsonResponse(comments_data, safe=False)
 
