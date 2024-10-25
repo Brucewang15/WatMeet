@@ -109,6 +109,7 @@ const IndividualClubPage = () => {
                                         </div>
                                     </div>
                                     <p className="comment-content">{comment.comment_body}</p>
+                                    <p>upvotes: {comment.comment_upvote} downvotes: {comment.comment_downvote}</p>
                                 </div>
                             </div>
                         </div>

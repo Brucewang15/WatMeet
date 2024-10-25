@@ -22,6 +22,8 @@ def get_comments(request):
             'comment_star_rating': comment.star_rating,
             'comment_created_at': comment.created_at,
             'comment_user_name': user_name,
+            'comment_upvote': comment.upvote_num,
+            'comment_downvote': comment.downvote_num,
         })
     return JsonResponse(comments_data, safe=False)
 
