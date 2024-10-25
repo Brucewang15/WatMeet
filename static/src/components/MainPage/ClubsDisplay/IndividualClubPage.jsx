@@ -65,7 +65,7 @@ const IndividualClubPage = () => {
 
             <div className="commentCard">
                 <span className="commentTitle">Comments</span>
-                {allComments.map((comment) => (
+                {allComments.reverse().map((comment) => (
                     <div className="allCommentsContainer">                        
                             <div className="comments">
                                 <div className="comment-react">
@@ -104,7 +104,7 @@ const IndividualClubPage = () => {
                                             </svg>
                                         </div>
                                         <div className="user-info">
-                                            <span>Yassine Zanina</span>
+                                            <span>{comment.comment_user_name}</span>
                                             <p>{comment.comment_created_at.split("T")[0]}</p>
                                         </div>
                                     </div>

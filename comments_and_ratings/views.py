@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
 from comments_and_ratings.models import Comment
+from users.models import User
 import json
 # Create your views here.
 def get_comments(request):
@@ -11,6 +12,8 @@ def get_comments(request):
     all_comments = Comment.objects.filter(org_id=org_id)
     comments_data = []
     for comment in all_comments:
+        user = User.objects.get(user_id = comment.user_id)
+        user_name = user.first_name + " " + user.last_name
         comments_data.append({
             'comment_id': comment.comment_id,
             'comment_title': comment.comment_title,
@@ -18,6 +21,7 @@ def get_comments(request):
             'comment_user_id': comment.user_id,
             'comment_star_rating': comment.star_rating,
             'comment_created_at': comment.created_at,
+            'comment_user_name': user_name,
         })
     return JsonResponse(comments_data, safe=False)
 

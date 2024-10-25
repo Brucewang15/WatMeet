@@ -13,7 +13,6 @@ const Signup = () => {
 
     // State variables for email confirmation
     const [isEmailSent, setIsEmailSent] = useState(false);
-    const [code, setCode] = useState('');
 
     // Function to handle signup and send confirmation email
     const confirmEmail = async () => {
@@ -65,63 +64,6 @@ const Signup = () => {
         } catch (error) {
             console.error('Error:', error);
             alert('Failed to sign up. Please try again.');
-        }
-    };
-
-    // Function to handle email verification and obtain JWT token
-    const submitCode = async () => {
-        try {
-            const response = await fetch(
-                'http://127.0.0.1:8000/users/verify-email/',
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        veriCode: code,
-                        email: email,
-                    }),
-                }
-            );
-
-            if (response.ok) {
-                const data = await response.json();
-                if (data.success) {
-                    console.log('Email verified successfully');
-
-                    // Request JWT token after successful email verification
-                    const tokenResponse = await fetch('http://127.0.0.1:8000/api/token/', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            username: email,
-                            password: password
-                        }),
-                    });
-
-                    if (tokenResponse.ok) {
-                        const tokenData = await tokenResponse.json();
-                        console.log('JWT Token:', tokenData);
-
-                        // Store tokens securely
-                        localStorage.setItem('access_token', tokenData.access);
-                        localStorage.setItem('refresh_token', tokenData.refresh);
-
-                        // Redirect to the dashboard or protected route
-                        window.location.href = '/';
-                    } else {
-                        console.log('Failed to obtain JWT token');
-                    }
-                } else {
-                    console.log('Invalid verification code');
-                    alert('Invalid verification code. Please try again.');
-                }
-            }
-        } catch (error) {
-            console.error('Error:', error);
         }
     };
 
