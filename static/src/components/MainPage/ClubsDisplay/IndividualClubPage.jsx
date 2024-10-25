@@ -65,7 +65,7 @@ const IndividualClubPage = () => {
 
             <div className="commentCard">
                 <span className="commentTitle">Comments</span>
-                {allComments.reverse().map((comment) => (
+                {[...allComments].reverse().map((comment) => (
                     <div className="allCommentsContainer">                        
                             <div className="comments">
                                 <div className="comment-react">

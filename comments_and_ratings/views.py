@@ -34,6 +34,8 @@ def post_comment(request):
     user_id = body_data.get('user_id')
     org_id = body_data.get('org_id')
     print(comment, stars, user_id, 'test', org_id)
+    if Comment.objects.filter(user_id = user_id).exists():
+        return JsonResponse({'success': False, 'reason': 'Already posted comment'})
     comment = Comment(comment_title='test', comment_body=comment, star_rating=stars, org_id=org_id, user_id=user_id)
     comment.save()
     return JsonResponse({'success': True})
