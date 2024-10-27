@@ -6,6 +6,7 @@ class User(models.Model):
     last_name = models.CharField(max_length=100)
     username=models.CharField(max_length=100)
     password = models.CharField(max_length=100)
+    imageurl = models.CharField(max_length=100, null=True)
     email = models.EmailField(max_length=100, unique=True)
     verification_code = models.CharField(max_length=100)
     is_active = models.BooleanField(default=False)

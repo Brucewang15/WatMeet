@@ -13,3 +13,13 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.comment_title if self.comment_title else "No Title"
+
+class UserCommentRating(models.Model):
+    usercomment_id = models.AutoField(primary_key=True)
+    user = models.ForeignKey('users.User', on_delete=models.CASCADE, related_name='user_comments_rating')
+    comment = models.ForeignKey('Comment', on_delete=models.CASCADE, related_name='user_comments_rating')
+    upvote = models.BooleanField(default=False)
+    downvote = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.user} - {self.comment}"
