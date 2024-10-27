@@ -9,7 +9,8 @@ const IndividualClubPage = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userId, setUserId] = useState(null);
     const [allComments, setAllComments] = useState([])
-    const { orgId } = useParams();
+    const { orgId } = useParams()
+    
 
     //Checks if a user is logged in or not. If logged in, sets userId.
     useEffect(() => {
@@ -22,6 +23,26 @@ const IndividualClubPage = () => {
             setUserId(tokenPayload.user_id)
         }
     }, []);
+
+    //Gets club data from backend upon loading
+    useEffect(() => {
+        const getClubData = async () => {
+            const response = await fetch('http://127.0.0.1:8000/organizations/get_individual_club_data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    org_id: orgId
+                })
+            })
+            if (response.ok) {
+                const data = await response.json()
+                console.log(data)
+            }
+        }
+        getClubData()
+    }, [])
 
     //Gets all comments for a specific organization
     useEffect(() => {
@@ -65,8 +86,9 @@ const IndividualClubPage = () => {
 
             <div className="commentCard">
                 <span className="commentTitle">Comments</span>
+                <div className="allCommentsContainer">
                 {[...allComments].reverse().map((comment, index) => (
-                    <div className="allCommentsContainer">
+                    
                         <div className="comments">
                             <div class="like-wrapper">
                                 <input class="check" type="checkbox" id={`like-toggle-${index}`} />
@@ -121,9 +143,10 @@ const IndividualClubPage = () => {
                                 <p className="comment-content">{comment.comment_body}</p>
                             </div>
                         </div>
-                    </div>
+                    
 
                 ))}
+                </div>
             </div>
             {/* {isLoggedIn && <div className="">
                 {orgId} {userId}

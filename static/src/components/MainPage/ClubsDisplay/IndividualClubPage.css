@@ -76,7 +76,8 @@
 
 /* From Uiverse.io by zanina-yassine */
 .commentCard {
-    width: 40%;
+    max-width: 700px;
+    width: 100%;
     height: fit-content;
     background-color: white;
     box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
@@ -110,6 +111,8 @@
     grid-template-columns: 35px 1fr;
     gap: 20px;
     padding: 20px;
+    min-height: 15vh;
+    border-bottom: 1px solid #f1f1f1;
 }
 
 .comment-react {
