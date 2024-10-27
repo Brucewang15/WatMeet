@@ -6,6 +6,7 @@
     height: 100%;
     justify-content: center;
 }
+
 /* From Uiverse.io by vinodjangid07 */
 .bookmarkBtn {
     width: 130px;
@@ -69,3 +70,335 @@
     transform: scale(0.95);
     transition-duration: .3s;
 }
+
+
+
+
+/* From Uiverse.io by zanina-yassine */
+.commentCard {
+    width: 40%;
+    height: fit-content;
+    background-color: white;
+    box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 17px 17px 27px 27px;
+}
+
+.commentTitle {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border-bottom: 1px solid #f1f1f1;
+    font-weight: 700;
+    font-size: 20px;
+    color: #47484b;
+}
+
+.title::after {
+    content: '';
+    width: 8ch;
+    height: 1px;
+    position: absolute;
+    bottom: -1px;
+    background-color: #47484b;
+}
+
+.comments {
+    display: grid;
+    grid-template-columns: 35px 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.comment-react {
+    width: 35px;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.comment-react button {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+.comment-react button:after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: -2.5px;
+    top: -2.5px;
+    background-color: #f5356e;
+    border-radius: 50%;
+    z-index: 0;
+    transform: scale(0);
+}
+
+.comment-react button svg {
+    position: relative;
+    z-index: 9;
+}
+
+.comment-react button:hover:after {
+    animation: ripple 0.6s ease-in-out forwards;
+}
+
+.comment-react button:hover svg {
+    fill: #f5356e;
+}
+
+.comment-react button:hover svg path {
+    stroke: #f5356e;
+    fill: #f5356e;
+}
+
+.comment-react hr {
+    width: 80%;
+    height: 1px;
+    background-color: #dfe1e6;
+    margin: auto;
+    border: 0;
+}
+
+.comment-react span {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: #707277;
+}
+
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.comment-container .user {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 10px;
+}
+
+.comment-container .user .user-pic {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+}
+
+.comment-container .user .user-pic:after {
+    content: '';
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 50%;
+    background-color: #0fc45a;
+    border: 2px solid #ffffff;
+}
+
+.comment-container .user .user-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3px;
+}
+
+.comment-container .user .user-info span {
+    font-weight: 700;
+    font-size: 15px;
+    color: #47484b;
+}
+
+.comment-container .user .user-info p {
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0;
+    color: #acaeb4;
+}
+
+.comment-container .comment-content {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #5f6064;
+}
+
+.text-box {
+    width: 100%;
+    height: fit-content;
+    background-color: #f1f1f1;
+    padding: 8px;
+}
+
+.text-box .box-container {
+    background-color: #ffffff;
+    border-radius: 8px 8px 21px 21px;
+    padding: 8px;
+}
+
+.text-box textarea {
+    width: 100%;
+    height: 40px;
+    resize: none;
+    border: 0;
+    border-radius: 6px;
+    padding: 12px 12px 10px 12px;
+    font-size: 13px;
+    outline: none;
+    caret-color: #0a84ff;
+}
+
+.text-box .formatting {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto 1fr;
+}
+
+.text-box .formatting button {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+}
+
+.text-box .formatting button:hover {
+    background-color: #f1f1f1;
+}
+
+.text-box .formatting .send {
+    width: 30px;
+    height: 30px;
+    background-color: #0a84ff;
+    margin: 0 0 0 auto;
+}
+
+.text-box .formatting .send:hover {
+    background-color: #026eda;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+
+/* From Uiverse.io by SalladShooter */
+.like-wrapper {
+    --gap: 0.5em;
+    --radius: 0.35em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    --dot-bg: #212121;
+    --dot-color: #313131;
+    --dot-size: 1px;
+    --dot-space: 22px;
+    height: 25px;
+    width: 25px;
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.check[type="checkbox"] {
+    display: none;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: -0.25em;
+    margin-bottom: -0.25em;
+    position: absolute;
+}
+
+.icon {
+    width: 1.5em;
+    height: 1.5em;
+    fill: #313131;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.icon.active {
+    display: none;
+    fill: #f52121;
+}
+
+.check[type="checkbox"]:checked+.container .icon.active {
+    display: inline-block;
+    animation: wiggle 0.5s ease-in-out;
+}
+
+.check[type="checkbox"]:checked+.container .icon.inactive {
+    display: none;
+}
+
+.like-text {
+    padding: 0.5em;
+    color: #313131;
+    font-family: Arial, sans-serif;
+    font-weight: bolder;
+    position: relative;
+    top: 25px;
+}
+
+@keyframes wiggle {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+}   

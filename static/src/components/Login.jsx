@@ -30,6 +30,7 @@ const Login = () => {
             })
             if (response.ok) {
                 const data = await response.json();
+                console.log(data)
                 if (data.success) {
                     console.log('ok')
                     const tokenResponse = await fetch('http://127.0.0.1:8000/api/token/', {
@@ -42,7 +43,6 @@ const Login = () => {
                             password: password
                         }),
                     });
-
                     if (tokenResponse.ok) {
                         const tokenData = await tokenResponse.json();
                         console.log('JWT Token:', tokenData);
@@ -57,11 +57,10 @@ const Login = () => {
                         console.log('Failed to obtain JWT token');
                     }
                 }
-                else if (data.reason === 'Verify email') {
+                else if (data.reason == 'Verify email') {
                     setIsEmailSent(true)
                     console.log('email is sent')
                 }
-
                 else {
                     console.log(data.reason)
                 }

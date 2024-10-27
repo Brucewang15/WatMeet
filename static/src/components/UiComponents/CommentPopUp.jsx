@@ -24,7 +24,13 @@ const CommentPopUp = ( {userId} ) => {
                 })
             })
             if (response.ok) {
-                console.log('comment added')
+                const data = await response.json()
+                if (data.success) {
+                    console.log('comment added')
+                }
+                else {
+                    console.log(data.reason)
+                }
             }
         }
         catch (err) {
