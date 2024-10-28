@@ -41,7 +41,7 @@ const MainPage = () => {
                     // <ClubsDisplay title={club.org_name} membershipType={club[1]} 
                     // description={club.overview} ranking_num = {club.ranking_num} 
                     // star_rating={club.star_rating} org_id = {club.org_id} key={index} />     
-                    <DisplayCard org_id = {index+1} clubName = {club.org_name} clubDescription={club.overview}
+                    <DisplayCard org_id = {club.org_id} clubName = {club.org_name} clubDescription={club.overview}
                     clubRating = {club.star_rating} clubRank = {club.ranking_num} />
                     ))}
             </div>
