@@ -72,7 +72,7 @@ const IndividualClubPage = () => {
             }
         }
         getAllComments()
-    }, [])
+    }, [allComments])
     return (
         <div className="individualClubContainer">
 
@@ -102,7 +102,7 @@ const IndividualClubPage = () => {
                 <p className="text">Comment</p>
             </button>
 
-            {commentState && <div className="commentPopUp"><CommentPopUp userId={userId} /> </div>}
+            {commentState && <div className="commentPopUp"><CommentPopUp userId={userId} setCommentState={setCommentState} /> </div>}
 
             <div className="commentCard">
                 <span className="commentTitle">Comments</span>
