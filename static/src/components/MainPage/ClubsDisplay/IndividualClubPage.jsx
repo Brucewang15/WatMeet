@@ -9,8 +9,9 @@ const IndividualClubPage = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userId, setUserId] = useState(null);
     const [allComments, setAllComments] = useState([])
+    const [clubInfo, setClubInfo] = useState({})
     const { orgId } = useParams()
-    
+
 
     //Checks if a user is logged in or not. If logged in, sets userId.
     useEffect(() => {
@@ -38,7 +39,8 @@ const IndividualClubPage = () => {
             })
             if (response.ok) {
                 const data = await response.json()
-                console.log(data)
+                setClubInfo(data)
+                console.log(clubInfo, data)
             }
         }
         getClubData()
@@ -73,6 +75,24 @@ const IndividualClubPage = () => {
     }, [])
     return (
         <div className="individualClubContainer">
+
+            <div className="club-about-section-wrapper">
+                <div className="club-about-section">
+                    <div className="left-side">
+                        <h2>{clubInfo.org_name}</h2>
+                        <p>{clubInfo.overview}</p>
+                    </div>
+                    <div className="right-side">
+                        <ul>
+                            <li><strong>Rating:</strong> {clubInfo.star_rating}</li>
+                            <li><strong>Ranking:</strong> {clubInfo.ranking_num}</li>
+                            <li><strong>Type:</strong> {clubInfo.org_type}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
             <button className="bookmarkBtn" onClick={() => { setCommentState(!commentState && isLoggedIn) }}>
                 <span className="IconContainer">
                     <svg fill="white" viewBox="0 0 512 512" height="1em">
@@ -87,8 +107,8 @@ const IndividualClubPage = () => {
             <div className="commentCard">
                 <span className="commentTitle">Comments</span>
                 <div className="allCommentsContainer">
-                {[...allComments].reverse().map((comment, index) => (
-                    
+                    {[...allComments].reverse().map((comment, index) => (
+
                         <div className="comments">
                             <div class="like-wrapper">
                                 <input class="check" type="checkbox" id={`like-toggle-${index}`} />
@@ -143,9 +163,9 @@ const IndividualClubPage = () => {
                                 <p className="comment-content">{comment.comment_body}</p>
                             </div>
                         </div>
-                    
 
-                ))}
+
+                    ))}
                 </div>
             </div>
             {/* {isLoggedIn && <div className="">

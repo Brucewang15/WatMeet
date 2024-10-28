@@ -1,11 +1,38 @@
 .individualClubContainer {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     width: 100%;
     height: 100%;
     justify-content: center;
 }
+
+.club-about-section-wrapper {
+
+}
+.club-about-section {
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.club-about-section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.club-about-section p {
+    line-height: 1.6;
+}
+
+.right-side ul li {
+    font-size: 1.1em;
+}
+
 
 /* From Uiverse.io by vinodjangid07 */
 .bookmarkBtn {
@@ -78,6 +105,7 @@
 .commentCard {
     max-width: 700px;
     width: 100%;
+    flex-wrap: wrap;
     height: fit-content;
     background-color: white;
     box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
@@ -404,4 +432,4 @@
     75% {
         transform: rotate(-10deg);
     }
-}   
+}
