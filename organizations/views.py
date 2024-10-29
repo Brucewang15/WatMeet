@@ -16,4 +16,4 @@ def get_individual_club_data(request):
     org_id = body_data.get('org_id')
     club = Organization.objects.get(org_id = org_id)
 
-    return JsonResponse({'org_name': club.org_name, 'overview': club.overview, 'star_rating': club.star_rating, 'ranking_num': club.ranking_num, 'org_type': club.org_type})
+    return JsonResponse({'org_name': club.org_name, 'overview': club.overview, 'star_rating': club.star_rating, 'number_of_star_rating': club.number_of_star_rating, 'ranking_num': club.ranking_num, 'org_type': club.org_type})
