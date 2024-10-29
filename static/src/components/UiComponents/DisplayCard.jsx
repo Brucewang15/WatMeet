@@ -13,11 +13,17 @@ const DisplayCard = ( {org_id, clubName, clubDescription, clubRating, clubRating
 
     const clubDescriptionShortened = clubDescription.length > 400 ? clubDescription.slice(0, 400) + '...' : clubDescription
     return (
-        <div className="org_card" onClick = {handleClick} style={{ '--rating': clubRating }}>
+        <div className="org_card" onClick = {handleClick} style={{ '--rating': clubRating*20 }}>
             {/* <div className="icon">🫠</div> */}
             <div className="title">{clubName}</div>
             <p className="description">{clubDescriptionShortened}</p>
-            <div className="rating"></div>
+
+            <div className="ratingWrapper">
+                <div className="ratingNumber">{clubRating}</div>
+                <div className="rating"></div>
+                <div className="ratingStats">{clubRatingNumber}100 ratings</div>
+            </div>
+            
             <a href={`/organizations/${org_id}`} className="link">Learn more</a>
         </div>
     );

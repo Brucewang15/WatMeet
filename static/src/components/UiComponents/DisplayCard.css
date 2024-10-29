@@ -29,6 +29,7 @@
     max-width: 800px;
     width: 100%;
     height: 300px;
+    flex-wrap: wrap;
 
     aspect-ratio: 2/3;
     background: var(--background);
@@ -75,19 +76,34 @@
     margin-bottom: .2em;
 }
 
-.org_card>.rating {
+.org_card .ratingWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 8.5em;
+    align-items: center;
+}
+.org_card .ratingNumber {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.org_card .rating {
     font-size: 2em;
-    margin-bottom: 0.8em;
     color: var(--ratingColor);
     position: relative;
     width: max-content;
 }
 
-.org_card>.rating:before {
+.org_card .ratingStats {
+    color: darkgray;
+}
+
+.org_card .rating:before {
     content: "☆☆☆☆☆";
 }
 
-.org_card>.rating:after {
+.org_card .rating:after {
     content: "★★★★★";
     position: absolute;
     left: 0;
@@ -97,7 +113,7 @@
 }
 
 .org_card>.link {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem;;
     color: var(--linkColor);
     font-size: .8em;
     font-weight: 600;
