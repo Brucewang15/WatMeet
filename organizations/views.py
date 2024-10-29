@@ -2,12 +2,16 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
 from organizations.models import Organization
+
+from .sort.sort_data import sort_data
 import json
 
 # Create your views here.
+
 def get_club_data(request):
     data = Organization.objects.all().values()
-    return JsonResponse(list(data), safe=False)
+    data = sort_data(data, "hi")
+    return JsonResponse(data, safe=False)
 
 def get_individual_club_data(request):
     body_unicode = request.body # users code
