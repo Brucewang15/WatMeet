@@ -52,6 +52,6 @@ def post_comment(request):
     comment.save()
     org = Organization.objects.get(org_id = org_id)
     org.number_of_star_rating += 1
-    org.star_rating = (org.star_rating*(org.number_of_star_rating-1) + stars)/org.number_of_star_rating
+    org.star_rating = round((org.star_rating * (org.number_of_star_rating - 1) + stars) / org.number_of_star_rating, 1)
     org.save()
     return JsonResponse({'success': True})
