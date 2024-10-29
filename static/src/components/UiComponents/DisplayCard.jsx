@@ -13,7 +13,7 @@ const DisplayCard = ( {org_id, clubName, clubDescription, clubRating, clubRating
 
     const clubDescriptionShortened = clubDescription.length > 400 ? clubDescription.slice(0, 400) + '...' : clubDescription
     return (
-        <div className="org_card" onClick = {handleClick} style={{ '--rating': 90 }}>
+        <div className="org_card" onClick = {handleClick} style={{ '--rating': clubRating }}>
             {/* <div className="icon">🫠</div> */}
             <div className="title">{clubName}</div>
             <p className="description">{clubDescriptionShortened}</p>
