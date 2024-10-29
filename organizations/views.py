@@ -10,7 +10,7 @@ import json
 
 def get_club_data(request):
     data = Organization.objects.all().values()
-    data = sort_data(data)
+    data = sort_data(data, "hi")
     return JsonResponse(data, safe=False)
 
 def get_individual_club_data(request):
