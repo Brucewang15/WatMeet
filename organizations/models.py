@@ -6,6 +6,7 @@ class Organization(models.Model):
     user = models.ForeignKey('users.User', on_delete=models.CASCADE, related_name='organizations')
     overview = models.TextField()
     star_rating = models.FloatField()
+    number_of_star_rating = models.IntegerField(default=0)
     ranking_num = models.IntegerField()
     ORG_TYPE_CHOICES = [
         ('club', 'Club'),

@@ -1,0 +1,140 @@
+/* From Uiverse.io by wztd */
+.org_card {
+    --background: #fff;
+    --cardShadow: rgba(32, 33, 37, .1);
+    --cardShadowHover: rgba(32, 33, 37, .06);
+    --cardShadowActive: rgba(32, 33, 37, .55);
+    --cardBorder: #dbdce0;
+    --cardBorderActive: #1a73e8;
+    --textColor: #202125;
+    --linkColor: #1967d2;
+    --ratingColor: #faab00;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    .org_card {
+        --background: #3c4043;
+        --cardShadow: rgba(0, 0, 0, .28);
+        --cardShadowHover: rgba(0, 0, 0, .16);
+        --cardShadowActive: rgba(0, 0, 0, .55);
+        --cardBorder: #202125;
+        --cardBorderActive: #8ab4f8;
+        --textColor: #e9eaee;
+        --linkColor: #8ab4f8;
+    }
+}
+
+.org_card {
+    max-width: 800px;
+    width: 100%;
+    height: 300px;
+    flex-wrap: wrap;
+
+    aspect-ratio: 2/3;
+    background: var(--background);
+    color: var(--textColor);
+    border: 1px solid var(--cardBorder);
+    padding: 25px;
+    box-shadow: 8px 8px 0 var(--cardShadow);
+    transition: box-shadow .5s, transform .5s;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.org_card:hover {
+    transform: translate(-2px, -4px);
+    box-shadow: 16px 16px 0 var(--cardShadowHover);
+}
+
+.org_card:active {
+    transform: translate(-2px, -4px);
+    border: 2px solid var(--cardBorderActive);
+    box-shadow: 4px 4px 0 var(--cardShadowActive);
+}
+
+.org_card>.icon,
+.org_card>.title,
+.org_card>.description {
+    margin-bottom: 0.7em;
+    cursor: default;
+    user-select: none;
+}
+
+.org_card>.title {
+    margin-top: 1.5em;
+    font-weight: bold;
+}
+
+.org_card>.description {
+    line-height: 1.5em;
+    min-height: 6em;
+}
+
+.org_card>.icon {
+    font-size: 3em;
+    margin-bottom: .2em;
+}
+
+.org_card .ratingWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 8.5em;
+    align-items: center;
+}
+.org_card .ratingNumber {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.org_card .rating {
+    font-size: 2em;
+    color: var(--ratingColor);
+    position: relative;
+    width: max-content;
+}
+
+.org_card .ratingStats {
+    color: darkgray;
+}
+
+.org_card .rating:before {
+    content: "☆☆☆☆☆";
+}
+
+.org_card .rating:after {
+    content: "★★★★★";
+    position: absolute;
+    left: 0;
+    z-index: 0;
+    width: calc(var(--rating) * 1%);
+    overflow: hidden;
+}
+
+.org_card>.link {
+    margin-bottom: 1rem;;
+    color: var(--linkColor);
+    font-size: .8em;
+    font-weight: 600;
+}
+
+/* Optional ~ Link the whole card */
+.org_card>.link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.org_card>.link:after {
+    content: "↗";
+    display: inline-block;
+    margin-left: .3em;
+    transition: transform .3s ease-in-out;
+}
+
+.org_card:hover>.link:after {
+    transform: translate(.2em, -.2em);
+}

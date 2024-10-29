@@ -1,7 +1,7 @@
 import './CommentPopUp.css'
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-const CommentPopUp = ( {userId} ) => {
+const CommentPopUp = ( {userId, setCommentState, onCommentPosted} ) => {
 
     const { orgId } = useParams();
     const [comment, setComment] = useState("");
@@ -27,6 +27,7 @@ const CommentPopUp = ( {userId} ) => {
                 const data = await response.json()
                 if (data.success) {
                     console.log('comment added')
+                    onCommentPosted();
                 }
                 else {
                     console.log(data.reason)
@@ -105,7 +106,7 @@ const CommentPopUp = ( {userId} ) => {
             />
 
 
-            <button className="cssbuttons-io" onClick={postComment}>
+            <button className="cssbuttons-io" onClick={() => {postComment(); setCommentState();}}>
                 <span>
                     Submit
                 </span>

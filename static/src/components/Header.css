@@ -12,6 +12,7 @@
     padding-bottom: 0.5%;
     gap: 40px;
     top: 0;
+    z-index: 10;
 }
 .individualContainer {
     width: auto;

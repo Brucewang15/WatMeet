@@ -47,7 +47,6 @@
     cursor: pointer;
     transition-duration: .3s;
     overflow: hidden;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.062);
 }
 
 .IconContainer {
@@ -109,7 +108,7 @@
     height: fit-content;
     background-color: white;
     box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 17px 17px 27px 27px;
+    border-radius: 10px;
 }
 
 .commentTitle {
