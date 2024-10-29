@@ -9,6 +9,7 @@ const IndividualClubPage = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userId, setUserId] = useState(null);
     const [allComments, setAllComments] = useState([])
+    const [allCommentsRatings, setAllCommentsRatings] = useState([])
     const [clubInfo, setClubInfo] = useState({})
     const { orgId } = useParams()
 
@@ -51,6 +52,7 @@ const IndividualClubPage = () => {
         getAllCommentsDB()
     }, [])
 
+
     const getAllCommentsDB = async () => {
         console.log(orgId, allComments)
         try {
@@ -64,9 +66,10 @@ const IndividualClubPage = () => {
                 })
             })
             if (response.ok) {
-                console.log('ok')
                 const data = await response.json()
-                setAllComments(data)
+                console.log(data)
+                setAllComments(data.comments_data)
+                setAllCommentsRatings(data.comments_likes)
                 console.log(allComments, data)
             }
         }
@@ -91,6 +94,32 @@ const IndividualClubPage = () => {
                             <li><strong>Type:</strong> {clubInfo.org_type}</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+
+            <div className="ratingWrapper" style={{ '--rating': clubInfo.star_rating * 20 }}>
+                <div className="ratingLeft">
+                    {Array.from({ length: 5 }).map((_, index) => {
+                        const reversedIndex = 5 - index; // Reverse the order from 5 to 1
+                        return (
+                            <div className="ratingBarWrapper" key={index}>
+                                <div className="ratingBarNumber">{reversedIndex}</div>
+                                <div
+                                    className="ratingBar"
+                                    style={{
+                                        '--ratingBar':
+                                            (allCommentsRatings[reversedIndex - 1] /
+                                                clubInfo.number_of_star_rating) * 100,
+                                    }}
+                                ></div>
+                            </div>
+                        );
+                    })}
+                </div>
+                <div className="ratingRight">
+                    <div className="ratingNumber">{clubInfo.star_rating}</div>
+                    <div className="rating"></div>
+                    <div className="ratingStats">{clubInfo.number_of_star_rating} ratings</div>
                 </div>
             </div>
 

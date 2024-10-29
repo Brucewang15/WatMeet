@@ -6,17 +6,21 @@ from users.models import User
 from organizations.models import Organization
 import json
 # Create your views here.
+
+# Get comments for a specific org_id
 def get_comments(request):
     body_unicode = request.body.decode('utf-8')
     body_data = json.loads(body_unicode)
     org_id = body_data.get('org_id')
     all_comments = Comment.objects.filter(org_id=org_id)
     comments_data = []
+    comments_likes = [0, 0, 0, 0, 0]
     
     for comment in all_comments:
         user = User.objects.get(user_id = comment.user_id)
         user_name = user.first_name + " " + user.last_name
         org = Organization.objects.get(org_id = org_id)
+        comments_likes[int(comment.star_rating)-1] += 1
         comments_data.append({
             'comment_id': comment.comment_id,
             'comment_title': comment.comment_title,
@@ -29,8 +33,9 @@ def get_comments(request):
             'comment_downvote': comment.downvote_num,
             'comment_number_of_star_rating': org.number_of_star_rating,
         })
-    return JsonResponse(comments_data, safe=False)
+    return JsonResponse({'comments_data': comments_data, 'comments_likes': comments_likes}, safe=False)
 
+# Post a comment
 def post_comment(request):
     body_unicode = request.body.decode('utf-8')
     body_data = json.loads(body_unicode)
