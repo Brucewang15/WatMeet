@@ -48,31 +48,33 @@ const IndividualClubPage = () => {
 
     //Gets all comments for a specific organization
     useEffect(() => {
-        const getAllComments = async () => {
-            console.log(orgId)
-            try {
-                const response = await fetch('http://127.0.0.1:8000/comments/get_comments/', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        org_id: orgId
-                    })
+        getAllCommentsDB()
+    }, [])
+
+    const getAllCommentsDB = async () => {
+        console.log(orgId, allComments)
+        try {
+            const response = await fetch('http://127.0.0.1:8000/comments/get_comments/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    org_id: orgId
                 })
-                if (response.ok) {
-                    console.log('ok')
-                    const data = await response.json()
-                    setAllComments(data)
-                    console.log(allComments, data)
-                }
-            }
-            catch (err) {
-                console.log('error', err)
+            })
+            if (response.ok) {
+                console.log('ok')
+                const data = await response.json()
+                setAllComments(data)
+                console.log(allComments, data)
             }
         }
-        getAllComments()
-    }, [allComments])
+        catch (err) {
+            console.log('error', err)
+        }
+    }
+
     return (
         <div className="individualClubContainer">
 
@@ -102,7 +104,7 @@ const IndividualClubPage = () => {
                 <p className="text">Comment</p>
             </button>
 
-            {commentState && <div className="commentPopUp"><CommentPopUp userId={userId} setCommentState={setCommentState} /> </div>}
+            {commentState && <div className="commentPopUp"><CommentPopUp userId={userId} setCommentState={setCommentState} onCommentPosted={getAllCommentsDB} /> </div>}
 
             <div className="commentCard">
                 <span className="commentTitle">Comments</span>

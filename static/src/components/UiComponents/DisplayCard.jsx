@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 const DisplayCard = ( {org_id, clubName, clubDescription, clubRating, clubRatingNumber, clubRank}) => {
     const navigate = useNavigate();
-    console.log(org_id);
+    let formattedClubRating = clubRating.toFixed(1);
+
     const handleClick = () => {
         console.log(org_id)
         navigate(`/organizations/${org_id}`);
@@ -19,9 +20,9 @@ const DisplayCard = ( {org_id, clubName, clubDescription, clubRating, clubRating
             <p className="description">{clubDescriptionShortened}</p>
 
             <div className="ratingWrapper">
-                <div className="ratingNumber">{clubRating}</div>
+                <div className="ratingNumber">{formattedClubRating}</div>
                 <div className="rating"></div>
-                <div className="ratingStats">{clubRatingNumber}100 ratings</div>
+                <div className="ratingStats">{clubRatingNumber} ratings</div>
             </div>
             
             <a href={`/organizations/${org_id}`} className="link">Learn more</a>

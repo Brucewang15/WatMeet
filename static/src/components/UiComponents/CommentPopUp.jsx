@@ -1,7 +1,7 @@
 import './CommentPopUp.css'
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-const CommentPopUp = ( {userId, setCommentState} ) => {
+const CommentPopUp = ( {userId, setCommentState, onCommentPosted} ) => {
 
     const { orgId } = useParams();
     const [comment, setComment] = useState("");
@@ -27,6 +27,7 @@ const CommentPopUp = ( {userId, setCommentState} ) => {
                 const data = await response.json()
                 if (data.success) {
                     console.log('comment added')
+                    onCommentPosted();
                 }
                 else {
                     console.log(data.reason)
