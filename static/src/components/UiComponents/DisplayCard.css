@@ -14,13 +14,13 @@
 
 @media (prefers-color-scheme: dark) {
     .org_card {
-        --background: #3c4043;
+        --background: white;
         --cardShadow: rgba(0, 0, 0, .28);
         --cardShadowHover: rgba(0, 0, 0, .16);
         --cardShadowActive: rgba(0, 0, 0, .55);
         --cardBorder: #202125;
         --cardBorderActive: #8ab4f8;
-        --textColor: #e9eaee;
+        --textColor: black;
         --linkColor: #8ab4f8;
     }
 }
@@ -34,8 +34,8 @@
     aspect-ratio: 2/3;
     background: var(--background);
     color: var(--textColor);
-    border: 1px solid var(--cardBorder);
     padding: 25px;
+    border: 1px solid lightgray;
     box-shadow: 8px 8px 0 var(--cardShadow);
     transition: box-shadow .5s, transform .5s;
     border-radius: 8px;

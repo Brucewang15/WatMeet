@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Comment from '../../UiComponents/Comment';
 import './IndividualClubPage.css'
 import CommentPopUp from '../../UiComponents/CommentPopUp';
+import Header from '../../Header'
 const IndividualClubPage = () => {
 
     const [commentState, setCommentState] = useState(false)
@@ -85,6 +86,7 @@ const IndividualClubPage = () => {
 
     return (
         <div className="individualClubContainer">
+            <Header />
 
             <div className="club-about-section-wrapper">
                 <div className="club-about-section">
