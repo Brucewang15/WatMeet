@@ -1,55 +1,5 @@
 [
     {
-        "Category": null,
-        "Program Name": "When does instructional program begin?",
-        "Class Description": "Instructional programs begins the week of September 16th, 2024",
-        "Class Times": "N/A",
-        "Location": "N/A",
-        "Instructor Name": "N/A",
-        "Instructor Description": "N/A",
-        "Registration Link": "N/A"
-    },
-    {
-        "Category": null,
-        "Program Name": "When does instructional program end?",
-        "Class Description": "",
-        "Class Times": "N/A",
-        "Location": "N/A",
-        "Instructor Name": "N/A",
-        "Instructor Description": "N/A",
-        "Registration Link": "N/A"
-    },
-    {
-        "Category": null,
-        "Program Name": "Do the instructional programs run during reading week?",
-        "Class Description": "",
-        "Class Times": "N/A",
-        "Location": "N/A",
-        "Instructor Name": "N/A",
-        "Instructor Description": "N/A",
-        "Registration Link": "N/A"
-    },
-    {
-        "Category": null,
-        "Program Name": "Will a program be re-scheduled if a program is cancelled?",
-        "Class Description": "",
-        "Class Times": "N/A",
-        "Location": "N/A",
-        "Instructor Name": "N/A",
-        "Instructor Description": "N/A",
-        "Registration Link": "N/A"
-    },
-    {
-        "Category": null,
-        "Program Name": "Can I try an instructional program for free?",
-        "Class Description": "",
-        "Class Times": "N/A",
-        "Location": "N/A",
-        "Instructor Name": "N/A",
-        "Instructor Description": "N/A",
-        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=8144bcf1-be16-4781-aa2a-351cfbb6cb2c"
-    },
-    {
         "Category": "Dance Programs",
         "Program Name": "Introduction to Hip Hop",
         "Class Description": "Fall 2024 Offering: Thursdays 5:00-6:00 pm in PAC Studio 4",
