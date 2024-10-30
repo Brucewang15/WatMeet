@@ -483,7 +483,7 @@
 .ratingLeft {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 2px;
 }
 .ratingBarWrapper {
     display: flex;
@@ -494,15 +494,16 @@
 .ratingBar {
     background-color: lightgray;
     width: 400px;
-    height: 15px;
+    height: 12px;
     border-radius: 7.5px;
+    position: relative;
 }
 .ratingBar::after {
     content: "";
     background-color: #faab00;
-    height: 15px;
+    height: 12px;
     border-radius: 7.5px;
-    width: calc(var(--ratingBar) * 4px);
+    width: calc(var(--ratingBar) * 1%);
     display: block;     /* Add this */
     position: absolute; /* Add this */
 }
