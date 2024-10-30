@@ -1,0 +1,162 @@
+[
+    {
+        "Category": null,
+        "Program Name": "When does instructional program begin?",
+        "Class Description": "Instructional programs begins the week of September 16th, 2024",
+        "Class Times": "N/A",
+        "Location": "N/A",
+        "Instructor Name": "N/A",
+        "Instructor Description": "N/A",
+        "Registration Link": "N/A"
+    },
+    {
+        "Category": null,
+        "Program Name": "When does instructional program end?",
+        "Class Description": "",
+        "Class Times": "N/A",
+        "Location": "N/A",
+        "Instructor Name": "N/A",
+        "Instructor Description": "N/A",
+        "Registration Link": "N/A"
+    },
+    {
+        "Category": null,
+        "Program Name": "Do the instructional programs run during reading week?",
+        "Class Description": "",
+        "Class Times": "N/A",
+        "Location": "N/A",
+        "Instructor Name": "N/A",
+        "Instructor Description": "N/A",
+        "Registration Link": "N/A"
+    },
+    {
+        "Category": null,
+        "Program Name": "Will a program be re-scheduled if a program is cancelled?",
+        "Class Description": "",
+        "Class Times": "N/A",
+        "Location": "N/A",
+        "Instructor Name": "N/A",
+        "Instructor Description": "N/A",
+        "Registration Link": "N/A"
+    },
+    {
+        "Category": null,
+        "Program Name": "Can I try an instructional program for free?",
+        "Class Description": "",
+        "Class Times": "N/A",
+        "Location": "N/A",
+        "Instructor Name": "N/A",
+        "Instructor Description": "N/A",
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=8144bcf1-be16-4781-aa2a-351cfbb6cb2c"
+    },
+    {
+        "Category": "Dance Programs",
+        "Program Name": "Introduction to Hip Hop",
+        "Class Description": "Fall 2024 Offering: Thursdays 5:00-6:00 pm in PAC Studio 4",
+        "Class Times": "Fall 2024 Offering: N/A",
+        "Location": "N/A",
+        "Instructor Name": "N/A",
+        "Instructor Description": "N/A",
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=ee8eccf0-add4-46ca-b12e-b30694f74f0a&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
+    },
+    {
+        "Category": "Dance Programs",
+        "Program Name": "",
+        "Class Description": "",
+        "Class Times": "N/A",
+        "Location": "N/A",
+        "Instructor Name": "N/A",
+        "Instructor Description": "N/A",
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=1534df22-7773-4d45-8f6c-ff42d780f7c1&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
+    },
+    {
+        "Category": "Dance Programs",
+        "Program Name": "",
+        "Class Description": "",
+        "Class Times": "N/A",
+        "Location": "N/A",
+        "Instructor Name": "N/A",
+        "Instructor Description": "N/A",
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=179ffbee-f9f4-4c86-8443-3b0357d59b5b&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
+    },
+    {
+        "Category": "Dance Programs",
+        "Program Name": "",
+        "Class Description": "",
+        "Class Times": "N/A",
+        "Location": "N/A",
+        "Instructor Name": "N/A",
+        "Instructor Description": "N/A",
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=a245ec12-220d-4af8-a9e8-9dbb49c6859d&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
+    },
+    {
+        "Category": "Dance Programs",
+        "Program Name": "",
+        "Class Description": "",
+        "Class Times": "N/A",
+        "Location": "N/A",
+        "Instructor Name": "N/A",
+        "Instructor Description": "N/A",
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=4fd4e4ea-4f52-4662-84f6-2fb937ca04df"
+    },
+    {
+        "Category": "Martial Arts Programs",
+        "Program Name": "Learn to Box",
+        "Class Description": "Fall 2024 Offerings:",
+        "Class Times": "Fall 2024 Offering: Thursdays 8:30-10:00pm",
+        "Location": "N/A",
+        "Instructor Name": "N/A",
+        "Instructor Description": "N/A",
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=292254cf-eb8e-4fd9-abfe-4538e2125ee3&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
+    },
+    {
+        "Category": "Martial Arts Programs",
+        "Program Name": "",
+        "Class Description": "",
+        "Class Times": "N/A",
+        "Location": "N/A",
+        "Instructor Name": "N/A",
+        "Instructor Description": "N/A",
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=5fade292-63e0-4f68-b5e7-4d024bed7820"
+    },
+    {
+        "Category": "Skipping Programs",
+        "Program Name": "Freestyle Skipping",
+        "Class Description": "Fall 2024 offering: N/A",
+        "Class Times": "Fall 2024 offering: N/A",
+        "Location": "N/A",
+        "Instructor Name": "N/A",
+        "Instructor Description": "N/A",
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=15248509-a838-4eee-b914-711415bb246a"
+    },
+    {
+        "Category": "Skating Programs",
+        "Program Name": "Learn to Skate",
+        "Class Description": "Fall 2023 Offerings:",
+        "Class Times": "Fall 2023 Offerings:",
+        "Location": "N/A",
+        "Instructor Name": "N/A",
+        "Instructor Description": "N/A",
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=9ad1fdf3-9255-48f6-a8c0-897873b36209&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
+    },
+    {
+        "Category": "Skating Programs",
+        "Program Name": "",
+        "Class Description": "",
+        "Class Times": "N/A",
+        "Location": "N/A",
+        "Instructor Name": "N/A",
+        "Instructor Description": "N/A",
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=c3d3f53a-ce38-4b4f-9564-0b698a6369c3&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
+    },
+    {
+        "Category": "Climbing Programs",
+        "Program Name": "Student Climbing Lessons",
+        "Class Description": "Having trouble going from a V3 to a V4? Want to get into climbing but don't know how to start? The PAC Climbing and Bouldering wall is offering semi-private lessons for beginner and more advanced climbers. These lessons are led by our staff with vast climbing knowledge and skills to help you become introduced into climbing community or help you solve a problem you didn't think you could get. These lessons also allow for more private time on the climbing and bouldering wall. This program requires a Rock Climbing Membership",
+        "Class Times": "Fall 2023 Offering: Sundays @ 1:30-3:00pm in PAC Climbing Gym",
+        "Location": "N/A",
+        "Instructor Name": "N/A",
+        "Instructor Description": "N/A",
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=d2c53080-69e7-4233-909f-9c8059d95136&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
+    }
+]

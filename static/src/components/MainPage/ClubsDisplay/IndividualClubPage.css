@@ -1,4 +1,5 @@
 .individualClubContainer {
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -124,14 +125,6 @@
     color: #47484b;
 }
 
-.title::after {
-    content: '';
-    width: 8ch;
-    height: 1px;
-    position: absolute;
-    bottom: -1px;
-    background-color: #47484b;
-}
 
 .comments {
     display: grid;
@@ -438,7 +431,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 200px;
     max-width: 750px;
     width: 100%;
     gap: 25px;
@@ -483,7 +475,7 @@
 .ratingLeft {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 2px;
 }
 .ratingBarWrapper {
     display: flex;
@@ -494,15 +486,16 @@
 .ratingBar {
     background-color: lightgray;
     width: 400px;
-    height: 15px;
+    height: 12px;
     border-radius: 7.5px;
+    position: relative;
 }
 .ratingBar::after {
     content: "";
     background-color: #faab00;
-    height: 15px;
+    height: 12px;
     border-radius: 7.5px;
-    width: calc(var(--ratingBar) * 4px);
+    width: calc(var(--ratingBar) * 1%);
     display: block;     /* Add this */
     position: absolute; /* Add this */
 }

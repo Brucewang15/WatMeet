@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Comment from '../../UiComponents/Comment';
 import './IndividualClubPage.css'
 import CommentPopUp from '../../UiComponents/CommentPopUp';
+import Header from '../../Header'
 const IndividualClubPage = () => {
 
     const [commentState, setCommentState] = useState(false)
@@ -10,7 +11,10 @@ const IndividualClubPage = () => {
     const [userId, setUserId] = useState(null);
     const [allComments, setAllComments] = useState([])
     const [allCommentsRatings, setAllCommentsRatings] = useState([])
-    const [clubInfo, setClubInfo] = useState({})
+    const [clubInfo, setClubInfo] = useState({
+        star_rating: 0,
+        number_of_star_rating: 0,
+    })
     const { orgId } = useParams()
 
 
@@ -28,31 +32,33 @@ const IndividualClubPage = () => {
 
     //Gets club data from backend upon loading
     useEffect(() => {
-        const getClubData = async () => {
-            const response = await fetch('http://127.0.0.1:8000/organizations/get_individual_club_data', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    org_id: orgId
-                })
-            })
-            if (response.ok) {
-                const data = await response.json()
-                setClubInfo(data)
-                console.log(clubInfo, data)
-            }
-        }
         getClubData()
     }, [])
+
+    // Function used to get club data
+    const getClubData = async () => {
+        const response = await fetch('http://127.0.0.1:8000/organizations/get_individual_club_data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                org_id: orgId
+            })
+        })
+        if (response.ok) {
+            const data = await response.json()
+            setClubInfo(data)
+            console.log(clubInfo, data)
+        }
+    }
 
     //Gets all comments for a specific organization
     useEffect(() => {
         getAllCommentsDB()
     }, [])
 
-
+    // Function used in useEffect on top.
     const getAllCommentsDB = async () => {
         console.log(orgId, allComments)
         try {
@@ -80,19 +86,13 @@ const IndividualClubPage = () => {
 
     return (
         <div className="individualClubContainer">
+            <Header />
 
             <div className="club-about-section-wrapper">
                 <div className="club-about-section">
                     <div className="left-side">
                         <h2>{clubInfo.org_name}</h2>
                         <p>{clubInfo.overview}</p>
-                    </div>
-                    <div className="right-side">
-                        <ul>
-                            <li><strong>Rating:</strong> {clubInfo.star_rating}</li>
-                            <li><strong>Ranking:</strong> {clubInfo.ranking_num}</li>
-                            <li><strong>Type:</strong> {clubInfo.org_type}</li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -107,10 +107,10 @@ const IndividualClubPage = () => {
                                 <div
                                     className="ratingBar"
                                     style={{
-                                        '--ratingBar':
-                                            (allCommentsRatings[reversedIndex - 1] /
-                                                clubInfo.number_of_star_rating) * 100,
-                                    }}
+                                        '--ratingBar': clubInfo.number_of_star_rating
+                                            ? (allCommentsRatings[reversedIndex - 1] / clubInfo.number_of_star_rating) * 100
+                                            : 0,
+                                        }}
                                 ></div>
                             </div>
                         );
@@ -133,7 +133,7 @@ const IndividualClubPage = () => {
                 <p className="text">Comment</p>
             </button>
 
-            {commentState && <div className="commentPopUp"><CommentPopUp userId={userId} setCommentState={setCommentState} onCommentPosted={getAllCommentsDB} /> </div>}
+            {commentState && <div className="commentPopUp"><CommentPopUp userId={userId} setCommentState={setCommentState} onCommentPosted={() => {getAllCommentsDB(); getClubData();}} /> </div>}
 
             <div className="commentCard">
                 <span className="commentTitle">Comments</span>
