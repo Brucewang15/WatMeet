@@ -6,7 +6,7 @@ def get_sort_num(org):
     return org['star_rating']
 
 
-def sort_data(data, search):
+def sort_data(data, search_propt):
     data = list(data)
     
     data_with_num = list(map(lambda org: (get_sort_num(org), org), data))

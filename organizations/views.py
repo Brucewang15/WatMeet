@@ -10,7 +10,11 @@ import json
 
 def get_club_data(request):
     data = Organization.objects.all().values()
-    data = sort_data(data, "hi")
+    search_propt = json.loads(request.body).get("searchPropt")
+    print(search_propt)
+
+    data = sort_data(data, search_propt)
+    
     return JsonResponse(data, safe=False)
 
 def get_individual_club_data(request):
