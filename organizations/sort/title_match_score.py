@@ -15,6 +15,7 @@ def get_match_score(club_name, query):
             cn_trigram[trigram] += 1
         else:
             cn_trigram[trigram] = 1
+    
     #loop through query and see the matches
     for i in range(len(query)):
         if (len(query) - i <= 2):

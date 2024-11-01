@@ -15,7 +15,6 @@ const MainPage = () => {
     const [searchPropt, setSearchPrompt] = useState(""); 
 
     useEffect(() => {
-        console.log(searchPropt)
         const get_club_data = async () => {
             const response = await fetch('http://127.0.0.1:8000/organizations/get_club_data/', {
                 method: 'POST',
@@ -27,7 +26,6 @@ const MainPage = () => {
             if (response.ok) {
                 try {
                     const data = await response.json();
-                    console.log(data);
                     setClubs(data);
                 } catch (error) {
                     console.error('Error parsing JSON:', error);

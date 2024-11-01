@@ -9,6 +9,8 @@ from .title_match_score import get_match_score
 def sort_data(data, search_propt):
     data = list(data)
     print(data)
+    
+    # enter 3 or more things in the search engine for it to work
     if (len(search_propt) >= 3):
         data_with_num = list(map(lambda org: (get_match_score(org["org_name"], search_propt), org), data))
     else:
