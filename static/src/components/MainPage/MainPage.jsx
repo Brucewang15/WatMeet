@@ -12,13 +12,17 @@ import DisplayCard from '../UiComponents/DisplayCard';
 const MainPage = () => {
 
     const [clubs, setClubs] = useState([]);
+    const [searchPropt, setSearchPrompt] = useState(""); 
+
     useEffect(() => {
+        console.log(searchPropt)
         const get_club_data = async () => {
-            const response = await fetch('http://127.0.0.1:8000/organizations/get_club_data', {
-                method: 'GET',
+            const response = await fetch('http://127.0.0.1:8000/organizations/get_club_data/', {
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
+                body: JSON.stringify({searchPropt: searchPropt})
             })
             if (response.ok) {
                 try {
@@ -31,10 +35,10 @@ const MainPage = () => {
             }
         }
         get_club_data()
-    }, [])
+    }, [searchPropt])
 
     return <>
-        <Header />
+        <Header setSearchPropt={setSearchPrompt}/>
         <div className="mainContainer">
             <div className="clubsContainer">
                 {clubs.map((club, index) => (

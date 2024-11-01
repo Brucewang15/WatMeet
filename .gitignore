@@ -1,6 +1,6 @@
 venv/
 users/scripts/confirmationEmail/passwords.py
-
+db.sqlite3
 __pycache__/
 *.pyc
 

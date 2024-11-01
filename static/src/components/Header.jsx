@@ -1,7 +1,8 @@
 import './Header.css'
 import Search from './Search/Search';
 import { useNavigate } from 'react-router-dom';
-const Header = () => {
+const Header = ({setSearchPropt}) => {
+
     const navigate = useNavigate();
     const handleRedirectMainPage = () => {
         navigate('/')
@@ -9,7 +10,7 @@ const Header = () => {
     return (
         <div className="mainContainerHeader">
             <div onClick={handleRedirectMainPage} className="individualContainer">Test</div>
-            <div className="individualContainer"><Search /></div>
+            <div className="individualContainer"><Search setSearchPropt={setSearchPropt}/></div>
             <div className="individualContainer"><a href="/login/">Login</a></div>
         </div>
     );
