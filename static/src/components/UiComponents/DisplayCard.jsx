@@ -12,7 +12,7 @@ const DisplayCard = ({ org_id, clubName, clubDescription, clubRating, clubRating
         navigate(`/organizations/${org_id}`);
     };
 
-    const clubDescriptionShortened = clubDescription.length > 400 ? clubDescription.slice(0, 400) + '...' : clubDescription
+    const clubDescriptionShortened = clubDescription.length > 150 ? clubDescription.slice(0, 150) + '...' : clubDescription
     return (
         <div className="org_card" onClick={handleClick} style={{ '--rating': clubRating * 20 }}>
             {/* <div className="icon">🫠</div> */}
@@ -20,9 +20,6 @@ const DisplayCard = ({ org_id, clubName, clubDescription, clubRating, clubRating
             <p className="description">{clubDescriptionShortened}</p>
 
             <div className="ratingWrapper">
-                <div className="ratingLeft">
-                    
-                </div>
                 <div className="ratingRight">
                     <div className="ratingNumber">{formattedClubRating}</div>
                     <div className="rating"></div>
