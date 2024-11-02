@@ -28,7 +28,7 @@ const MainPage = () => {
                 },
                 body: JSON.stringify({ searchPropt: searchPropt, selectedType: selectedType })
             })
-            if (response.ok) {
+            if (response.ok) { 
                 try {
                     const data = await response.json();
                     setClubs(data);
@@ -38,7 +38,7 @@ const MainPage = () => {
             }
         }
         get_club_data()
-    }, [searchPropt])   
+    }, [searchPropt, selectedType])   
 
     return <>
         <Header setSearchPropt={setSearchPrompt} />

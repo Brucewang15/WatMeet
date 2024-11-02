@@ -1,0 +1,36 @@
+.filterContainer {
+    border: 1px solid grey;
+    border-radius: 0 0 5px 5px;
+
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+
+    width: 500px;
+}
+
+.titleContainer {
+    position: relative;
+    height: 20%;
+
+    padding: 20px;
+}
+
+
+.ratingContainer {
+    position: relative;
+    height: 50%;
+
+    padding: 20px;
+}
+
+.orgContainer {
+    position: relative;
+    height: 20%;
+}

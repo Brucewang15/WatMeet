@@ -14,12 +14,11 @@ def get_club_data(request):
     if selectedType == 'All':
         data = Organization.objects.all().values()
     elif selectedType == 'Clubs':
-        data = Organization.objects.filter(org_type = 'club')
+        data = Organization.objects.filter(org_type = 'club').values()
     elif selectedType == 'Design Teams':
-        data = Organization.objects.filter(org_type = 'design')
+        data = Organization.objects.filter(org_type = 'design').values()
 
     search_propt = json.loads(request.body).get("searchPropt")
-    print(search_propt)
 
     data = sort_data(data, search_propt) 
     return JsonResponse(data, safe=False)
