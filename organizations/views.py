@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 from organizations.models import Organization
 
-from .sort.sort_data import sort_data
+from .search.sort_data import sort_data
 import json
 
 # Create your views here.
