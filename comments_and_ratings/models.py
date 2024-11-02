@@ -29,17 +29,3 @@ class UserCommentRating(models.Model):
 
     def __str__(self):
         return f"{self.user} - {self.comment}"
- 
-class UserOrgRating(models.Model):
-    userorg_id = models.AutoField(primary_key=True)
-    user = models.ForeignKey('users.User', on_delete=models.CASCADE, related_name='user_orgs_rating')
-    org = models.ForeignKey('organizations.Organization', on_delete=models.CASCADE, related_name='user_orgs_rating')
-    star_rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        unique_together = ('user', 'org')
-
-    def __str__(self):
-        return f"{self.user} - {self.org}"

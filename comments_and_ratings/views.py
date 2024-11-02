@@ -5,6 +5,8 @@ from comments_and_ratings.models import Comment
 from users.models import User
 from organizations.models import Organization
 import json
+from comments_and_ratings.models import UserCommentRating
+from django.utils import timezone
 # Create your views here.
 
 # Get comments for a specific org_id
@@ -54,4 +56,33 @@ def post_comment(request):
     org.number_of_star_rating += 1
     org.star_rating = round((org.star_rating * (org.number_of_star_rating - 1) + stars) / org.number_of_star_rating, 1)
     org.save()
+    return JsonResponse({'success': True})
+
+# rate a comment
+def rate_comments(request):
+    body_unicode = request.body.decode('utf-8')
+    body_data = json.loads(body_unicode)
+    comment_id = body_data.get('comment_id')
+    user_id = body_data.get('user_id')
+    upvote = body_data.get('upvote')
+    downvote = body_data.get('downvote')
+
+    comment = Comment.objects.get(comment_id=comment_id)
+    
+    if upvote:
+        comment.upvote += 1
+    elif downvote:
+        comment.downvote += 1
+
+    comment.save()
+
+    UserCommentRating.objects.update_or_create(
+        user_id=user_id,
+        comment_id=comment_id,
+        defaults={
+            'upvote': upvote,
+            'downvote': downvote,
+            'created_at': timezone.now()  # Sets the time when the user rated the comment
+        }
+    )
     return JsonResponse({'success': True})

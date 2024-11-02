@@ -84,6 +84,37 @@ const IndividualClubPage = () => {
         }
     }
 
+    const ratecomment = async (commentId, userId, like) => {
+        try {
+            const response = await fetch('http://127.0.0.1:8000/comments/rate_comment/', {
+                method: 'POST', // Use POST for creating/updating resources
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    comment_id: commentId,
+                    user_id: userId,
+                    like: like,
+                }),
+            });
+    
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+    
+            const data = await response.json();
+            if (data.success) {
+                console.log('Comment rating updated successfully:', data);
+                // Optionally, update your UI to reflect the new like status here
+            } else {
+                console.error('Failed to update comment rating:', data);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+      
+
     return (
         <div className="individualClubContainer">
             <Header />
@@ -142,8 +173,11 @@ const IndividualClubPage = () => {
 
                         <div className="comments">
                             <div class="like-wrapper">
-                                <input class="check" type="checkbox" id={`like-toggle-${index}`} />
-                                <label class="container" for={`like-toggle-${index}`}>
+                                <input class="check" type="checkbox" id={`like-toggle-${index}`} onChange={(e) => {
+                                        const like = e.target.checked; // Get the checked status (true/false)
+                                        ratecomment(comment.comment_id, userId, true, false); // Call the function with appropriate parameters
+                                    }}/>
+                                 <label class="container" for={`like-toggle-${index}`}>
                                     <svg
                                         viewBox="0 0 512 512"
                                         xmlns="http://www.w3.org/2000/svg"
