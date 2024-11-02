@@ -6,6 +6,9 @@ from users.models import User
 
 # python manage.py load_data
 
+
+#load the data for clubs
+"""
 class Command(BaseCommand):
     help = 'Load data from a JSON file'
 
@@ -33,6 +36,34 @@ class Command(BaseCommand):
                 star_rating = 3.5,
                 ranking_num = 3,
                 org_type = 'club',
+                constitution = "bruh",
+                user_id=19
+            )
+        self.stdout.write(self.style.SUCCESS('Data loaded successfully'))
+"""
+
+# design teams 
+
+class Command(BaseCommand):
+    help = 'Load data from a JSON file'
+
+    def handle(self, *args, **kwargs):
+        # Load data from the JSON file
+        with open('./organizations/info/design_team_data.json', 'r') as file:
+            data = json.load(file)
+
+        random_user = User.objects.get(user_id=19)
+
+        for item in data:
+            # Create model instances
+            print(item["name"])
+            Organization.objects.create(
+                org_name = item["name"],
+                overview = item['description'],
+                user = random_user,
+                star_rating = 0,
+                ranking_num = 3,
+                org_type = 'design',
                 constitution = "bruh",
                 user_id=19
             )

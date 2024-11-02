@@ -11,7 +11,6 @@ import json
 def get_club_data(request):
     data = Organization.objects.all().values()
     search_propt = json.loads(request.body).get("searchPropt")
-    print(search_propt)
 
     data = sort_data(data, search_propt)
     

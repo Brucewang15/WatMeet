@@ -5,6 +5,7 @@ import ClubsDisplay from "./ClubsDisplay/ClubsDisplay";
 import "./MainPage.css"
 import Header from '../Header';
 import DisplayCard from '../UiComponents/DisplayCard';
+import SearchFilter from "../SearchFilter/SearchFilter"
 
 //import clubs_info from "..../webscraping/club_info.json";
 
@@ -61,6 +62,7 @@ const MainPage = () => {
                     </div>
                 ))}
             </div>
+            <SearchFilter/>
             <div className="clubsContainer">
                 {clubs.map((club, index) => (
                     // <ClubsDisplay title={club.org_name} membershipType={club[1]} 
