@@ -8,7 +8,6 @@ from .title_match_score import get_match_score
 
 def sort_data(data, search_propt):
     data = list(data)
-    print(data)
     
     # enter 3 or more things in the search engine for it to work
     if (len(search_propt) >= 3):
@@ -16,8 +15,11 @@ def sort_data(data, search_propt):
     else:
         data_with_num = list(map(lambda org: (org["star_rating"], org), data))
 
+   
     data_with_num.sort(reverse=True, key=lambda s: s[0])
 
-    sorted_data = list(map(lambda element: element[1], data_with_num))
-
-    return sorted_data
+    if (search_propt == ""):
+        return list(map(lambda element: element[1], data_with_num))
+    
+    sorted_data = list(filter(lambda elem: elem[0] > 0.2, data_with_num))
+    return list(map(lambda elem: elem[1], sorted_data))
