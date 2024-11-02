@@ -3,6 +3,7 @@
     width: 80%;
     max-width: 1000px;
     margin: 100px auto 0 auto;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4); 
 }
 .clubsContainer {
     /* Adjust to control the maximum number of columns */
@@ -17,7 +18,7 @@
 .chooseOrgType {
     height: 80px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Four equal columns */
+    grid-template-columns: repeat(5, 1fr); /* Four equal columns */
     gap: 0; /* No gap between the columns */
 }
 .chooseOrgTypeButtons {
@@ -25,5 +26,11 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    border: 1px solid black;
+    box-shadow: 1px;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+    font-weight: 500;
+}
+.chooseOrgTypeButtons:hover {
+    background-color: gray; 
 }
