@@ -9,12 +9,19 @@ import json
 # Create your views here.
 
 def get_club_data(request):
-    data = Organization.objects.all().values()
+    
+    selectedType = json.loads(request.body).get("selectedType")
+    if selectedType == 'All':
+        data = Organization.objects.all().values()
+    elif selectedType == 'Clubs':
+        data = Organization.objects.filter(org_type = 'club')
+    elif selectedType == 'Design Teams':
+        data = Organization.objects.filter(org_type = 'design')
+
     search_propt = json.loads(request.body).get("searchPropt")
     print(search_propt)
 
-    data = sort_data(data, search_propt)
-    
+    data = sort_data(data, search_propt) 
     return JsonResponse(data, safe=False)
 
 def get_individual_club_data(request):

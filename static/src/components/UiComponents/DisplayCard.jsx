@@ -3,7 +3,7 @@ import './DisplayCard.css';
 import { useNavigate } from 'react-router-dom';
 
 
-const DisplayCard = ({ org_id, clubName, clubDescription, clubRating, clubRatingNumber, clubRank }) => {
+const DisplayCard = ({ org_id, clubName, clubDescription, clubRating, clubRatingNumber, clubRank, selectedType}) => {
     const navigate = useNavigate();
     let formattedClubRating = clubRating.toFixed(1);
 

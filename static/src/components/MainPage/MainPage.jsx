@@ -13,6 +13,11 @@ const MainPage = () => {
 
     const [clubs, setClubs] = useState([]);
     const [searchPropt, setSearchPrompt] = useState("");
+    const [selectedType, setSelectedType] = useState('All');
+
+    const handleSelect = (type) => {
+        setSelectedType(type);
+    };
 
     useEffect(() => {
         const get_club_data = async () => {
@@ -21,7 +26,7 @@ const MainPage = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ searchPropt: searchPropt })
+                body: JSON.stringify({ searchPropt: searchPropt, selectedType: selectedType })
             })
             if (response.ok) {
                 try {
@@ -33,14 +38,7 @@ const MainPage = () => {
             }
         }
         get_club_data()
-    }, [searchPropt])
-
-
-    const [selectedType, setSelectedType] = useState('All');
-
-    const handleSelect = (type) => {
-        setSelectedType(type);
-    };
+    }, [searchPropt])   
 
     return <>
         <Header setSearchPropt={setSearchPrompt} />
@@ -67,7 +65,8 @@ const MainPage = () => {
                     // description={club.overview} ranking_num = {club.ranking_num} 
                     // star_rating={club.star_rating} org_id = {club.org_id} key={index} />     
                     <DisplayCard org_id={club.org_id} clubName={club.org_name} clubDescription={club.overview}
-                        clubRating={club.star_rating} clubRatingNumber={club.number_of_star_rating} clubRank={club.ranking_num} />
+                        clubRating={club.star_rating} clubRatingNumber={club.number_of_star_rating} clubRank={club.ranking_num} 
+                    />
                 ))}
             </div>
         </div>
