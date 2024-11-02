@@ -1,11 +1,29 @@
-.clubsContainer {
+.mainContainer {  
+    margin-top: 100px;
     width: 80%;
-    max-width: 1000px; /* Adjust to control the maximum number of columns */
+    max-width: 1000px;
+    margin: 100px auto 0 auto;
+}
+.clubsContainer {
+    /* Adjust to control the maximum number of columns */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin: auto;
-    margin-top: 100px;
     border: 1px solid grey;
-    border-radius: 5px;
+    border-radius: 0 0 5px 5px;
+}
+
+.chooseOrgType {
+    height: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four equal columns */
+    gap: 0; /* No gap between the columns */
+}
+.chooseOrgTypeButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid black;
 }

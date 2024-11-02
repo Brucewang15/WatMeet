@@ -31,6 +31,9 @@
     color: transparent; /* Make the text itself transparent to show the gradient */
     text-align: center;
 }
+.individualContainer img {
+    height: 50px;
+}
 .individualContainer:nth-child(1):hover, .individualContainer:nth-child(3):hover {
     cursor: pointer;
 }

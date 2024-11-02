@@ -38,6 +38,12 @@ const MainPage = () => {
     return <>
         <Header setSearchPropt={setSearchPrompt}/>
         <div className="mainContainer">
+            <div className="chooseOrgType">
+                <div className="chooseOrgTypeButtons">Clubs</div>
+                <div className="chooseOrgTypeButtons">Design Teams</div>
+                <div className="chooseOrgTypeButtons">Sports</div>
+                <div className="chooseOrgTypeButtons">Intramurals</div>
+            </div>
             <div className="clubsContainer">
                 {clubs.map((club, index) => (
                     // <ClubsDisplay title={club.org_name} membershipType={club[1]} 
