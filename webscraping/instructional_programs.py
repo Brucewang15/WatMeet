@@ -34,62 +34,56 @@ try:
         program_sections = category.find_elements(By.CLASS_NAME, 'c-story-blocks__structural_accordion_block__list-item')
         
         for section in program_sections:
-            program_info = {
-                'Category': current_category,
-                'Program Name': 'N/A',
-                'Class Description': 'N/A',
-                'Class Times': 'N/A',
-                'Location': 'N/A',
-                'Instructor Name': 'N/A',
-                'Instructor Description': 'N/A',
-                'Registration Link': 'N/A'
-            }
-            
-            # Program name
+            # Expand each program section to reveal all class details
             try:
                 program_name_button = section.find_element(By.CLASS_NAME, 'c-story-blocks__structural_accordion_block__list-item-toggle')
-                program_info['Program Name'] = program_name_button.find_element(By.CLASS_NAME, 'flex-item-1').text.strip()
+                program_name_button.click()
             except Exception:
                 pass
             
-            # Program details
-            try:
-                content = section.find_element(By.CLASS_NAME, 'c-story-blocks__structural_accordion_block__list-item-content')
-                description_blocks = content.find_elements(By.CLASS_NAME, 'c-story-blocks__block-container')
+            # Collect all classes under this program section
+            content = section.find_elements(By.CLASS_NAME, 'c-story-blocks__block-container')
+            for block in content:
+                program_info = {
+                    'Category': current_category,
+                    'Program Name': 'N/A',
+                    'Class Description': 'N/A',
+                    'Class Times': 'N/A',
+                    'Location': 'N/A',
+                    'Instructor Name': 'N/A',
+                    'Instructor Description': 'N/A',
+                    'Registration Link': 'N/A'
+                }
                 
-                for block in description_blocks:
-                    # Class times and descriptions
-                    class_name = block.find_elements(By.TAG_NAME, 'h4')
-                    if class_name:
-                        program_info['Program Name'] = class_name[0].text.strip()
-                    
-                    description = block.find_elements(By.TAG_NAME, 'p')
-                    if description:
-                        program_info['Class Description'] = description[0].text.strip()
-                    
-                    # Class times and location
-                    for p in description:
-                        if 'Offering' in p.text or 'Fall' in p.text:
-                            program_info['Class Times'] = p.text.strip()
-                    
-                    # Registration link
-                    reg_link = block.find_elements(By.TAG_NAME, 'a')
-                    if reg_link:
-                        program_info['Registration Link'] = reg_link[0].get_attribute('href')
-                    
-                    # Instructor details
-                    instructor_header = block.find_elements(By.TAG_NAME, 'h4')
-                    if instructor_header and 'Instructor' in instructor_header[0].text:
-                        instructor_name = instructor_header[0].find_element(By.XPATH, 'following-sibling::p')
-                        instructor_description = instructor_name.find_element(By.XPATH, 'following-sibling::p') if instructor_name else None
-                        program_info['Instructor Name'] = instructor_name.text.strip() if instructor_name else 'N/A'
-                        program_info['Instructor Description'] = instructor_description.text.strip() if instructor_description else 'N/A'
+                # Program name
+                class_name = block.find_elements(By.TAG_NAME, 'h4')
+                if class_name:
+                    program_info['Program Name'] = class_name[0].text.strip()
 
-            except Exception:
-                pass
-            
-            # Append the program info to programs data
-            programs_data.append(program_info)
+                # Class times and description
+                description = block.find_elements(By.TAG_NAME, 'p')
+                if description:
+                    program_info['Class Description'] = description[0].text.strip()
+
+                for p in description:
+                    if 'Offering' in p.text or 'Fall' in p.text:
+                        program_info['Class Times'] = p.text.strip()
+                
+                # Registration link
+                reg_link = block.find_elements(By.TAG_NAME, 'a')
+                if reg_link:
+                    program_info['Registration Link'] = reg_link[0].get_attribute('href')
+                
+                # Instructor details
+                instructor_header = block.find_elements(By.TAG_NAME, 'h4')
+                if instructor_header and 'Instructor' in instructor_header[0].text:
+                    instructor_name = instructor_header[0].find_element(By.XPATH, 'following-sibling::p')
+                    instructor_description = instructor_name.find_element(By.XPATH, 'following-sibling::p') if instructor_name else None
+                    program_info['Instructor Name'] = instructor_name.text.strip() if instructor_name else 'N/A'
+                    program_info['Instructor Description'] = instructor_description.text.strip() if instructor_description else 'N/A'
+                
+                # Append each class within the category
+                programs_data.append(program_info)
 
 except Exception as e:
     print(f"Error scraping programs: {e}")

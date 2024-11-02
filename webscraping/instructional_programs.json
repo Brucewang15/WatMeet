@@ -2,111 +2,161 @@
     {
         "Category": "Dance Programs",
         "Program Name": "Introduction to Hip Hop",
-        "Class Description": "Fall 2024 Offering: Thursdays 5:00-6:00 pm in PAC Studio 4",
-        "Class Times": "Fall 2024 Offering: N/A",
-        "Location": "N/A",
-        "Instructor Name": "N/A",
-        "Instructor Description": "N/A",
+        "Class Description": "Learn the fundamentals of breaking, popping, and locking in this introductory hip hop class. Participants will learn fun and energetic choreography to popular hip hop and R&B music! No previous dance experience is required.",
+        "Class Times": "Thursdays 5:00-6:00 pm",
+        "Location": "PAC Studio 4",
+        "Instructor Name": "Lila",
+        "Instructor Description": "Lila is a second year Arts & Business student. She has always found fitness and dance to be a way to express herself physically, mentally, and emotionally. When Lila's not dancing, she enjoys playing flag football, hiking, and weight training. Lila started dancing at the age of three. Shortly after, Lila began her competitive dance journey, training an average of 30 hours per week and competing throughout Canada and the United States. For Lila, fitness is about finding a type of movement that you enjoy. She strives to help her students find their own dance style, support each other, and create a judgement free zone. Most importantly, Lila wants her students to have fun!",
         "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=ee8eccf0-add4-46ca-b12e-b30694f74f0a&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
     },
     {
         "Category": "Dance Programs",
-        "Program Name": "",
-        "Class Description": "",
+        "Program Name": "Intermediate Hip Hop",
+        "Class Description": "Dust off those Air Force 1's and get ready to pop, lock, and break in this intermediate hip hop class. Develop your personal dance style and express yourself through movement! Participants should have some previous dance experience.",
         "Class Times": "N/A",
         "Location": "N/A",
-        "Instructor Name": "N/A",
-        "Instructor Description": "N/A",
-        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=1534df22-7773-4d45-8f6c-ff42d780f7c1&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
+        "Instructor Name": "Lila",
+        "Instructor Description": "Lila is a second year Arts & Business student. She has always found fitness and dance to be a way to express herself physically, mentally, and emotionally. When Lila's not dancing, she enjoys playing flag football, hiking, and weight training. Lila started dancing at the age of three. Shortly after, Lila began her competitive dance journey, training an average of 30 hours per week and competing throughout Canada and the United States. For Lila, fitness is about finding a type of movement that you enjoy. She strives to help her students find their own dance style, support each other, and create a judgement free zone. Most importantly, Lila wants her students to have fun!"  ,
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=ee8eccf0-add4-46ca-b12e-b30694f74f0a&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
     },
     {
         "Category": "Dance Programs",
-        "Program Name": "",
-        "Class Description": "",
+        "Program Name": "Introduction to Jazz and Musical Theatre",
+        "Class Description": "Are you ready to experience the joy of movement? After taking this class you can expect to experience improvements in flexibility, cardiovascular health, and body-awareness. But most importantly, this class will provide a safe space to move your body in ways that feel good. This class is suitable for participants with no or minimal dance experience. Increase your confidence on the dance floor and groove to your favourite showtunes in this exciting new class.",
         "Class Times": "N/A",
         "Location": "N/A",
-        "Instructor Name": "N/A",
+        "Instructor Name": "Raven",
+        "Instructor Description": "Raven has over 16 years of dance training in RAD ballet, Luigi style jazz, and modern dance. Raven was even a soloist for 4 years in the Hamilton's City ballet, The Nutcracker! Raven has over 6 years of teaching experience, and even started her own ballet studio when she was in grade 9! Raven meets students where they're at, tailoring her lessons to meet the needs of her class participants. In her classes, Raven ensures that no one is left behind or confused by choreography. She strives to promote positivity and inclusion in the way she teaches, corrects, and choreographs.",
+        "Registration Link": "N/A"
+    },
+    {
+        "Category": "Dance Programs",
+        "Program Name": "Introduction to Ballet",
+        "Class Description": "In this introductory course, participants will develop awareness of alignment and basic ballet vocabulary and technique. No previous ballet or dance experience is required. Classes will include basic barre exercises, as well as centre work. Plié and chassé your way to improved coordination, flexibility, and posture!",
+        "Class Times": "\n Mondays 5:00-6:00 pm\nThursdays 5:30-6:30 pm",
+        "Location": "PAC Studio 3",
+        "Instructor Name": "Raven",
+        "Instructor Description": "Raven has over 16 years of dance training in RAD ballet, Luigi style jazz, and modern dance. Raven was even a soloist for 4 years in the Hamilton's City ballet, The Nutcracker! Raven has over 6 years of teaching experience, and even started her own ballet studio when she was in grade 9! Raven meets students where they're at, tailoring her lessons to meet the needs of her class participants. In her classes, Raven ensures that no one is left behind or confused by choreography. She strives to promote positivity and inclusion in the way she teaches, corrects, and choreographs.",
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=179ffbee-f9f4-4c86-8443-3b0357d59b5b&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
+    },
+    {
+        "Category": "Dance Programs",
+        "Program Name": "Intermediate Ballet",
+        "Class Description": "Have you been missing the Barre? Are your ballet shoes sitting in the back of your closet just itching to chaine across the floor? Come fall back in love with Ballet in the Intermediate Ballet Class! Take a break from studying to stretch, jump, and turn your way through barre and centre work and reconnect with this athletic artform.\nParticipants in this program should be comfortable with the fundamentals of Ballet, including common terminology, positions, and technique. One or more years of Ballet experience is recommended. Haven’t danced for a few years and feeling a bit rusty? No problem! We will slowly and safely work towards rebuilding ballet strength and flexibility. Modifications will be provided to ensure the classes are enjoyable for both Intermediate and Advanced dancers.",
+        "Class Times": "Mondays 6:00-7:00pm",
+        "Location": "PAC Studio 4",
+        "Instructor Name": "Raven",
+        "Instructor Description": "Raven has over 16 years of dance training in RAD ballet, Luigi style jazz, and modern dance. Raven was even a soloist for 4 years in the Hamilton's City ballet, The Nutcracker! Raven has over 6 years of teaching experience, and even started her own ballet studio when she was in grade 9! Raven meets students where they're at, tailoring her lessons to meet the needs of her class participants. In her classes, Raven ensures that no one is left behind or confused by choreography. She strives to promote positivity and inclusion in the way she teaches, corrects, and choreographs.",
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=179ffbee-f9f4-4c86-8443-3b0357d59b5b&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
+    },
+    {
+        "Category": "Dance Programs",
+        "Program Name": "Advanced / Pointe Ballet",
+        "Class Description": "Have you been missing the Barre? Are your ballet shoes sitting in the back of your closet just itching to chaine across the floor? Come fall back in love with Ballet in the Intermediate Ballet Class! Take a break from studying to stretch, jump, and turn your way through barre and centre work and reconnect with this athletic artform.\nParticipants in this program should be comfortable with the fundamentals of Ballet, including common terminology, positions, and technique. One or more years of Ballet experience is recommended. Haven’t danced for a few years and feeling a bit rusty? No problem! We will slowly and safely work towards rebuilding ballet strength and flexibility. Modifications will be provided to ensure the classes are enjoyable for both Intermediate and Advanced dancers.",
+        "Class Times": "Mondays 5:00-6:00 pm (this class doesn't include Pointe)\nThursdays 6:30-8:00pm",
+        "Location": "PAC Studio 3",
+        "Instructor Name": "Marina",
         "Instructor Description": "N/A",
         "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=179ffbee-f9f4-4c86-8443-3b0357d59b5b&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
     },
     {
         "Category": "Dance Programs",
-        "Program Name": "",
-        "Class Description": "",
+        "Program Name": "Introduction to Lyrical and Contemporary",
+        "Class Description": "Contemporary dance draws on elements of ballet, modern, and jazz to explore movement. Express yourself through flowing combinations! Participants can expect to learn about fundamental contemporary and lyrical dance movement. No previous dance experience is required.",
+        "Class Times": "Tuesdays 6:00-7:00pm",
+        "Location": "PAC Studio 3",
+        "Instructor Name": "Audrey",
+        "Instructor Description": "N/A",
+        "Registration Link": "N/A"
+    },
+        {
+        "Category": "Dance Programs",
+        "Program Name": "Intermediate Lyrical and Contemporary",
+        "Class Description": "Contemporary dance draws on elements of ballet, modern, and jazz to explore movement. Express yourself through flowing combinations! Participants can expect to build upon fundamental principles of contemporary and lyrical dance and learn intermediate and advance skills. Previous dance experience is recommended.",
         "Class Times": "N/A",
         "Location": "N/A",
         "Instructor Name": "N/A",
         "Instructor Description": "N/A",
-        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=a245ec12-220d-4af8-a9e8-9dbb49c6859d&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
+        "Registration Link": "N/A"
     },
     {
         "Category": "Dance Programs",
-        "Program Name": "",
-        "Class Description": "",
-        "Class Times": "N/A",
-        "Location": "N/A",
-        "Instructor Name": "N/A",
+        "Program Name": "Introduction to Dancehall / Soca",
+        "Class Description": "Join us for an electrifying introductory Dancehall and Soca dance class! Perfect for beginners, this class will teach you the fundamentals of these vibrant Caribbean dance styles. You'll learn basic steps, fluid body movements, and iconic dancehall and soca grooves that will have you moving to the rhythm in no time. Whether you're looking to get fit, have fun, or just experience something new, this class is the perfect way to immerse yourself in the infectious energy of Dancehall and Soca music. No experience needed—just bring your energy and a love for dance!",
+        "Class Times": "Thursdays 4:30-5:30 pm",
+        "Location": "PAC Studio 3",
+        "Instructor Name": "Kayla",
         "Instructor Description": "N/A",
-        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=4fd4e4ea-4f52-4662-84f6-2fb937ca04df"
+        "Registration Link": "N/A"
     },
     {
         "Category": "Martial Arts Programs",
         "Program Name": "Learn to Box",
-        "Class Description": "Fall 2024 Offerings:",
-        "Class Times": "Fall 2024 Offering: Thursdays 8:30-10:00pm",
-        "Location": "N/A",
-        "Instructor Name": "N/A",
-        "Instructor Description": "N/A",
+        "Class Description": "Learn to Box introduces students to the fundamentals of boxing in a safe, fun, friendly and cooperative environment.This class introduces participants to the fundamentals boxing and aims to help participants build a foundation of proper technique. The program will cover how to throw punches (straights, hooks, uppercuts) from a well-balanced stance, how to defend (blocking, parrying, slipping, moving), and how throw, and defend against, basic combinations. Classes incorporate individual practice, partner work, bag work and boxing fitness/conditioning. No experience necessary!",
+        "Class Times": "Tuesdays (Early) 7:00-8:30pm\nTuesdays (Late) 8:30-10:00pm\nThursdays 8:30-10:00pm",
+        "Location": "CIF Studio",
+        "Instructor Name": "Thomas",
+        "Instructor Description": "Being an instructor allows Thomas to share his passion for the sport of boxing. In addition to skill building, Thomas hopes to pass on how boxing can contribute to feelings of calmness and stability. Thomas is inspired watching how the participants in his classes progress - many participants leave his class walking taller and more confidently.",
         "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=292254cf-eb8e-4fd9-abfe-4538e2125ee3&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
     },
     {
         "Category": "Martial Arts Programs",
-        "Program Name": "",
+        "Program Name": "Intermediate Boxing",
         "Class Description": "",
-        "Class Times": "N/A",
-        "Location": "N/A",
-        "Instructor Name": "N/A",
+        "Class Times": "Thursdays 8:30-10:00pm",
+        "Location": "CIF Studio",
+        "Instructor Name": "Thomas",
+        "Instructor Description": "Being an instructor allows Thomas to share his passion for the sport of boxing. In addition to skill building, Thomas hopes to pass on how boxing can contribute to feelings of calmness and stability. Thomas is inspired watching how the participants in his classes progress - many participants leave his class walking taller and more confidently.",
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=292254cf-eb8e-4fd9-abfe-4538e2125ee3&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
+    },
+    {
+        "Category": "Martial Arts Programs",
+        "Program Name": "Wrestling",
+        "Class Description": "This program welcomes all students to participate in learning wrestling techniques and skills, as well as improving their body awareness and fitness levels. Suitable for beginners (little to no experience), and intermediate (previous wrestling experience and competition).\nThe program will cover the fundamentals of wrestling and aims to also develop strength and conditioning. Classes will cover proper wrestling stance, a variety of offensive and defensive attacks, ground technique and mat strategy. Classes incorporate individual practice, partner work, scrimmage, and fitness/conditioning.",
+        "Class Times": "Wednesdays 7-8:30 pm",
+        "Location": "PAC Studio 4",
+        "Instructor Name": "Jamie\nGary",
         "Instructor Description": "N/A",
-        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=5fade292-63e0-4f68-b5e7-4d024bed7820"
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=78154f05-e2fb-401e-b3a1-e023e31e9d54"
     },
     {
         "Category": "Skipping Programs",
         "Program Name": "Freestyle Skipping",
-        "Class Description": "Fall 2024 offering: N/A",
-        "Class Times": "Fall 2024 offering: N/A",
+        "Class Description": "When registering for the class, you will have the option to purchase a 4mm skipping rope ($15.00+tax), specifically designed for freestyle and speed skipping. Skipping ropes will be distributed at the beginning of the first class.\nFreestyle Skipping introduces students to the fundamentals of skipping in a safe, enjoyable, welcoming environment. This class aims to help participants build a foundation of proper technique and will cover skills such as footwork, side-swings, and crossovers. As students develop their skills, they will progress to more advanced techniques including skill combinations and double-unders.\nOur classes are designed to be inclusive and accessible to students of all experience levels, so whether you're a seasoned skipper or a complete beginner, you'll find a supportive and nurturing atmosphere in which to learn and grow. So come join us and discover the joy and benefits of Freestyle Skipping!",
+        "Class Times": "N/A",
         "Location": "N/A",
-        "Instructor Name": "N/A",
+        "Instructor Name": "Kaylie",
         "Instructor Description": "N/A",
-        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=15248509-a838-4eee-b914-711415bb246a"
+        "Registration Link": "N/A"
     },
     {
         "Category": "Skating Programs",
         "Program Name": "Learn to Skate",
-        "Class Description": "Fall 2023 Offerings:",
-        "Class Times": "Fall 2023 Offerings:",
-        "Location": "N/A",
+        "Class Description": "Whether you've never stepped foot on the ice or you are trying to become more comfortable and sturdy on blades, then Learn to Skate is the perfect fit for you. This course will help you gain the confidence and agility needed to feel strong and free on the ice. Learn to Skate I is for absolute beginners, while Learn to Skate II is for those who have some skating experience but are looking to develop further skills and confidence. NOTE: You must supply your own skates and CSA approved helmets are required.",
+        "Class Times": "Wednesdays 7-8:00 pm\nThursdays 7-8:00 pm",
+        "Location": "CIF Studio",
         "Instructor Name": "N/A",
         "Instructor Description": "N/A",
         "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=9ad1fdf3-9255-48f6-a8c0-897873b36209&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
     },
     {
         "Category": "Skating Programs",
-        "Program Name": "",
-        "Class Description": "",
-        "Class Times": "N/A",
-        "Location": "N/A",
+        "Program Name": "Figure Skating",
+        "Class Description": "Figure Skating is an introductory program for skaters who wish to learn and experience various areas of figure skating, free skating, dancing, stroking, and precision skating. This is a flexible program where skaters can progress at their own rate. In order to enroll in Learn to Figure Skate, skaters should be comfortable on the ice (good stopping/turning), have the ability to do two cross overs on each side, and be able to do a one foot glide for 5 seconds on each side. This is not an appropriate class for those just beginning to skate.",
+        "Class Times": "Thursdays 6-7:00 pm",
+        "Location": "CIF Arena",
         "Instructor Name": "N/A",
         "Instructor Description": "N/A",
-        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=c3d3f53a-ce38-4b4f-9564-0b698a6369c3&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=c3d3f53a-ce38-4b4f-9564-0b698a6369c3"
     },
     {
         "Category": "Climbing Programs",
         "Program Name": "Student Climbing Lessons",
-        "Class Description": "Having trouble going from a V3 to a V4? Want to get into climbing but don't know how to start? The PAC Climbing and Bouldering wall is offering semi-private lessons for beginner and more advanced climbers. These lessons are led by our staff with vast climbing knowledge and skills to help you become introduced into climbing community or help you solve a problem you didn't think you could get. These lessons also allow for more private time on the climbing and bouldering wall. This program requires a Rock Climbing Membership",
-        "Class Times": "Fall 2023 Offering: Sundays @ 1:30-3:00pm in PAC Climbing Gym",
-        "Location": "N/A",
+        "Class Description": "Having trouble going from a V3 to a V4? Want to get into climbing but don't know how to start? The PAC Climbing and Bouldering wall is offering semi-private lessons for beginner and more advanced climbers. These lessons are led by our staff with vast climbing knowledge and skills to help you become introduced into climbing community or help you solve a problem you didn't think you could get. These lessons also allow for more private time on the climbing and bouldering wall. This program requires a Rock Climbing Membership.",
+        "Class Times": "N/A",
+        "Location": "PAC Climbing Gym",
         "Instructor Name": "N/A",
         "Instructor Description": "N/A",
-        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=d2c53080-69e7-4233-909f-9c8059d95136&semesterId=042aa72b-1a34-4fd0-a9e7-a40e62862427"
+        "Registration Link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=d2c53080-69e7-4233-909f-9c8059d95136"
     }
 ]
