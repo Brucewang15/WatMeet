@@ -28,7 +28,7 @@ const MainPage = () => {
                 },
                 body: JSON.stringify({ searchPropt: searchPropt, selectedType: selectedType })
             })
-            if (response.ok) { 
+            if (response.ok) {
                 try {
                     const data = await response.json();
                     setClubs(data);

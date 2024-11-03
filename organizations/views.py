@@ -17,6 +17,10 @@ def get_club_data(request):
         data = Organization.objects.filter(org_type = 'club').values()
     elif selectedType == 'Design Teams':
         data = Organization.objects.filter(org_type = 'design').values()
+    elif selectedType == 'Sports':
+        data = Organization.objects.filter(org_type = 'sportclub')
+    elif selectedType == 'Intramurals':
+        data = Organization.objects.filter(org_type = 'Intramurals')
 
     search_propt = json.loads(request.body).get("searchPropt")
 

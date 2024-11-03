@@ -1,0 +1,726 @@
+[
+    {
+        "name": "Breakers, UW",
+        "tags": ["Dance", "Performing Arts", "Recreation", "Social"]
+    },
+    {
+        "name": "Buddha's Light Community Club, UW",
+        "tags": ["Religious", "Wellness", "Culture", "Social"]
+    },
+    {
+        "name": "Campus Association for Bahá’í Studies at UW (CABS)",
+        "tags": ["Religious", "Culture", "Advocacy", "Social"]
+    },
+    {
+        "name": "Campus Compost, UW",
+        "tags": ["Environmental", "Sustainability", "Community Service", "Advocacy"]
+    },
+    {
+        "name": "Campus Crusade for Cheese",
+        "tags": ["Food", "Social", "Recreation"]
+    },
+    {
+        "name": "CariVybz Dance Company",
+        "tags": ["Dance", "Performing Arts", "Culture", "Social"]
+    },
+    {
+        "name": "Chess Club, UW",
+        "tags": ["Gaming", "Recreation", "Social"]
+    },
+    {
+        "name": "Chinese Christian Fellowship, UW",
+        "tags": ["Religious", "Culture", "Language", "Social"]
+    },
+    {
+        "name": "Chinese Hip-Hop (Rap) Club",
+        "tags": ["Music", "Culture", "Arts", "Social"]
+    },
+    {
+        "name": "Chinese Students Association (CSA), UW",
+        "tags": ["Culture", "Social", "Language"]
+    },
+    {
+        "name": "Christian Orthodox Campus-Ministry Association",
+        "tags": ["Religious", "Culture", "Social"]
+    },
+    {
+        "name": "Christians on Campus",
+        "tags": ["Religious", "Social"]
+    },
+    {
+        "name": "Club That Really Likes Anime (CTRL-A)",
+        "tags": ["Arts", "Culture", "Recreation", "Social", "Media"]
+    },
+    {
+        "name": "Concert Band, UW",
+        "tags": ["Music", "Performing Arts", "Arts", "Social"]
+    },
+    {
+        "name": "Contact Lens Interest Club (CLIC)",
+        "tags": ["Health", "Academic", "Professional Development", "Science"]
+    },
+    {
+        "name": "Cooking Club, UW",
+        "tags": ["Food", "Social", "Culture", "Recreation"]
+    },
+    {
+        "name": "Crafts 4 Charity",
+        "tags": ["Charity", "Arts", "Community Service", "Social", "Fundraising", "Volunteering"]
+    },
+    {
+        "name": "Creative Writing Club",
+        "tags": ["Literature", "Arts", "Social"]
+    },
+    {
+        "name": "Creators Collective",
+        "tags": ["Arts", "Media", "Social"]
+    },
+    {
+        "name": "CroWat: Croatian Student Association",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "Culture and Language Exchange Club, UW",
+        "tags": ["Language", "Culture", "Social", "International"]
+    },
+    {
+        "name": "DJ Club, UW",
+        "tags": ["Music", "Arts", "Recreation", "Social", "Performing Arts"]
+    },
+    {
+        "name": "Debate Society, UW (Debating Association)",
+        "tags": ["Debate", "Academic", "Social", "Public Speaking"]
+    },
+    {
+        "name": "Deception Board Games Club",
+        "tags": ["Gaming", "Recreation", "Social", "Board Games"]
+    },
+    {
+        "name": "Egyptian Student Association",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "Eritrean and Ethiopian Students Association",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "Euchre Club, UW",
+        "tags": ["Gaming", "Recreation", "Social"]
+    },
+    {
+        "name": "Fashion for Change",
+        "tags": ["Arts", "Charity", "Performing Arts", "Social", "Fundraising"]
+    },
+    {
+        "name": "Fighting Game Club (UWFGC)",
+        "tags": ["Gaming", "Recreation", "Social", "Video Games", "Competitions"]
+    },
+    {
+        "name": "Films, UW (Former Films Creator Club)",
+        "tags": ["Media", "Arts", "Social", "Film"]
+    },
+    {
+        "name": "Game Development Club",
+        "tags": ["Technology", "Arts", "Academic", "Social"]
+    },
+    {
+        "name": "Global Brigades - Business Brigades",
+        "tags": ["Business", "Volunteering", "International", "Community Service", "Professional Development"]
+    },
+    {
+        "name": "Global Brigades - Medical Brigades",
+        "tags": ["Health", "Volunteering", "International", "Community Service", "Professional Development"]
+    },
+    {
+        "name": "Gujarati Students Association (GSA)",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "HanVoice Waterloo",
+        "tags": ["Advocacy", "International", "Culture", "Social"]
+    },
+    {
+        "name": "Her Campus Waterloo",
+        "tags": ["Media", "Literature", "Women's Empowerment", "Social"]
+    },
+    {
+        "name": "Hera.co",
+        "tags": ["Women's Empowerment", "Leadership", "Networking", "Social", "Mentorship"]
+    },
+    {
+        "name": "Hillel Waterloo",
+        "tags": ["Religious", "Culture", "Social"]
+    },
+    {
+        "name": "Hindu Students Council at the University of Waterloo",
+        "tags": ["Religious", "Culture", "Social"]
+    },
+    {
+        "name": "Hip Hop, UW",
+        "tags": ["Dance", "Performing Arts", "Recreation", "Social", "Music"]
+    },
+    {
+        "name": "Hong Kong Students' Association",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "Humans vs. Zombies Society",
+        "tags": ["Gaming", "Recreation", "Social"]
+    },
+    {
+        "name": "Impact Alliance",
+        "tags": ["Advocacy", "Environmental", "Sustainability", "Community Service", "Social"]
+    },
+    {
+        "name": "Improv Club, UW",
+        "tags": ["Performing Arts", "Arts", "Recreation", "Social", "Comedy"]
+    },
+    {
+        "name": "Indian Cultural Association, UW",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "Indonesian Students' Association",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "Iranian Students' Association of Waterloo",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "Jamnetwork",
+        "tags": ["Music", "Recreation", "Social"]
+    },
+    {
+        "name": "Kingdom Come",
+        "tags": ["Religious", "Advocacy", "Social"]
+    },
+    {
+        "name": "Korean Catholic Gathering",
+        "tags": ["Religious", "Culture", "Social"]
+    },
+    {
+        "name": "Korean Christian Fellowship",
+        "tags": ["Religious", "Culture", "Social"]
+    },
+    {
+        "name": "Latin American Student Association (LASA)",
+        "tags": ["Culture", "Social", "Language", "International"]
+    },
+    {
+        "name": "Law & Business Nexus (LBN)",
+        "tags": ["Law", "Business", "Professional Development", "Networking", "Academic"]
+    },
+    {
+        "name": "Low Vision Interest Group",
+        "tags": ["Health", "Academic", "Professional Development", "Science"]
+    },
+    {
+        "name": "MEDLIFE UW",
+        "tags": ["Health", "Volunteering", "International", "Community Service"]
+    },
+    {
+        "name": "Make-A-Wish UWaterloo Chapter",
+        "tags": ["Charity", "Health", "Volunteering", "Community Service", "Fundraising"]
+    },
+    {
+        "name": "Mambo Club",
+        "tags": ["Dance", "Performing Arts", "Recreation", "Social"]
+    },
+    {
+        "name": "Mandarin Chinese Christian Fellowship",
+        "tags": ["Religious", "Culture", "Language", "Social"]
+    },
+    {
+        "name": "Marketing Association, UW",
+        "tags": ["Business", "Professional Development", "Networking"]
+    },
+    {
+        "name": "Metal KLVB, UW",
+        "tags": ["Music", "Arts", "Social"]
+    },
+    {
+        "name": "MoMoSa",
+        "tags": ["Leadership", "Networking", "Social"]
+    },
+    {
+        "name": "Mock Trial Club",
+        "tags": ["Law", "Academic", "Professional Development", "Competitions"]
+    },
+    {
+        "name": "Model United Nations, UW",
+        "tags": ["International", "Debate", "Academic", "Politics", "Public Speaking", "Competitions"]
+    },
+    {
+        "name": "Musical Interdudes - A Cappella Affiliate",
+        "tags": ["Music", "Performing Arts", "Arts", "Social"]
+    },
+    {
+        "name": "Muslim Students Association - Orphan Sponsorship Program",
+        "tags": ["Charity", "Religious", "Community Service", "Fundraising"]
+    },
+    {
+        "name": "Muslim Students' Association (MSA)",
+        "tags": ["Religious", "Culture", "Social"]
+    },
+    {
+        "name": "North African Student Association",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "Pakistani Students' Association",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "Photography Club, UW",
+        "tags": ["Arts", "Recreation", "Social", "Photography"]
+    },
+    {
+        "name": "Pokémon TCG Club",
+        "tags": ["Gaming", "Recreation", "Social"]
+    },
+    {
+        "name": "Power to Change (Campus Crusade for Christ)",
+        "tags": ["Religious", "Advocacy", "Social"]
+    },
+    {
+        "name": "Pre-Pharmacy, UW",
+        "tags": ["Health", "Academic", "Professional Development", "Science"]
+    },
+    {
+        "name": "Product Management Club",
+        "tags": ["Business", "Technology", "Professional Development", "Networking"]
+    },
+    {
+        "name": "QTPOC KW",
+        "tags": ["LGBTQ+", "Support Group", "Advocacy", "Social"]
+    },
+    {
+        "name": "Riichi Mahjong UW (RMUW)",
+        "tags": ["Gaming", "Recreation", "Culture", "Social", "Board Games"]
+    },
+    {
+        "name": "Romanian Student Association",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "Rubik's Cube Club (formerly Twisty Puzzles), UW",
+        "tags": ["Gaming", "Recreation", "Academic", "Social", "Competitions"]
+    },
+    {
+        "name": "SMILE (Students for Mental Health and Inner Life Enrichment)",
+        "tags": ["Mental Health", "Wellness", "Support Group", "Social"]
+    },
+    {
+        "name": "SOCH Mental Health UW",
+        "tags": ["Mental Health", "Culture", "Support Group", "Social"]
+    },
+    {
+        "name": "Serbian Student Association",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "Sikh Students Association (SSA)",
+        "tags": ["Religious", "Culture", "Social"]
+    },
+    {
+        "name": "Smash, UW",
+        "tags": ["Gaming", "Recreation", "Social", "Video Games", "Competitions"]
+    },
+    {
+        "name": "Socialist Fightback Club at Waterloo University",
+        "tags": ["Advocacy", "Politics", "Social"]
+    },
+    {
+        "name": "Somali Student Association",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "Stocks Club",
+        "tags": ["Finance", "Academic", "Professional Development", "Investment"]
+    },
+    {
+        "name": "Students For Life, UW (UWSFL)",
+        "tags": ["Advocacy", "Support Group", "Social"]
+    },
+    {
+        "name": "Students Supporting Opioid Stewardship (S.S.O.S.)",
+        "tags": ["Health", "Advocacy", "Community Service", "Social"]
+    },
+    {
+        "name": "Sunshine Cheerful Crawling Club (SCCC)",
+        "tags": ["Recreation", "Wellness", "Social"]
+    },
+    {
+        "name": "TMA (Thaqalayn Muslim Association)",
+        "tags": ["Religious", "Culture", "Social"]
+    },
+    {
+        "name": "Tea and Culture Club",
+        "tags": ["Food", "Culture", "Social", "Recreation"]
+    },
+    {
+        "name": "Teaching Students' Association",
+        "tags": ["Academic", "Professional Development", "Networking", "Education"]
+    },
+    {
+        "name": "Tech+ UW",
+        "tags": ["Technology", "Diversity", "Professional Development", "Networking", "Women's Empowerment"]
+    },
+    {
+        "name": "Technology in Pharmacy Network",
+        "tags": ["Health", "Technology", "Professional Development", "Networking"]
+    },
+    {
+        "name": "The AcaBellas - A Cappella Affiliate",
+        "tags": ["Music", "Performing Arts", "Arts", "Women's Empowerment", "Social"]
+    },
+    {
+        "name": "The Bhakti Yoga Club",
+        "tags": ["Wellness", "Religious", "Culture", "Social"]
+    },
+    {
+        "name": "The Circle K International Club of University of Waterloo",
+        "tags": ["Volunteering", "Community Service", "Leadership", "Social"]
+    },
+    {
+        "name": "The Islamic Information Center of the University Waterloo (IICUW)",
+        "tags": ["Religious", "Culture", "Advocacy", "Social"]
+    },
+    {
+        "name": "The Unaccompanied Minors - A Cappella Affiliate",
+        "tags": ["Music", "Performing Arts", "Arts", "Social"]
+    },
+    {
+        "name": "The University of Waterloo Project Rozana Chapter",
+        "tags": ["Advocacy", "Health", "International", "Community Service"]
+    },
+    {
+        "name": "The Water Boys - A Cappella Affiliate",
+        "tags": ["Music", "Performing Arts", "Arts", "Social"]
+    },
+    {
+        "name": "The Women's Network (TWN)",
+        "tags": ["Women's Empowerment", "Professional Development", "Networking", "Social", "Mentorship"]
+    },
+    {
+        "name": "Turkish Students Association",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "UW ACE Chapter",
+        "tags": ["Business", "Competitions", "Professional Development", "Networking"]
+    },
+    {
+        "name": "UW Blockchain Club",
+        "tags": ["Technology", "Finance", "Academic", "Networking", "Innovation"]
+    },
+    {
+        "name": "UW Board Games Club",
+        "tags": ["Gaming", "Recreation", "Social", "Board Games"]
+    },
+    {
+        "name": "UW Book Club",
+        "tags": ["Literature", "Arts", "Social"]
+    },
+    {
+        "name": "UW Canadian Association for Global Health (UW CAGH)",
+        "tags": ["Health", "Academic", "Professional Development", "Networking", "International"]
+    },
+    {
+        "name": "UW Cancer Foundation",
+        "tags": ["Charity", "Health", "Community Service", "Fundraising"]
+    },
+    {
+        "name": "UW Charity Knitting Circle",
+        "tags": ["Arts", "Charity", "Community Service", "Social", "Volunteering"]
+    },
+    {
+        "name": "UW Chinese Instrumental Orchestra",
+        "tags": ["Music", "Performing Arts", "Culture", "Social"]
+    },
+    {
+        "name": "UW Cuban Salsa Club",
+        "tags": ["Dance", "Performing Arts", "Recreation", "Culture", "Social"]
+    },
+    {
+        "name": "UW Cyber Security",
+        "tags": ["Technology", "Academic", "Professional Development", "Networking"]
+    },
+    {
+        "name": "UW Dhamaka",
+        "tags": ["Dance", "Performing Arts", "Culture", "Social"]
+    },
+    {
+        "name": "UW EmpowerCycle",
+        "tags": ["Advocacy", "Women's Empowerment", "Health", "Community Service", "Fundraising"]
+    },
+    {
+        "name": "UW Entrepreneurship Society",
+        "tags": ["Entrepreneurship", "Business", "Professional Development", "Networking", "Innovation"]
+    },
+    {
+        "name": "UW Futures in Rehabilitation Sciences",
+        "tags": ["Health", "Academic", "Professional Development", "Networking", "Science"]
+    },
+    {
+        "name": "UW Geospatial Club",
+        "tags": ["Technology", "Academic", "Professional Development", "Networking", "Science"]
+    },
+    {
+        "name": "UW Gives Blood",
+        "tags": ["Health", "Community Service", "Volunteering", "Social", "Fundraising"]
+    },
+    {
+        "name": "UW Go Club",
+        "tags": ["Gaming", "Recreation", "Culture", "Social", "Board Games"]
+    },
+    {
+        "name": "UW Kpop Club",
+        "tags": ["Music", "Culture", "Social", "Dance"]
+    },
+    {
+        "name": "UW Management Consulting Club",
+        "tags": ["Business", "Professional Development", "Networking"]
+    },
+    {
+        "name": "UW Mario Kart",
+        "tags": ["Gaming", "Recreation", "Social", "Video Games"]
+    },
+    {
+        "name": "UW Mehfil",
+        "tags": ["Music", "Culture", "Social", "Performing Arts"]
+    },
+    {
+        "name": "UW Operation Smile",
+        "tags": ["Charity", "Health", "Community Service", "Fundraising"]
+    },
+    {
+        "name": "UW Parks Canada Club",
+        "tags": ["Environmental", "Recreation", "Community Service", "Social"]
+    },
+    {
+        "name": "UW Poker Studies Club",
+        "tags": ["Gaming", "Recreation", "Social"]
+    },
+    {
+        "name": "UW Pre-Dental Club",
+        "tags": ["Health", "Academic", "Professional Development", "Science"]
+    },
+    {
+        "name": "UW Pre-Med Club",
+        "tags": ["Health", "Academic", "Professional Development", "Science"]
+    },
+    {
+        "name": "UW Quizbowl",
+        "tags": ["Academic", "Recreation", "Social", "Competitions"]
+    },
+    {
+        "name": "UW Relay for Life",
+        "tags": ["Charity", "Health", "Community Service", "Social", "Fundraising"]
+    },
+    {
+        "name": "UW SafeTails Initiative",
+        "tags": ["Advocacy", "Charity", "Community Service", "Fundraising"]
+    },
+    {
+        "name": "UW Scrabble",
+        "tags": ["Gaming", "Recreation", "Social", "Board Games"]
+    },
+    {
+        "name": "UW Society of Addictions Awareness (UW SAA)",
+        "tags": ["Health", "Advocacy", "Support Group", "Social"]
+    },
+    {
+        "name": "UW Stem Cell Club",
+        "tags": ["Health", "Advocacy", "Community Service", "Volunteering", "Fundraising"]
+    },
+    {
+        "name": "UW Street Dance",
+        "tags": ["Dance", "Performing Arts", "Recreation", "Social", "Music"]
+    },
+    {
+        "name": "UW Tetris Club",
+        "tags": ["Gaming", "Recreation", "Social", "Video Games"]
+    },
+    {
+        "name": "UW VR",
+        "tags": ["Technology", "Academic", "Professional Development", "Gaming", "Innovation"]
+    },
+    {
+        "name": "UW against Child Abuse",
+        "tags": ["Advocacy", "Community Service", "Charity"]
+    },
+    {
+        "name": "UWBobaTime",
+        "tags": ["Food", "Culture", "Social", "Recreation"]
+    },
+    {
+        "name": "UWTSS - UW Taiwanese Student Society",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "UWVSA (University of Waterloo Vietnamese Student Association)",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "UWaterloo Chai and Verse",
+        "tags": ["Literature", "Culture", "Social"]
+    },
+    {
+        "name": "UWaterloo Meditates",
+        "tags": ["Wellness", "Mental Health", "Support Group", "Social"]
+    },
+    {
+        "name": "Universal Finance Organization, UW",
+        "tags": ["Finance", "Academic", "Professional Development"]
+    },
+    {
+        "name": "University of Waterloo Airsoft and Precision Sports Club (UWAPC)",
+        "tags": ["Sports", "Recreation", "Social", "Gaming"]
+    },
+    {
+        "name": "University of Waterloo Bhangra",
+        "tags": ["Dance", "Performing Arts", "Culture", "Social"]
+    },
+    {
+        "name": "University of Waterloo Canadian Association on Gerontology Student Connection (UWCAG)",
+        "tags": ["Health", "Academic", "Professional Development", "Networking", "Science"]
+    },
+    {
+        "name": "University of Waterloo Cantonese Chinese Christian Fellowship",
+        "tags": ["Religious", "Culture", "Language", "Social"]
+    },
+    {
+        "name": "University of Waterloo Chinese Classical Dance Club",
+        "tags": ["Dance", "Performing Arts", "Culture", "Social"]
+    },
+    {
+        "name": "University of Waterloo Conservatives",
+        "tags": ["Politics", "Networking", "Social", "Advocacy"]
+    },
+    {
+        "name": "University of Waterloo Entomology Club",
+        "tags": ["Science", "Academic", "Environmental", "Social"]
+    },
+    {
+        "name": "University of Waterloo Filipino Students' Association",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "University of Waterloo Global Dental Brigades (UW GDB)",
+        "tags": ["Health", "Volunteering", "International", "Community Service"]
+    },
+    {
+        "name": "University of Waterloo Korean Students’ Association",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "University of Waterloo Malayalee Association",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "University of Waterloo Moot Court",
+        "tags": ["Law", "Academic", "Professional Development", "Competitions", "Public Speaking"]
+    },
+    {
+        "name": "University of Waterloo New Democratic Party",
+        "tags": ["Politics", "Networking", "Social", "Advocacy"]
+    },
+    {
+        "name": "University of Waterloo Zoology Club",
+        "tags": ["Science", "Academic", "Environmental", "Social"]
+    },
+    {
+        "name": "University of Waterloo's Beauty Club (UWBC)",
+        "tags": ["Wellness", "Arts", "Social"]
+    },
+    {
+        "name": "University of Waterloo’s Neuroscience Association (UWNSA)",
+        "tags": ["Science", "Academic", "Professional Development", "Networking"]
+    },
+    {
+        "name": "Visual Arts Club, UW",
+        "tags": ["Arts", "Recreation", "Social"]
+    },
+    {
+        "name": "Voices for Palestine",
+        "tags": ["Advocacy", "Culture", "International", "Social"]
+    },
+    {
+        "name": "WaterBoo!",
+        "tags": ["Media", "Recreation", "Social"]
+    },
+    {
+        "name": "Waterloo Arab Student Association",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "Waterloo Hockey Club",
+        "tags": ["Sports", "Recreation", "Social"]
+    },
+    {
+        "name": "Waterloo Ismaili Students' Association",
+        "tags": ["Religious", "Culture", "Social"]
+    },
+    {
+        "name": "Waterloo Movie Watchers Club",
+        "tags": ["Media", "Recreation", "Social", "Film"]
+    },
+    {
+        "name": "Waterloo Punjabi Association (WPA)",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "Waterloo Real Estate Association",
+        "tags": ["Business", "Professional Development", "Networking", "Investment"]
+    },
+    {
+        "name": "Waterloo Science Fiction & Fantasy Club (WATSFIC)",
+        "tags": ["Gaming", "Literature", "Recreation", "Social"]
+    },
+    {
+        "name": "Waterloo Snow Coalition",
+        "tags": ["Sports", "Recreation", "Social", "Environmental"]
+    },
+    {
+        "name": "Waterloo Students and Microbiology (WatSAM)",
+        "tags": ["Science", "Academic", "Professional Development", "Networking"]
+    },
+    {
+        "name": "Waterloo Sudanese Student Association",
+        "tags": ["Culture", "Social", "International"]
+    },
+    {
+        "name": "Waterloo Warriors Gaana",
+        "tags": ["Dance", "Performing Arts", "Culture", "Social"]
+    },
+    {
+        "name": "Women in Pre-Law",
+        "tags": ["Law", "Women's Empowerment", "Professional Development", "Networking", "Mentorship"]
+    },
+    {
+        "name": "Women in Science, Technology, Engineering, and Mathematics (WiSTEM)",
+        "tags": ["Science", "Technology", "Engineering", "Women's Empowerment", "Professional Development", "Networking", "Mentorship"]
+    },
+    {
+        "name": "Young Liberals, UW",
+        "tags": ["Politics", "Networking", "Social", "Advocacy"]
+    },
+    {
+        "name": "Yugioh Club",
+        "tags": ["Gaming", "Recreation", "Social"]
+    },
+    {
+        "name": "oSTEM @ UWaterloo",
+        "tags": ["LGBTQ+", "Science", "Technology", "Engineering", "Support Group", "Professional Development", "Networking"]
+    },
+    {
+        "name": "osu! Club, UW",
+        "tags": ["Gaming", "Recreation", "Social", "Video Games"]
+    },
+    {
+        "name": "uWaTNA",
+        "tags": ["Culture", "Social", "International"]
+    }
+]
