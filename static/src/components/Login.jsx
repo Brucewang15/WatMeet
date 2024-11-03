@@ -18,68 +18,15 @@ const Login = () => {
         });
     });
 
-    // const handleLogin = async () => {
-    //     try {
-    //         const response = await fetch('http://127.0.0.1:8000/users/login/', {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             body: JSON.stringify({
-    //                 email: email,
-    //                 password: password
-    //             })
-    //         })
-    //         if (response.ok) {
-    //             const data = await response.json();
-    //             console.log(data)
-    //             if (data.success) {
-    //                 console.log('ok')
-    //                 const tokenResponse = await fetch('http://127.0.0.1:8000/api/token/', {
-    //                     method: 'POST',
-    //                     headers: {
-    //                         'Content-Type': 'application/json',
-    //                     },
-    //                     body: JSON.stringify({
-    //                         username: email,
-    //                         password: password
-    //                     }),
-    //                 });
-    //                 if (tokenResponse.ok) {
-    //                     const tokenData = await tokenResponse.json();
-    //                     console.log('JWT Token:', tokenData);
-
-    //                     // Store tokens securely
-    //                     localStorage.setItem('access_token', tokenData.access);
-    //                     localStorage.setItem('refresh_token', tokenData.refresh);
-
-    //                     // Redirect to the dashboard or protected route
-    //                     window.location.href = '/';
-    //                 } else {
-    //                     console.log('Failed to obtain JWT token');
-    //                 }
-    //             }
-    //             else if (data.reason == 'Verify email') {
-    //                 setIsEmailSent(true)
-    //                 console.log('email is sent')
-    //             }
-    //             else {
-    //                 console.log(data.reason)
-    //             }
-    //         }
-    //     }
-    //     catch (err) {
-    //         console.log('error', err)
-    //     }
-    // }
     const dispatch = useDispatch();
     const auth = useSelector(state => state.auth);
     const { emailVerificationRequired, isAuthenticated, error } = auth;
     const handleLogin = () => {
         dispatch(login(email, password))
     }
-    if (isAuthenticated ) {
-        console.log('is authed')
+    if (isAuthenticated) {
+        console.log('is authed', isAuthenticated)
+        window.location.href='/'
     }
     else if (emailVerificationRequired) {
         console.log('sent email')
