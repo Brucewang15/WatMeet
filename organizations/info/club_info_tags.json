@@ -1,6 +1,6 @@
 [
     {
-        "name": "Breakers, UW",
+        "name": "Breakers,UW",
         "tags": ["Dance", "Performing Arts", "Recreation", "Social"]
     },
     {
@@ -8,7 +8,7 @@
         "tags": ["Religious", "Wellness", "Culture", "Social"]
     },
     {
-        "name": "Campus Association for Bahá’í Studies at UW (CABS)",
+        "name": "Campus Association for Bah\u00e1\u02bc\u00ed Studies at UW (CABS)",
         "tags": ["Religious", "Culture", "Advocacy", "Social"]
     },
     {
@@ -32,7 +32,7 @@
         "tags": ["Religious", "Culture", "Language", "Social"]
     },
     {
-        "name": "Chinese Hip-Hop (Rap) Club",
+        "name": "Chinese Hip-Hop(Rap) Club",
         "tags": ["Music", "Culture", "Arts", "Social"]
     },
     {
@@ -304,11 +304,11 @@
         "tags": ["Culture", "Social", "International"]
     },
     {
-        "name": "Rubik's Cube Club (formerly Twisty Puzzles), UW",
+        "name": "Rubik's Cube Club (formerly twisty puzzles), UW",
         "tags": ["Gaming", "Recreation", "Academic", "Social", "Competitions"]
     },
     {
-        "name": "SMILE (Students for Mental Health and Inner Life Enrichment)",
+        "name": "SMILE (Students for Mental health and Inner Life Enrichment)",
         "tags": ["Mental Health", "Wellness", "Support Group", "Social"]
     },
     {
@@ -380,7 +380,7 @@
         "tags": ["Wellness", "Religious", "Culture", "Social"]
     },
     {
-        "name": "The Circle K International Club of University of Waterloo",
+        "name": "The Circle K International Club of University of Waterloo\u201d",
         "tags": ["Volunteering", "Community Service", "Leadership", "Social"]
     },
     {
@@ -532,7 +532,7 @@
         "tags": ["Health", "Advocacy", "Support Group", "Social"]
     },
     {
-        "name": "UW Stem Cell Club",
+        "name": "UW Stem Cell Club (Formerly UW One Match)",
         "tags": ["Health", "Advocacy", "Community Service", "Volunteering", "Fundraising"]
     },
     {
