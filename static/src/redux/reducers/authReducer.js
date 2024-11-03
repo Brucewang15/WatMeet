@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from '../actions/types';
+import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT, EMAIL_VERIFICATION_REQUIRED } from '../actions/types';
 
 const initialState = {
     isAuthenticated: false,
@@ -21,14 +21,18 @@ export default function authReducer(state = initialState, action) {
                 loading: false,
                 error: null,
             };
+        case EMAIL_VERIFICATION_REQUIRED:
+            return {
+                ...state,
+                emailVerificationRequired: true,
+                isAuthenticated: false,
+            };
         case LOGIN_FAIL:
-        case LOGOUT:
             return {
                 ...state,
                 isAuthenticated: false,
                 accessToken: null,
                 refreshToken: null,
-                loading: false,
                 error: payload,
             };
         default:

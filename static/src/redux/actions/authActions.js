@@ -1,4 +1,4 @@
-import { LOGIN_FAIL, LOGIN_SUCCESS } from "./types";
+import { LOGIN_FAIL, LOGIN_SUCCESS, EMAIL_VERIFICATION_REQUIRED } from "./types";
 
 const login = (email, password) => async dispatch => {
     try {
@@ -36,14 +36,12 @@ const login = (email, password) => async dispatch => {
                     console.log('Failed to obtain JWT token');
                 }
             }
-            else {
-                console.log(data.reason)
-                dispatch({
-                    type: LOGIN_FAIL,
-                    payload: data.reason
-                })
+            else if (data.reason === 'Verify email') {
+                dispatch({ type: EMAIL_VERIFICATION_REQUIRED });
+            } else {
+                dispatch({ type: LOGIN_FAIL, payload: data.reason });
             }
-            
+
         }
     }
     catch (err) {

@@ -81,12 +81,15 @@ const Login = () => {
     if (isAuthenticated ) {
         console.log('is authed')
     }
-    if (emailVerificationRequired) {
+    else if (emailVerificationRequired) {
         console.log('sent email')
+    }
+    else {
+        console.log(error)
     }
     return (
         <div className='main-Container'>
-            {!isEmailSent ? (
+            {!emailVerificationRequired ? (
                 <div className="form-container">
                     <p className="title">Login</p>
                     <div className="form">
