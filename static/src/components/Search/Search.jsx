@@ -11,9 +11,16 @@ const Search = ({setSearchPropt}) => {
         setSearchPropt(userInput);
     }
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            handleClick();
+        }
+    }
+
     return (
         <div className="searchBox">
-            <input className="searchInput" type="text" name="" placeholder="Search something" onChange={(e) => setUserInput(e.target.value)}/>
+            <input className="searchInput" type="text" name="" placeholder="Search something" onChange={(e) => setUserInput(e.target.value)} onKeyDown={handleKeyDown}/>
             <button className="searchButton" href="#" onClick={handleClick}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
                     <g clipPath="url(#clip0_2_17)">
