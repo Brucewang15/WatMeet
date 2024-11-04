@@ -11,6 +11,13 @@ const Search = ({ setSearchPropt }) => {
         setSearchPropt(userInput);
     }
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            handleClick();
+        }
+    }
+
     return (
         <div className="searchBox">
             <input
