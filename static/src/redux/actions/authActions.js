@@ -74,6 +74,7 @@ export const loadUser = () => dispatch => {
     const refreshToken = localStorage.getItem('refresh_token');
 
     if (accessToken) {
+        console.log(accessToken, refreshToken)
         dispatch({
             type: LOGIN_SUCCESS,
             payload: {
