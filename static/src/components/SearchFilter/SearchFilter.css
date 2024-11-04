@@ -1,36 +1,108 @@
 .filterContainer {
-    border: 1px solid grey;
-    border-radius: 0 0 5px 5px;
-
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #f8f9fa;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-
-
-    width: 500px;
+    font-family: Arial, sans-serif;
 }
 
 .titleContainer {
-    position: relative;
-    height: 20%;
-
-    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
+.title {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+}
 
+/* Rating Container */
 .ratingContainer {
-    position: relative;
-    height: 50%;
-
-    padding: 20px;
+    margin-bottom: 20px;
 }
 
+.showRating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.ratingText {
+    font-size: 1em;
+    color: #555;
+}
+
+.currentRating {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #007bff; /* Highlight color */
+}
+
+.ratingInput {
+    width: 100%;
+    margin-top: 10px;
+
+}
+
+/* Organization Container */
 .orgContainer {
-    position: relative;
-    height: 20%;
+    margin-bottom: 20px;
+}
+
+.orgType {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.orgsContainer {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.orgs {
+    padding: 8px 15px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    color: #333;
+    font-size: 0.9em;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.orgs:hover {
+    background-color: #ced4da;
+}
+
+/* Button Styles */
+.filterClear {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    color: white;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filterClear:hover {
+    background-color: #c82333;
+}
+
+
+@media (max-width: 300px) {
+    .orgsContainer {
+        flex-direction: column; /* Stack boxes vertically */
+    }
 }

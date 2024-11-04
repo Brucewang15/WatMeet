@@ -5,6 +5,7 @@ import ClubsDisplay from "./ClubsDisplay/ClubsDisplay";
 import "./MainPage.css"
 import Header from '../Header';
 import DisplayCard from '../UiComponents/DisplayCard';
+import SearchFilter from '../SearchFilter/SearchFilter';
 
 //import clubs_info from "..../webscraping/club_info.json";
 
@@ -13,6 +14,7 @@ const MainPage = () => {
 
     const [clubs, setClubs] = useState([]);
     const [searchPropt, setSearchPrompt] = useState("");
+    const [minRating, setMinRating] = useState(0);
     const [selectedType, setSelectedType] = useState('All');
 
     const handleSelect = (type) => {
@@ -26,7 +28,7 @@ const MainPage = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ searchPropt: searchPropt, selectedType: selectedType })
+                body: JSON.stringify({ searchPropt: searchPropt, selectedType: selectedType, minRating: minRating})
             })
             if (response.ok) {
                 try {
@@ -38,11 +40,13 @@ const MainPage = () => {
             }
         }
         get_club_data()
-    }, [searchPropt, selectedType])   
+    }, [searchPropt, minRating, selectedType])   
 
     return <>
         <Header setSearchPropt={setSearchPrompt} />
         <div className="mainContainer">
+            <SearchFilter setRating={setMinRating}/>
+
             <div className="chooseOrgType">
                 {['All', 'Clubs', 'Design Teams', 'Sports', 'Intramurals'].map((type) => (
                     <div

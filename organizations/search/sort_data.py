@@ -22,4 +22,6 @@ def sort_data(data, search_propt):
         return list(map(lambda element: element[1], data_with_num))
     
     sorted_data = list(filter(lambda elem: elem[0] > 0.2, data_with_num))
-    return list(map(lambda elem: elem[1], sorted_data))
+    result = list(map(lambda elem: elem[1], sorted_data))
+
+    return result
