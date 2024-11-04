@@ -71,6 +71,12 @@ def rate_comment(request):
     comment = Comment.objects.get(comment_id=comment_id)
     # comment = get_object_or_404(Comment, comment_id=comment_id)
     
+    user_rating = UserCommentRating.objects.filter(user_id=user_id, comment_id=comment_id).first()
+
+    if user_rating:
+        # User has already rated the comment
+        return JsonResponse({'success': False, 'message': 'You have already rated this comment.'})
+
     if upvote:
         comment.upvote_num += 1
     elif downvote:
@@ -85,6 +91,6 @@ def rate_comment(request):
             'upvote': upvote,
             'downvote': downvote,
             'created_at': timezone.now()  # Sets the time when the user rated the comment
-        }
+        }   
     )
     return JsonResponse({'success': True})

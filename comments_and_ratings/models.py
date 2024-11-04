@@ -26,6 +26,9 @@ class UserCommentRating(models.Model):
     created_at = models.DateTimeField(
         default=timezone.make_aware(datetime(2001, 9, 11, 8, 46))
     )
+    class Meta:
+    # Adding constraints to ensure one rating per user per comment
+        unique_together = ('user', 'comment')
 
     def __str__(self):
         return f"{self.user} - {self.comment}"
