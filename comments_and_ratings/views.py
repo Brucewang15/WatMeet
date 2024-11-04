@@ -68,29 +68,49 @@ def rate_comment(request):
     upvote = body_data.get('upvote')
     downvote = body_data.get('downvote')
     print(comment_id, user_id, upvote, downvote)
+
+    # Fetch the comment object
     comment = Comment.objects.get(comment_id=comment_id)
-    # comment = get_object_or_404(Comment, comment_id=comment_id)
-    
+    # Fetch the existing user rating for the comment, if it exists
     user_rating = UserCommentRating.objects.filter(user_id=user_id, comment_id=comment_id).first()
-
+    print(user_rating)
+    print("gay")
     if user_rating:
-        # User has already rated the comment
-        return JsonResponse({'success': False, 'message': 'You have already rated this comment.'})
-
-    if upvote:
-        comment.upvote_num += 1
-    elif downvote:
-        comment.downvote_num += 1
-
-    comment.save()
-
-    UserCommentRating.objects.update_or_create(
-        user_id=user_id,
-        comment_id=comment_id,
-        defaults={
-            'upvote': upvote,
-            'downvote': downvote,
-            'created_at': timezone.now()  # Sets the time when the user rated the comment
-        }   
-    )
+        # User has already rated the comment - check if they are changing their vote
+        if upvote and not user_rating.upvote:
+            # User changes from downvote to upvote
+            comment.upvote_num += 1
+            comment.downvote_num -= 1
+            user_rating.upvote = True
+            user_rating.downvote = False
+        elif downvote and not user_rating.downvote:
+            # User changes from upvote to downvote
+            comment.downvote_num += 1
+            comment.upvote_num -= 1
+            user_rating.upvote = False
+            user_rating.downvote = True
+        else:
+            # If the user is trying to vote the same way again, return an error
+            return JsonResponse({'success': False, 'message': 'You have already rated this comment.'})
+        
+        # Save changes to comment and user rating
+        comment.save()
+        user_rating.save()
+    else:
+        # If no previous rating exists, create a new one
+        if upvote:
+            comment.upvote_num += 1
+        elif downvote:
+            comment.downvote_num += 1
+        
+        comment.save()
+        
+        UserCommentRating.objects.create(
+            user_id=user_id,
+            comment_id=comment_id,
+            upvote=upvote,
+            downvote=downvote,
+            created_at=timezone.now()  # Set the time when the user rated the comment
+        )
+    
     return JsonResponse({'success': True})
