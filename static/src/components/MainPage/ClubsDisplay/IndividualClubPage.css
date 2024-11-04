@@ -9,9 +9,8 @@
     justify-content: center;
 }
 
-.club-about-section-wrapper {
+.club-about-section-wrapper {}
 
-}
 .club-about-section {
     max-width: 1000px;
     display: flex;
@@ -20,6 +19,7 @@
     margin-left: 20px;
     margin-right: 20px;
 }
+
 .club-about-section h2 {
     font-size: 2em;
     margin-bottom: 10px;
@@ -47,6 +47,7 @@
     border-radius: 5px;
     margin-bottom: 20px;
 }
+
 .leaveACommentWrapper {
     display: flex;
     width: 100%;
@@ -55,10 +56,12 @@
     align-items: center;
     padding: 0 20px 0 20px;
 }
+
 .leaveACommentText {
     font-weight: 500;
     font-size: 20px;
 }
+
 .bookmarkBtn {
     width: 180px;
     height: 50px;
@@ -379,6 +382,7 @@
     height: auto;
     cursor: pointer;
 }
+
 .like-wrapper .voteButton {
     width: 75%;
     color: white;
@@ -389,6 +393,7 @@
     border: 1px solid lightgray;
     border-radius: 50%;
 }
+
 .like-text {
     color: #313131;
     font-family: Arial, sans-serif;
@@ -461,6 +466,7 @@
     width: 100%;
     gap: 25px;
 }
+
 .ratingRight {
     display: flex;
     flex-direction: column;
@@ -468,6 +474,7 @@
     align-items: center;
     text-align: center;
 }
+
 .ratingNumber {
     font-weight: bold;
     font-size: 2rem;
@@ -503,12 +510,14 @@
     flex-direction: column;
     gap: 2px;
 }
+
 .ratingBarWrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 8px;
 }
+
 .ratingBar {
     background-color: lightgray;
     width: 400px;
@@ -516,12 +525,44 @@
     border-radius: 7.5px;
     position: relative;
 }
+
 .ratingBar::after {
     content: "";
     background-color: #faab00;
     height: 12px;
     border-radius: 7.5px;
     width: calc(var(--ratingBar) * 1%);
-    display: block;     /* Add this */
-    position: absolute; /* Add this */
+    display: block;
+    /* Add this */
+    position: absolute;
+    /* Add this */
+}
+
+
+/* Overlay to darken the background */
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Ensure it sits above other elements */
+}
+
+/* Popup content styling */
+.popupContent {
+    /* White background */
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 500px;
+    /* Adjust as needed */
+    width: 100%;
+    box-sizing: border-box;
 }

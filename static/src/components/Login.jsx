@@ -38,7 +38,7 @@ const Login = () => {
         <div className='main-Container'>
             {!emailVerificationRequired ? (
                 <div className="form-container">
-                    <p className="title">Login</p>
+                    <p className="generalTitle">Login</p>
                     <div className="form">
                         <div className="input-group">
                             <label for="email">Email</label>
