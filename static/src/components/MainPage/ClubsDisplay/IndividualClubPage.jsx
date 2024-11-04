@@ -20,7 +20,18 @@ const IndividualClubPage = () => {
     const { orgId } = useParams()
 
     const auth = useSelector(state => state.auth)
-    const {isAuthenticated} = auth;
+    const { isAuthenticated, accessToken } = auth;
+    useEffect(() => {
+        if (isAuthenticated && accessToken) {
+            try {
+                const arrayToken = accessToken.split('.');
+                const tokenPayload = JSON.parse(atob(arrayToken[1]));
+                setUserId(tokenPayload.user_id);
+            } catch (error) {
+                console.error('Failed to parse access token:', error);
+            }
+        }
+    }, [isAuthenticated, accessToken]);
     console.log(isAuthenticated)
 
     //Checks if a user is logged in or not. If logged in, sets userId.
@@ -91,6 +102,7 @@ const IndividualClubPage = () => {
 
     const ratecomment = async (commentId, userId, upvote, downvote) => {
         try {
+            console.log(userId)
             const response = await fetch('http://127.0.0.1:8000/comments/rate_comment/', {
                 method: 'POST', // Use POST for creating/updating resources
                 headers: {
@@ -103,14 +115,15 @@ const IndividualClubPage = () => {
                     downvote: downvote,
                 }),
             });
-    
+
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-    
+
             const data = await response.json();
             if (data.success) {
                 console.log('Comment rating updated successfully:', data);
+                getAllCommentsDB()
                 // Optionally, update your UI to reflect the new like status here
             } else {
                 console.error('Failed to update comment rating:', data);
@@ -119,7 +132,6 @@ const IndividualClubPage = () => {
             console.error('Error:', error);
         }
     };
-      
 
     return (
         <div className="individualClubContainer">
@@ -147,7 +159,7 @@ const IndividualClubPage = () => {
                                         '--ratingBar': clubInfo.number_of_star_rating
                                             ? (allCommentsRatings[reversedIndex - 1] / clubInfo.number_of_star_rating) * 100
                                             : 0,
-                                        }}
+                                    }}
                                 ></div>
                             </div>
                         );
@@ -170,7 +182,7 @@ const IndividualClubPage = () => {
                 <p className="text">Comment</p>
             </button>
 
-            {commentState && <div className="commentPopUp"><CommentPopUp userId={userId} setCommentState={setCommentState} onCommentPosted={() => {getAllCommentsDB(); getClubData();}} /> </div>}
+            {commentState && <div className="commentPopUp"><CommentPopUp userId={userId} setCommentState={setCommentState} onCommentPosted={() => { getAllCommentsDB(); getClubData(); }} /> </div>}
 
             <div className="commentCard">
                 <span className="commentTitle">Comments</span>
@@ -179,7 +191,7 @@ const IndividualClubPage = () => {
 
                         <div className="comments">
                             <div class="like-wrapper">
-                                <img className='voteButton' src={upvote} alt="upvote" onClick={() => ratecomment(comment.comment_id, userId, true, false)}  /> 
+                                <img className='voteButton' src={upvote} alt="upvote" onClick={() => ratecomment(comment.comment_id, userId, true, false)} />
                                 <div className="like-text">{comment.comment_upvote - comment.comment_downvote}</div>
                                 <img className='voteButton' src={downvote} alt="downvote" onClick={() => ratecomment(comment.comment_id, userId, false, true)} />
                             </div>
