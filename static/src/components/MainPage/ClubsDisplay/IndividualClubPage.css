@@ -36,11 +36,34 @@
 
 
 /* From Uiverse.io by vinodjangid07 */
+.leaveAComment {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    max-width: 700px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0 2px gray;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.leaveACommentWrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 20px;
+}
+.leaveACommentText {
+    font-weight: 500;
+    font-size: 20px;
+}
 .bookmarkBtn {
-    width: 130px;
-    height: 40px;
+    width: 180px;
+    height: 50px;
     border-radius: 40px;
-    border: none;
+    border: 1px solid gray;
     background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
@@ -81,7 +104,7 @@
 }
 
 .bookmarkBtn:hover .IconContainer {
-    width: 120px;
+    width: 160px;
     border-radius: 40px;
     transition-duration: .3s;
 }
