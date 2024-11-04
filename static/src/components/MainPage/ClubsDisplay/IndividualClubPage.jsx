@@ -179,9 +179,9 @@ const IndividualClubPage = () => {
 
                         <div className="comments">
                             <div class="like-wrapper">
-                                <img className='voteButton' src={upvote} alt="" /> 
-                                <div className="like-text">{comment.comment_upvote}</div>
-                                <img className='voteButton' src={downvote} alt="" />
+                                <img className='voteButton' src={upvote} alt="upvote" onClick={() => ratecomment(comment.comment_id, userId, true, false)}  /> 
+                                <div className="like-text">{comment.comment_upvote - comment.comment_downvote}</div>
+                                <img className='voteButton' src={downvote} alt="downvote" onClick={() => ratecomment(comment.comment_id, userId, false, true)} />
                             </div>
 
                             <div className="comment-container">
