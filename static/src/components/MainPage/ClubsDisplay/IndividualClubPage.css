@@ -346,21 +346,31 @@
 
 /* From Uiverse.io by SalladShooter */
 .like-wrapper {
-    --gap: 0.5em;
-    --radius: 0.35em;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: center;
-    --dot-bg: #212121;
-    --dot-color: #313131;
-    --dot-size: 1px;
-    --dot-space: 22px;
-    height: 25px;
     width: 25px;
-    padding: 0.5em;
+    gap: 5px;
+    padding-left: 5px;
+    height: auto;
     cursor: pointer;
+}
+.like-wrapper .voteButton {
+    width: 75%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+}
+.like-text {
+    color: #313131;
+    font-family: Arial, sans-serif;
+    font-weight: bolder;
+    position: relative;
 }
 
 .check[type="checkbox"] {
@@ -397,14 +407,7 @@
     display: none;
 }
 
-.like-text {
-    padding: 0.5em;
-    color: #313131;
-    font-family: Arial, sans-serif;
-    font-weight: bolder;
-    position: relative;
-    top: 25px;
-}
+
 
 @keyframes wiggle {
 
