@@ -3,18 +3,33 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 from organizations.models import Organization
 
-from .sort.sort_data import sort_data
+from .search.sort_data import sort_data
 import json
 
 # Create your views here.
 
 def get_club_data(request):
-    data = Organization.objects.all().values()
+    
+    selectedType = json.loads(request.body).get("selectedType")
+    if selectedType == 'All':
+        data = Organization.objects.all().values()
+    elif selectedType == 'Clubs':
+        data = Organization.objects.filter(org_type = 'club').values()
+    elif selectedType == 'Design Teams':
+        data = Organization.objects.filter(org_type = 'design').values()
+    elif selectedType == 'Sports':
+        data = Organization.objects.filter(org_type = 'sportclub')
+    elif selectedType == 'Intramurals':
+        data = Organization.objects.filter(org_type = 'Intramurals')
+
     search_propt = json.loads(request.body).get("searchPropt")
-    print(search_propt)
+    minRating = json.loads(request.body).get("minRating")
 
     data = sort_data(data, search_propt)
+
+    #filter out everything below minRating
     
+    data = list(filter(lambda elem: Organization.objects.get(org_name=elem["org_name"]).star_rating >= float(minRating), data))
     return JsonResponse(data, safe=False)
 
 def get_individual_club_data(request):

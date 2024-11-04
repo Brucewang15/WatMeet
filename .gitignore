@@ -2,6 +2,7 @@ venv/
 users/scripts/confirmationEmail/passwords.py
 
 __pycache__/
+node_modules
 *.pyc
 
 db.sqlite3
