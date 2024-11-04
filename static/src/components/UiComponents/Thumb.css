@@ -1,0 +1,169 @@
+/* From Uiverse.io by mahiatlinux */
+.like-dislike-container {
+    --primary-blue: #3498db;
+    --light-blue: #5dade2;
+    --dark-blue: #2980b9;
+    --text-color: #ecf0f1;
+    --background: linear-gradient(#2c3e50, #34495e);
+    --shadow: 0 5px 15px 0 rgba(52, 152, 219, 0.3);
+    --shadow-active: 0 5px 5px 0 rgba(52, 152, 219, 0.5);
+    --border-radius-main: 10px;
+    --border-radius-icon: 50px;
+    position: relative;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    cursor: default;
+    color: var(--text-color);
+    opacity: 0.9;
+    margin: auto;
+    padding: 1.5rem;
+    font-weight: 600;
+    background: var(--background);
+    max-width: max-content;
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--shadow);
+    transition: 0.2s ease all;
+}
+
+.like-dislike-container:hover {
+    box-shadow: var(--shadow-active);
+}
+
+.like-dislike-container .tool-box {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 0;
+    right: 0;
+    border-radius: var(--border-radius-main);
+}
+
+.like-dislike-container .btn-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 0.8rem;
+    height: 0.8rem;
+    color: transparent;
+    font-size: 0;
+    cursor: pointer;
+    background-color: rgba(231, 76, 60, 0.8);
+    border: none;
+    border-radius: var(--border-radius-main);
+    transition: 0.2s ease all;
+}
+
+.like-dislike-container .btn-close:hover {
+    width: 1rem;
+    height: 1rem;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: rgba(231, 76, 60, 1);
+    box-shadow: var(--shadow-active);
+}
+
+.like-dislike-container .btn-close:active {
+    width: 0.9rem;
+    height: 0.9rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 3px 3px 0 rgba(231, 76, 60, 0.5);
+}
+
+.like-dislike-container .text-content {
+    margin-bottom: 1rem;
+    font-size: 18px;
+    line-height: 1.6;
+    cursor: default;
+}
+
+.like-dislike-container .icons-box {
+    display: flex;
+}
+
+.like-dislike-container .icons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid var(--light-blue);
+    border-radius: var(--border-radius-icon);
+    transition: 0.2s ease all;
+}
+
+.like-dislike-container .icons:hover {
+    opacity: 1;
+    box-shadow: var(--shadow);
+    background-color: var(--light-blue);
+}
+
+.like-dislike-container .icons:active {
+    opacity: 1;
+    box-shadow: var(--shadow-active);
+    background-color: var(--dark-blue);
+}
+
+.like-dislike-container .icons .btn-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.like-dislike-container .like-text-content {
+    border-right: 0.1rem solid var(--light-blue);
+    padding: 0 0.6rem 0 0.5rem;
+    pointer-events: none;
+}
+
+.like-dislike-container .dislike-text-content {
+    border-left: 0.1rem solid var(--light-blue);
+    padding: 0 0.5rem 0 0.6rem;
+    pointer-events: none;
+}
+
+.like-dislike-container .icons .svgs {
+    width: 1.3rem;
+    fill: var(--text-color);
+    box-sizing: content-box;
+    padding: 10px 10px;
+    transition: 0.2s ease all;
+}
+
+.like-dislike-container .icons .input-box {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.like-dislike-container .icons #icon-like-regular {
+    display: block;
+}
+
+.like-dislike-container .icons #icon-like-solid {
+    display: none;
+}
+
+
+.like-dislike-container .icons #like-checkbox:checked~.fireworks>.checked-like-fx {
+    right: 40px;
+}
+
+.like-dislike-container .icons #dislike-checkbox:checked~.fireworks>.checked-dislike-fx {
+    left: 40px;
+}
+
