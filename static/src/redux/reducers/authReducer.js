@@ -23,8 +23,8 @@ export default function authReducer(state = initialState, action) {
             return {
                 ...state,
                 isAuthenticated: true,
-                accessToken: payload.access,
-                refreshToken: payload.refresh,
+                accessToken: payload.accessToken,
+                refreshToken: payload.refreshToken,
                 loading: false,
                 error: null,
             };
