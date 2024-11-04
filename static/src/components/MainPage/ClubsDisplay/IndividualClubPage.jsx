@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Comment from '../../UiComponents/Comment';
 import './IndividualClubPage.css'
 import CommentPopUp from '../../UiComponents/CommentPopUp';
 import Header from '../../Header'
@@ -84,7 +83,7 @@ const IndividualClubPage = () => {
         }
     }
 
-    const ratecomment = async (commentId, userId, like) => {
+    const ratecomment = async (commentId, userId, upvote, downvote) => {
         try {
             const response = await fetch('http://127.0.0.1:8000/comments/rate_comment/', {
                 method: 'POST', // Use POST for creating/updating resources
@@ -94,7 +93,8 @@ const IndividualClubPage = () => {
                 body: JSON.stringify({
                     comment_id: commentId,
                     user_id: userId,
-                    like: like,
+                    upvote: upvote,
+                    downvote: downvote,
                 }),
             });
     
@@ -175,7 +175,7 @@ const IndividualClubPage = () => {
                             <div class="like-wrapper">
                                 <input class="check" type="checkbox" id={`like-toggle-${index}`} onChange={(e) => {
                                         const like = e.target.checked; // Get the checked status (true/false)
-                                        ratecomment(comment.comment_id, userId, true, false); // Call the function with appropriate parameters
+                                        ratecomment(comment.comment_id, userId, like, false); // Call the function with appropriate parameters
                                     }}/>
                                  <label class="container" for={`like-toggle-${index}`}>
                                     <svg
