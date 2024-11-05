@@ -67,14 +67,12 @@ def rate_comment(request):
     user_id = body_data.get('user_id')
     upvote = body_data.get('upvote')
     downvote = body_data.get('downvote')
-    print(comment_id, user_id, upvote, downvote)
 
     # Fetch the comment object
     comment = Comment.objects.get(comment_id=comment_id)
     # Fetch the existing user rating for the comment, if it exists
     user_rating = UserCommentRating.objects.filter(user_id=user_id, comment_id=comment_id).first()
-    print(user_rating)
-    print("gay")
+
     if user_rating:
         # User has already rated the comment - check if they are changing their vote
         if upvote and not user_rating.upvote:
@@ -114,3 +112,23 @@ def rate_comment(request):
         )
     
     return JsonResponse({'success': True})
+
+# Get a user's ratings for comments
+def get_user_ratings(request):
+    body_unicode = request.body.decode('utf-8')
+    body_data = json.loads(body_unicode)
+    user_id = body_data.get('user_id')
+    
+    # Fetch all ratings by this user
+    user_ratings = UserCommentRating.objects.filter(user_id=user_id)
+    ratings_data = []
+
+    for rating in user_ratings:
+        ratings_data.append({
+            'comment_id': rating.comment,  # Assuming comment_id is a foreign key
+            'upvote': rating.upvote,
+            'downvote': rating.downvote,
+            'rated_at': rating.created_at
+        })
+    
+    return JsonResponse({'user_ratings': ratings_data}, safe=False)
