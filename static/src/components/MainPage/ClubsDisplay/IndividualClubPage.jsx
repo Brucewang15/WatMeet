@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import './IndividualClubPage.css'
 import { useSelector } from 'react-redux';
 import CommentPopUp from '../../UiComponents/CommentPopUp';
+import Login from '../../../components/account/Login'
 import Header from '../../Header'
 import Thumb from '../../UiComponents/Thumb';
 import upvote from '../../../pictures/upvote.svg'
@@ -10,6 +11,8 @@ import downvote from '../../../pictures/downvote.svg'
 const IndividualClubPage = () => {
 
     const [commentState, setCommentState] = useState(false)
+
+    const [loginPopupVisible, setLoginPopupVisible] = useState(false)
     const [userId, setUserId] = useState(null);
     const [allComments, setAllComments] = useState([])
     const [allCommentsRatings, setAllCommentsRatings] = useState([])
@@ -143,7 +146,8 @@ const IndividualClubPage = () => {
         }
     };
 
-        // Fetch user comment ratings from the backend when component mounts
+
+    // Fetch user comment ratings from the backend when component mounts
     useEffect(() => {
         if (userId) {
             fetchUserCommentRatings();
@@ -172,58 +176,94 @@ const IndividualClubPage = () => {
         }
     };
 
+    // prevent scrolling when pop up is opened
+    useEffect(() => {
+        if (loginPopupVisible || commentState) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [loginPopupVisible]);
+
 
     return (
         <div className="individualClubContainer">
             <Header />
 
             <div className="club-about-section-wrapper">
-                <div className="club-about-section">
-                    <div className="left-side">
+                <div className="top-side">
+                    <div className="content">
                         <h2>{clubInfo.org_name}</h2>
+                    </div>
+                </div>
+                <div className="bottom-side">
+                    <div className="content">
                         <p>{clubInfo.overview}</p>
+                    </div>
+                </div>
+                <div className="ratingWrapperOutside">
+                    <div className="ratingWrapper" style={{ '--rating': clubInfo.star_rating * 20 }}>
+                        <div className="ratingLeft">
+                            {Array.from({ length: 5 }).map((_, index) => {
+                                const reversedIndex = 5 - index; // Reverse the order from 5 to 1
+                                return (
+                                    <div className="ratingBarWrapper" key={index}>
+                                        <div className="ratingBarNumber">{reversedIndex}</div>
+                                        <div
+                                            className="ratingBar"
+                                            style={{
+                                                '--ratingBar': clubInfo.number_of_star_rating
+                                                    ? (allCommentsRatings[reversedIndex - 1] / clubInfo.number_of_star_rating) * 100
+                                                    : 0,
+                                            }}
+                                        ></div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                        <div className="ratingRight">
+                            <div className="ratingNumber">{clubInfo.star_rating}</div>
+                            <div className="rating"></div>
+                            <div className="ratingStats">{clubInfo.number_of_star_rating} ratings</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div className="ratingWrapper" style={{ '--rating': clubInfo.star_rating * 20 }}>
-                <div className="ratingLeft">
-                    {Array.from({ length: 5 }).map((_, index) => {
-                        const reversedIndex = 5 - index; // Reverse the order from 5 to 1
-                        return (
-                            <div className="ratingBarWrapper" key={index}>
-                                <div className="ratingBarNumber">{reversedIndex}</div>
-                                <div
-                                    className="ratingBar"
-                                    style={{
-                                        '--ratingBar': clubInfo.number_of_star_rating
-                                            ? (allCommentsRatings[reversedIndex - 1] / clubInfo.number_of_star_rating) * 100
-                                            : 0,
-                                    }}
-                                ></div>
-                            </div>
-                        );
-                    })}
-                </div>
-                <div className="ratingRight">
-                    <div className="ratingNumber">{clubInfo.star_rating}</div>
-                    <div className="rating"></div>
-                    <div className="ratingStats">{clubInfo.number_of_star_rating} ratings</div>
+
+            <div className="leaveAComment">
+                <div className="leaveACommentWrapper"><div className="leaveACommentText">Leave a review!</div>
+                    <button className="bookmarkBtn" onClick={() => {
+                        if (isAuthenticated) {
+                            setCommentState(!commentState);
+                        } else {
+                            setLoginPopupVisible(true);
+                        }
+                    }}>
+                        <span className="IconContainer">
+                            <svg fill="white" viewBox="0 0 512 512" height="1em">
+                                <path d="M123.6 391.3c12.9-9.4 29.6-11.8 44.6-6.4c26.5 9.6 56.2 15.1 87.8 15.1c124.7 0 208-80.5 208-160s-83.3-160-208-160S48 160.5 48 240c0 32 12.4 62.8 35.7 89.2c8.6 9.7 12.8 22.5 11.8 35.5c-1.4 18.1-5.7 34.7-11.3 49.4c17-7.9 31.1-16.7 39.4-22.7zM21.2 431.9c1.8-2.7 3.5-5.4 5.1-8.1c10-16.6 19.5-38.4 21.4-62.9C17.7 326.8 0 285.1 0 240C0 125.1 114.6 32 256 32s256 93.1 256 208s-114.6 208-256 208c-37.1 0-72.3-6.4-104.1-17.9c-11.9 8.7-31.3 20.6-54.3 30.6c-15.1 6.6-32.3 12.6-50.1 16.1c-.8 .2-1.6 .3-2.4 .5c-4.4 .8-8.7 1.5-13.2 1.9c-.2 0-.5 .1-.7 .1c-5.1 .5-10.2 .8-15.3 .8c-6.5 0-12.3-3.9-14.8-9.9c-2.5-6-1.1-12.8 3.4-17.4c4.1-4.2 7.8-8.7 11.3-13.5c1.7-2.3 3.3-4.6 4.8-6.9c.1-.2 .2-.3 .3-.5z"></path>
+                            </svg>
+                        </span>
+                        <p className="text">Comment</p>
+                    </button>
                 </div>
             </div>
 
-
-            <button className="bookmarkBtn" onClick={() => { setCommentState(!commentState && isAuthenticated) }}>
-                <span className="IconContainer">
-                    <svg fill="white" viewBox="0 0 512 512" height="1em">
-                        <path d="M123.6 391.3c12.9-9.4 29.6-11.8 44.6-6.4c26.5 9.6 56.2 15.1 87.8 15.1c124.7 0 208-80.5 208-160s-83.3-160-208-160S48 160.5 48 240c0 32 12.4 62.8 35.7 89.2c8.6 9.7 12.8 22.5 11.8 35.5c-1.4 18.1-5.7 34.7-11.3 49.4c17-7.9 31.1-16.7 39.4-22.7zM21.2 431.9c1.8-2.7 3.5-5.4 5.1-8.1c10-16.6 19.5-38.4 21.4-62.9C17.7 326.8 0 285.1 0 240C0 125.1 114.6 32 256 32s256 93.1 256 208s-114.6 208-256 208c-37.1 0-72.3-6.4-104.1-17.9c-11.9 8.7-31.3 20.6-54.3 30.6c-15.1 6.6-32.3 12.6-50.1 16.1c-.8 .2-1.6 .3-2.4 .5c-4.4 .8-8.7 1.5-13.2 1.9c-.2 0-.5 .1-.7 .1c-5.1 .5-10.2 .8-15.3 .8c-6.5 0-12.3-3.9-14.8-9.9c-2.5-6-1.1-12.8 3.4-17.4c4.1-4.2 7.8-8.7 11.3-13.5c1.7-2.3 3.3-4.6 4.8-6.9c.1-.2 .2-.3 .3-.5z"></path>
-                    </svg>
-                </span>
-                <p className="text">Comment</p>
-            </button>
-
             {commentState && <div className="commentPopUp"><CommentPopUp userId={userId} setCommentState={setCommentState} onCommentPosted={() => { getAllCommentsDB(); getClubData(); }} /> </div>}
 
+            {loginPopupVisible && (
+                <div className="popupOverlay" onClick={() => setLoginPopupVisible(false)}>
+                    <div className="popupContent" onClick={(e) => e.stopPropagation()}>
+                        <Login />
+                    </div>
+                </div>
+            )}
+            
             <div className="commentCard">
                 <span className="commentTitle">Comments</span>
                 <div className="allCommentsContainer">
@@ -232,10 +272,21 @@ const IndividualClubPage = () => {
                         <div className="comments">
                             <div class="like-wrapper">
                                 <img className={`voteButton ${commentRatings[comment.comment_id]?.upvoted ? 'upvoted' : ''}`}
-                                 src={upvote} alt="upvote" onClick={() => ratecomment(comment.comment_id, userId, true, false)} />
+
+                                    src={upvote} alt="upvote" onClick={() => {
+                                        if (isAuthenticated) {
+                                            ratecomment(comment.comment_id, userId, true, false)
+                                        } else {
+                                            setLoginPopupVisible(true)
+                                        }}} />
                                 <div className="like-text">{comment.comment_upvote - comment.comment_downvote}</div>
-                                <img className={`voteButton ${commentRatings[comment.comment_id]?.downvoted ? 'downvoted' : ''}`} 
-                                src={downvote} alt="downvote" onClick={() => ratecomment(comment.comment_id, userId, false, true)} />
+                                <img className={`voteButton ${commentRatings[comment.comment_id]?.downvoted ? 'downvoted' : ''}`}
+                                    src={downvote} alt="downvote" onClick={() => {
+                                        if (isAuthenticated) {
+                                            ratecomment(comment.comment_id, userId, false, true)
+                                        } else {
+                                            setLoginPopupVisible(true)
+                                        }}} />
                             </div>
 
                             <div className="comment-container">
@@ -263,7 +314,10 @@ const IndividualClubPage = () => {
                                         <p>{comment.comment_created_at.split("T")[0]}</p>
                                     </div>
                                 </div>
-                                <p className="comment-content">{comment.comment_body}</p>
+                                <div className="individualCommentStarRating" style={{ '--rating': comment.comment_star_rating * 20 }}>
+                                    <div className="rating commentVersion"></div>
+                                </div>
+                                <div className="comment-content">{comment.comment_body}</div>
                             </div>
                         </div>
 
