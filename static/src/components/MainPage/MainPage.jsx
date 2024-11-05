@@ -48,7 +48,7 @@ const MainPage = () => {
             <div className=""><SearchFilter setRating={setMinRating} /></div>
             <div className="mainAllClubsContainer">
                 <div className="chooseOrgType">
-                    {['All', 'Clubs', 'Design Teams', 'Sports', 'Intramurals'].map((type) => (
+                    {['All', 'Clubs', 'Design Teams', 'Intramurals'].map((type) => (
                         <div
                             key={type}
                             className="chooseOrgTypeButtons"

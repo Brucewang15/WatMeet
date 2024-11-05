@@ -212,9 +212,21 @@ const IndividualClubPage = () => {
 
                         <div className="comments">
                             <div class="like-wrapper">
-                                <img className='voteButton' src={upvote} alt="upvote" onClick={() => ratecomment(comment.comment_id, userId, true, false)} />
+                                <img className='voteButton' src={upvote} alt="upvote" onClick={() => {
+                                    if (isAuthenticated) {
+                                        ratecomment(comment.comment_id, userId, true, false)
+                                    } else {
+                                        setLoginPopupVisible(true)
+                                    }
+                                }} />
                                 <div className="like-text">{comment.comment_upvote - comment.comment_downvote}</div>
-                                <img className='voteButton' src={downvote} alt="downvote" onClick={() => ratecomment(comment.comment_id, userId, false, true)} />
+                                <img className='voteButton' src={downvote} alt="downvote" onClick={() => {
+                                    if (isAuthenticated) {
+                                        ratecomment(comment.comment_id, userId, false, true)
+                                    } else {
+                                        setLoginPopupVisible(true)
+                                    }
+                                }} />
                             </div>
 
                             <div className="comment-container">
