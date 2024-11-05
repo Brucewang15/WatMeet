@@ -141,41 +141,46 @@ const IndividualClubPage = () => {
             <Header />
 
             <div className="club-about-section-wrapper">
-                <div className="club-about-section">
-                    <div className="left-side">
+                <div className="top-side">
+                    <div className="content">
                         <h2>{clubInfo.org_name}</h2>
+                    </div>
+                </div>
+                <div className="bottom-side">
+                    <div className="content">
                         <p>{clubInfo.overview}</p>
+                    </div>
+                </div>
+                <div className="ratingWrapperOutside">
+                    <div className="ratingWrapper" style={{ '--rating': clubInfo.star_rating * 20 }}>
+                        <div className="ratingLeft">
+                            {Array.from({ length: 5 }).map((_, index) => {
+                                const reversedIndex = 5 - index; // Reverse the order from 5 to 1
+                                return (
+                                    <div className="ratingBarWrapper" key={index}>
+                                        <div className="ratingBarNumber">{reversedIndex}</div>
+                                        <div
+                                            className="ratingBar"
+                                            style={{
+                                                '--ratingBar': clubInfo.number_of_star_rating
+                                                    ? (allCommentsRatings[reversedIndex - 1] / clubInfo.number_of_star_rating) * 100
+                                                    : 0,
+                                            }}
+                                        ></div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                        <div className="ratingRight">
+                            <div className="ratingNumber">{clubInfo.star_rating}</div>
+                            <div className="rating"></div>
+                            <div className="ratingStats">{clubInfo.number_of_star_rating} ratings</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div className="ratingWrapper" style={{ '--rating': clubInfo.star_rating * 20 }}>
-                <div className="ratingLeft">
-                    {Array.from({ length: 5 }).map((_, index) => {
-                        const reversedIndex = 5 - index; // Reverse the order from 5 to 1
-                        return (
-                            <div className="ratingBarWrapper" key={index}>
-                                <div className="ratingBarNumber">{reversedIndex}</div>
-                                <div
-                                    className="ratingBar"
-                                    style={{
-                                        '--ratingBar': clubInfo.number_of_star_rating
-                                            ? (allCommentsRatings[reversedIndex - 1] / clubInfo.number_of_star_rating) * 100
-                                            : 0,
-                                    }}
-                                ></div>
-                            </div>
-                        );
-                    })}
-                </div>
-                <div className="ratingRight">
-                    <div className="ratingNumber">{clubInfo.star_rating}</div>
-                    <div className="rating"></div>
-                    <div className="ratingStats">{clubInfo.number_of_star_rating} ratings</div>
-                </div>
-            </div>
-
-            <div className="leaveAComment"> 
+            <div className="leaveAComment">
                 <div className="leaveACommentWrapper"><div className="leaveACommentText">Leave a review!</div>
                     <button className="bookmarkBtn" onClick={() => {
                         if (isAuthenticated) {
@@ -254,7 +259,7 @@ const IndividualClubPage = () => {
                                         <p>{comment.comment_created_at.split("T")[0]}</p>
                                     </div>
                                 </div>
-                                <div className="individualCommentStarRating" style={{'--rating': comment.comment_star_rating * 20}}>
+                                <div className="individualCommentStarRating" style={{ '--rating': comment.comment_star_rating * 20 }}>
                                     <div className="rating commentVersion"></div>
                                 </div>
                                 <div className="comment-content">{comment.comment_body}</div>
