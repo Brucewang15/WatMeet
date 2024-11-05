@@ -254,7 +254,10 @@ const IndividualClubPage = () => {
                                         <p>{comment.comment_created_at.split("T")[0]}</p>
                                     </div>
                                 </div>
-                                <p className="comment-content">{comment.comment_body}</p>
+                                <div className="individualCommentStarRating" style={{'--rating': comment.comment_star_rating * 20}}>
+                                    <div className="rating commentVersion"></div>
+                                </div>
+                                <div className="comment-content">{comment.comment_body}</div>
                             </div>
                         </div>
 
