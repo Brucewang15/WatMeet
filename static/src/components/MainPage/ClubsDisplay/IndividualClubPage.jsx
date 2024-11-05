@@ -3,18 +3,19 @@ import { useParams } from 'react-router-dom';
 import './IndividualClubPage.css'
 import { useSelector } from 'react-redux';
 import CommentPopUp from '../../UiComponents/CommentPopUp';
+import Login from '../../../components/account/Login'
 import Header from '../../Header'
 import Thumb from '../../UiComponents/Thumb';
 import upvote from '../../../pictures/upvote.svg'
 import downvote from '../../../pictures/downvote.svg'
-import Login from '../../account/Login';
 const IndividualClubPage = () => {
 
-    const [commentState, setCommentState] = useState(false) // comment pop up
-    const [loginPopupVisible, setLoginPopupVisible] = useState(false); // login pop up
+    const [commentState, setCommentState] = useState(false)
+    const [loginPopupVisible, setLoginPopupVisible] = useState(false)
     const [userId, setUserId] = useState(null);
     const [allComments, setAllComments] = useState([])
     const [allCommentsRatings, setAllCommentsRatings] = useState([])
+    const [commentRatings, setCommentRatings] = useState({});
     const [clubInfo, setClubInfo] = useState({
         star_rating: 0,
         number_of_star_rating: 0,
@@ -36,18 +37,17 @@ const IndividualClubPage = () => {
     }, [isAuthenticated, accessToken]);
     console.log(isAuthenticated)
 
-    // prevent scrolling when pop up is opened
-    useEffect(() => {
-        if (loginPopupVisible || commentState) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-
-        return () => {
-            document.body.style.overflow = 'auto';
-        };
-    }, [loginPopupVisible]);
+    //Checks if a user is logged in or not. If logged in, sets userId.
+    // useEffect(() => {
+    //     // Check for access token in localStorage
+    //     const token = localStorage.getItem("access_token");
+    //     if (token) {
+    //         const arrayToken = token.split(".")
+    //         const tokenPayload = JSON.parse(atob(arrayToken[1]))
+    //         setIsLoggedIn(true)
+    //         setUserId(tokenPayload.user_id)
+    //     }
+    // }, []);
 
     //Gets club data from backend upon loading
     useEffect(() => {
@@ -104,6 +104,15 @@ const IndividualClubPage = () => {
     }
 
     const ratecomment = async (commentId, userId, upvote, downvote) => {
+
+        const newRatings = { ...commentRatings };
+        if (upvote) {
+            newRatings[commentId] = { upvoted: true, downvoted: false };
+        } else {
+            newRatings[commentId] = { upvoted: false, downvoted: true };
+        }
+        setCommentRatings(newRatings);
+
         try {
             console.log(userId)
             const response = await fetch('http://127.0.0.1:8000/comments/rate_comment/', {
@@ -135,6 +144,49 @@ const IndividualClubPage = () => {
             console.error('Error:', error);
         }
     };
+
+    // Fetch user comment ratings from the backend when component mounts
+    useEffect(() => {
+        if (userId) {
+            fetchUserCommentRatings();
+        }
+    }, [userId]);
+
+    const fetchUserCommentRatings = async () => {
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/comments/get_user_ratings/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    user_id: userId,
+                    org_id: orgId
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setCommentRatings(data.commentRatings); // Assume data.commentRatings is an object with the same structure
+            }
+        } catch (error) {
+            console.error('Failed to fetch user ratings:', error);
+        }
+    };
+
+    // prevent scrolling when pop up is opened
+    useEffect(() => {
+        if (loginPopupVisible || commentState) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [loginPopupVisible]);
+
 
     return (
         <div className="individualClubContainer">
@@ -199,7 +251,6 @@ const IndividualClubPage = () => {
                 </div>
             </div>
 
-
             {commentState && <div className="commentPopUp"><CommentPopUp userId={userId} setCommentState={setCommentState} onCommentPosted={() => { getAllCommentsDB(); getClubData(); }} /> </div>}
 
             {loginPopupVisible && (
@@ -209,7 +260,6 @@ const IndividualClubPage = () => {
                     </div>
                 </div>
             )}
-
             <div className="commentCard">
                 <span className="commentTitle">Comments</span>
                 <div className="allCommentsContainer">
@@ -217,21 +267,21 @@ const IndividualClubPage = () => {
 
                         <div className="comments">
                             <div class="like-wrapper">
-                                <img className='voteButton' src={upvote} alt="upvote" onClick={() => {
-                                    if (isAuthenticated) {
-                                        ratecomment(comment.comment_id, userId, true, false)
-                                    } else {
-                                        setLoginPopupVisible(true)
-                                    }
-                                }} />
+                                <img className={`voteButton ${commentRatings[comment.comment_id]?.upvoted ? 'upvoted' : ''}`}
+                                    src={upvote} alt="upvote" onClick={() => {
+                                        if (isAuthenticated) {
+                                            ratecomment(comment.comment_id, userId, true, false)
+                                        } else {
+                                            setLoginPopupVisible(true)
+                                        }}} />
                                 <div className="like-text">{comment.comment_upvote - comment.comment_downvote}</div>
-                                <img className='voteButton' src={downvote} alt="downvote" onClick={() => {
-                                    if (isAuthenticated) {
-                                        ratecomment(comment.comment_id, userId, false, true)
-                                    } else {
-                                        setLoginPopupVisible(true)
-                                    }
-                                }} />
+                                <img className={`voteButton ${commentRatings[comment.comment_id]?.downvoted ? 'downvoted' : ''}`}
+                                    src={downvote} alt="downvote" onClick={() => {
+                                        if (isAuthenticated) {
+                                            ratecomment(comment.comment_id, userId, false, true)
+                                        } else {
+                                            setLoginPopupVisible(true)
+                                        }}} />
                             </div>
 
                             <div className="comment-container">
@@ -270,7 +320,13 @@ const IndividualClubPage = () => {
                     ))}
                 </div>
             </div>
-        </div >
+            {/* {isLoggedIn && <div className="">
+                {orgId} {userId}
+                <input type="text" onChange={(e) => { setComment(e.target.value) }} />
+                <input type="text" onChange={(e) => { setStars(e.target.value) }} />
+                <button onClick={postComment}>Submit</button>
+            </div>} */}
+        </div>
     );
 }
 

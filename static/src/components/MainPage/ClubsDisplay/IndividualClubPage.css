@@ -413,6 +413,14 @@
     border-radius: 50%;
 }
 
+.upvoted {
+    background-color: #dfdfdf; /* makes the color lighter */
+}
+
+.downvoted {
+    background-color: #dfdfdf; /* makes the color darker */
+}
+
 .like-text {
     color: #313131;
     font-family: Arial, sans-serif;
