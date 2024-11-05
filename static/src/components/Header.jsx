@@ -13,10 +13,13 @@ const Header = ({ setSearchPropt }) => {
     const { isAuthenticated } = auth;
     return (
         <div className="mainContainerHeader">
-            <div onClick={handleRedirectMainPage} className="individualContainer"><img src={Logo} alt="" /></div>
-            <div className="individualContainer"><Search setSearchPropt={setSearchPropt} /></div>
-            {!isAuthenticated ? (<div className="individualContainer"><a href="/login/">Login</a></div>)
-                : (<div className="individualContainer"><a href="/account">Account</a></div>)}
+            <div className="mainContainerHeaderWrapper">
+                <div onClick={handleRedirectMainPage} className="individualContainer"><img src={Logo} alt="" /></div>
+                <div className="individualContainer"><Search setSearchPropt={setSearchPropt} /></div>
+                {!isAuthenticated ? (<div className="individualContainer"><a href="/login/">Login</a></div>)
+                    : (<div className="individualContainer"><a href="/account">Account</a></div>)}
+
+            </div>
 
         </div>
     );

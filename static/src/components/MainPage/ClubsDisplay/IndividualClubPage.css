@@ -9,9 +9,8 @@
     justify-content: center;
 }
 
-.club-about-section-wrapper {
+.club-about-section-wrapper {}
 
-}
 .club-about-section {
     max-width: 1000px;
     display: flex;
@@ -20,6 +19,7 @@
     margin-left: 20px;
     margin-right: 20px;
 }
+
 .club-about-section h2 {
     font-size: 2em;
     margin-bottom: 10px;
@@ -36,11 +36,37 @@
 
 
 /* From Uiverse.io by vinodjangid07 */
+.leaveAComment {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    max-width: 700px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0 2px gray;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.leaveACommentWrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 20px;
+}
+
+.leaveACommentText {
+    font-weight: 500;
+    font-size: 20px;
+}
+
 .bookmarkBtn {
-    width: 130px;
-    height: 40px;
+    width: 180px;
+    height: 50px;
     border-radius: 40px;
-    border: none;
+    border: 1px solid gray;
     background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
@@ -81,7 +107,7 @@
 }
 
 .bookmarkBtn:hover .IconContainer {
-    width: 120px;
+    width: 160px;
     border-radius: 40px;
     transition-duration: .3s;
 }
@@ -108,7 +134,7 @@
     flex-wrap: wrap;
     height: fit-content;
     background-color: white;
-    box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 2px gray;
     border-radius: 10px;
 }
 
@@ -356,6 +382,7 @@
     height: auto;
     cursor: pointer;
 }
+
 .like-wrapper .voteButton {
     width: 75%;
     color: white;
@@ -366,6 +393,7 @@
     border: 1px solid lightgray;
     border-radius: 50%;
 }
+
 .like-text {
     color: #313131;
     font-family: Arial, sans-serif;
@@ -434,10 +462,15 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    max-width: 750px;
     width: 100%;
     gap: 25px;
+    background-color: white;
+    box-shadow: 0 0 1px gray;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 25px;
 }
+
 .ratingRight {
     display: flex;
     flex-direction: column;
@@ -445,6 +478,7 @@
     align-items: center;
     text-align: center;
 }
+
 .ratingNumber {
     font-weight: bold;
     font-size: 2rem;
@@ -480,12 +514,14 @@
     flex-direction: column;
     gap: 2px;
 }
+
 .ratingBarWrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 8px;
 }
+
 .ratingBar {
     background-color: lightgray;
     width: 400px;
@@ -493,12 +529,44 @@
     border-radius: 7.5px;
     position: relative;
 }
+
 .ratingBar::after {
     content: "";
     background-color: #faab00;
     height: 12px;
     border-radius: 7.5px;
     width: calc(var(--ratingBar) * 1%);
-    display: block;     /* Add this */
-    position: absolute; /* Add this */
+    display: block;
+    /* Add this */
+    position: absolute;
+    /* Add this */
+}
+
+
+/* Overlay to darken the background */
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Ensure it sits above other elements */
+}
+
+/* Popup content styling */
+.popupContent {
+    /* White background */
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 500px;
+    /* Adjust as needed */
+    width: 100%;
+    box-sizing: border-box;
 }

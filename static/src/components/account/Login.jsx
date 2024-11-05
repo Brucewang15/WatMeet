@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import "./General.css";
 import ConfirmEmail from './ConfirmEmail';
-import login from '../redux/actions/authActions'
+import login from '../../redux/actions/authActions'
 
 const Login = () => {
 
@@ -38,7 +38,7 @@ const Login = () => {
         <div className='main-Container'>
             {!emailVerificationRequired ? (
                 <div className="form-container">
-                    <p className="title">Login</p>
+                    <p className="generalTitle">Login</p>
                     <div className="form">
                         <div className="input-group">
                             <label for="email">Email</label>
@@ -48,7 +48,7 @@ const Login = () => {
                             <label for="password">Password</label>
                             <input type="password" name="password" id="password" onChange={(e) => { setPassword(e.target.value) }} placeholder=""></input>
                             <div class="forgot">
-                                <a rel="noopener noreferrer" href="#">Forgot Password ?</a>
+                                <a rel="noopener noreferrer" href="/forgot-password">Forgot Password ?</a>
                             </div>
                         </div>
                         <button class="sign" onClick={handleLogin}>Sign in</button>

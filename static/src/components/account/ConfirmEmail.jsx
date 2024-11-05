@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {confirmEmail} from '../redux/actions/authActions'
+import {confirmEmail} from '../../redux/actions/authActions'
 import './General.css';
 
 const ConfirmEmail = ({ email, password }) => {
