@@ -112,3 +112,13 @@ def login(request):
     if user.password != password:
         return JsonResponse({'success': False, 'reason': 'Email or password Incorrect'})
     return JsonResponse({'success': True})
+
+# resends verification code in forgot password
+def forgotPassword(request):
+    body_unicode = request.body # users code
+    body_data = json.loads(body_unicode)
+    email = body_data.get('email')
+    user = User.objects.filter(email=email)
+    if not user.exists():
+        return JsonResponse({'success': False})
+    return JsonResponse({'success': True})

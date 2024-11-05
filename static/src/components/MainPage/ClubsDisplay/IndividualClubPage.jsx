@@ -7,7 +7,7 @@ import Header from '../../Header'
 import Thumb from '../../UiComponents/Thumb';
 import upvote from '../../../pictures/upvote.svg'
 import downvote from '../../../pictures/downvote.svg'
-import Login from '../../Login';
+import Login from '../../account/Login';
 const IndividualClubPage = () => {
 
     const [commentState, setCommentState] = useState(false) // comment pop up
