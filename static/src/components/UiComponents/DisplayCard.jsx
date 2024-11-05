@@ -19,7 +19,7 @@ const DisplayCard = ({ org_id, clubName, clubDescription, clubRating, clubRating
             <div className="title">{clubName}</div>
             <p className="description">{clubDescriptionShortened}</p>
 
-            <div className="ratingWrapper">
+            <div className="ratingWrapperMain">
                 <div className="ratingRight">
                     <div className="ratingNumber">{formattedClubRating}</div>
                     <div className="rating"></div>

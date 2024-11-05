@@ -175,7 +175,7 @@ const IndividualClubPage = () => {
                 </div>
             </div>
 
-            <div className="leaveAComment">
+            <div className="leaveAComment"> 
                 <div className="leaveACommentWrapper"><div className="leaveACommentText">Leave a review!</div>
                     <button className="bookmarkBtn" onClick={() => {
                         if (isAuthenticated) {
