@@ -11,6 +11,7 @@ import downvote from '../../../pictures/downvote.svg'
 const IndividualClubPage = () => {
 
     const [commentState, setCommentState] = useState(false)
+
     const [loginPopupVisible, setLoginPopupVisible] = useState(false)
     const [userId, setUserId] = useState(null);
     const [allComments, setAllComments] = useState([])
@@ -145,6 +146,7 @@ const IndividualClubPage = () => {
         }
     };
 
+
     // Fetch user comment ratings from the backend when component mounts
     useEffect(() => {
         if (userId) {
@@ -232,6 +234,7 @@ const IndividualClubPage = () => {
                 </div>
             </div>
 
+
             <div className="leaveAComment">
                 <div className="leaveACommentWrapper"><div className="leaveACommentText">Leave a review!</div>
                     <button className="bookmarkBtn" onClick={() => {
@@ -260,6 +263,7 @@ const IndividualClubPage = () => {
                     </div>
                 </div>
             )}
+            
             <div className="commentCard">
                 <span className="commentTitle">Comments</span>
                 <div className="allCommentsContainer">
@@ -268,6 +272,7 @@ const IndividualClubPage = () => {
                         <div className="comments">
                             <div class="like-wrapper">
                                 <img className={`voteButton ${commentRatings[comment.comment_id]?.upvoted ? 'upvoted' : ''}`}
+
                                     src={upvote} alt="upvote" onClick={() => {
                                         if (isAuthenticated) {
                                             ratecomment(comment.comment_id, userId, true, false)
