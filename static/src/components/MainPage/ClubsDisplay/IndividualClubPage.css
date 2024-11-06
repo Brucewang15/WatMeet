@@ -6,6 +6,71 @@
     height: 100%;
     justify-content: center;
 }
+<<<<<<< Updated upstream
+=======
+
+.club-about-section-wrapper {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.top-side{
+    width: 100%;
+    /* Set your background image here */
+    background: url('C:\Users\PC\Documents\GitHub\WatMeet\static\src\pictures\uw background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.top-side {
+    height: 50%;
+}
+.bottom-side {
+    height: 50%;
+    width: 100%;
+    background-color: white;
+}
+
+.bottom-side .content {
+    max-width: 1100px;
+    margin: 0 auto;
+    /* Center the content */
+    /* Optional: Add some padding */
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.top-side .content {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.content p {
+    width: 50%;
+    font-size: 17px;
+}
+.content h2 {
+    width: 50%;
+    color: white;
+    font-size: 2.5em;
+    position: absolute;
+    bottom: 20px;
+    margin: 0;
+}
+
+.right-side ul li {
+    font-size: 1.1em;
+}
+
+
+>>>>>>> Stashed changes
 /* From Uiverse.io by vinodjangid07 */
 .bookmarkBtn {
     width: 130px;
