@@ -1,0 +1,256 @@
+/* IndividualClubComments.css */
+
+/* Styles for the "Leave a Comment" button */
+.leaveAComment {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    max-width: 700px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0 2px gray;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.leaveACommentWrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 20px;
+}
+
+.leaveACommentText {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* Button styling */
+.bookmarkBtn {
+    width: 180px;
+    height: 50px;
+    border-radius: 40px;
+    border: 1px solid gray;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: .3s;
+    overflow: hidden;
+}
+
+.IconContainer {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(103, 74, 228);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+    transition-duration: .3s;
+}
+
+.text {
+    height: 100%;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(26, 26, 26);
+    z-index: 1;
+    transition-duration: .3s;
+    font-size: 1.04em;
+    font-weight: 600;
+}
+
+.bookmarkBtn:hover .IconContainer {
+    width: 160px;
+    border-radius: 40px;
+    transition-duration: .3s;
+}
+
+.bookmarkBtn:hover .text {
+    transform: translate(10px);
+    width: 0;
+    font-size: 0;
+    transition-duration: .3s;
+}
+
+.bookmarkBtn:active {
+    transform: scale(0.95);
+    transition-duration: .3s;
+}
+
+/* Comments styling */
+.commentCard {
+    max-width: 700px;
+    width: 100%;
+    flex-wrap: wrap;
+    height: fit-content;
+    background-color: white;
+    box-shadow: 0px 0px 2px gray;
+    border-radius: 10px;
+}
+
+.commentTitle {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border-bottom: 1px solid #f1f1f1;
+    font-weight: 700;
+    font-size: 20px;
+    color: #47484b;
+}
+
+.comments {
+    display: grid;
+    grid-template-columns: 35px 1fr;
+    gap: 20px;
+    padding: 20px;
+    min-height: 15vh;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.like-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 25px;
+    gap: 5px;
+    padding-left: 5px;
+    height: auto;
+    cursor: pointer;
+}
+
+.like-wrapper .voteButton {
+    width: 75%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+}
+
+.upvoted {
+    background-color: #dfdfdf;
+}
+
+.downvoted {
+    background-color: #dfdfdf;
+}
+
+.like-text {
+    color: #313131;
+    font-family: Arial, sans-serif;
+    font-weight: bolder;
+    position: relative;
+}
+
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.comment-container .user {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 10px;
+}
+
+.comment-container .user .user-pic {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+}
+
+.comment-container .user .user-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3px;
+}
+
+.comment-container .user .user-info span {
+    font-weight: 700;
+    font-size: 15px;
+    color: #47484b;
+}
+
+.comment-container .user .user-info p {
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0;
+    color: #acaeb4;
+}
+
+.comment-container .comment-content {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #5f6064;
+}
+
+/* Popup styling */
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popupContent {
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Star rating styling */
+.rating.commentVersion {
+    font-size: 1em;
+    color: #faab00;
+    position: relative;
+    width: max-content;
+}
+
+.rating.commentVersion:before {
+    content: "☆☆☆☆☆";
+}
+
+.rating.commentVersion:after {
+    content: "★★★★★";
+    position: absolute;
+    left: 0;
+    z-index: 0;
+    width: calc(var(--rating) * 1%);
+    overflow: hidden;
+}
