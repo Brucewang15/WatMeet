@@ -6,29 +6,34 @@ import "./MainPage.css"
 import Header from '../Header';
 import DisplayCard from '../UiComponents/DisplayCard';
 import SearchFilter from '../SearchFilter/SearchFilter';
+import Background from '../Background/Background';
+import { useParams } from 'react-router-dom';
 
 //import clubs_info from "..../webscraping/club_info.json";
 
 
 const MainPage = () => {
 
+
     const [clubs, setClubs] = useState([]);
-    const [searchPropt, setSearchPrompt] = useState("");
     const [minRating, setMinRating] = useState(0);
     const [selectedType, setSelectedType] = useState('All');
+
+    const {prompt} = useParams();
 
     const handleSelect = (type) => {
         setSelectedType(type);
     };
 
     useEffect(() => {
+        console.log(prompt);
         const get_club_data = async () => {
             const response = await fetch('http://127.0.0.1:8000/organizations/get_club_data/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ searchPropt: searchPropt, selectedType: selectedType, minRating: minRating })
+                body: JSON.stringify({ searchPropt: prompt, selectedType: selectedType, minRating: minRating })
             })
             if (response.ok) {
                 try {
@@ -40,10 +45,11 @@ const MainPage = () => {
             }
         }
         get_club_data()
-    }, [searchPropt, minRating, selectedType])
+    }, [prompt, minRating, selectedType])
 
     return <>
-        <Header setSearchPropt={setSearchPrompt} />
+        <Header/>
+        <Background prompt={prompt}/>
         <div className="mainContainer">
             <div className=""><SearchFilter setRating={setMinRating} /></div>
             <div className="mainAllClubsContainer">

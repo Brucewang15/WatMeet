@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useParams } from 'react-router-dom';
 
 
 import './Search.css'
 
-const Search = ({ setSearchPropt }) => {
+const Search = () => {
 
     const [userInput, setUserInput] = useState("");
+    const navigate = useNavigate();
 
     const handleClick = () => {
-        setSearchPropt(userInput);
-    }
-
-    const handleKeyDown = (event) => {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            handleClick();
+        if (userInput == "") {
+            navigate('/');
+        } else {
+            navigate(`/explore/search/${userInput}`);
         }
     }
 

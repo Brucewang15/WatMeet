@@ -3,7 +3,7 @@ import Search from './Search/Search';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../pictures/Watclub_logo_transparent.png'
 import { useSelector } from 'react-redux';
-const Header = ({ setSearchPropt }) => {
+const Header = () => {
 
     const navigate = useNavigate();
     const handleRedirectMainPage = () => {
@@ -15,7 +15,7 @@ const Header = ({ setSearchPropt }) => {
         <div className="mainContainerHeader">
             <div className="mainContainerHeaderWrapper">
                 <div onClick={handleRedirectMainPage} className="individualContainer"><img src={Logo} alt="" /></div>
-                <div className="individualContainer"><Search setSearchPropt={setSearchPropt} /></div>
+                <div className="individualContainer"><Search/></div>
                 {!isAuthenticated ? (<div className="individualContainer"><a href="/login/">Login</a></div>)
                     : (<div className="individualContainer"><a href="/account">Account</a></div>)}
 

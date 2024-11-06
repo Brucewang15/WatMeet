@@ -25,6 +25,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/explore/search/:prompt/" element={<MainPage/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
