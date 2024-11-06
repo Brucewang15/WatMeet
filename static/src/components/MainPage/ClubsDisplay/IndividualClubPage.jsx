@@ -55,6 +55,11 @@ const IndividualClubPage = () => {
         getClubData()
     }, [])
 
+    //scroll to top upon loading
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     // Function used to get club data
     const getClubData = async () => {
         const response = await fetch('http://127.0.0.1:8000/organizations/get_individual_club_data', {
@@ -207,29 +212,35 @@ const IndividualClubPage = () => {
                 </div>
                 <div className="ratingWrapperOutside">
                     <div className="ratingWrapper" style={{ '--rating': clubInfo.star_rating * 20 }}>
-                        <div className="ratingLeft">
-                            {Array.from({ length: 5 }).map((_, index) => {
-                                const reversedIndex = 5 - index; // Reverse the order from 5 to 1
-                                return (
-                                    <div className="ratingBarWrapper" key={index}>
-                                        <div className="ratingBarNumber">{reversedIndex}</div>
-                                        <div
-                                            className="ratingBar"
-                                            style={{
-                                                '--ratingBar': clubInfo.number_of_star_rating
-                                                    ? (allCommentsRatings[reversedIndex - 1] / clubInfo.number_of_star_rating) * 100
-                                                    : 0,
-                                            }}
-                                        ></div>
-                                    </div>
-                                );
-                            })}
+                        <div className="ratingTop">
+                            Reviews
                         </div>
-                        <div className="ratingRight">
-                            <div className="ratingNumber">{clubInfo.star_rating}</div>
-                            <div className="rating"></div>
-                            <div className="ratingStats">{clubInfo.number_of_star_rating} ratings</div>
+                        <div className="ratingBottom">
+                            <div className="ratingLeft">
+                                {Array.from({ length: 5 }).map((_, index) => {
+                                    const reversedIndex = 5 - index; // Reverse the order from 5 to 1
+                                    return (
+                                        <div className="ratingBarWrapper" key={index}>
+                                            <div className="ratingBarNumber">{reversedIndex}</div>
+                                            <div
+                                                className="ratingBar"
+                                                style={{
+                                                    '--ratingBar': clubInfo.number_of_star_rating
+                                                        ? (allCommentsRatings[reversedIndex - 1] / clubInfo.number_of_star_rating) * 100
+                                                        : 0,
+                                                }}
+                                            ></div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                            <div className="ratingRight">
+                                <div className="ratingNumber">{clubInfo.star_rating}</div>
+                                <div className="rating"></div>
+                                <div className="ratingStats">{clubInfo.number_of_star_rating} ratings</div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -263,7 +274,7 @@ const IndividualClubPage = () => {
                     </div>
                 </div>
             )}
-            
+
             <div className="commentCard">
                 <span className="commentTitle">Comments</span>
                 <div className="allCommentsContainer">
@@ -278,7 +289,8 @@ const IndividualClubPage = () => {
                                             ratecomment(comment.comment_id, userId, true, false)
                                         } else {
                                             setLoginPopupVisible(true)
-                                        }}} />
+                                        }
+                                    }} />
                                 <div className="like-text">{comment.comment_upvote - comment.comment_downvote}</div>
                                 <img className={`voteButton ${commentRatings[comment.comment_id]?.downvoted ? 'downvoted' : ''}`}
                                     src={downvote} alt="downvote" onClick={() => {
@@ -286,7 +298,8 @@ const IndividualClubPage = () => {
                                             ratecomment(comment.comment_id, userId, false, true)
                                         } else {
                                             setLoginPopupVisible(true)
-                                        }}} />
+                                        }
+                                    }} />
                             </div>
 
                             <div className="comment-container">

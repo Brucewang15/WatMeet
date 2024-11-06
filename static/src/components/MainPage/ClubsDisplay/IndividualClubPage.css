@@ -1,5 +1,5 @@
 .individualClubContainer {
-    margin-top: 80px;
+    margin-top: 70px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -11,7 +11,7 @@
 
 .club-about-section-wrapper {
     width: 100%;
-    height: 500px;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,22 +19,22 @@
     position: relative;
 }
 
-.top-side,
-.bottom-side {
+.top-side{
     width: 100%;
     /* Set your background image here */
+    background: url('https://img.freepik.com/premium-photo/creative-abstract-wide-background-with-geometric-shapes_960396-349506.jpg');
     background-size: cover;
     background-position: center;
 }
 .top-side {
-    background-color: gray;
-    height: 40%;
+    height: 50%;
 }
 .bottom-side {
-    height: 60%;
-    background-color: lightgray;
+    height: 50%;
+    width: 100%;
+    background-color: white;
 }
-.top-side .content,
+
 .bottom-side .content {
     max-width: 1100px;
     margin: 0 auto;
@@ -43,10 +43,26 @@
     padding-left: 5%;
     padding-right: 5%;
 }
+.top-side .content {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
 
-.content p,
+.content p {
+    width: 50%;
+    font-size: 17px;
+}
 .content h2 {
     width: 50%;
+    color: white;
+    font-size: 2.5em;
+    position: absolute;
+    bottom: 20px;
+    margin: 0;
 }
 
 .right-side ul li {
@@ -492,7 +508,7 @@
 
 .ratingWrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     /* Align items to the right within the container */
@@ -507,6 +523,18 @@
     justify-content: right; 
     top: 50%;
     transform: translateY(-50%);
+    border: 4px solid; /* Set the border thickness */
+    border-image: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+    padding: 25px 10px 25px 10px;
+    border-image-slice: 1;
+}
+.ratingTop {
+    font-size: 30px;
+    font-weight: 500;
+}
+.ratingBottom {
+    display: flex;
+    flex-direction: row;
 }
 
 .ratingRight {
