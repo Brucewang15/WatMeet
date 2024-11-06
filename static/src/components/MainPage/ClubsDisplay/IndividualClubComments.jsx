@@ -95,9 +95,9 @@ const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, g
         }
     };
 
-    // Prevent scrolling when pop-up is open
+    // Prevent scrolling when pop-up is open (note: add commentState in future)
     useEffect(() => {
-        if (loginPopupVisible || commentState) {
+        if (loginPopupVisible) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = 'auto';
@@ -105,7 +105,7 @@ const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, g
         return () => {
             document.body.style.overflow = 'auto';
         };
-    }, [loginPopupVisible, commentState]);
+    }, [loginPopupVisible]);
 
     return (
         <>

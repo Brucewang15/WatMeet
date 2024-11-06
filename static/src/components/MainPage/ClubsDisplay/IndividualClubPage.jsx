@@ -8,6 +8,8 @@ import IndividualClubComments from './IndividualClubComments';
 
 const IndividualClubPage = () => {
     const [userId, setUserId] = useState(null);
+    const [allComments, setAllComments] = useState([]);
+    const [allCommentsRatings, setAllCommentsRatings] = useState([]);
     const [clubInfo, setClubInfo] = useState({
         star_rating: 0,
         number_of_star_rating: 0,
@@ -28,6 +30,29 @@ const IndividualClubPage = () => {
             }
         }
     }, [isAuthenticated, accessToken]);
+
+    // Fetch all comments from the backend
+    const getAllCommentsDB = async () => {
+        try {
+            const response = await fetch('http://127.0.0.1:8000/comments/get_comments/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ org_id: orgId }),
+            });
+            if (response.ok) {
+                const data = await response.json();
+                setAllComments(data.comments_data);
+                setAllCommentsRatings(data.comments_likes);
+            }
+        } catch (err) {
+            console.log('error', err);
+        }
+    };
+
+    // Fetch all comments when component mounts
+    useEffect(() => {
+        getAllCommentsDB();
+    }, []);
 
     // Get club data from backend upon loading
     useEffect(() => {
@@ -81,7 +106,7 @@ const IndividualClubPage = () => {
                                                 className="ratingBar"
                                                 style={{
                                                     '--ratingBar': clubInfo.number_of_star_rating
-                                                        ? (clubInfo[`star_rating_${reversedIndex}`] / clubInfo.number_of_star_rating) * 100
+                                                        ? (allCommentsRatings[reversedIndex - 1] / clubInfo.number_of_star_rating) * 100
                                                         : 0,
                                                 }}
                                             ></div>
