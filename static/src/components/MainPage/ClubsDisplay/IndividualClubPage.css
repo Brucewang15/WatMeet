@@ -24,7 +24,7 @@
 .top-side {
     width: 100%;
     height: 50%;
-    background: url('../../../pictures/uw\ background\ v2.jpg');
+    background: url('static\src\pictures\watclub background.jpg');
     position: relative;
     background-size: cover;
     background-position: center;
