@@ -1,0 +1,5 @@
+pip install -r requirements.txt
+.venv\scripts\activate\
+python manage.py runserver
+cd static
+npm start
