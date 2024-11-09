@@ -26,22 +26,18 @@
 }
 
 .org_card {
-    max-width: 200px;
-    min-width: 30%;
-    flex-wrap: wrap; 
-    text-align: left;
+    width: calc(100% -50px);
+    height: auto;
     display: flex;
-    overflow: hidden;
+    flex-direction: row;
+    overflow: hidden; 
+    justify-content: space-between;
 
-    aspect-ratio: 2/3;
     background: var(--background);
     color: var(--textColor);
-    padding: 25px;
+    padding: 20px 30px;
     border: 1px solid lightgray;
-    box-shadow: 4px 4px 0 var(--cardShadow);
     transition: box-shadow .5s, transform .5s;
-    border-radius: 8px;
-    display: inline-block;
 }
 
 .org_card:hover {
@@ -55,25 +51,30 @@
     box-shadow: 4px 4px 0 var(--cardShadowActive);
 }
 
-.org_card>.icon,
-.org_card>.title,
-.org_card>.description {
-    margin-bottom: 0.7em;
+.org_card_left {
+    width: 70%;
+}
+
+.org_card .icon,
+.org_card .title,
+.org_card .description {
+    margin: 0;
     cursor: default;
     user-select: none;
+    text-align: left;
 }
 
-.org_card>.title {
-    margin-top: 1.5em;
+.org_card .title {
     font-weight: bold;
+    font-size: 1.4em;
+    margin-bottom: 10px;
 }
 
-.org_card>.description {
-    line-height: 1.5em;
-    min-height: 6em;
+.org_card .description {
+    line-height: 1.4em;
 }
 
-.org_card>.icon {
+.org_card .icon {
     font-size: 3em;
     margin-bottom: .2em;
 }
@@ -114,15 +115,14 @@
     overflow: hidden;
 }
 
-.org_card>.link {
-    margin-bottom: 1rem;;
+.org_card .link {
     color: var(--linkColor);
     font-size: .8em;
     font-weight: 600;
 }
 
 /* Optional ~ Link the whole card */
-.org_card>.link::before {
+.org_card .link::before {
     content: "";
     position: absolute;
     top: 0;
@@ -130,13 +130,9 @@
     width: 100%;
 }
 
-.org_card>.link:after {
+.org_card .link:after {
     content: "↗";
     display: inline-block;
     margin-left: .3em;
     transition: transform .3s ease-in-out;
-}
-
-.org_card:hover>.link:after {
-    transform: translate(.2em, -.2em);
 }

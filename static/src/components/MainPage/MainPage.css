@@ -13,9 +13,8 @@
 }
 .clubsContainer {
     /* Adjust to control the maximum number of columns */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    row-gap: 30px;
+    display: flex;
+    flex-direction: column;
     margin: auto;
     border: 1px solid grey;
     border-radius: 0 0 5px 5px;
