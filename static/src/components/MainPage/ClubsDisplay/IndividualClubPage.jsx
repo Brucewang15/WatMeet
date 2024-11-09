@@ -5,6 +5,7 @@ import './IndividualClubPage.css';
 import { useSelector } from 'react-redux';
 import Header from '../../Header';
 import IndividualClubComments from './IndividualClubComments';
+import Socials from '../../UiComponents/Socials'
 
 const IndividualClubPage = () => {
     const [userId, setUserId] = useState(null);
@@ -82,6 +83,8 @@ const IndividualClubPage = () => {
             <Header />
 
             <div className="club-about-section-wrapper">
+
+                <Socials types={["instagram"]} links={['http://']} />
                 <div className="top-side">
                     <div className="content">
                         <h2>{clubInfo.org_name}</h2>
