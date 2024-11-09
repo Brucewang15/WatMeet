@@ -27,6 +27,4 @@ class Command(BaseCommand):
                     org = organization,
                     tag_name = tag
                 )
-
-            
         self.stdout.write(self.style.SUCCESS('Data loaded successfully'))
