@@ -1,0 +1,25 @@
+{
+    "club_name": "Artistic Swimming",
+    "description": null,
+    "join_today_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=fa36b83d-f2bf-42b8-9cb9-706fbd3086c4",
+    "try_it_sessions": [],
+    "fee": null,
+    "executive_team": [],
+    "schedule": [],
+    "competitions": [],
+    "contacts": [
+        {
+            "type": "EMAIL",
+            "link": "mailto: artisticswimming@uwaterloo.ca"
+        },
+        {
+            "type": "INSTAGRAM",
+            "link": "https://www.instagram.com/wlooartisticswimming/"
+        },
+        {
+            "type": "FACEBOOK",
+            "link": "https://www.facebook.com/WarriorsSynchro/"
+        }
+    ],
+    "coordinator_contact": null
+}
