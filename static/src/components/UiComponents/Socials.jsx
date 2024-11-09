@@ -1,5 +1,7 @@
 import React from 'react';
 import './Socials.css'
+import linktr from '../../pictures/linktree-white-icon.svg'
+import www from '../../pictures/www.png'
 
 const Socials = ({ types, links }) => {
     if (!Array.isArray(types) || !Array.isArray(links)) {
@@ -15,27 +17,16 @@ const Socials = ({ types, links }) => {
     // Mapping of social types to their corresponding SVG icons
     const svgMap = {
         discord: (
-            <svg className="socialSvg discordSvg" viewBox="0 0 245 240">
+            <svg
+                height="25px"
+                width="25px"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+                className="socialSvg discordSvg"
+            >
                 <path
-                    d="M104.4,104.8c-5.7,0-10.3,5-10.3,11.1c0,6.1,4.6,11.1,10.3,11.1c5.7,0,10.3-5,10.3-11.1
-          C114.7,109.8,110.1,104.8,104.4,104.8z M140.1,104.8c-5.7,0-10.3,5-10.3,11.1c0,6.1,4.6,11.1,10.3,11.1
-          c5.7,0,10.3-5,10.3-11.1C150.4,109.8,145.8,104.8,140.1,104.8z"
-                />
-                <path
-                    d="M189.6,20H55.4C25,20,0,45,0,75.4v89.2c0,30.4,25,55.4,55.4,55.4h134.2c30.4,0,55.4-25,55.4-55.4V75.4
-          C245,45,220,20,189.6,20z M225.3,164c0,21.8-17.7,39.4-39.4,39.4H55.4c-21.8,0-39.4-17.7-39.4-39.4V75.4
-          c0-21.8,17.7-39.4,39.4-39.4h130.5c21.8,0,39.4,17.7,39.4,39.4V164z"
-                />
-                <path
-                    d="M93.6,164c-11.7,0-21.3-9.6-21.3-21.3c0-11.7,9.6-21.3,21.3-21.3s21.3,9.6,21.3,21.3
-          C114.9,154.4,105.3,164,93.6,164z M93.6,130.7c-6.1,0-11.1,5-11.1,11.1s5,11.1,11.1,11.1s11.1-5,11.1-11.1S99.7,130.7,93.6,130.7z
-          "
-                />
-                <path
-                    d="M152.4,164c-11.7,0-21.3-9.6-21.3-21.3c0-11.7,9.6-21.3,21.3-21.3s21.3,9.6,21.3,21.3
-          C173.7,154.4,163.1,164,152.4,164z M152.4,130.7c-6.1,0-11.1,5-11.1,11.1s5,11.1,11.1,11.1s11.1-5,11.1-11.1
-          S158.5,130.7,152.4,130.7z"
-                />
+                    d="M40,12c0,0-4.585-3.588-10-4l-0.488,0.976C34.408,10.174,36.654,11.891,39,14c-4.045-2.065-8.039-4-15-4s-10.955,1.935-15,4c2.346-2.109,5.018-4.015,9.488-5.024L18,8c-5.681,0.537-10,4-10,4s-5.121,7.425-6,22c5.162,5.953,13,6,13,6l1.639-2.185C13.857,36.848,10.715,35.121,8,32c3.238,2.45,8.125,5,16,5s12.762-2.55,16-5c-2.715,3.121-5.857,4.848-8.639,5.815L33,40c0,0,7.838-0.047,13-6C45.121,19.425,40,12,40,12z M17.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C21,28.209,19.433,30,17.5,30z M30.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C34,28.209,32.433,30,30.5,30z"
+                ></path>
             </svg>
         ),
         instagram: (
@@ -49,20 +40,23 @@ const Socials = ({ types, links }) => {
             </svg>
         ),
         website: (
-            <svg className="socialSvg websiteSvg" viewBox="0 0 64 64">
-                <path d="M32 0C14.355 0 0 14.355 0 32s14.355 32 32 32 32-14.355 32-32S49.645 0 32 0zm0 58C17.664 58 6 46.336 6 32S17.664 6 32 6s26 11.664 26 26-11.664 26-26 26z" />
-                <path d="M32 12a20 20 0 100 40 20 20 0 000-40zm0 38a18 18 0 110-36 18 18 0 010 36z" />
-                <path d="M32 18a14 14 0 100 28 14 14 0 000-28zm0 26a12 12 0 110-24 12 12 0 010 24z" />
-            </svg>
+            <img src={www} className="socialSvg" />
         ),
         linktr: (
-            <svg className="socialSvg linktrSvg" viewBox="0 0 448 512">
-                <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm0 48c-88.4 0-256 44.6-256 133.3V480c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V437.3C480 348.6 312.4 304 224 304z" />
-            </svg>
+            <img src={linktr} className="socialSvg" alt="" />
         ),
         email: (
-            <svg className="socialSvg emailSvg" viewBox="0 0 512 512">
-                <path d="M502.3 190.8L327.4 338.9c-15 15-35.2 22.5-55.6 22.5s-40.6-7.5-55.6-22.5L9.7 190.8C3.9 185 0 176.1 0 166.2V80c0-26.5 21.5-48 48-48h416c26.5 0 48 21.5 48 48v86.2c0 9.9-3.9 18.8-9.7 24.6zM464 128H48v38.2l208 170.7c12.5 10.3 29.2 16.3 46.3 16.3s33.8-6 46.3-16.3l208-170.7V128z" />
+            <svg
+                height="32"
+                width="32"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    className="socialSvg emailSvg"
+                    d="M28 5H4c-1.104 0-2 .896-2 2v18c0 1.104.896 2 2 2h24c1.104 0 2-.896 2-2V7c0-1.104-.896-2-2-2zm0 4.879L16 18 4 9.879V7l12 8 12-8v2.879zM4 23V11.885l11.446 7.63c.269.18.594.274.921.274s.652-.094.92-.274L28 11.885V23H4z"
+                    fill="#FFFFFF"
+                ></path>
             </svg>
         ),
         linkedin: (
@@ -78,27 +72,31 @@ const Socials = ({ types, links }) => {
     };
 
     return (
-        <div className="card">
-            {types.map((type, index) => {
-                const svgIcon = svgMap[type.toLowerCase()];
-                if (!svgIcon) {
-                    console.warn(`Unsupported social type: ${type}`);
-                    return null;
-                }
+        <div className="cardWrapper">
+            <div className="socialsTitle">Socials</div>
+            <div className="card">
+                {types.map((type, index) => {
+                    const svgIcon = svgMap[type.toLowerCase()];
+                    if (!svgIcon) {
+                        console.warn(`Unsupported social type: ${type}`);
+                        return null;
+                    }
 
-                return (
-                    <a
-                        href={links[index]}
-                        className={`socialContainer container${index + 1}`}
-                        key={`${type}-${index}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        {svgIcon}
-                    </a>
-                );
-            })}
+                    return (
+                        <a
+                            href={links[index]}
+                            className={`socialContainer container_${type.toLowerCase()}`}
+                            key={`${type}-${index}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {svgIcon}
+                        </a>
+                    );
+                })}
+            </div>
         </div>
+
     );
 };
 

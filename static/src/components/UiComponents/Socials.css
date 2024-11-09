@@ -1,14 +1,28 @@
 /* From Uiverse.io by vinodjangid07 */
-.card {
-    width: fit-content;
-    height: fit-content;
+.cardWrapper {
     background-color: rgb(238, 238, 238);
     display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    width: 100%;
+    padding: 0 5%;
+    
+}
+.socialsTitle {
+    padding:  10px 25px;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+.card {
+    width: fit-content;
+    background-color: rgb(238, 238, 238);
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 25px 25px;
+    padding: 0 25px 25px 25px;
     gap: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
 }
 
 /* for all social containers*/
@@ -24,36 +38,59 @@
 }
 
 /* instagram*/
-.container1:hover {
+.container_instagram:hover {
     background-color: #d62976;
-    transition-duration: .3s;
 }
 
 /* twitter*/
-.container2:hover {
+.container_:hover {
     background-color: #00acee;
     transition-duration: .3s;
 }
 
 /* linkdin*/
-.container3:hover {
+.container_linkedin:hover {
     background-color: #0072b1;
     transition-duration: .3s;
 }
 
-/* Whatsapp*/
-.container4:hover {
-    background-color: #128C7E;
+/* Linktr*/
+.container_linktr:hover {
+    background-color: #88e474;
+}
+
+/* Email */
+.container_email:hover {
+    background-color: #ff6e6e;
+}
+
+/* Discord */
+.container_discord:hover {
+    background-color: rgb(0, 60, 255);
     transition-duration: .3s;
 }
 
+/* Facebook */
+.container_facebook:hover {
+    background-color: #316FF6;
+}
+
+/* Youtube */
+.container_youtube:hover {
+    background-color: red;
+}
+
+/* Website */
+.container_website:hover {
+    background-color: #00e4b8;
+}
 .socialContainer:active {
     transform: scale(0.9);
     transition-duration: .3s;
 }
 
 .socialSvg {
-    width: 17px;
+    width: 25px;
 }
 
 .socialSvg path {

@@ -84,7 +84,6 @@ const IndividualClubPage = () => {
 
             <div className="club-about-section-wrapper">
 
-                <Socials types={["instagram"]} links={['http://']} />
                 <div className="top-side">
                     <div className="content">
                         <h2>{clubInfo.org_name}</h2>
@@ -95,6 +94,8 @@ const IndividualClubPage = () => {
                         <p>{clubInfo.overview}</p>
                     </div>
                 </div>
+
+
                 <div className="ratingWrapperOutside">
                     <div className="ratingWrapper" style={{ '--rating': clubInfo.star_rating * 20 }}>
                         <div className="ratingTop">Reviews</div>
@@ -126,6 +127,11 @@ const IndividualClubPage = () => {
                     </div>
                 </div>
             </div>
+
+            <div className="socialSection">
+                <Socials types={clubInfo.types} links={clubInfo.links} />
+            </div>
+            
 
             {/* Include the IndividualClubComments component */}
             <IndividualClubComments
