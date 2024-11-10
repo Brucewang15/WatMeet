@@ -122,3 +122,16 @@ def forgotPassword(request):
     if not user.exists():
         return JsonResponse({'success': False})
     return JsonResponse({'success': True})
+
+def get_user(request):
+    try:
+        body_unicode = request.body.decode('utf-8') # users code
+        body_data = json.loads(body_unicode)
+        user_id = body_data.get('user_id')
+        user = User.objects.get(user_id=user_id)
+        
+        return JsonResponse({'first_name': user.first_name, 
+                            'last_name': user.last_name,
+                            'email': user.email}, safe=False)  
+    except User.DoesNotExist:
+        return JsonResponse({'success': False})
