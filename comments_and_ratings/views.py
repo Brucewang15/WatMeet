@@ -15,14 +15,19 @@ def get_comments(request):
     body_unicode = request.body.decode('utf-8')
     body_data = json.loads(body_unicode)
     org_id = body_data.get('org_id')
-    all_comments = Comment.objects.filter(org_id=org_id)
+    
+    if org_id is None:
+        all_comments = Comment.objects.all()
+    else:
+        all_comments = Comment.objects.filter(org_id=org_id)
+
     comments_data = []
     comments_likes = [0, 0, 0, 0, 0]
     
     for comment in all_comments:
         user = User.objects.get(user_id = comment.user_id)
         user_name = user.first_name + " " + user.last_name
-        org = Organization.objects.get(org_id = org_id)
+        org = Organization.objects.get(org_id = comment.org_id)
         comments_likes[int(comment.star_rating)-1] += 1
         comments_data.append({
             'comment_id': comment.comment_id,
