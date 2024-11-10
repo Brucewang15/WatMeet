@@ -81,6 +81,7 @@ const IndividualClubPage = () => {
         });
         if (response.ok) {
             const data = await response.json();
+            console.log(data)
             setClubInfo(data);
         }
     };
@@ -94,12 +95,12 @@ const IndividualClubPage = () => {
                 <div className="top-side">
                     <div className="content">
                         <h2>{clubInfo.org_name}</h2>
-                        {clubInfo.tags}
+                        
                     </div>
                 </div>
                 <div className="bottom-side">
                     <div className="content">
-                        <p>{clubInfo.overview}</p>
+                        <p>{clubInfo.overview} {clubInfo.tags}</p>
                         <div className="socialSection">
                             <Socials types={clubInfo.types} links={clubInfo.links} />
                         </div>
