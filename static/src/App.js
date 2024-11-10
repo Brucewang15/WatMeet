@@ -13,6 +13,8 @@ import IndividualClubPage from './components/MainPage/ClubsDisplay/IndividualClu
 import { useEffect } from 'react';
 import { loadUser } from '../src/redux/actions/authActions'
 import ForgotPassword from './components/account/ForgotPassword';
+import IndividualProfilePage from './components/MainPage/ProfileDisplay/IndividualProfilePage';
+
 function App() {
   const dispatch = useDispatch();
 
@@ -32,6 +34,7 @@ function App() {
           {/* <Route path="/confirmEmail" element={<ConfirmEmail/>} /> */}
           <Route path="/organizations" element={<MainClubPage />} />
           <Route path="/organizations/:orgId/" element={<IndividualClubPage />} />
+          <Route path="/users/:userId/" element={<IndividualProfilePage />} />
         </Routes>
       </Router>
 
