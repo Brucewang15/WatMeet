@@ -13,6 +13,8 @@ const Socials = ({ types, links }) => {
         console.error("'types' and 'links' arrays must have the same length.");
         return null;
     }
+    const shouldDisplay = Array.isArray(types) && types.length !== 0
+
 
     // Mapping of social types to their corresponding SVG icons
     const svgMap = {
@@ -71,17 +73,15 @@ const Socials = ({ types, links }) => {
         ),
     };
 
-    return (
-        <div className="cardWrapper">
-            <div className="socialsTitle">Socials</div>
-            <div className="card">
+    return <>
+        {shouldDisplay &&
+            <div className="socialsCard">
                 {types.map((type, index) => {
                     const svgIcon = svgMap[type.toLowerCase()];
                     if (!svgIcon) {
                         console.warn(`Unsupported social type: ${type}`);
                         return null;
                     }
-
                     return (
                         <a
                             href={links[index]}
@@ -94,10 +94,8 @@ const Socials = ({ types, links }) => {
                         </a>
                     );
                 })}
-            </div>
-        </div>
-
-    );
+            </div>}
+    </>;
 };
 
 export default Socials;

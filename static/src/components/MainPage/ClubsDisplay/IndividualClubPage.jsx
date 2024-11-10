@@ -6,14 +6,21 @@ import { useSelector } from 'react-redux';
 import Header from '../../Header';
 import IndividualClubComments from './IndividualClubComments';
 import Socials from '../../UiComponents/Socials'
+import RatingBox from './RatingBox';
 
 const IndividualClubPage = () => {
     const [userId, setUserId] = useState(null);
     const [allComments, setAllComments] = useState([]);
     const [allCommentsRatings, setAllCommentsRatings] = useState([]);
     const [clubInfo, setClubInfo] = useState({
+        org_name: '',
+        overview: '',
         star_rating: 0,
         number_of_star_rating: 0,
+        ranking_num: 0,
+        org_type: '',
+        links: [],
+        tags: [],
     });
     const { orgId } = useParams();
 
@@ -87,53 +94,29 @@ const IndividualClubPage = () => {
                 <div className="top-side">
                     <div className="content">
                         <h2>{clubInfo.org_name}</h2>
+                        {clubInfo.tags}
                     </div>
                 </div>
                 <div className="bottom-side">
                     <div className="content">
                         <p>{clubInfo.overview}</p>
-                    </div>
-                </div>
-
-
-                <div className="ratingWrapperOutside">
-                    <div className="ratingWrapper" style={{ '--rating': clubInfo.star_rating * 20 }}>
-                        <div className="ratingTop">Reviews</div>
-                        <div className="ratingBottom">
-                            <div className="ratingLeft">
-                                {Array.from({ length: 5 }).map((_, index) => {
-                                    const reversedIndex = 5 - index; // Reverse the order from 5 to 1
-                                    return (
-                                        <div className="ratingBarWrapper" key={index}>
-                                            <div className="ratingBarNumber">{reversedIndex}</div>
-                                            <div
-                                                className="ratingBar"
-                                                style={{
-                                                    '--ratingBar': clubInfo.number_of_star_rating
-                                                        ? (allCommentsRatings[reversedIndex - 1] / clubInfo.number_of_star_rating) * 100
-                                                        : 0,
-                                                }}
-                                            ></div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                            <div className="ratingRight">
-                                <div className="ratingNumber">{clubInfo.star_rating}</div>
-                                <div className="rating"></div>
-                                <div className="ratingStats">{clubInfo.number_of_star_rating} ratings</div>
-                            </div>
+                        <div className="socialSection">
+                            <Socials types={clubInfo.types} links={clubInfo.links} />
                         </div>
+
+                        <RatingBox
+                            starRating={clubInfo.star_rating}
+                            numberOfStarRatings={clubInfo.number_of_star_rating}
+                            allCommentsRatings={allCommentsRatings}
+                        />
                     </div>
                 </div>
             </div>
 
-            <div className="socialSection">
-                <Socials types={clubInfo.types} links={clubInfo.links} />
-            </div>
-            
 
             {/* Include the IndividualClubComments component */}
+
+
             <IndividualClubComments
                 orgId={orgId}
                 userId={userId}
@@ -141,6 +124,7 @@ const IndividualClubPage = () => {
                 accessToken={accessToken}
                 getClubData={getClubData}
                 clubInfo={clubInfo}
+                getAllCommentsDB2={getAllCommentsDB}
             />
         </div>
     );

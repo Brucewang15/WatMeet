@@ -7,7 +7,7 @@ import downvote from '../../../pictures/downvote.svg';
 import { useSelector } from 'react-redux';
 import './IndividualClubComments.css';
 
-const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, getClubData, clubInfo }) => {
+const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, getClubData, clubInfo, getAllCommentsDB2 }) => {
     const [commentState, setCommentState] = useState(false);
     const [loginPopupVisible, setLoginPopupVisible] = useState(false);
     const [allComments, setAllComments] = useState([]);
@@ -54,7 +54,7 @@ const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, g
             });
             if (response.ok) {
                 const data = await response.json();
-                setCommentRatings(data.commentRatings);
+                setCommentRatings(data.user_ratings);
             }
         } catch (error) {
             console.error('Failed to fetch user ratings:', error);
@@ -97,7 +97,7 @@ const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, g
 
     // Prevent scrolling when pop-up is open (note: add commentState in future)
     useEffect(() => {
-        if (loginPopupVisible) {
+        if (loginPopupVisible || commentState) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = 'auto';
@@ -105,7 +105,7 @@ const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, g
         return () => {
             document.body.style.overflow = 'auto';
         };
-    }, [loginPopupVisible]);
+    }, [loginPopupVisible, commentState]);
 
     return (
         <>
@@ -133,15 +133,17 @@ const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, g
             </div>
 
             {commentState && (
-                <div className="commentPopUp">
-                    <CommentPopUp
-                        userId={userId}
-                        setCommentState={setCommentState}
-                        onCommentPosted={() => {
-                            getAllCommentsDB();
-                            getClubData();
-                        }}
-                    />
+                <div className="popupOverlay" onClick={() => setCommentState(false)}>
+                    <div className="popupContent" onClick={(e) => e.stopPropagation()}>
+                        <CommentPopUp
+                            userId={userId}
+                            setCommentState={setCommentState}
+                            onCommentPosted={() => {
+                                getAllCommentsDB2();
+                                getClubData();
+                            }}
+                        />
+                    </div>
                 </div>
             )}
 
@@ -158,6 +160,7 @@ const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, g
                 <div className="allCommentsContainer">
                     {[...allComments].reverse().map((comment, index) => (
                         <div className="comments" key={index}>
+                            {console.log(comment, 'comment', commentRatings)}
                             <div className="like-wrapper">
                                 <img
                                     className={`voteButton ${commentRatings[comment.comment_id]?.upvoted ? 'upvoted' : ''}`}

@@ -120,15 +120,15 @@ def get_user_ratings(request):
     user_id = body_data.get('user_id')
     
     # Fetch all ratings by this user
-    user_ratings = UserCommentRating.objects.filter(user_id=user_id)
+    user_ratings = UserCommentRating.objects.filter(user_id=user_id).values()
     ratings_data = []
 
     for rating in user_ratings:
         ratings_data.append({
-            'comment_id': rating.comment,  # Assuming comment_id is a foreign key
-            'upvote': rating.upvote,
-            'downvote': rating.downvote,
-            'rated_at': rating.created_at
+            'comment_id': rating['comment_id'],  # Assuming comment_id is a foreign key
+            'upvote': rating['upvote'],
+            'downvote': rating['downvote'],
+            'rated_at': rating['created_at']
         })
     
     return JsonResponse({'user_ratings': ratings_data}, safe=False)

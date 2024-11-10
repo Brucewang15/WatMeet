@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
 from organizations.models import Organization
+from organizations.models import Tag
 
 from .search.sort_data import sort_data
 import json
@@ -36,8 +37,9 @@ def get_individual_club_data(request):
     body_unicode = request.body # users code
     body_data = json.loads(body_unicode)
 
-    org_id = body_data.get('org_id')
-    club = Organization.objects.get(org_id = org_id)
+    orgId = body_data.get('org_id')
+    print(orgId, 'org_id')
+    club = Organization.objects.get(org_id = orgId)
     # Initialize empty lists
     types = []
     links = []
@@ -75,4 +77,21 @@ def get_individual_club_data(request):
         types.append('website')
         links.append(club.website)
     
-    return JsonResponse({'org_name': club.org_name, 'overview': club.overview, 'star_rating': club.star_rating, 'number_of_star_rating': club.number_of_star_rating, 'ranking_num': club.ranking_num, 'org_type': club.org_type, 'types': types, 'links': links})
+    print(Tag.objects.values())
+    tags = Tag.objects.filter(org_id=orgId).values()
+    print(tags, 'tags')
+    all_tags = []
+    for tag in tags:
+        print(tag)
+        all_tags.append(tag['tag_name'])
+    print(all_tags)
+    
+    return JsonResponse({'org_name': club.org_name, 
+                         'overview': club.overview, 
+                         'star_rating': club.star_rating, 
+                         'number_of_star_rating': club.number_of_star_rating, 
+                         'ranking_num': club.ranking_num, 
+                         'org_type': club.org_type, 
+                         'types': types, 
+                         'links': links,
+                         'tags': all_tags})
