@@ -77,6 +77,19 @@
     transition: background-color 0.3s;
 }
 
+.orgs.clicked {
+    padding: 8px 15px;
+
+    background-color: rgb(237, 237, 124);
+
+    border-radius: 5px;
+    color: #333;
+    font-size: 0.9em;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
 .orgs:hover {
     background-color: #ced4da;
 }
