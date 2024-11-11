@@ -6,11 +6,10 @@ const SearchFilter = ({setMinStarRating, setMinAmountRating}) => {
 
     const [starRating, setStarRating] = useState(0);
     const [amountRating, setAmountRating] = useState(0);
-    const [tags, setTags] = useState(["Social", "Culture", "Recreation", "International", "Professional Development", 
-        "Academic", "Networking", "Arts", "Advocacy", "Community Service", "Gaming", "Health", "Religious", "Performing Arts", "Music", 
-        "Science", "Technology", "Charity", "Volunteering", "Fundraising", "Support Group", "Language", "Wellness", "Video Games", "Board Games", 
+    const [tags, setTags] = useState(["Culture", "Recreation", "International", "Technology","Academic", "Arts", "Community Service", "Gaming", 
+        "Health", "Religious", "Performing Arts", "Music", "Science", "Charity", "Volunteering", "Fundraising", "Support Group", "Language", "Wellness", "Video Games", "Board Games", 
         "Literature", "Public Speaking", "Law", "Mentorship", "Innovation", "Leadership", "Finance", "Sports", "Debate", "Engineering", "Investment", 
-        "LGBTQ+", "Film", "Diversity", "Education", "Photography", "Comedy", "Entrepreneurship"]);
+        "LGBTQ+", "Film", "Diversity", "Education", "Photography", "Comedy", "Entrepreneurship", "Social", "Professional Development", "Networking", "Advocacy"]);
     const [isClicked, setIsClicked] = useState(new Array(tags.length).fill(false));
     const [expanded, setExpanded] = useState(false);
 
