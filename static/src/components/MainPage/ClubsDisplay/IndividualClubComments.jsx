@@ -140,6 +140,7 @@ const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, g
                             setCommentState={setCommentState}
                             onCommentPosted={() => {
                                 getAllCommentsDB2();
+                                getAllCommentsDB();
                                 getClubData();
                             }}
                         />

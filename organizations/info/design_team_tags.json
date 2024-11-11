@@ -1,146 +1,146 @@
 [
     {
         "name": "Baja SAE",
-        "tags": ["Engineering", "Engineering Design", "Competitions", "Automotive", "Teamwork"]
+        "tags": ["Automotive", "Manufacturing"]
     },
     {
         "name": "Concrete Canoe Team",
-        "tags": ["Engineering", "Engineering Design", "Competitions", "Construction", "Teamwork"]
+        "tags": ["Civil", "Manufacturing"]
     },
     {
         "name": "Concrete Toboggan Team",
-        "tags": ["Engineering", "Engineering Design", "Competitions", "Construction", "Teamwork"]
+        "tags": ["Civil", "Manufacturing"]
     },
     {
-        "name": "Electrium Mobili   ty",
-        "tags": ["Engineering", "Engineering Design", "Technology", "Sustainability", "Innovation"]
+        "name": "Electrium Mobility",
+        "tags": ["Automotive", "Sustainability", "Manufacturing"]
     },
     {
         "name": "Engineers Without Borders",
-        "tags": ["Engineering", "Advocacy", "International", "Sustainability", "Community Service"]
+        "tags": ["Humanitarian"]
     },
     {
         "name": "F_rmlab",
-        "tags": ["Architecture", "Arts", "Technology", "Innovation"]
+        "tags": ["Civil", "Software"]
     },
     {
         "name": "Formula Nano",
-        "tags": ["Engineering", "Engineering Design", "Science", "Competitions", "Research"]
+        "tags": ["Nanotechnology"]
     },
     {
         "name": "UW Formula Electric",
-        "tags": ["Engineering", "Engineering Design", "Competitions", "Automotive", "Sustainability"]
+        "tags": ["Automotive", "Sustainability", "Manufacturing"]
     },
     {
         "name": "Hacker Fab",
-        "tags": ["Engineering", "Technology", "Innovation", "Research"]
+        "tags": ["Nanotechnology", "Manufacturing"]
     },
     {
         "name": "Industry 4.0 Team",
-        "tags": ["Engineering", "Technology", "Competitions", "Education"]
+        "tags": ["Manufacturing", "Software", "AI"]
     },
     {
         "name": "International Genetically Engineered Machine Team (iGEM)",
-        "tags": ["Science", "Engineering", "Competitions", "Research"]
+        "tags": ["Biomedical", "Nanotechnology"]
     },
     {
         "name": "MedTechResolve",
-        "tags": ["Engineering", "Health", "Innovation", "Competitions", "Technology"]
+        "tags": ["Biomedical", "AI"]
     },
     {
         "name": "Midnight Sun Solar Car Team",
-        "tags": ["Engineering", "Engineering Design", "Sustainability", "Competitions", "Automotive"]
+        "tags": ["Automotive", "Sustainability", "Manufacturing"]
     },
     {
         "name": "MIT-PITT-RW",
-        "tags": ["Engineering", "Robotics", "Competitions", "Technology", "Research"]
+        "tags": ["Automotive", "AI", "Software"]
     },
     {
         "name": "Robotics Team (UWRT)",
-        "tags": ["Engineering", "Robotics", "Competitions", "Technology", "Teamwork"]
+        "tags": ["Robotics", "AI", "Software"]
     },
     {
         "name": "Steel Bridge Design Team",
-        "tags": ["Engineering", "Engineering Design", "Competitions", "Construction", "Teamwork"]
+        "tags": ["Civil", "Manufacturing"]
     },
     {
         "name": "The Waterloo Alternative Protein Project",
-        "tags": ["Science", "Engineering", "Sustainability", "Food", "Research"]
+        "tags": ["Sustainability", "Humanitarian", "Biomedical"]
     },
     {
         "name": "UWAFT",
-        "tags": ["Engineering", "Engineering Design", "Sustainability", "Automotive", "Innovation"]
+        "tags": ["Automotive", "Sustainability"]
     },
     {
         "name": "UWATERLOO IISE",
-        "tags": ["Engineering", "Professional Development", "Networking", "Education"]
+        "tags": ["Manufacturing", "Humanitarian"]
     },
     {
         "name": "UW BIOMOD Team",
-        "tags": ["Science", "Engineering", "Competitions", "Research"]
+        "tags": ["Biomedical", "Nanotechnology"]
     },
     {
         "name": "UW Blueprint",
-        "tags": ["Technology", "Engineering", "Community Service", "Innovation"]
+        "tags": ["Software", "Humanitarian"]
     },
     {
         "name": "UW Nano Research Group",
-        "tags": ["Engineering", "Science", "Research", "Technology"]
+        "tags": ["Nanotechnology", "Biomedical"]
     },
     {
         "name": "UW Orbital",
-        "tags": ["Engineering", "Engineering Design", "Science", "Competitions", "Teamwork"]
+        "tags": ["Aerospace", "Software"]
     },
     {
         "name": "UW REACT - FIRST Robotics",
-        "tags": ["Engineering", "Robotics", "Competitions", "Technology", "Teamwork"]
+        "tags": ["Robotics", "AI", "Manufacturing"]
     },
     {
         "name": "UW Reality Labs",
-        "tags": ["Engineering", "Technology", "Innovation", "Gaming"]
+        "tags": ["Software", "AI"]
     },
     {
         "name": "UWSiO",
-        "tags": ["Engineering", "Science", "Research", "Technology"]
+        "tags": ["Nanotechnology"]
     },
     {
         "name": "UW Vex U Robotics Team",
-        "tags": ["Engineering", "Robotics", "Competitions", "Teamwork"]
+        "tags": ["Robotics", "AI", "Manufacturing"]
     },
     {
         "name": "WAT ARROW",
-        "tags": ["Engineering", "Engineering Design", "Competitions", "Teamwork"]
+        "tags": ["Aerospace"]
     },
     {
         "name": "Wat Street",
-        "tags": ["Finance", "Technology", "Competitions", "Innovation", "Investment"]
+        "tags": ["Software", "AI"]
     },
     {
         "name": "Warrior Home",
-        "tags": ["Engineering", "Engineering Design", "Sustainability", "Construction", "Teamwork"]
+        "tags": ["Civil", "Sustainability"]
     },
     {
         "name": "Waterloo Aerial Robotics Group (WARG)",
-        "tags": ["Engineering", "Robotics", "Technology", "Competitions", "Teamwork"]
+        "tags": ["Aerospace", "Robotics", "AI"]
     },
     {
         "name": "WATOLINK",
-        "tags": ["Engineering", "Technology", "Research", "Innovation", "Artificial Intelligence"]
+        "tags": ["Biomedical", "AI", "Software"]
     },
     {
         "name": "Waterloo Rocketry Team",
-        "tags": ["Engineering", "Engineering Design", "Science", "Competitions", "Teamwork"]
+        "tags": ["Aerospace", "Manufacturing"]
     },
     {
         "name": "Waterloop",
-        "tags": ["Engineering", "Engineering Design", "Innovation", "Competitions", "Teamwork"]
+        "tags": ["Automotive", "Aerospace", "Manufacturing"]
     },
     {
         "name": "WATonomous",
-        "tags": ["Engineering", "Engineering Design", "Technology", "Competitions", "Automotive"]
+        "tags": ["Automotive", "AI", "Software"]
     },
     {
         "name": "WAT.ai",
-        "tags": ["Engineering", "Technology", "Science", "Research", "Artificial Intelligence"]
+        "tags": ["AI", "Software"]
     }
 ]

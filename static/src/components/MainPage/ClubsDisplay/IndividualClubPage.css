@@ -50,6 +50,10 @@
     height: fit-content;
     width: fit-content;
     right: 0;
+    display: flex;
+    flex-direction: column;
+    top: 100px;
+    gap: 15px;
 }
 
 .content h2 {

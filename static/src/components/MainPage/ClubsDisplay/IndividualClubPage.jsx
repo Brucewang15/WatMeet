@@ -7,6 +7,7 @@ import Header from '../../Header';
 import IndividualClubComments from './IndividualClubComments';
 import Socials from '../../UiComponents/Socials'
 import RatingBox from './RatingBox';
+import Tags from '../../UiComponents/Tags';
 
 const IndividualClubPage = () => {
     const [userId, setUserId] = useState(null);
@@ -102,7 +103,8 @@ const IndividualClubPage = () => {
                     <div className="content">
                         <p>{clubInfo.overview} {clubInfo.tags}</p>
                         <div className="socialSection">
-                            <Socials types={clubInfo.types} links={clubInfo.links} />
+                            <Tags tags={clubInfo.tags} />
+                            <Socials types = {clubInfo.types} links = {clubInfo.links} />
                         </div>
 
                         <RatingBox

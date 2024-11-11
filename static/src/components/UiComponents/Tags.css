@@ -1,0 +1,25 @@
+.allTags {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 475px;
+    height: fit-content;
+    width: fit-content;
+    align-items: center;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.tag {
+    margin: 5px;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: black;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.tag:hover {
+    background-color: #e0e0e0;
+}
