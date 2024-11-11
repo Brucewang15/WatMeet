@@ -52,7 +52,9 @@ const MainPage = () => {
         <Header/>
         <Background prompt={prompt}/>
         <div className="mainContainer">
-            <div className=""><SearchFilter setMinStarRating={setMinStarRating} setMinAmountRating={setMinAmountRating}/></div>
+            <div className="fContainer">
+                <SearchFilter setMinStarRating={setMinStarRating} setMinAmountRating={setMinAmountRating}/>
+            </div>
             <div className="mainAllClubsContainer">
                 <div className="chooseOrgType">
                     {['All', 'Clubs', 'Design Teams', 'Intramurals'].map((type) => (

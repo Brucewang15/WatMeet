@@ -1,5 +1,4 @@
 .filterContainer {
-    width: 100%;
     max-width: 250px;
     padding: 20px;
     background-color: white;
@@ -135,11 +134,17 @@
 }
 
 
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
     .orgsContainer {
-        flex-direction: column; /* Stack boxes vertically */
+        flex-direction: column; 
         flex-wrap: wrap;
         max-height: 300px;
         overflow: scroll;
+    }
+} */
+
+@media (max-width: 670px) {
+    .filterContainer {
+        max-width: 670px;
     }
 }
