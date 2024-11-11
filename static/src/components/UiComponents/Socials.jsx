@@ -17,7 +17,7 @@ const Socials = ({ types, links }) => {
 
 
     // Mapping of social types to their corresponding SVG icons
-    const svgMap = {
+    const svgMap = {    
         discord: (
             <svg
                 height="25px"

@@ -46,6 +46,30 @@ class Command(BaseCommand):
             except:
                 org.save()
                 continue
+
+        # Clubs
+        with open('./organizations/info/club_info_finalized.json', 'r') as file:
+            club_data = json.load(file)
+    
+        for item in club_data:
+            name=item["names"]
+            print(name)
+            org = Organization.objects.get(org_name=name)
+            try:
+                links = item["links"]
+                org.instagram = get_value(links, "instagram")
+                org.facebook = get_value(links, "facebook")
+                org.linkedin = get_value(links, "linkedin")
+                org.email = get_value(links, "email")
+                org.website = get_value(links, "website")
+                org.youtube = get_value(links, "youtube")
+                org.discord = get_value(links, "discord")
+                org.linktr = get_value(links, "linktr")
+                org.save()
+            except:
+                org.save()
+                continue
+                
             
             
         self.stdout.write(self.style.SUCCESS('Data reloaded successfully'))

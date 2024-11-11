@@ -49,7 +49,8 @@
     position: absolute;
     height: fit-content;
     width: fit-content;
-    right: 0;
+    right: 475px;
+    transform: translateX(100%);
     display: flex;
     flex-direction: column;
     top: 100px;

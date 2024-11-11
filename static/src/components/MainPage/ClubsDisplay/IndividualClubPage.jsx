@@ -101,7 +101,7 @@ const IndividualClubPage = () => {
                 </div>
                 <div className="bottom-side">
                     <div className="content">
-                        <p>{clubInfo.overview} {clubInfo.tags}</p>
+                        <p>{clubInfo.overview}</p>
                         <div className="socialSection">
                             <Tags tags={clubInfo.tags} />
                             <Socials types = {clubInfo.types} links = {clubInfo.links} />
