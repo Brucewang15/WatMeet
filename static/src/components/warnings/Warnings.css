@@ -10,7 +10,7 @@
 .alert {
     display: flex;
     align-items: center;
-    padding: 0.5rem;
+    padding: 0.6rem 1rem;
     border-radius: 0.5rem;
     border-left: 4px solid;
     transition: all 300ms ease-in-out;
@@ -84,6 +84,7 @@
 }
 
 .alert-text {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     font-weight: 600;
+    white-space: nowrap;
 }
