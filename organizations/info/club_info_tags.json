@@ -1,5 +1,73 @@
 [
     {
+        "name": "A Cappella Club",
+        "tags": ["Performing Arts", "Music", "Arts"]
+    },
+    {
+        "name": "ACE - A Cappella Affiliate",
+        "tags": ["Performing Arts", "Music", "Arts"]
+    },
+    {
+        "name": "AIESEC",
+        "tags": ["International", "Leadership", "Volunteering", "Professional Development", "Networking", "Advocacy"]
+    },
+    {
+        "name": "African Student Association (ASA)",
+        "tags": ["Culture", "International", "Diversity"]
+    },
+    {
+        "name": "AfroXDance Club",
+        "tags": ["Performing Arts", "Arts", "Culture", "Wellness"]
+    },
+    {
+        "name": "Amnesty International",
+        "tags": ["Advocacy", "Charity", "International", "Community Service"]
+    },
+    {
+        "name": "Animal Rights Society",
+        "tags": ["Advocacy", "Community Service", "Volunteering"]
+    },
+    {
+        "name": "Animusic Ensembles",
+        "tags": ["Music", "Arts", "Gaming", "Performing Arts", "Culture"]
+    },
+    {
+        "name": "Armenian Students' Association",
+        "tags": ["Culture", "International", "Language", "Arts", "Diversity", "Education"]
+    },
+    {
+        "name": "Ascend Canada Waterloo Chapter",
+        "tags": ["International", "Leadership", "Professional Development", "Networking", "Diversity"]
+    },
+    {
+        "name": "Association of Caribbean Students",
+        "tags": ["Culture", "International", "Diversity"]
+    },
+    {
+        "name": "Association of Korean Canadian Scientists and Engineers",
+        "tags": ["Science", "Technology", "Engineering", "International", "Professional Development", "Networking"]
+    },
+    {
+        "name": "Aviation Society",
+        "tags": ["Technology", "Academic", "Education", "Social"]
+    },
+    {
+        "name": "Best Buddies, UW",
+        "tags": ["Charity", "Volunteering", "Community Service", "Support Group", "Diversity"]
+    },
+    {
+        "name": "Big Spoon Lil Spoon",
+        "tags": ["Charity", "Volunteering", "Community Service", "Mentorship", "Education", "Support Group"]
+    },
+    {
+        "name": "Black Association for Student Expression,UW (UW BASE)",
+        "tags": ["Culture", "Diversity", "Mentorship", "Community Service"]
+    },
+    {
+        "name": "Black Medical Leaders of Tomorrow",
+        "tags": ["Health", "Diversity", "Education", "Professional Development", "Advocacy", "Mentorship"]
+    },
+    {
         "name": "Breakers,UW",
         "tags": ["Dance", "Performing Arts", "Recreation", "Social"]
     },
