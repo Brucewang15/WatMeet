@@ -76,7 +76,7 @@
         "tags": ["Religious", "Wellness", "Culture", "Social"]
     },
     {
-        "name": "Campus Association for Bah\u00e1\u02bc\u00ed Studies at UW (CABS)",
+        "name": "Campus Association for Bahá’í Studies at UW (CABS)",
         "tags": ["Religious", "Culture", "Advocacy", "Social"]
     },
     {
@@ -161,7 +161,7 @@
     },
     {
         "name": "Deception Board Games Club",
-        "tags": ["Gaming", "Recreation", "Social", "Board Games"]
+        "tags": ["Gaming", "Recreation", "Social"]
     },
     {
         "name": "Egyptian Student Association",
@@ -181,7 +181,7 @@
     },
     {
         "name": "Fighting Game Club (UWFGC)",
-        "tags": ["Gaming", "Recreation", "Social", "Video Games", "Competitions"]
+        "tags": ["Gaming", "Recreation", "Social", "Competitions"]
     },
     {
         "name": "Films, UW (Former Films Creator Club)",
@@ -365,7 +365,7 @@
     },
     {
         "name": "Riichi Mahjong UW (RMUW)",
-        "tags": ["Gaming", "Recreation", "Culture", "Social", "Board Games"]
+        "tags": ["Gaming", "Recreation", "Culture", "Social"]
     },
     {
         "name": "Romanian Student Association",
@@ -393,7 +393,7 @@
     },
     {
         "name": "Smash, UW",
-        "tags": ["Gaming", "Recreation", "Social", "Video Games", "Competitions"]
+        "tags": ["Gaming", "Recreation", "Social", "Competitions"]
     },
     {
         "name": "Socialist Fightback Club at Waterloo University",
@@ -448,7 +448,7 @@
         "tags": ["Wellness", "Religious", "Culture", "Social"]
     },
     {
-        "name": "The Circle K International Club of University of Waterloo\u201d",
+        "name": "The Circle K International Club of University of Waterloo”",
         "tags": ["Volunteering", "Community Service", "Leadership", "Social"]
     },
     {
@@ -485,7 +485,7 @@
     },
     {
         "name": "UW Board Games Club",
-        "tags": ["Gaming", "Recreation", "Social", "Board Games"]
+        "tags": ["Gaming", "Recreation", "Social"]
     },
     {
         "name": "UW Book Club",
@@ -541,7 +541,7 @@
     },
     {
         "name": "UW Go Club",
-        "tags": ["Gaming", "Recreation", "Culture", "Social", "Board Games"]
+        "tags": ["Gaming", "Recreation", "Culture", "Social"]
     },
     {
         "name": "UW Kpop Club",
@@ -553,7 +553,7 @@
     },
     {
         "name": "UW Mario Kart",
-        "tags": ["Gaming", "Recreation", "Social", "Video Games"]
+        "tags": ["Gaming", "Recreation", "Social"]
     },
     {
         "name": "UW Mehfil",
@@ -593,7 +593,7 @@
     },
     {
         "name": "UW Scrabble",
-        "tags": ["Gaming", "Recreation", "Social", "Board Games"]
+        "tags": ["Gaming", "Recreation", "Social"]
     },
     {
         "name": "UW Society of Addictions Awareness (UW SAA)",
@@ -609,7 +609,7 @@
     },
     {
         "name": "UW Tetris Club",
-        "tags": ["Gaming", "Recreation", "Social", "Video Games"]
+        "tags": ["Gaming", "Recreation", "Social"]
     },
     {
         "name": "UW VR",
@@ -785,7 +785,7 @@
     },
     {
         "name": "osu! Club, UW",
-        "tags": ["Gaming", "Recreation", "Social", "Video Games"]
+        "tags": ["Gaming", "Recreation", "Social"]
     },
     {
         "name": "uWaTNA",
