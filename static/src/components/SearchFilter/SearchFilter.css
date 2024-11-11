@@ -64,6 +64,9 @@
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+
+    max-height: 300px;
+    overflow: scroll;
 }
 
 .orgs {
@@ -77,9 +80,29 @@
     transition: background-color 0.3s;
 }
 
+.orgs.clicked {
+    padding: 8px 15px;
+
+    background-color: rgb(237, 237, 124);
+
+    border-radius: 5px;
+    color: #333;
+    font-size: 0.9em;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
 .orgs:hover {
     background-color: #ced4da;
 }
+
+.orgs.clicked:hover {
+    background-color: rgb(200, 200, 23);
+}
+
+
+
 
 /* Button Styles */
 .filterClear {
@@ -99,9 +122,24 @@
     background-color: #c82333;
 }
 
+.showContainer {
+    display: flex;
+    justify-content: center;
+}
+.show {
 
-@media (max-width: 300px) {
+    margin-top: 10px;
+    color: #7c7b78;
+
+    cursor: pointer;
+}
+
+
+@media (max-width: 400px) {
     .orgsContainer {
         flex-direction: column; /* Stack boxes vertically */
+        flex-wrap: wrap;
+        max-height: 300px;
+        overflow: scroll;
     }
 }

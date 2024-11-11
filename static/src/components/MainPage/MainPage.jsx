@@ -16,7 +16,8 @@ const MainPage = () => {
 
 
     const [clubs, setClubs] = useState([]);
-    const [minRating, setMinRating] = useState(0);
+    const [minStarRating, setMinStarRating] = useState(0);
+    const [minAmountRating, setMinAmountRating] = useState(0);
     const [selectedType, setSelectedType] = useState('All');
 
     const {prompt} = useParams();
@@ -33,7 +34,7 @@ const MainPage = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ searchPropt: prompt, selectedType: selectedType, minRating: minRating })
+                body: JSON.stringify({ searchPropt: prompt, selectedType: selectedType, minStarRating: minStarRating })
             })
             if (response.ok) {
                 try {
@@ -45,13 +46,13 @@ const MainPage = () => {
             }
         }
         get_club_data()
-    }, [prompt, minRating, selectedType])
+    }, [prompt, minStarRating, minAmountRating, selectedType])
 
     return <>
         <Header/>
         <Background prompt={prompt}/>
         <div className="mainContainer">
-            <div className=""><SearchFilter setRating={setMinRating} /></div>
+            <div className=""><SearchFilter setMinStarRating={setMinStarRating} setMinAmountRating={setMinAmountRating}/></div>
             <div className="mainAllClubsContainer">
                 <div className="chooseOrgType">
                     {['All', 'Clubs', 'Design Teams', 'Intramurals'].map((type) => (
