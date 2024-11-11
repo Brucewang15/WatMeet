@@ -23,13 +23,13 @@ def get_club_data(request):
         data = Organization.objects.filter(org_type = 'Intramurals')
 
     search_propt = json.loads(request.body).get("searchPropt")
-    minRating = json.loads(request.body).get("minRating")
+    minStarRating = json.loads(request.body).get("minStarRating")
 
     data = sort_data(data, search_propt)
 
     #filter out everything below minRating
     
-    data = list(filter(lambda elem: Organization.objects.get(org_name=elem["org_name"]).star_rating >= float(minRating), data))
+    data = list(filter(lambda elem: Organization.objects.get(org_name=elem["org_name"]).star_rating >= float(minStarRating), data))
     return JsonResponse(data, safe=False)
 
 def get_individual_club_data(request):

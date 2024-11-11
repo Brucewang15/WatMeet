@@ -64,6 +64,9 @@
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+
+    max-height: 300px;
+    overflow: scroll;
 }
 
 .orgs {
@@ -97,11 +100,6 @@
 .orgs.clicked:hover {
     background-color: rgb(200, 200, 23);
 }
-
-.moreOrgsContainer {
-    margin-bottom: 20px;
-}
-
 
 
 
@@ -137,8 +135,11 @@
 }
 
 
-@media (max-width: 300px) {
+@media (max-width: 400px) {
     .orgsContainer {
         flex-direction: column; /* Stack boxes vertically */
+        flex-wrap: wrap;
+        max-height: 300px;
+        overflow: scroll;
     }
 }
