@@ -8,32 +8,22 @@ import "./SearchFilter.css";
 const SearchFilter = ({setRating}) => {
 
     const [slider, setSlider] = useState(0);
-    const [tags, setTags] = useState([
-        {id: 1, isClicked: false},
-        {id: 2, isClicked: false},
-        {id: 3, isClicked: false},
-        {id: 4, isClicked: false},
-        {id: 5, isClicked: false},
-        {id: 6, isClicked: false},
-        {id: 7, isClicked: false},
-        {id: 8, isClicked: false},
-        {id: 9, isClicked: false},
-        {id: 10, isClicked: false},
-        {id: 11, isClicked: false},
-        {id: 12, isClicked: false},
-    ]);
+    const [tags, setTags] = useState(["Social", "Culture", "Recreation", "International", "Professional Development", 
+        "Academic", "Networking", "Arts", "Advocacy", "Community Service", "Gaming", "Health", "Religious", "Performing Arts", "Music", 
+        "Science", "Technology", "Charity", "Volunteering", "Fundraising", "Support Group", "Language", "Wellness", "Video Games", "Board Games", 
+        "Literature", "Public Speaking", "Law", "Mentorship", "Innovation", "Leadership", "Finance", "Sports", "Debate", "Engineering", "Investment", 
+        "LGBTQ+", "Film", "Diversity", "Education", "Photography", "Comedy", "Entrepreneurship"]);
+    const [isClicked, setIsClicked] = useState(new Array(tags.length).fill(false));
 
     const handleChange = (event) => {
         setSlider(event.target.value);
         setRating(event.target.value);
     }
 
-    const handleTagClick = (id) => {
-        setTags(
-            tags.map((tag) => 
-                tag.id === id ? {id: tag.id, isClicked: !tag.isClicked} : tag
-            )
-        );
+    const handleTagClick = (index) => {
+        setIsClicked(isClicked.map((item, i) => 
+            index == i ? !item : item
+        ));
     }
 
 
@@ -50,20 +40,16 @@ const SearchFilter = ({setRating}) => {
                 <input className="ratingInput" type="range" min="0" max="5" defaultValue="0" step="0.1" onChange={handleChange}/>
             </div>
             <div className="orgContainer">
-                <div className="orgType">Your organization type</div>
+                <div className="orgType">Organization Tags</div>
                 <div className="orgsContainer">
-                    <div className={tags[0].isClicked ? "orgs clicked" : "orgs"} onClick={() => handleTagClick(1)}>Culture</div>
-                    <div className={tags[1].isClicked ? "orgs clicked" : "orgs"} onClick={() => handleTagClick(2)}>Recreation</div>
-                    <div className={tags[2].isClicked ? "orgs clicked" : "orgs"} onClick={() => handleTagClick(3)}>International</div>
-                    <div className={tags[3].isClicked ? "orgs clicked" : "orgs"} onClick={() => handleTagClick(4)}>Science</div>
-                    <div className={tags[4].isClicked ? "orgs clicked" : "orgs"} onClick={() => handleTagClick(5)}>Arts</div>
-                    <div className={tags[5].isClicked ? "orgs clicked" : "orgs"} onClick={() => handleTagClick(6)}>Community Service</div>
-                    <div className={tags[6].isClicked ? "orgs clicked" : "orgs"} onClick={() => handleTagClick(7)}>Academic</div>
-                    <div className={tags[7].isClicked ? "orgs clicked" : "orgs"} onClick={() => handleTagClick(8)}>Gaming</div>
-                    <div className={tags[8].isClicked ? "orgs clicked" : "orgs"} onClick={() => handleTagClick(9)}>Religious</div>
-                    <div className={tags[9].isClicked ? "orgs clicked" : "orgs"} onClick={() => handleTagClick(10)}>Performing Arts</div>
-                    <div className={tags[10].isClicked ? "orgs clicked" : "orgs"} onClick={() => handleTagClick(11)}>Technology</div>
-                    <div className={tags[11].isClicked ? "orgs clicked" : "orgs"} onClick={() => handleTagClick(12)}>Music</div>
+                    {tags.map((item, index) => (
+                        <div key={index} onClick={() => handleTagClick(index)} className={isClicked[index] ? "orgs clicked" : "orgs"}>
+                            {item}
+                        </div>
+                    ))}
+                </div>
+                <div className="showContainer">
+                    <div className="show">show more</div>
                 </div>
             </div>
             <button className="filterClear">Clear Filter</button>

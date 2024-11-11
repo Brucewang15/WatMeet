@@ -94,6 +94,18 @@
     background-color: #ced4da;
 }
 
+.orgs.clicked:hover {
+    background-color: rgb(200, 200, 23);
+}
+
+.moreOrgsContainer {
+    margin-bottom: 20px;
+}
+
+
+
+
+
 /* Button Styles */
 .filterClear {
     display: block;
@@ -110,6 +122,18 @@
 
 .filterClear:hover {
     background-color: #c82333;
+}
+
+.showContainer {
+    display: flex;
+    justify-content: center;
+}
+.show {
+
+    margin-top: 10px;
+    color: #7c7b78;
+
+    cursor: pointer;
 }
 
 
