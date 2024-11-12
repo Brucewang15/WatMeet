@@ -18,13 +18,17 @@ const SearchFilter = ({ setMinStarRating, setMinAmountRating, setTagStates}) => 
     const [expanded, setExpanded] = useState(false);
 
     const handleStarRatingChange = (event) => {
-        setStarRating(event.target.value);
-        setMinStarRating(event.target.value);
+        let value = Number(event.target.value);
+        value = Math.floor(value*2)/2;
+        setStarRating(value);
+        setMinStarRating(value);
     }
 
     const handleAmountRatingChange = (event) => {
-        setAmountRating(event.target.value);
-        setMinAmountRating(event.target.value);
+        let value = event.target.value;
+        value = Math.floor(value/5)*5;
+        setAmountRating(value);
+        setMinAmountRating(value);
     }
 
     const handleTagClick = (index) => {
@@ -58,7 +62,7 @@ const SearchFilter = ({ setMinStarRating, setMinAmountRating, setTagStates}) => 
             <div className="ratingContainer">
                 <div className="showRating">
                     <div className="ratingText">Showing all ratings greater than:</div>
-                    <div className="currentRating">{starRating}</div>
+                    <div className="currentRating">{starRating.toFixed(1)}</div>
                 </div>
                 <input className="ratingInput" type="range" min="0" max="5" defaultValue="0" step="0.1" onChange={handleStarRatingChange} />
             </div>
@@ -67,7 +71,7 @@ const SearchFilter = ({ setMinStarRating, setMinAmountRating, setTagStates}) => 
                     <div className="ratingText">Showing amount of ratings greater than:</div>
                     <div className="currentRating">{amountRating}</div>
                 </div>
-                <input className="ratingInput" type="range" min="0" max="5" defaultValue="0" step="0.1" onChange={handleAmountRatingChange} />
+                <input className="ratingInput" type="range" min="0" max="50" defaultValue="0" step="1" onChange={handleAmountRatingChange} />
             </div>
             <div className="orgContainer">
                 <div className="orgType">Organization Tags</div>
