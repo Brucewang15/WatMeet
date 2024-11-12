@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 import json
 import os
+import time
 
 # Set up the Selenium WebDriver with correct Chrome binary path and no sandbox option
 service = Service(executable_path="chromedriver\chromedriver-win64\chromedriver-win64\chromedriver.exe")
@@ -78,24 +79,32 @@ def scrape_triathlon():
 def scrape_underwater_hockey():
     url = "https://athletics.uwaterloo.ca/sports/2024/3/1/underwater-hockey.aspx"
     driver.get(url)
-    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "c-story-blocks")))
-
-    data = {"club": "Underwater Hockey"}
-    try:
-        data["description"] = driver.find_element(By.XPATH, "//div[contains(@class,'c-story-blocks')]//p").text
-        data["try_it_sessions"] = driver.find_element(By.XPATH, "//table").text
-        
-        # Attempt to locate fee; if not found, default to "Fee info not available"
-        try:
-            data["fee"] = driver.find_element(By.XPATH, "//*[contains(text(),'$')]").text
-        except NoSuchElementException:
-            print("Fee information not found on Underwater Hockey page.")
-            data["fee"] = "Fee info not available"
-
-        data["contact"] = driver.find_element(By.XPATH, "//a[contains(@href, 'mailto')]").get_attribute("href")
-    except NoSuchElementException as e:
-        print(f"Element not found in Underwater Hockey page: {e}")
+    time.sleep(2)  # Wait for page to load
     
+    data = {"club": "Underwater Hockey"}
+    
+    # Safely attempt to scrape each element
+    try:
+        data["description"] = driver.find_element(By.XPATH, "//p[contains(text(),'Underwater Hockey is a co-ed')]").text
+    except NoSuchElementException:
+        data["description"] = "Description not available"
+
+    try:
+        data["try_it_sessions"] = driver.find_element(By.XPATH, "//table").text
+    except NoSuchElementException:
+        data["try_it_sessions"] = "Try-it session details not available"
+
+    try:
+        data["fee"] = driver.find_element(By.XPATH, "//ul/li[contains(text(),'$')]").text
+    except NoSuchElementException:
+        data["fee"] = "Fee information not available"
+
+    try:
+        data["contact"] = driver.find_element(By.XPATH, "//a[contains(@href, 'mailto')]").get_attribute("href")
+    except NoSuchElementException:
+        data["contact"] = "Contact information not available"
+        print("Element not found in Underwater Hockey page: Contact information missing")
+
     return data
 
 def main():
