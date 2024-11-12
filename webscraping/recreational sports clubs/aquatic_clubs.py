@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import json
+import time
 
 # Set up the Selenium WebDriver
 service = Service(executable_path="chromedriver\chromedriver-win64\chromedriver-win64\chromedriver.exe")
