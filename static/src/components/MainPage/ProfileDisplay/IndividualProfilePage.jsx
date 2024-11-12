@@ -27,6 +27,7 @@ const IndividualProfilePage = () => {
                 const arrayToken = accessToken.split('.');
                 const tokenPayload = JSON.parse(atob(arrayToken[1]));
                 setUserId(tokenPayload.user_id);
+                getUserData(tokenPayload.user_id);
             } catch (error) {
                 console.error('Failed to parse access token:', error);
             }
@@ -67,7 +68,7 @@ const IndividualProfilePage = () => {
     //     }
     // };
 
-    const getUserData = async () => {
+    const getUserData = async (userId) => {
         console.log("Fetching user data for userId:", userId);
         try{
             const response = await fetch('http://127.0.0.1:8000/users/get_user/', {
@@ -96,6 +97,7 @@ const IndividualProfilePage = () => {
     //     }
     // };
 
+
     useEffect(() => {
         getAllCommentsDB();
     }, []);
@@ -105,9 +107,6 @@ const IndividualProfilePage = () => {
     //     getClubData();
     // }, []);
 
-    useEffect(() => {
-        getUserData();
-    }, [userId]);
 
     // Scroll to top upon loading
     useEffect(() => {
