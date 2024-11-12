@@ -4,17 +4,8 @@ import linktr from '../../pictures/linktree-white-icon.svg'
 import www from '../../pictures/www.png'
 
 const Socials = ({ types, links }) => {
-    if (!Array.isArray(types) || !Array.isArray(links)) {
-        console.error("Both 'types' and 'links' should be arrays.");
-        return null;
-    }
 
-    if (types.length !== links.length) {
-        console.error("'types' and 'links' arrays must have the same length.");
-        return null;
-    }
     const shouldDisplay = Array.isArray(types) && types.length !== 0
-
 
     // Mapping of social types to their corresponding SVG icons
     const svgMap = {    

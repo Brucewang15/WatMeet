@@ -48,7 +48,7 @@ const Bookmark = ({ org_id, user_id }) => {
 
     return (
         <label className="ui-bookmark">
-            <input type="checkbox" checked={bookmarked} onClick={() => {changeBookmark(!bookmarked)}} />
+            <input type="checkbox" checked={bookmarked} onChange={() => {changeBookmark(!bookmarked)}} />
             <div className="bookmark">
                 <svg viewBox="0 0 32 32">
                     <g>
