@@ -23,3 +23,9 @@ class UserOrg(models.Model):
     def __str__(self):
         return f"{self.user} - {self.org}"
 
+class Bookmark(models.Model):
+    bookmark_id = models.AutoField(primary_key=True)
+    user = models.ForeignKey('User', related_name='userId', on_delete=models.CASCADE)
+    org = models.ForeignKey('organizations.Organization', related_name='org', on_delete=models.CASCADE)
+    def __str__(self):
+        return f"{self.user} {self.org}"

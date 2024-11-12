@@ -8,6 +8,7 @@ import IndividualClubComments from './IndividualClubComments';
 import Socials from '../../UiComponents/Socials'
 import RatingBox from './RatingBox';
 import Tags from '../../UiComponents/Tags';
+import Bookmark from '../../UiComponents/Bookmark';
 
 const IndividualClubPage = () => {
     const [userId, setUserId] = useState(null);
@@ -28,17 +29,22 @@ const IndividualClubPage = () => {
     const auth = useSelector((state) => state.auth);
     const { isAuthenticated, accessToken } = auth;
 
-    useEffect(() => {
+    const checkAuth = () => {
         if (isAuthenticated && accessToken) {
             try {
                 const arrayToken = accessToken.split('.');
                 const tokenPayload = JSON.parse(atob(arrayToken[1]));
                 setUserId(tokenPayload.user_id);
+                console.log(userId, 'userid')
             } catch (error) {
                 console.error('Failed to parse access token:', error);
             }
         }
+    }
+    useEffect(() => {
+        checkAuth()
     }, [isAuthenticated, accessToken]);
+
 
     // Fetch all comments from the backend
     const getAllCommentsDB = async () => {
@@ -95,8 +101,10 @@ const IndividualClubPage = () => {
 
                 <div className="top-side">
                     <div className="content">
-                        <h2>{clubInfo.org_name}</h2>
-                        
+                        <h2>{clubInfo.org_name}
+                            {userId && <Bookmark org_id={orgId} user_id={userId} />}
+                        </h2>
+
                     </div>
                 </div>
                 <div className="bottom-side">
@@ -104,7 +112,7 @@ const IndividualClubPage = () => {
                         <p>{clubInfo.overview}</p>
                         <div className="socialSection">
                             <Tags tags={clubInfo.tags} />
-                            <Socials types = {clubInfo.types} links = {clubInfo.links} />
+                            <Socials types={clubInfo.types} links={clubInfo.links} />
                         </div>
 
                         <RatingBox
