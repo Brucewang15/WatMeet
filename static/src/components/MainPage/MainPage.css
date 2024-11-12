@@ -20,6 +20,7 @@
 }
 .clubsContainer {
     /* Adjust to control the maximum number of columns */
+    
     display: flex;
     flex-direction: column;
     margin: auto;

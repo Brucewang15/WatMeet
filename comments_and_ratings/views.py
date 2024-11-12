@@ -40,6 +40,8 @@ def get_comments(request):
             'comment_upvote': comment.upvote_num,
             'comment_downvote': comment.downvote_num,
             'comment_number_of_star_rating': org.number_of_star_rating,
+            'comment_org_id': comment.org_id,
+            'comment_org_name': org.org_name
         })
     return JsonResponse({'comments_data': comments_data, 'comments_likes': comments_likes}, safe=False)
 
