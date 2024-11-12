@@ -83,10 +83,18 @@ def scrape_underwater_hockey():
     try:
         data["description"] = driver.find_element(By.XPATH, "//div[contains(@class,'c-story-blocks')]//p").text
         data["try_it_sessions"] = driver.find_element(By.XPATH, "//table").text
-        data["fee"] = driver.find_element(By.XPATH, "//ul/li[contains(text(),'$')]").text
+        
+        # Attempt to locate fee; if not found, default to "Fee info not available"
+        try:
+            data["fee"] = driver.find_element(By.XPATH, "//*[contains(text(),'$')]").text
+        except NoSuchElementException:
+            print("Fee information not found on Underwater Hockey page.")
+            data["fee"] = "Fee info not available"
+
         data["contact"] = driver.find_element(By.XPATH, "//a[contains(@href, 'mailto')]").get_attribute("href")
     except NoSuchElementException as e:
         print(f"Element not found in Underwater Hockey page: {e}")
+    
     return data
 
 def main():
