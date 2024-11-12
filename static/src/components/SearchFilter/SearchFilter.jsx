@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import "./SearchFilter.css";
 
-const SearchFilter = ({ setMinStarRating, setMinAmountRating }) => {
+const SearchFilter = ({ setMinStarRating, setMinAmountRating, setTagStates}) => {
 
     const [starRating, setStarRating] = useState(0);
     const [amountRating, setAmountRating] = useState(0);
@@ -29,6 +29,9 @@ const SearchFilter = ({ setMinStarRating, setMinAmountRating }) => {
 
     const handleTagClick = (index) => {
         setIsClicked(isClicked.map((item, i) =>
+            index == i ? !item : item
+        ));
+        setTagStates(isClicked.map((item, i) =>
             index == i ? !item : item
         ));
     }
