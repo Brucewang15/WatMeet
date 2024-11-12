@@ -77,12 +77,9 @@ def get_individual_club_data(request):
         types.append('website')
         links.append(club.website)
     
-    print(Tag.objects.values())
     tags = Tag.objects.filter(org_id=orgId).values()
-    print(tags, 'tags')
     all_tags = []
     for tag in tags:
-        print(tag)
         all_tags.append(tag['tag_name'])
     print(all_tags)
     

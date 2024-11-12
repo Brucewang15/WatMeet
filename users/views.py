@@ -3,6 +3,7 @@ import json
 from django.http import HttpResponse
 from django.http import JsonResponse
 from users.models import User
+from users.models import Bookmark
 from .scripts.confirmationEmail.CreateNumber import CreateNumber
 from .scripts.confirmationEmail.sendEmail import sendEmail
 from django.middleware.csrf import get_token
@@ -135,3 +136,38 @@ def get_user(request):
                             'email': user.email}, safe=False)  
     except User.DoesNotExist:
         return JsonResponse({'success': False})
+
+# Get bookmark information for a given club
+def get_bookmark_state(request):
+    try:
+        body_unicode = request.body.decode('utf-8') # users code
+        body_data = json.loads(body_unicode)
+        print('yea2')
+
+        userId = body_data.get('user_id')
+        orgId = body_data.get('org_id')
+        print(userId, orgId, 'k')
+        user = Bookmark.objects.filter(user_id = userId, org_id = orgId)
+        print(user)
+        if user.exists():
+            return JsonResponse({'success': True, 'bookmarked': True})
+        else:
+            return JsonResponse({'success': True, 'bookmarked': False})
+    except User.DoesNotExist:
+        return JsonResponse({'success': False})
+    
+# change bookmark state
+def change_bookmark(request):
+    body_data = json.loads(request.body.decode('utf-8'))
+
+    bookmarkState = body_data.get('bookmarkState')
+    orgId = body_data.get('org_id')
+    userId = body_data.get('user_id')
+
+    if (bookmarkState):
+        bookmark = Bookmark.objects.create(org_id = orgId, user_id = userId)
+        bookmark.save()
+    else:
+        bookmark = Bookmark.objects.get(org_id = orgId, user_id = userId)
+        bookmark.delete()
+    return JsonResponse({'success': True})
