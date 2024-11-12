@@ -192,6 +192,10 @@
     gap: 3px;
 }
 
+.like-wrapper img {
+    width: 100%;
+}
+
 .comment-container .user .user-info span {
     font-weight: 700;
     font-size: 15px;
