@@ -10,6 +10,7 @@ import time
 service = Service(executable_path="chromedriver\chromedriver-win64\chromedriver-win64\chromedriver.exe")
 options = webdriver.ChromeOptions()
 options.add_argument("--no-sandbox")  # Bypass sandbox mode to avoid permission issues
+options.binary_location = "C:\Program Files\Google\Chrome\Application\chrome.exe"  # Set your Chrome binary path here
 driver = webdriver.Chrome(service=service, options=options)
 
 import json
