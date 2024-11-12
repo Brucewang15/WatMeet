@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 import json
+import os
 
 # Set up the Selenium WebDriver with correct Chrome binary path and no sandbox option
 service = Service(executable_path="chromedriver\chromedriver-win64\chromedriver-win64\chromedriver.exe")
@@ -98,6 +99,14 @@ def scrape_underwater_hockey():
     return data
 
 def main():
+    # Folder path where you want to save the JSON file
+    folder_path = "webscraping/recreational sports clubs"
+    
+    # Create the folder if it does not exist
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+    
+    # Scrape each club's page and collect data
     clubs_data = [
         scrape_artistic_swimming(),
         scrape_dragon_boat(),
@@ -105,12 +114,14 @@ def main():
         scrape_triathlon(),
         scrape_underwater_hockey(),
     ]
-
-    # Save to JSON file
-    with open("aquatic_clubs.json", "w") as outfile:
+    
+    # Save JSON file in the specified folder
+    json_path = os.path.join(folder_path, "aquatic_clubs.json")
+    with open(json_path, "w") as outfile:
         json.dump(clubs_data, outfile, indent=4)
+    
+    print(f"Data scraped and saved to {json_path}")
 
-    print("Data scraped and saved to aquatic_clubs.json")
 
 if __name__ == "__main__":
     main()
