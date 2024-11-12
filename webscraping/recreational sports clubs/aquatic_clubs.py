@@ -1,5 +1,16 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import json
+
+# Set up the Selenium WebDriver
+service = Service(executable_path="chromedriver\chromedriver-win64\chromedriver-win64\chromedriver.exe")
+options = webdriver.ChromeOptions()
+options.add_argument("--no-sandbox")  # Bypass sandbox mode to avoid permission issues
+driver = webdriver.Chrome(service=service, options=options)
+
 import json
 import time
 
