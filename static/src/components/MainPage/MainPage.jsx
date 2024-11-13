@@ -49,7 +49,6 @@ const MainPage = () => {
     }, [prompt, minStarRating, minAmountRating, selectedType])
 
     return <>
-        <Header/>
         <Background prompt={prompt}/>
         <div className="mainContainer">
             <div className="fContainer">

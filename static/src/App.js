@@ -14,6 +14,7 @@ import { useEffect } from 'react';
 import { loadUser } from '../src/redux/actions/authActions'
 import ForgotPassword from './components/account/ForgotPassword';
 import IndividualProfilePage from './components/MainPage/ProfileDisplay/IndividualProfilePage';
+import Header from './components/Header';
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ function App() {
   return (
     <div>
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/explore/search/:prompt/" element={<MainPage/>} />
