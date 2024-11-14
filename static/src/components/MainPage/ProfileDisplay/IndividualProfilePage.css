@@ -56,7 +56,6 @@
 
 .centertext {
     display: flex;
-    flex-direction: column; /* Add this line to stack items vertically */
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -73,4 +72,44 @@
     .profileDetails {
         text-align: center;
     }
+}
+
+.profileContentContainer {
+    margin-bottom: 32px;
+    margin-top: 10px;
+    padding: 5px; /* Optional: Adds padding around the container */
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.commentheading {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    flex-direction: column;
+}
+
+.profileContentDrop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px; /* Space between columns */
+    flex-wrap: wrap; /* Allows columns to stack on smaller screens */
+}
+
+.comments {
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    gap: 5px;
 }   
+
+.bookmarks {
+    flex: 2;
+    flex-direction: column;
+    display: flex;
+    gap: 5px;
+}
