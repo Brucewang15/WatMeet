@@ -18,6 +18,8 @@ const MainPage = () => {
     const [minStarRating, setMinStarRating] = useState(0);
     const [minAmountRating, setMinAmountRating] = useState(0);
     const [selectedType, setSelectedType] = useState('All');
+    
+    const [tagStates, setTagStates] = useState(new Array(41).fill(false));
 
     const {prompt} = useParams();
 
@@ -27,13 +29,16 @@ const MainPage = () => {
 
     useEffect(() => {
         console.log(prompt);
+        console.log(tagStates);
         const get_club_data = async () => {
             const response = await fetch('http://127.0.0.1:8000/organizations/get_club_data/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ searchPropt: prompt, selectedType: selectedType, minStarRating: minStarRating })
+                body: JSON.stringify({ searchPropt: prompt, selectedType: selectedType, minStarRating: minStarRating, minAmountRating: minAmountRating,
+                    tagStates: tagStates
+                })
             })
             if (response.ok) {
                 try {
@@ -45,13 +50,13 @@ const MainPage = () => {
             }
         }
         get_club_data()
-    }, [prompt, minStarRating, minAmountRating, selectedType])
+    }, [prompt, minStarRating, minAmountRating, selectedType, tagStates])
 
     return <>
         <Background prompt={prompt}/>
         <div className="mainContainer">
             <div className="fContainer">
-                <SearchFilter setMinStarRating={setMinStarRating} setMinAmountRating={setMinAmountRating}/>
+                <SearchFilter setMinStarRating={setMinStarRating} setMinAmountRating={setMinAmountRating} setTagStates={setTagStates}/>
             </div>
             <div className="mainAllClubsContainer">
                 <div className="chooseOrgType">

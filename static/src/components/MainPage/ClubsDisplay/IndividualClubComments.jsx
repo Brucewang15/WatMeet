@@ -81,7 +81,7 @@ const IndividualClubComments = ({
             const data = await response.json();
             if (data.success) {
                 console.log('Comment rating updated successfully:', data);
-                getAllCommentsDB();
+                getAllCommentsDB(userId);
                 getClubData();
             } else {
                 console.error('Failed to update comment rating:', data);
@@ -159,7 +159,7 @@ const IndividualClubComments = ({
                             {console.log(comment, 'comment', commentRatings[0])}
                             <div className="like-wrapper">
                                 <img
-                                    className={`voteButton ${commentRatings[comment.comment_id]?.upvoted ? 'upvoted' : ''}`}
+                                    className={`voteButton ${allCommentsIndividualLikes[allComments.length - index - 1] === 'upvoted' ? 'upvoted': ''}`}
                                     src={upvote}
                                     alt="upvote"
                                     onClick={() => {
@@ -172,7 +172,7 @@ const IndividualClubComments = ({
                                 />
                                 <div className="like-text">{comment.comment_upvote - comment.comment_downvote}</div>
                                 <img
-                                    className={`voteButton ${commentRatings[comment.comment_id]?.downvoted ? 'downvoted' : ''}`}
+                                    className={`voteButton ${allCommentsIndividualLikes[allComments.length - index - 1] === 'downvoted' ? 'downvoted': ''}`}
                                     src={downvote}
                                     alt="downvote"
                                     onClick={() => {

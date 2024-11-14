@@ -37,7 +37,7 @@ def get_comments(request):
         
         if comment_individual_like.exists():
             print(comment_individual_like, 'comment_individual_like')
-            result = "upvote" if comment_individual_like[0]['upvote'] else "downvote" if comment_individual_like[0]['downvote'] else ""
+            result = "upvoted" if comment_individual_like[0]['upvote'] else "downvoted" if comment_individual_like[0]['downvote'] else ""
             print(result, 'result')
             comments_individual_likes.append(result)
 

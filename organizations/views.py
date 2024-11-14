@@ -5,6 +5,7 @@ from organizations.models import Organization
 from organizations.models import Tag
 
 from .search.sort_data import sort_data
+from .filterSearch.filter import filterData
 import json
 
 # Create your views here.
@@ -25,12 +26,18 @@ def get_club_data(request):
 
     search_propt = json.loads(request.body).get("searchPropt")
     minStarRating = json.loads(request.body).get("minStarRating")
+    minAmountRating = json.loads(request.body).get("minAmountRating")
+    tagStates = json.loads(request.body).get("tagStates") #array
 
     data = sort_data(data, search_propt)
 
     #filter out everything below minRating
     
-    data = list(filter(lambda elem: Organization.objects.get(org_name=elem["org_name"]).star_rating >= float(minStarRating), data))
+    data = list(filter(lambda elem: Organization.objects.get(org_name=elem["org_name"]).star_rating >= float(minStarRating), data)) #array of dictionaries of clubs
+    data = list(filter(lambda elem: Organization.objects.get(org_name=elem["org_name"]).number_of_star_rating >= float(minAmountRating), data))
+
+    data = filterData(data, tagStates)
+
     return JsonResponse(data, safe=False)
 
 def get_individual_club_data(request):
