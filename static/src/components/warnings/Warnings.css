@@ -14,6 +14,7 @@
     border-radius: 0.5rem;
     border-left: 4px solid;
     transition: all 300ms ease-in-out;
+    animation: slideDownFadeIn 0.5s ease-in-out;
 }
 
 .alert-success {
@@ -87,4 +88,15 @@
     font-size: 0.9rem;
     font-weight: 600;
     white-space: nowrap;
+}
+
+@keyframes slideDownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

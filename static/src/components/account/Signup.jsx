@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './General.css';
 import ConfirmEmail from './ConfirmEmail';
+import Warning from '../warnings/Warnings'
 
 const Signup = () => {
     // State variables for signup
@@ -10,9 +11,27 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [emailTaken, setEmailTaken] = useState(false);
+    const [warning, setWarning] = useState([false, "", ""])
 
     // State variables for email confirmation
     const [isEmailSent, setIsEmailSent] = useState(false);
+
+    const checkPasswordStrong = (password) => {
+        let symbol = false
+        let number = false
+        let letter = false
+        for (let i = 0; i < password.length; i++) {
+            const code = password[i].charCodeAt(0);
+            if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) {
+                letter = true
+            } else if (code >= 48 && code <= 57) {
+                number = true
+            } else {
+                symbol = true
+            }
+        }
+        return symbol && number && letter
+    }
 
     // Function to handle signup and send confirmation email
     const confirmEmail = async () => {
@@ -26,10 +45,24 @@ const Signup = () => {
             alert('All fields are required');
             return;
         }
-
-        if (password !== confirmPassword) {
-            alert('Passwords do not match');
+        else if (password.length < 8) {
+            console.log('above 8')
+            setWarning([true, "Error", "Your password length must be above 8"])
             return;
+        }
+        else if (!checkPasswordStrong(password)){
+            console.log('1 letter number and symbol')
+            setWarning([true, "Error", "Your Password should have at least 1 letter, number, and symbol"])
+            return;
+        }
+
+        else if (password !== confirmPassword) {
+            console.log('Passwords do not match');
+            setWarning([true, "Error", "Your passwords do not match"])
+            return;
+        }
+        else {
+            setWarning([false, "", ""])
         }
 
         try {
@@ -67,7 +100,8 @@ const Signup = () => {
         }
     };
 
-    return (
+    return <>
+        {warning[0] && <Warning warningType={warning[1]} warningMessage={warning[2]} />}
         <div className="main-Container">
             {!isEmailSent ? (
                 // Signup Form
@@ -152,7 +186,7 @@ const Signup = () => {
                 <ConfirmEmail email={email} password={password} />
             )}
         </div>
-    );
+    </>
 };
 
 export default Signup;
