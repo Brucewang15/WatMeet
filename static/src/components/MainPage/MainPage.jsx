@@ -14,7 +14,6 @@ import { useParams } from 'react-router-dom';
 
 const MainPage = () => {
 
-
     const [clubs, setClubs] = useState([]);
     const [minStarRating, setMinStarRating] = useState(0);
     const [minAmountRating, setMinAmountRating] = useState(0);
