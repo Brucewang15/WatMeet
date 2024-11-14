@@ -38,7 +38,7 @@ def find_contact_links():
         links["discord"] = None
 
     try:
-        links["website"] = driver.find_element(By.XPATH, "//a[contains(@href, 'http') and not(contains(@href, 'mailto')) and not(contains(@href, 'instagram')) and not(contains(@href, 'facebook')) and not(contains(@href, 'discord'))]").get_attribute("href")
+        links["website"] = driver.find_element(By.XPATH, "//a[contains(@href, 'http') and contains(@href, 'warrior')]").get_attribute("href")
     except NoSuchElementException:
         links["website"] = None
 
@@ -47,8 +47,8 @@ def find_contact_links():
 # Helper function to scrape the executive team
 def scrape_executive_team():
     try:
-        team_section = driver.find_elements(By.XPATH, "//ul/li[contains(text(), ':')]")
-        return [member.text for member in team_section]
+        team_section = driver.find_elements(By.XPATH, "//div[contains(@class, 'c-story-blocks')]//ul/li[contains(text(), ':')]")
+        return [member.text.strip() for member in team_section]
     except NoSuchElementException:
         return []
 
@@ -76,18 +76,21 @@ def scrape_club(url, club_name):
         except NoSuchElementException:
             data["fee"] = "Fee information not available"
 
+    # Refine membership link scraping logic
     try:
-        data["membership_link"] = driver.find_element(By.XPATH, "//a[contains(@href, 'membership')]").get_attribute("href")
+        data["membership_link"] = driver.find_element(By.XPATH, "//a[contains(@href, 'membership') and contains(@href, 'warrior')]").get_attribute("href")
     except NoSuchElementException:
         data["membership_link"] = "Membership link not available"
 
+    # Refine schedule link scraping logic
     try:
-        data["schedule_link"] = driver.find_element(By.XPATH, "//a[contains(text(),'schedule') or contains(text(),'Schedule')]").get_attribute("href")
+        data["schedule_link"] = driver.find_element(By.XPATH, "//a[contains(text(),'schedule') and contains(@href, 'warrior')]").get_attribute("href")
     except NoSuchElementException:
         data["schedule_link"] = "Schedule link not available"
 
+    # Refine join-now link scraping logic
     try:
-        data["join_now_link"] = driver.find_element(By.XPATH, "//a[contains(text(),'JOIN TODAY')]").get_attribute("href")
+        data["join_now_link"] = driver.find_element(By.XPATH, "//a[contains(text(),'JOIN TODAY') or contains(text(),'Join Now') or contains(text(),'join today')]").get_attribute("href")
     except NoSuchElementException:
         data["join_now_link"] = "Join link not available"
 
