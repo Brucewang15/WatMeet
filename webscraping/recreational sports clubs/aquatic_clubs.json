@@ -5,14 +5,15 @@
         "try_it_sessions": "Date Location Time\nSeptember 15    Studio 4\nPool 6-7 PM\n7-9 PM\nSeptember 17   Studio 3\nPool \n  7-8 PM\n8-10 PM\n  September 19  Studio 4\nPool 8-9 PM\n9-10 PM\nSeptember 22 Studio 4\nPool 6-7 PM\n7-9 PM",
         "fee": "Approximately $170.00 per player. This fee is for each semester.",
         "membership_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=fa36b83d-f2bf-42b8-9cb9-706fbd3086c4",
-        "schedule_link": "Schedule link not available",
+        "schedule_link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=5d1f9ff9-c5cc-4b7a-943f-d8a05ebb3562",
         "join_now_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=fa36b83d-f2bf-42b8-9cb9-706fbd3086c4",
+        "constitution_link": "https://uofwaterloo-my.sharepoint.com/personal/k6browne_uwaterloo_ca/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fk6browne%5Fuwaterloo%5Fca%2FDocuments%2FDocuments%2FClub%20Coordinator%2FCompetitive%20Clubs%2FGeneral%2FConstitutions%2FFall%5F24%2FWarriorsArtisticSwimming%5FConstitution%5FFall24%2Edocx%2Epdf&parent=%2Fpersonal%2Fk6browne%5Fuwaterloo%5Fca%2FDocuments%2FDocuments%2FClub%20Coordinator%2FCompetitive%20Clubs%2FGeneral%2FConstitutions%2FFall%5F24&ga=1",
         "contact": {
             "email": "mailto: artisticswimming@uwaterloo.ca",
             "instagram": "https://www.instagram.com/wlooartisticswimming/",
             "facebook": "https://www.facebook.com/WarriorsSynchro/",
             "discord": null,
-            "website": "https://warrior.uwaterloo.ca/"
+            "website": null
         },
         "executive_team": [
             "President & Finance:  Rachel Dietrich",
@@ -28,14 +29,14 @@
         "try_it_sessions": "Date Location\nSeptember 15    Laurel Creek",
         "fee": "Approximately $36.75 per player. This fee is per semester.",
         "membership_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=0b3009e2-c367-46e2-a60e-67ae0ba7ed3a",
-        "schedule_link": "Schedule link not available",
+        "schedule_link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=8ac5c480-eae6-4ca3-bf3d-7d9eef4237e9",
         "join_now_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=0b3009e2-c367-46e2-a60e-67ae0ba7ed3a",
         "contact": {
             "email": "mailto: info@uwdbc.com",
             "instagram": "https://www.instagram.com/wloo.dboat",
             "facebook": "https://athletics.uwaterloo.ca/common/controls/adhandler.aspx?ad_id=23&target=https://www.facebook.com/waterloowarriors",
             "discord": "https://discord.com/invite/aQzCK9Gfez",
-            "website": "https://warrior.uwaterloo.ca/"
+            "website": null
         },
         "executive_team": [
             "Co-Presidents: Rebecca Xu & Justin Chhay",
@@ -45,8 +46,7 @@
             "Sponsorship: Wayne Wan & Ryan Bulson",
             "Finance: Dominic Muthukumaraswamy",
             "Events: Ruby Cat, Megan Quan, & Sana Thind",
-            "Web Developer: Thomas Luc",
-            "Thursdays 5:30 - 7:00pm"
+            "Web Developer: Thomas Luc"
         ]
     },
     {
@@ -55,47 +55,54 @@
         "try_it_sessions": "Date Location Time\nSeptember 16, PAC Pool 8-9 PM\nSeptember 18 PAC Pool 8-9:30 PM\nSeptember 21 PAC Pool 4-5:30 PM\nSeptember 23 PAC Pool 8-9 PM\nSeptember 25 PAC Pool 8-9:30 PM\nSeptember 28 PAC Pool 4-5:30 PM",
         "fee": "Approximately $63.00 per player. This fee is per semester.",
         "membership_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=a73c02a5-e4f3-4e3c-a6df-ccff8dcb4a55",
-        "schedule_link": "Schedule link not available",
+        "schedule_link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=043b193f-351b-481e-ab8a-d9b1e7c2e243",
         "join_now_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=a73c02a5-e4f3-4e3c-a6df-ccff8dcb4a55",
         "contact": {
             "email": "mailto: lifesaving@uwaterloo.ca",
             "instagram": "https://instagram.com/wloo.lifesaving",
             "facebook": "https://www.facebook.com/uwaterloo.lifesaving/",
             "discord": null,
-            "website": "https://warrior.uwaterloo.ca/"
+            "website": null
         },
         "executive_team": [
             "Co-President/Treasury Director: Jennifer Li",
             "Co-President: Mick Wang",
             "Digital Marketing Coordinator: Carson Fong",
-            "Junior Executive: Persephonie Lai",
-            "Mondays & Wednesdays 8-9:30 PM",
-            "Saturdays 4-5:30 PM"
+            "Junior Executive: Persephonie Lai"
         ]
     },
     {
         "club": "Triathlon",
         "description": "The Warriors Triathlon Club is open to University of Waterloo students, staff, faculty, and members of the UW community at large who have memberships at the University of Waterloo\u2019s Athletics Department. The club will create a group training environment in which athletes of a wide range of ability levels can improve. In addition, our group training sessions will build a community of athletes, in which individuals may establish friendships and training partnerships that continue outside of club programming",
         "try_it_sessions": "Date Location Time\nSeptember 15 PAC Pool 4-5:30 PM\nSeptember 17 Spin Studio 6-7:30 PM",
-        "fee": "Cycling membership - $10.50",
-        "membership_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=7f2c8088-a9d3-49b4-a533-b86f49c1afcc",
-        "schedule_link": "Schedule link not available",
-        "join_now_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=7f2c8088-a9d3-49b4-a533-b86f49c1afcc",
+        "fee": [
+            "Cycling membership - $10.50",
+            "Swimming membership - $63.50"
+        ],
+        "membership_link": [
+            "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=7f2c8088-a9d3-49b4-a533-b86f49c1afcc",
+            "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=5ee39be7-1895-40f2-b653-8b3ea7d7fa1c"
+        ],
+        "schedule_link": [
+            "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=5fa399cc-eb19-45b4-b343-2317867c370c",
+            "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=03fa965a-5620-441f-8ad0-6b4bc2481895"
+    ],
+        "join_now_link": [
+            "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=7f2c8088-a9d3-49b4-a533-b86f49c1afcc",
+            "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=5ee39be7-1895-40f2-b653-8b3ea7d7fa1c"
+        ],
         "contact": {
             "email": "mailto: triclub@uwaterloo.ca",
             "instagram": "https://www.instagram.com/uoft_tri_club/reel/C2slhM-voNC/?img_index=uoft_tri_club",
             "facebook": "https://www.facebook.com/warriorstriclub/",
             "discord": null,
-            "website": "https://warrior.uwaterloo.ca/"
+            "website": null
         },
         "executive_team": [
             "Co-President: Jacqueline Powichrowski",
             "Co-President  & Indoor Cycling Coordinator: Lars Kamin",
             "Co-President & Indoor Cycling Coordinator: Yaroslav Brovchenko",
-            "Co-President & Communication Coordinator: Caroline Huang",
-            "Sundays 4-5:30 PM",
-            "Tuesdays 7-8:30 PM",
-            "Wednesdays 8-9:30 PM"
+            "Co-President & Communication Coordinator: Caroline Huang"
         ]
     },
     {
@@ -104,7 +111,7 @@
         "try_it_sessions": "Date Location Time\nSeptember 16 PAC Pool 9-10 PM\nSeptember 20 PAC Pool 9-10 PM\nSeptember 23 PAC Pool 9-10 PM\nSeptember 27 PAC Pool 9-10 PM",
         "fee": "Fee information not available",
         "membership_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=30164db4-6d4f-4568-b4fb-5aeee8d00191",
-        "schedule_link": "Schedule link not available",
+        "schedule_link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=3f9a6a35-2aea-487a-b4b3-6b364fcdd305",
         "join_now_link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=a5804994-5948-4ea0-b057-83ac1e09b931",
         "contact": {
             "email": "mailto:karin.browne@uwaterloo.ca",
