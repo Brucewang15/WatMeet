@@ -51,3 +51,6 @@ button:active {
   border-radius: 5px;
   padding: 18px 46px 18px 26px;
 }
+.searchInput:focus {
+  border: 1px solid rgb(195, 195, 195);
+}
