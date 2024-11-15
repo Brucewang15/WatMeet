@@ -100,7 +100,7 @@
     flex-wrap: wrap; /* Allows columns to stack on smaller screens */
 }
 
-.comments {
+.profilecomments {
     flex: 1;
     flex-direction: column;
     display: flex;
@@ -108,8 +108,99 @@
 }   
 
 .bookmarks {
+    height: 100%;
     flex: 2;
     flex-direction: column;
     display: flex;
     gap: 5px;
+}
+
+.profilebookmark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* styles.css */
+
+/* General Styles */
+
+/* Card Container */
+.card {
+width: 100%; /* Equivalent to w-60 (15rem) */
+background: #ffffff; /* from-slate-300 to-slate-100 */
+color: #475569; /* text-slate-600 */
+border: 1.5px solid #cbd5e1; /* border border-slate-300 */
+display: flex;
+flex-direction: row;
+justify-content: center;
+padding: 15px; /* p-4 */
+gap: 15px; /* gap-4 */
+border-radius: 6px; /* rounded-lg */
+margin-bottom: 15px;
+}
+
+/* Card Title */
+.card-title {
+font-size: 1.125rem; /* text-lg */
+font-weight: bold; /* font-bold */
+text-transform: capitalize; /* capitalize */
+border-radius: 6px; /* rounded-md */
+display: flex;
+align-items: center;
+}
+
+/* Bookmark List */
+.bookmark-list {
+list-style-type: disc;
+padding-left: 20px;
+margin: 0;
+}
+
+.bookmark-item {
+margin-bottom: 2px;
+}
+
+/* No Bookmarks Message */
+.no-bookmarks {
+font-style: italic;
+color: #94a3b8; /* a lighter shade */
+}
+
+/* Button Container */
+.card-button {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+/* Action Button */
+.action-button {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 40px;
+height: 40px;
+background-color: #cbd5e1; /* bg-slate-300 */
+color: #475569; /* text color */
+border: none;
+border-radius: 6px; /* rounded-md */
+cursor: pointer;
+transition: background-color 0.3s ease, color 0.3s ease; /* duration-300 */
+}
+
+.action-button:hover {
+background-color: #475569; /* hover:bg-slate-600 */
+color: #f1f5f9; /* hover:text-slate-200 */
+}
+
+/* SVG Icon Styling */
+.action-button svg {
+width: 24px;
+height: 24px;
+stroke: currentColor;
 }

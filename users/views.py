@@ -183,6 +183,7 @@ def get_bookmark_info(request):
         org = Organization.objects.get(org_id = bookmarkorg)
         bookmark_data.append({
             'org_name': org.org_name,
+            'org_id': org.org_id,
         })
 
     return JsonResponse({'bookmarks': bookmark_data})

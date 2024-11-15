@@ -170,7 +170,7 @@ const IndividualProfilePage = () => {
             <div className='centertext'>
                 <div className='profileContentContainer'>
                     <div className='profileContentDrop'>
-                        <div className='comments'>
+                        <div className='profilecomments'>
                             <div className='commentheading'>
                             <h2>Your Comments</h2>
                             </div>
@@ -261,13 +261,30 @@ const IndividualProfilePage = () => {
                             <div className='commentheading'>
                                 <h2>Your Bookmarks</h2>
                             </div>
-                            <div className='centertext'>
+                            <div className='profilebookmark'>
                                 {BookmarkInfo.bookmarks && BookmarkInfo.bookmarks.length > 0 ? (
                                     <ul>
                                         {BookmarkInfo.bookmarks.map((bookmark, index) => (
-                                            <p>{bookmark.org_name}</p>
+                                            // <div className='profilebookmark'>
+
+                                            <div class="card">
+                                                <div class="card-title">
+                                                    {bookmark.org_name}
+                                                </div>
+                                                <div class="card-button">
+                                                    <a href={`/organizations/${bookmark.org_id}/`} class="action-button" title="Visit External Link">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+                                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                                    </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            // </div>
                                         ))}
-                                    </ul>
+                                    </ul> 
                                 ) : (
                                     <p>You haven't made any Bookmarks yet.</p>
                                     
