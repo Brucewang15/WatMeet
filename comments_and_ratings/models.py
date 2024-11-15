@@ -19,7 +19,7 @@ class Comment(models.Model):
 
 class UserCommentRating(models.Model):
     usercomment_id = models.AutoField(primary_key=True)
-    org = models.ForeignKey('organizations.Organization', on_delete=models.CASCADE, related_name='users.Bookmark.org+', default=0)
+    org = models.ForeignKey('organizations.Organization', on_delete=models.CASCADE, related_name='users.Bookmark.org+')
     user = models.ForeignKey('users.User', on_delete=models.CASCADE, related_name='user_comments_rating')
     comment = models.ForeignKey('Comment', on_delete=models.CASCADE, related_name='user_comments_rating')
     upvote = models.BooleanField(default=False)
