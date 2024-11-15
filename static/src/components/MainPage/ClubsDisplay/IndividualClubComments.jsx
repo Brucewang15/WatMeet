@@ -7,17 +7,23 @@ import downvote from '../../../pictures/downvote.svg';
 import { useSelector } from 'react-redux';
 import './IndividualClubComments.css';
 
-const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, getClubData, clubInfo, getAllCommentsDB2 }) => {
+const IndividualClubComments = ({ 
+    orgId,
+    userId,
+    isAuthenticated,
+    accessToken,
+    getClubData,
+    clubInfo,
+    getAllCommentsDB,
+    allComments,
+    allCommentsIndividualLikes
+ }) => {
     const [commentState, setCommentState] = useState(false);
     const [loginPopupVisible, setLoginPopupVisible] = useState(false);
-    const [allComments, setAllComments] = useState([]);
     const [allCommentsRatings, setAllCommentsRatings] = useState([]);
     const [commentRatings, setCommentRatings] = useState({});
 
-    // Fetch all comments when component mounts
-    useEffect(() => {
-        getAllCommentsDB();
-    }, []);
+    
 
     // Fetch user comment ratings when userId changes
     useEffect(() => {
@@ -26,23 +32,7 @@ const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, g
         }
     }, [userId]);
 
-    // Fetch all comments from the backend
-    const getAllCommentsDB = async () => {
-        try {
-            const response = await fetch('http://127.0.0.1:8000/comments/get_comments/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ org_id: orgId }),
-            });
-            if (response.ok) {
-                const data = await response.json();
-                setAllComments(data.comments_data);
-                setAllCommentsRatings(data.comments_likes);
-            }
-        } catch (err) {
-            console.log('error', err);
-        }
-    };
+    
 
     // Fetch user ratings for comments
     const fetchUserCommentRatings = async () => {
@@ -55,6 +45,7 @@ const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, g
             if (response.ok) {
                 const data = await response.json();
                 setCommentRatings(data.user_ratings);
+                console.log('commentRatings.user_ratings', data.user_ratings)
             }
         } catch (error) {
             console.error('Failed to fetch user ratings:', error);
@@ -75,7 +66,12 @@ const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, g
             const response = await fetch('http://127.0.0.1:8000/comments/rate_comment/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ comment_id: commentId, user_id: userId, upvote, downvote }),
+                body: JSON.stringify({ 
+                    comment_id: commentId, 
+                    user_id: userId, 
+                    upvote, 
+                    downvote,
+                    org_id: orgId }),
             });
 
             if (!response.ok) {
@@ -85,7 +81,7 @@ const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, g
             const data = await response.json();
             if (data.success) {
                 console.log('Comment rating updated successfully:', data);
-                getAllCommentsDB();
+                getAllCommentsDB(userId);
                 getClubData();
             } else {
                 console.error('Failed to update comment rating:', data);
@@ -139,7 +135,6 @@ const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, g
                             userId={userId}
                             setCommentState={setCommentState}
                             onCommentPosted={() => {
-                                getAllCommentsDB2();
                                 getAllCommentsDB();
                                 getClubData();
                             }}
@@ -161,10 +156,10 @@ const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, g
                 <div className="allCommentsContainer">
                     {[...allComments].reverse().map((comment, index) => (
                         <div className="comments" key={index}>
-                            {console.log(comment, 'comment', commentRatings)}
+                            {console.log(comment, 'comment', commentRatings[0])}
                             <div className="like-wrapper">
                                 <img
-                                    className={`voteButton ${commentRatings[comment.comment_id]?.upvoted ? 'upvoted' : ''}`}
+                                    className={`voteButton ${allCommentsIndividualLikes[allComments.length - index - 1] === 'upvoted' ? 'upvoted': ''}`}
                                     src={upvote}
                                     alt="upvote"
                                     onClick={() => {
@@ -177,7 +172,7 @@ const IndividualClubComments = ({ orgId, userId, isAuthenticated, accessToken, g
                                 />
                                 <div className="like-text">{comment.comment_upvote - comment.comment_downvote}</div>
                                 <img
-                                    className={`voteButton ${commentRatings[comment.comment_id]?.downvoted ? 'downvoted' : ''}`}
+                                    className={`voteButton ${allCommentsIndividualLikes[allComments.length - index - 1] === 'downvoted' ? 'downvoted': ''}`}
                                     src={downvote}
                                     alt="downvote"
                                     onClick={() => {

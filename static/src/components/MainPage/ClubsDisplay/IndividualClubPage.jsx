@@ -14,6 +14,7 @@ const IndividualClubPage = () => {
     const [userId, setUserId] = useState(null);
     const [allComments, setAllComments] = useState([]);
     const [allCommentsRatings, setAllCommentsRatings] = useState([]);
+    const [allCommentsIndividualLikes, setAllCommentsIndividualLikes] = useState([]);
     const [clubInfo, setClubInfo] = useState({
         org_name: '',
         overview: '',
@@ -34,6 +35,7 @@ const IndividualClubPage = () => {
             try {
                 const arrayToken = accessToken.split('.');
                 const tokenPayload = JSON.parse(atob(arrayToken[1]));
+                getAllCommentsDB(tokenPayload.user_id)
                 setUserId(tokenPayload.user_id);
                 console.log(userId, 'userid')
             } catch (error) {
@@ -47,17 +49,21 @@ const IndividualClubPage = () => {
 
 
     // Fetch all comments from the backend
-    const getAllCommentsDB = async () => {
+    const getAllCommentsDB = async ( user_id ) => {
         try {
             const response = await fetch('http://127.0.0.1:8000/comments/get_comments/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ org_id: orgId }),
+                body: JSON.stringify({
+                    org_id: orgId,
+                    user_id: user_id,
+                }),
             });
             if (response.ok) {
                 const data = await response.json();
                 setAllComments(data.comments_data);
                 setAllCommentsRatings(data.comments_likes);
+                setAllCommentsIndividualLikes(data.comments_individual_likes)
             }
         } catch (err) {
             console.log('error', err);
@@ -135,7 +141,9 @@ const IndividualClubPage = () => {
                 accessToken={accessToken}
                 getClubData={getClubData}
                 clubInfo={clubInfo}
-                getAllCommentsDB2={getAllCommentsDB}
+                getAllCommentsDB={getAllCommentsDB}
+                allComments={allComments}
+                allCommentsIndividualLikes={allCommentsIndividualLikes}
             />
         </div>
     );

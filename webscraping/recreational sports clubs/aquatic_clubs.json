@@ -4,35 +4,122 @@
         "description": "Welcome to Artistic Swimming! Previously known as synchronized swimming, this sport is a combination of dance, swimming, and gymnastics. We welcome both seasoned swimmers and those new to the sport, no experience required! Come to our try-it practices at the beginning of the term and stay to learn a routine and compete with us across the country. Reach out to us on instagram or email us at artisticswimming@uwaterloo.ca. We hope to see you in the pool!",
         "try_it_sessions": "Date Location Time\nSeptember 15    Studio 4\nPool 6-7 PM\n7-9 PM\nSeptember 17   Studio 3\nPool \n  7-8 PM\n8-10 PM\n  September 19  Studio 4\nPool 8-9 PM\n9-10 PM\nSeptember 22 Studio 4\nPool 6-7 PM\n7-9 PM",
         "fee": "Approximately $170.00 per player. This fee is for each semester.",
-        "contact": "mailto: artisticswimming@uwaterloo.ca"
+        "membership_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=fa36b83d-f2bf-42b8-9cb9-706fbd3086c4",
+        "schedule_link": "Schedule link not available",
+        "join_now_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=fa36b83d-f2bf-42b8-9cb9-706fbd3086c4",
+        "contact": {
+            "email": "mailto: artisticswimming@uwaterloo.ca",
+            "instagram": "https://www.instagram.com/wlooartisticswimming/",
+            "facebook": "https://www.facebook.com/WarriorsSynchro/",
+            "discord": null,
+            "website": "https://warrior.uwaterloo.ca/"
+        },
+        "executive_team": [
+            "President & Finance:  Rachel Dietrich",
+            "Vice President - Experienced: Olivia Clay",
+            "Vice President - Novice: Elizabeth Nigh",
+            "Social Media: Leanne Schut",
+            "Travel: Molly Chen"
+        ]
     },
     {
         "club": "Dragon Boat",
         "description": "Hey Warriors! This term, dragon boat practices are going be 2 dryland practices (in CIF and PAC Warrior Zone) and 1 pool practice in PAC. We welcome people of all skill ranges! If you have any questions or concerns, please reach out to us at info@uwdbc.com! We hope to see you all there! Paddles Up!\nVisit Dragon Boat Club Web Page to learn more and register!",
         "try_it_sessions": "Date Location\nSeptember 15    Laurel Creek",
         "fee": "Approximately $36.75 per player. This fee is per semester.",
-        "contact": "mailto: info@uwdbc.com"
+        "membership_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=0b3009e2-c367-46e2-a60e-67ae0ba7ed3a",
+        "schedule_link": "Schedule link not available",
+        "join_now_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=0b3009e2-c367-46e2-a60e-67ae0ba7ed3a",
+        "contact": {
+            "email": "mailto: info@uwdbc.com",
+            "instagram": "https://www.instagram.com/wloo.dboat",
+            "facebook": "https://athletics.uwaterloo.ca/common/controls/adhandler.aspx?ad_id=23&target=https://www.facebook.com/waterloowarriors",
+            "discord": "https://discord.com/invite/aQzCK9Gfez",
+            "website": "https://warrior.uwaterloo.ca/"
+        },
+        "executive_team": [
+            "Co-Presidents: Rebecca Xu & Justin Chhay",
+            "Admin: Evan Howie & Olivia Penn",
+            "Trainer: Hashir Mirza",
+            "Social Media:  Rachel Ni, Chelsea Hettigama & Jessica Luong",
+            "Sponsorship: Wayne Wan & Ryan Bulson",
+            "Finance: Dominic Muthukumaraswamy",
+            "Events: Ruby Cat, Megan Quan, & Sana Thind",
+            "Web Developer: Thomas Luc",
+            "Thursdays 5:30 - 7:00pm"
+        ]
     },
     {
         "club": "Lifesaving",
         "description": "\"Welcome to the Lifesaving Sport club based at the University of Waterloo. Everyone is welcome!\nJoin in and practice and compete in Lifesaving Sport. Members practice and compete in three disciplines \u2013 Lifeguarding (Water Rescue, First Aid and Priority Assessment), Pool Lifesaving (sport based on the lifeguarding skills), and Surf/Waterfront Lifesaving (paddle boards, surf skis, surf swim, beach flags, beach sprint, etc). Club members successfully compete regionally, provincially and nationally and even internationally, throughout the year and are four-time 2014 Champions. Members can choose which discipline to \u201cplay\u201d in and when and if to compete. Lifesaving Sport is an official Commonwealth and World Games event and is recognized as a competitive sport by the IOC. Come out and show your stuff! All lifeguards/future lifeguards and swimmers are welcome to attend practices.\"\n ",
         "try_it_sessions": "Date Location Time\nSeptember 16, PAC Pool 8-9 PM\nSeptember 18 PAC Pool 8-9:30 PM\nSeptember 21 PAC Pool 4-5:30 PM\nSeptember 23 PAC Pool 8-9 PM\nSeptember 25 PAC Pool 8-9:30 PM\nSeptember 28 PAC Pool 4-5:30 PM",
         "fee": "Approximately $63.00 per player. This fee is per semester.",
-        "contact": "mailto: lifesaving@uwaterloo.ca"
+        "membership_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=a73c02a5-e4f3-4e3c-a6df-ccff8dcb4a55",
+        "schedule_link": "Schedule link not available",
+        "join_now_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=a73c02a5-e4f3-4e3c-a6df-ccff8dcb4a55",
+        "contact": {
+            "email": "mailto: lifesaving@uwaterloo.ca",
+            "instagram": "https://instagram.com/wloo.lifesaving",
+            "facebook": "https://www.facebook.com/uwaterloo.lifesaving/",
+            "discord": null,
+            "website": "https://warrior.uwaterloo.ca/"
+        },
+        "executive_team": [
+            "Co-President/Treasury Director: Jennifer Li",
+            "Co-President: Mick Wang",
+            "Digital Marketing Coordinator: Carson Fong",
+            "Junior Executive: Persephonie Lai",
+            "Mondays & Wednesdays 8-9:30 PM",
+            "Saturdays 4-5:30 PM"
+        ]
     },
     {
         "club": "Triathlon",
         "description": "The Warriors Triathlon Club is open to University of Waterloo students, staff, faculty, and members of the UW community at large who have memberships at the University of Waterloo\u2019s Athletics Department. The club will create a group training environment in which athletes of a wide range of ability levels can improve. In addition, our group training sessions will build a community of athletes, in which individuals may establish friendships and training partnerships that continue outside of club programming",
         "try_it_sessions": "Date Location Time\nSeptember 15 PAC Pool 4-5:30 PM\nSeptember 17 Spin Studio 6-7:30 PM",
         "fee": "Cycling membership - $10.50",
-        "contact": "mailto: triclub@uwaterloo.ca"
+        "membership_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=7f2c8088-a9d3-49b4-a533-b86f49c1afcc",
+        "schedule_link": "Schedule link not available",
+        "join_now_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=7f2c8088-a9d3-49b4-a533-b86f49c1afcc",
+        "contact": {
+            "email": "mailto: triclub@uwaterloo.ca",
+            "instagram": "https://www.instagram.com/uoft_tri_club/reel/C2slhM-voNC/?img_index=uoft_tri_club",
+            "facebook": "https://www.facebook.com/warriorstriclub/",
+            "discord": null,
+            "website": "https://warrior.uwaterloo.ca/"
+        },
+        "executive_team": [
+            "Co-President: Jacqueline Powichrowski",
+            "Co-President  & Indoor Cycling Coordinator: Lars Kamin",
+            "Co-President & Indoor Cycling Coordinator: Yaroslav Brovchenko",
+            "Co-President & Communication Coordinator: Caroline Huang",
+            "Sundays 4-5:30 PM",
+            "Tuesdays 7-8:30 PM",
+            "Wednesdays 8-9:30 PM"
+        ]
     },
     {
         "club": "Underwater Hockey",
         "description": "Underwater Hockey is a co-ed, student-run club that aims to introduce students to the sport of Underwater Hockey. It is a sport that combines swimming, diving, and hockey skills in a pool. The players wear masks, snorkels, fins, and protective gloves while playing with a weighted puck. The sport is non-contact and requires speed, stamina, and strategy.",
         "try_it_sessions": "Date Location Time\nSeptember 16 PAC Pool 9-10 PM\nSeptember 20 PAC Pool 9-10 PM\nSeptember 23 PAC Pool 9-10 PM\nSeptember 27 PAC Pool 9-10 PM",
-        "fee": "Approximately $21.00 per player. This fee is per semester.",
-        "contact": "Contact information not available"
-
+        "fee": "Fee information not available",
+        "membership_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=30164db4-6d4f-4568-b4fb-5aeee8d00191",
+        "schedule_link": "Schedule link not available",
+        "join_now_link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=a5804994-5948-4ea0-b057-83ac1e09b931",
+        "contact": {
+            "email": "mailto:karin.browne@uwaterloo.ca",
+            "instagram": "https://www.instagram.com/wloo_underwaterhockey/",
+            "facebook": null,
+            "discord": "https://discord.gg/THwmN2cY",
+            "website": "https://warrior.uwaterloo.ca/"
+        },
+        "executive_team": [
+            "President: Allison Kemptom",
+            "VP of Finance: Daiphy Lee",
+            "VP of Operations: Owen Waldron",
+            "Director of Fundraising: Hadas Barabash",
+            "Director of Operations: Edem Afovia",
+            "Assistant Coach: Sascha Tortosa"
+        ]
     }
 ]

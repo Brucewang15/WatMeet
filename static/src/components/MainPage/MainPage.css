@@ -4,7 +4,7 @@
     margin: 0 auto 0 auto;
     display: flex;
     gap: 10px;
-    flex-flow: wrap;
+    flex-wrap: wrap;
 }
 
 .fContainer {
@@ -13,18 +13,20 @@
 
 .mainAllClubsContainer {
     display: block;
-    box-shadow: 0px 0px 2px rgba(84, 84, 84, 0.4); 
+    flex: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 770px;
-    width: 100%;
+    width: 65%;
     margin: 0;
+    border-radius: 8px; /* Added border-radius */
 }
+
 .clubsContainer {
-    /* Adjust to control the maximum number of columns */
-    
     display: flex;
     flex-direction: column;
     margin: auto;
     border-radius: 0 0 5px 5px;
+    align-items: center;
 }
 
 .chooseOrgType {
@@ -33,6 +35,7 @@
     grid-template-columns: repeat(4, 1fr); /* Four equal columns */
     gap: 0; /* No gap between the columns */
 }
+
 .chooseOrgTypeButtons {
     display: flex;
     align-items: center;
@@ -42,6 +45,12 @@
     transition: background-color 0.3s ease;
     font-size: 20px;
     font-weight: 500;
+}
+.chooseOrgTypeButtons:nth-child(1) {
+    border-top-left-radius: 8px;
+}
+.chooseOrgTypeButtons:last-child {
+    border-top-right-radius: 8px;
 }
 .chooseOrgTypeButtons:hover {
     background-color: gray; 

@@ -65,7 +65,9 @@
     flex-wrap: wrap;
 
     max-height: 300px;
-    overflow: scroll;
+    scrollbar-width: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .orgs {

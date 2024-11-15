@@ -15,6 +15,7 @@ def get_comments(request):
     body_unicode = request.body.decode('utf-8')
     body_data = json.loads(body_unicode)
     org_id = body_data.get('org_id')
+    user_id = body_data.get('user_id')
     
     if org_id is None:
         all_comments = Comment.objects.all()
@@ -23,12 +24,23 @@ def get_comments(request):
 
     comments_data = []
     comments_likes = [0, 0, 0, 0, 0]
+    comments_individual_likes = []
     
     for comment in all_comments:
         user = User.objects.get(user_id = comment.user_id)
         user_name = user.first_name + " " + user.last_name
         org = Organization.objects.get(org_id = comment.org_id)
         comments_likes[int(comment.star_rating)-1] += 1
+        
+        comment_individual_like = UserCommentRating.objects.filter(org_id=org_id, comment_id=comment.comment_id, user_id=user_id).values()
+        print(comment_individual_like, user_id, org_id, comment.comment_id, 'comment_individual_like')
+        
+        if comment_individual_like.exists():
+            print(comment_individual_like, 'comment_individual_like')
+            result = "upvoted" if comment_individual_like[0]['upvote'] else "downvoted" if comment_individual_like[0]['downvote'] else ""
+            print(result, 'result')
+            comments_individual_likes.append(result)
+
         comments_data.append({
             'comment_id': comment.comment_id,
             'comment_title': comment.comment_title,
@@ -43,7 +55,7 @@ def get_comments(request):
             'comment_org_id': comment.org_id,
             'comment_org_name': org.org_name
         })
-    return JsonResponse({'comments_data': comments_data, 'comments_likes': comments_likes}, safe=False)
+    return JsonResponse({'comments_data': comments_data, 'comments_likes': comments_likes, 'comments_individual_likes': comments_individual_likes}, safe=False)
 
 # Post a comment
 def post_comment(request):
@@ -74,6 +86,7 @@ def rate_comment(request):
     user_id = body_data.get('user_id')
     upvote = body_data.get('upvote')
     downvote = body_data.get('downvote')
+    org_id = body_data.get('org_id')
 
     # Fetch the comment object
     comment = Comment.objects.get(comment_id=comment_id)
@@ -115,7 +128,8 @@ def rate_comment(request):
             comment_id=comment_id,
             upvote=upvote,
             downvote=downvote,
-            created_at=timezone.now()  # Set the time when the user rated the comment
+            created_at=timezone.now(),  # Set the time when the user rated the comment
+            org_id=org_id,
         )
     
     return JsonResponse({'success': True})
@@ -125,9 +139,10 @@ def get_user_ratings(request):
     body_unicode = request.body.decode('utf-8')
     body_data = json.loads(body_unicode)
     user_id = body_data.get('user_id')
+    org_id = body_data.get('org_id')
     
     # Fetch all ratings by this user
-    user_ratings = UserCommentRating.objects.filter(user_id=user_id).values()
+    user_ratings = UserCommentRating.objects.filter(user_id=user_id, org_id=org_id).values()
     ratings_data = []
 
     for rating in user_ratings:
