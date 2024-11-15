@@ -112,13 +112,13 @@
         "fee": "Fee information not available",
         "membership_link": "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=30164db4-6d4f-4568-b4fb-5aeee8d00191",
         "schedule_link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=3f9a6a35-2aea-487a-b4b3-6b364fcdd305",
-        "join_now_link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=a5804994-5948-4ea0-b057-83ac1e09b931",
+        "join_now_link": "https://warrior.uwaterloo.ca/Program/GetProgramDetails?courseId=3f9a6a35-2aea-487a-b4b3-6b364fcdd305",
         "contact": {
             "email": "mailto:karin.browne@uwaterloo.ca",
             "instagram": "https://www.instagram.com/wloo_underwaterhockey/",
             "facebook": null,
             "discord": "https://discord.gg/THwmN2cY",
-            "website": "https://warrior.uwaterloo.ca/"
+            "website": null
         },
         "executive_team": [
             "President: Allison Kemptom",
