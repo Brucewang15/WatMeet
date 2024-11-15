@@ -1,7 +1,11 @@
 venv/
+.venv/
+env/
+ENV/
 users/scripts/confirmationEmail/passwords.py
 
 __pycache__/
 node_modules
 *.pyc
+
 

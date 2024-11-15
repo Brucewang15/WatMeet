@@ -31,8 +31,6 @@ const MainPage = () => {
     };
 
     useEffect(() => {
-        console.log(prompt);
-        console.log(tagStates);
         const get_club_data = async () => {
             setIsLoading(true); // Start loading
             try {

@@ -8,7 +8,7 @@ from .scripts.confirmationEmail.CreateNumber import CreateNumber
 from .scripts.confirmationEmail.sendEmail import sendEmail
 from django.middleware.csrf import get_token
 import urllib.parse
-
+from organizations.models import Organization
 
 # Create your views here.
 
@@ -171,3 +171,19 @@ def change_bookmark(request):
         bookmark = Bookmark.objects.get(org_id = orgId, user_id = userId)
         bookmark.delete()
     return JsonResponse({'success': True})
+
+def get_bookmark_info(request):
+    body_data = json.loads(request.body.decode('utf-8'))
+    userId = body_data.get('user_id')
+    bookmarks = Bookmark.objects.filter(user_id = userId)
+    
+    bookmark_data = []
+    for bookmark in bookmarks:
+        bookmarkorg = bookmark.org_id
+        org = Organization.objects.get(org_id = bookmarkorg)
+        bookmark_data.append({
+            'org_name': org.org_name,
+            'org_id': org.org_id,
+        })
+
+    return JsonResponse({'bookmarks': bookmark_data})
