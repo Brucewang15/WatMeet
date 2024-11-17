@@ -1,6 +1,7 @@
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework import serializers
 from rest_framework_simplejwt.tokens import RefreshToken
+from django.contrib.auth.hashers import check_password
 
 from .models import User  # Import your User model
 
@@ -20,9 +21,9 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         # Check if the user is active
         if not user.is_active:
             raise serializers.ValidationError("This account is inactive. Please contact support.")
-        print('active user')
+        print('active user', user.password, user.check_password(password))
         # Authenticate the user with the password
-        if user.password != password:
+        if not user.check_password(password):
             raise serializers.ValidationError("Invalid username or password")
         print('password works')
         # If everything is valid, proceed with generating the token
