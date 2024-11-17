@@ -20,7 +20,7 @@ def get_comments(request):
     if org_id is None:
         all_comments = Comment.objects.all()
     else:
-        all_comments = Comment.objects.filter(org_id=org_id)
+        all_comments = Comment.objects.filter(org_id=org_id).exclude(comment_body="")
 
     comments_data = []
     comments_likes = [0, 0, 0, 0, 0]

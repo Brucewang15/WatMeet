@@ -75,7 +75,7 @@ const Socials = ({ types, links }) => {
                     }
                     return (
                         <a
-                            href={links[index]}
+                            href={links[index].includes("@") ? `mailto:${links[index]}` : links[index]}
                             className={`socialContainer container_${type.toLowerCase()}`}
                             key={`${type}-${index}`}
                             target="_blank"

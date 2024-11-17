@@ -4,7 +4,44 @@ import {
     EMAIL_VERIFICATION_REQUIRED,
     EMAIL_VERIFICATION_FAIL,
     EMAIL_VERIFICATION_SUCCESS,
+    LOGOUT_SUCCESS,
+    LOGOUT_FAIL,
 } from "./types";
+
+export const logout = () => async dispatch => {
+    try {
+        const refreshToken = localStorage.getItem('refresh_token');
+        console.log(refreshToken, 'refreshToken')
+
+        const response = await fetch('http://127.0.0.1:8000/users/logout/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                refresh_token: refreshToken,
+            }),
+        });
+
+        if (response.ok) {
+            localStorage.removeItem('access_token');
+            localStorage.removeItem('refresh_token');
+
+            dispatch({
+                type: LOGOUT_SUCCESS,
+            });
+        } else {
+            dispatch({
+                type: LOGOUT_FAIL,
+            });
+        }
+    } catch (error) {
+        console.error('Logout error:', error);
+        dispatch({
+            type: LOGOUT_FAIL,
+        });
+    }
+};
 
 export const confirmEmail = (email, password, code) => async dispatch => {
     try {
@@ -86,8 +123,9 @@ export const loadUser = () => dispatch => {
         dispatch({ type: LOGIN_FAIL });
     }
 };
-const login = (email, password) => async dispatch => {
+export const login = (email, password) => async dispatch => {
     try {
+        console.log('in login')
         const response = await fetch('http://127.0.0.1:8000/users/login/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -139,5 +177,3 @@ const login = (email, password) => async dispatch => {
         });
     }
 }
-
-export default login

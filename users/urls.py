@@ -11,4 +11,5 @@ urlpatterns = [
     path('get_bookmark_state/', views.get_bookmark_state),
     path('change_bookmark/', views.change_bookmark),
     path('get_bookmark_info/', views.get_bookmark_info),
+    path('logout/', views.logout),
 ]

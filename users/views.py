@@ -9,8 +9,19 @@ from .scripts.confirmationEmail.sendEmail import sendEmail
 from django.middleware.csrf import get_token
 import urllib.parse
 from organizations.models import Organization
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
 
 # Create your views here.
+def logout(request):
+    body_unicode = request.body
+    body_data = json.loads(body_unicode)
+    refresh_token = body_data.get('refresh_token')
+    print(refresh_token, 'refresh_token')
+    if not refresh_token:
+        return JsonResponse({"detail": 'Refresh token is required'})
+    return JsonResponse({"detail": "Logout successful."})
 
 def index(request):
     if request.method == "POST":
