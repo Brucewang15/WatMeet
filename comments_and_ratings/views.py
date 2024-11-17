@@ -70,7 +70,7 @@ def post_comment(request):
     print(comment, stars, user_id, 'test', org_id)
     if Comment.objects.filter(user_id = user_id, org_id = org_id).exists():
         return JsonResponse({'success': False, 'reason': 'Already posted comment'})
-    comment = Comment(comment_title='test', comment_body=comment, star_rating=stars, org_id=org_id, user_id=user_id)
+    comment = Comment(comment_body=comment, star_rating=stars, org_id=org_id, user_id=user_id)
     comment.save()
     org = Organization.objects.get(org_id = org_id)
     org.number_of_star_rating += 1
