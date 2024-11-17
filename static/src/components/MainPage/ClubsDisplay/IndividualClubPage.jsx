@@ -45,7 +45,7 @@ const IndividualClubPage = () => {
     }
     useEffect(() => {
         checkAuth()
-    }, [isAuthenticated, accessToken]);
+    }, [isAuthenticated, accessToken, orgId]);
 
 
     // Fetch all comments from the backend
@@ -73,17 +73,17 @@ const IndividualClubPage = () => {
     // Fetch all comments when component mounts
     useEffect(() => {
         getAllCommentsDB();
-    }, []);
+    }, [orgId]);
 
     // Get club data from backend upon loading
     useEffect(() => {
         getClubData();
-    }, []);
+    }, [orgId]);
 
     // Scroll to top upon loading
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+    }, [orgId]);
 
     // Function to get club data
     const getClubData = async () => {

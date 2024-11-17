@@ -19,7 +19,7 @@ const DisplayCard = ({ org_id, clubName, clubDescription, clubRating, clubRating
             <div className="org_card_left">
                 <div className="title">{clubName}</div>
                 <p className="description">{clubDescriptionShortened}</p>
-                <a href={`/organizations/${org_id}`} className="link">Learn more</a>
+                {/* <a href={`/organizations/${org_id}`} className="link">Learn more</a> */}
             </div>
 
             <div className="ratingWrapperMain">

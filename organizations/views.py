@@ -5,10 +5,20 @@ from organizations.models import Organization
 from organizations.models import Tag
 
 from .search.sort_data import sort_data
+from .search.searchDropDrown.sort_data_prefix import sort_data_prefix
 from .filterSearch.filter import filterData
 import json
 
 # Create your views here.
+
+# used for the drop down for searchs
+def get_potential_club_data(request):
+    query = json.loads(request.body).get("query")
+    
+    data = Organization.objects.all().values()
+    data = sort_data_prefix(data, query)
+    return JsonResponse(data, safe=False)
+        
 
 def get_club_data(request):
     
