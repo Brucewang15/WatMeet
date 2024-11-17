@@ -15,6 +15,7 @@ import { loadUser } from '../src/redux/actions/authActions'
 import ForgotPassword from './components/account/ForgotPassword';
 import IndividualProfilePage from './components/MainPage/ProfileDisplay/IndividualProfilePage';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ function App() {
   return (
     <div>
       <Router>
-        <Header />
+        <Header/>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/explore/search/:prompt/" element={<MainPage/>} />
@@ -38,6 +39,7 @@ function App() {
           <Route path="/organizations/:orgId/" element={<IndividualClubPage />} />
           <Route path="/users/:userId/" element={<IndividualProfilePage />} />
         </Routes>
+        <Footer/>
       </Router>
 
     </div>
