@@ -12,6 +12,7 @@ from organizations.models import Organization
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from django.contrib.auth.hashers import make_password, check_password
 
 # Create your views here.
 def logout(request):
@@ -60,7 +61,7 @@ def verify(request):
     
     user = User.objects.filter(email=email)
     if not user.exists():
-        s = User(first_name = first_name, last_name = last_name, username=username, email = email, password = password, verification_code = variCode)
+        s = User(first_name = first_name, last_name = last_name, username=username, email = email, password = make_password(password), verification_code = variCode)
         s.save()
     elif User.objects.get(email=email).is_active:
         print('Email already exists')
@@ -121,7 +122,8 @@ def login(request):
         user.save()
         sendEmail(email, variCode)
         return JsonResponse({'success': False, 'reason': 'Verify email'})
-    if user.password != password:
+    print(password, user.password, user.check_password(password))
+    if not check_password(password, user.password):
         return JsonResponse({'success': False, 'reason': 'Email or password Incorrect'})
     return JsonResponse({'success': True})
 

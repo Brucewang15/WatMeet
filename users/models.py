@@ -1,7 +1,9 @@
 from django.db import models
+from django.contrib.auth.hashers import make_password, check_password
+
 
 class User(models.Model):
-    user_id = models.AutoField(primary_key=True)
+    user_id = models.AutoField(primary_key=True) 
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     username=models.CharField(max_length=100)
@@ -11,6 +13,9 @@ class User(models.Model):
     verification_code = models.CharField(max_length=100)
     is_active = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def check_password(self, raw_password):
+        return check_password(raw_password, self.password)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"

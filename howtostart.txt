@@ -4,3 +4,6 @@ pip install -r tobeadded.txt
 python manage.py runserver
 cd static
 npm start
+
+* Note: when the virtual environment (venv) isn't working, reinstall it by deleting
+the old venv or .venv folder, then type python -m venv venv
