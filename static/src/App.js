@@ -14,6 +14,7 @@ import { useEffect } from 'react';
 import { loadUser } from '../src/redux/actions/authActions'
 import ForgotPassword from './components/account/ForgotPassword';
 import IndividualProfilePage from './components/MainPage/ProfileDisplay/IndividualProfilePage';
+import About from './components/AboutUs/About';
 import Header from './components/Header';
 import Footer from './components/Footer';
 

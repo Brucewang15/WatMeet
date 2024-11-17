@@ -8,7 +8,7 @@ function Footer() {
       <div className="footer-links">
         <Link to="/" className="footer-link">Home</Link>
         <Link to="/about" className="footer-link">About</Link>
-        <a href="mailto:contact@yourdomain.com" className="footer-link">Contact</a>
+        <a href="mailto:watclub@uwaterloo.ca" className="footer-link">Contact</a>
       </div>
         WatClub &copy; {new Date().getFullYear()} <div className="footer-copyright"> All rights reserved.
       </div>
