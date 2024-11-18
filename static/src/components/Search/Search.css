@@ -12,32 +12,6 @@
   height: 70px;
 }
 
-.searchButton {
-  color: white;
-  position: absolute;
-  right: 8px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--gradient-2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
-  border: 0;
-  display: inline-block;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-}
-
-/*hover effect*/
-button:hover {
-  color: #fff;
-  background-color: #1A1A1A;
-  transform: translateY(-3px);
-}
-
-/*button pressing effect*/
-button:active {
-  box-shadow: none;
-  transform: translateY(0);
-}
-
 .searchInput {
   border: none;
   width: 100%;
@@ -52,10 +26,8 @@ button:active {
   padding: 18px 46px 18px 26px;
 }
 .searchInput:focus {
-  border: 1px solid rgb(195, 195, 195);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
-
-
 
 .dropDownContainer {
   position: absolute;
