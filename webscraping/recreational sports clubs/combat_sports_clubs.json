@@ -2,59 +2,66 @@
     {
         "club": "Chinese Martial Arts",
         "description": "The Chinese Martial Arts Club strives to encourage an appreciation for Chinese martial arts and promote fitness, mental focus, and self-defense. Members from all experience levels are welcome to try any of our classes at any time!",
-        "try_it_sessions": "SCHEDULE",
-        "fee": "Fee information not available",
+        "try_it_sessions": "Try a Chinese Martial Arts Class for FREE between September 4th - 28th.",
+        "fee": "30.00 + HST / term",
         "membership_link": "https://warrior.uwaterloo.ca/membership/getmembershipsummary?membershipproductid=9106e677-c521-4b20-8214-a2337131271a",
+        "schedule_link": [
+            "Wing Chun - Mondays 8:30-10 pm PAC Studio 4",
+            "Taichi - Wednesdays 3:30-5 pm PAC Studio 3",
+            "Wushu - Wednesdays 5:30-7 pm PAC Studio 4",
+            "Sanda - Fridays 3:30-5 pm, Saturdays 1-3:30 pm and Sundays 2-3:30 pm CIF Studio"],
         "join_now_link": "https://warrior.uwaterloo.ca/membership/getmembershipsummary?membershipproductid=9106e677-c521-4b20-8214-a2337131271a",
         "contact": {
             "email": "mailto:uwchinesemartialarts@gmail.com",
-            "instagram": "https://www.instagram.com/wloochinesemartialarts?igsh=MThyNTg0OG5mMTgybw%3D%3D",
-            "facebook": "https://athletics.uwaterloo.ca/common/controls/adhandler.aspx?ad_id=23&target=https://www.facebook.com/waterloowarriors",
+            "instagram": "https://www.instagram.com/wloochinesemartialarts",
+            "facebook": null,
             "discord": "https://discord.com/invite/d9MtnXQXVx",
-            "website": "https://athletics.uwaterloo.ca/common/controls/adhandler.aspx?ad_id=1&target=https://athletics.uwaterloo.ca/sports/2010/7/7/Ticket_Information.aspx"
+            "website": null
         },
         "executive_team": [
             "President: Amy Jing",
             "Treasurer: Aric Quan",
             "Marketing: Yuewei Zhou",
             "Events: Theresa Gu",
-            "Events: Samantha Alegrid",
-            "Wing Chun - Mondays 8:30-10 pm PAC Studio 4",
-            "Taichi - Wednesdays 3:30-5 pm PAC Studio 3",
-            "Wushu - Wednesdays 5:30-7 pm PAC Studio 4",
-            "Sanda - Fridays 3:30-5 pm, Saturdays 1-3:30 pm and Sundays 2-3:30 pm CIF Studio"
+            "Events: Samantha Alegrid"
         ]
     },
     {
         "club": "Fencing",
         "description": "Join the University of Waterloo Fencing Club and discover the exhilarating sport of fencing! Incorporating athleticism, strategy, and lightning-quick thinking, fencing is a challenging and highly rewarding sport where you're fighting your opponent for every single point. Whether you're a seasoned fencer with national-team experience or have never held a fencing weapon before, our club offers a welcoming environment for you to hone your skills.",
-        "try_it_sessions": "SCHEDULE",
-        "fee": "Fencing Introductory: $84",
-        "membership_link": "https://warrior.uwaterloo.ca/membership/index",
-        "join_now_link": "https://warrior.uwaterloo.ca/membership/index",
+        "try_it_sessions": "Date\\tLocation\\tTime\\nSeptember 16\\tActivity Area\\t5-7 PM\\nSeptember 23\\tActivity Area\\t5-7 PM",
+        "fee": [
+            "Fencing Introductory: $84",
+            "Fencing with Personal Equipment: $147",
+            "Fencing with Rental Equipment: $252"
+        ],
+        "membership_link": [
+            "https://warrior.uwaterloo.ca/membership/getmembershipsummary?membershipproductid=de7ba179-62b6-4c7a-aa58-4021819c964b",
+            "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=13e65642-d900-496a-b2be-65b601fb4a20",
+            "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=33d9b5a2-b8a3-440a-8ee0-134a42f72262"
+        ],
+        "schedule_link": [
+            "Beginner: \nSundays: 11 AM - 1 PM\nMondays: 5:30-7:30 PM\nThursdays: 5 - 8 PM",
+            "Intermediate & Advanced: \nSundays: 11 AM - 2 PM\nMondays: 5:00 - 7:30 PM\nThursdays 5 - 8 PM"
+    ],
+        "join_now_link": [
+            "https://warrior.uwaterloo.ca/membership/getmembershipsummary?membershipproductid=de7ba179-62b6-4c7a-aa58-4021819c964b",
+            "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=13e65642-d900-496a-b2be-65b601fb4a20",
+            "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=33d9b5a2-b8a3-440a-8ee0-134a42f72262"
+        ],
         "contact": {
             "email": "mailto:fencing@uwaterloo.ca",
             "instagram": "https://www.instagram.com/wloofencing/",
             "facebook": "https://www.facebook.com/groups/UWaterlooFencingClub/",
             "discord": "https://discord.gg/HFP79yn7HN",
-            "website": "https://athletics.uwaterloo.ca/feature/seethembethem"
+            "website": null
         },
         "executive_team": [
-            "Fencing Introductory: $84",
-            "Fencing with Personal Equipment: $147",
-            "Fencing with Rental Equipment: $252",
             "President: Hidde Koerts",
             "Vice President: Luke Chew",
             "Treasurer: Alan Zheng",
             "Social Chair: Jeanette Huang",
-            "Armorer: Vivian Dai",
-            "Beginner:\nSundays: 11 AM - 1 PM\nMondays: 5:30-7:30 PM\nThursdays: 5 - 8 PM",
-            "Sundays: 11 AM - 1 PM",
-            "Mondays: 5:30-7:30 PM",
-            "Thursdays: 5 - 8 PM",
-            "Intermediate & Advanced:\nSundays: 11 AM - 2 PM\nMondays: 5:00 - 7:30 PM\nThursdays 5 - 8 PM",
-            "Sundays: 11 AM - 2 PM",
-            "Mondays: 5:00 - 7:30 PM"
+            "Armorer: Vivian Dai"
         ]
     },
     {
