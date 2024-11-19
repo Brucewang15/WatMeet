@@ -136,8 +136,6 @@
     .content h2 > .bookmark {
         margin-left: 10px;
     }
-
-    /* Adjust other elements as needed for smaller screens */
 }
 
 @media (max-width: 480px) {
