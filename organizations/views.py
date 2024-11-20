@@ -48,7 +48,21 @@ def get_club_data(request):
     print("\n\n\n DONE \n\n\n")"""
 
     if len(new_data) < 10:
-        new_data += list(filter(lambda x: not (x in new_data), tfidfSearch(search_propt, data)))
+        #new_data += list(filter(lambda x: not (x in new_data), tfidfSearch(search_propt, data)))
+        
+        temp = list(filter(lambda x: not (x in new_data), tfidfSearch(search_propt, data)))
+
+        result = []
+        for i in range(min(len(temp), len(new_data))):
+            result.append(new_data[i])
+            result.append(temp[i])
+        
+        if len(new_data) > len(temp):
+            result.extend(new_data[min(len(temp), len(new_data)):])
+        elif len(new_data) < len(temp):
+            result.extend(temp[min(len(temp), len(new_data)):])
+        
+        new_data = result
     
     #testing
     """for d in new_data:

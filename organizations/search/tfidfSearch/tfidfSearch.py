@@ -37,7 +37,7 @@ def tfidfSearch(query, data):
 
     for i in range(numDocs):
         for j in range(len(query)):
-            tfidfScore[i] += tf[i][j] * math.log(numDocs/idf[j], 2) 
+            tfidfScore[i] += tf[i][j] * math.log(numDocs/(idf[j]+1), 2) 
     
     #result = list(map(lambda i, x: (tfidfScore[i], x), enumerate(data)))
     result = [(tfidfScore[i], x) for i,x in enumerate(data)]
