@@ -20,12 +20,31 @@
     padding-top: 0.5%;
     padding-bottom: 0.5%;
 }
-.individualContainer, .individualContainer2 {
+.individualContainer{
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.individualContainer2{
     width: auto;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
+
 }
+
+.profilePicture {
+    width: 100%; /* Make the width 100% of the container */
+    max-width: 150px; /* Set a maximum width */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 50%; /* Make it circular if needed */
+    object-fit: cover; /* Ensure it scales nicely */
+}
+
+
 .individualContainer a {
     text-decoration: none;
     color: none;
@@ -47,7 +66,7 @@
     cursor: pointer;
 }
 .individualContainer:nth-child(2) {
-    width: 100%;
+    width: 60%;
 }
 .dropdownMenu {
     position: absolute;

@@ -25,7 +25,7 @@
 
 .profilePicture {
     flex: 1;
-    max-width: 200px; /* Adjust as needed */
+    max-width: 50px; /* Adjust as needed */
     text-align: center;
 }
 

@@ -3,6 +3,9 @@ import random
 from collections import deque
 import pickle
 import os 
+from organizations.info import tags
+
+os.chdir(r'C:\Users\jonat\Documents\Code\WatMeet\organizations\info')
 
 tags = {
     "Academic": 1,
@@ -63,6 +66,15 @@ replay_buffer = deque(maxlen=50)
 def store_experience(state, action, reward, next_state, done):
     replay_buffer.append((state, action, reward, next_state, done))
 
+def get_clubs(tag_list):
+    clubs = []
+    ranked = []
+    for club in clubs:
+        if club.tags in tag_list:
+            ranked.append(club)
+    return clubs
+
+
 # Create a mock environment to generate experiences
 def generate_experience():
     state = np.random.randint(0, 10, size=50)  # Initial state: random saves for each tag
@@ -73,12 +85,10 @@ def generate_experience():
     next_state[action == 1] += 1  # Increase saves for recommended tags
     
     tags_list = np.array(list(tags.keys()))
-    print(state)
-    print(next_state)
     # Reward: sum of saves for recommended tags
-    # print("Initial State: " + str(tags_list[state >= 1]))
-    # print("Action: " + str(tags_list[action == 1]))
-    # print("Next State: " + str(tags_list[next_state >= 1]))
+    print("Initial State: " + str(tags_list[state >= 1]))
+    print("Action: " + str(tags_list[action == 1]))
+    print("Next State: " + str(tags_list[next_state >= 1]))
     reward = input("Enter the reward: ") # Would be calculated based on user interaction (clicks, saves, etc.)
     
     done = True

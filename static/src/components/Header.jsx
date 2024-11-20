@@ -2,6 +2,7 @@ import './Header.css'
 import Search from './Search/Search';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../pictures/Watclub_logo_transparent.png'
+import Pfp from '../pictures/Default_pfp.jpg';
 import { useSelector, useDispatch  } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -79,7 +80,7 @@ const Header = () => {
                 ) : (
                     <div className="individualContainer2">
                         <img
-                            src={userPfp || 'default_pfp.png'}
+                            src={Pfp}
                             onClick={toggleDropdown}
                             className="profilePicture"
                         />
