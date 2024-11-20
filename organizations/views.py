@@ -6,6 +6,7 @@ from organizations.models import Tag
 
 from .search.sort_data import sort_data
 from .search.searchDropDrown.sort_data_prefix import sort_data_prefix
+from .search.tfidfSearch.tfidfSearch import tfidfSearch
 from .filterSearch.filter import filterData
 import json
 
@@ -39,11 +40,37 @@ def get_club_data(request):
     minAmountRating = json.loads(request.body).get("minAmountRating")
     tagStates = json.loads(request.body).get("tagStates") #array
 
-    data = sort_data(data, search_propt)
+    new_data = sort_data(data, search_propt)
+
+    #testing
+    """for d in new_data:
+        print(d["org_name"])
+    print("\n\n\n DONE \n\n\n")"""
+
+    if len(new_data) < 10:
+        #new_data += list(filter(lambda x: not (x in new_data), tfidfSearch(search_propt, data)))
+        
+        temp = list(filter(lambda x: not (x in new_data), tfidfSearch(search_propt, data)))
+
+        result = []
+        for i in range(min(len(temp), len(new_data))):
+            result.append(new_data[i])
+            result.append(temp[i])
+        
+        if len(new_data) > len(temp):
+            result.extend(new_data[min(len(temp), len(new_data)):])
+        elif len(new_data) < len(temp):
+            result.extend(temp[min(len(temp), len(new_data)):])
+        
+        new_data = result
+    
+    #testing
+    """for d in new_data:
+        print(d["org_name"])"""
 
     #filter out everything below minRating
     
-    data = list(filter(lambda elem: Organization.objects.get(org_name=elem["org_name"]).star_rating >= float(minStarRating), data)) #array of dictionaries of clubs
+    data = list(filter(lambda elem: Organization.objects.get(org_name=elem["org_name"]).star_rating >= float(minStarRating), new_data)) #array of dictionaries of clubs
     data = list(filter(lambda elem: Organization.objects.get(org_name=elem["org_name"]).number_of_star_rating >= float(minAmountRating), data))
 
     data = filterData(data, tagStates)

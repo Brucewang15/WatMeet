@@ -24,10 +24,18 @@
 .top-side {
     width: 100%;
     height: 50%;
-    background: url('../../../pictures/watclub background.jpg');
+    background: url('../../../pictures/watclub background.jpg') no-repeat center center;
     position: relative;
     background-size: cover;
     background-position: center;
+}
+
+.top-side .content {
+    max-width: 1100px;
+    position: relative;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .bottom-side {
@@ -36,7 +44,6 @@
     background-color: white;
 }
 
-.top-side .content,
 .bottom-side .content {
     max-width: 1100px;
     position: relative;
@@ -79,3 +86,68 @@
     font-size: 1.1em;
 }
 
+/* Media Queries for Mobile Devices */
+@media (max-width: 767px) {
+    .individualClubContainer {
+        padding: 10px;
+    }
+
+    .club-about-section-wrapper {
+        height: auto; /* Adjust height based on content */
+        padding: 10px 0;
+    }
+
+    .top-side, .bottom-side {
+        height: auto; /* Allow sections to expand based on content */
+    }
+
+    .socialSection {
+        position: static;
+        transform: none;
+        right: 0;
+        top: 0;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .content h2 {
+        width: 100%;
+        font-size: 1.8em;
+        position: static;
+        margin-bottom: 20px;
+        text-align: center;
+        transform: none;
+    }
+
+    .content p {
+        width: 100%;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .right-side ul li {
+        font-size: 1em;
+    }
+
+    /* Adjust Bookmark Component Positioning if necessary */
+    /* Example: If Bookmark affects layout, ensure it wraps correctly */
+    .content h2 > .bookmark {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .socialSection {
+        gap: 8px;
+    }
+
+    .content h2 {
+        font-size: 1.6em;
+    }
+
+    .content p {
+        font-size: 15px;
+    }
+}
