@@ -82,7 +82,7 @@ const Header = () => {
                         <img
                             src={Pfp}
                             onClick={toggleDropdown}
-                            className="profilePicture"
+                            className="profilePicture1"
                         />
                         {dropdownVisible && (
                             <div className="dropdownMenu">

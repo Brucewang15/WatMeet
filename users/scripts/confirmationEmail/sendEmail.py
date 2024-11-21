@@ -15,8 +15,8 @@ def sendEmail(reciever, code):
 
     eReceiver = reciever
 
-    subject = "test"
-    body = str(code)
+    subject = "WatClub Verification Code"
+    body = "Your verification code: " + str(code)
 
     em = EmailMessage()
 
