@@ -1,4 +1,6 @@
 from django.db import models
+from datetime import datetime
+from django.utils import timezone
 
 class Organization(models.Model):
     org_id = models.AutoField(primary_key=True)
@@ -17,7 +19,7 @@ class Organization(models.Model):
     ]
     org_type = models.CharField(max_length=20, choices=ORG_TYPE_CHOICES)
     constitution = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
     instagram = models.TextField(blank=True, null=True)
     facebook = models.TextField(blank=True, null=True)
     linkedin = models.TextField(blank=True, null=True)
