@@ -36,12 +36,10 @@
 
 }
 
-.profilePicture {
-    width: 100%; /* Make the width 100% of the container */
-    max-width: 150px; /* Set a maximum width */
-    height: auto; /* Maintain the aspect ratio */
-    border-radius: 50%; /* Make it circular if needed */
-    object-fit: cover; /* Ensure it scales nicely */
+.profilePicture1 {
+    flex: 1;
+    max-width: 50px; /* Adjust as needed */
+    text-align: center;
 }
 
 

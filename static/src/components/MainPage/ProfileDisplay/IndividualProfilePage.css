@@ -25,7 +25,7 @@
 
 .profilePicture {
     flex: 1;
-    max-width: 50px; /* Adjust as needed */
+    max-width: 80px; /* Adjust as needed */
     text-align: center;
 }
 
@@ -96,7 +96,6 @@
 .profileContentDrop {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
     width: 100%;
     gap: 10px; /* Space between columns */

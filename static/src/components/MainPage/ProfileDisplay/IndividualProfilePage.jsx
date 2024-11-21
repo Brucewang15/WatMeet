@@ -6,6 +6,7 @@ import Header from '../../Header';
 import '../ClubsDisplay/IndividualClubComments.css';
 import upvote from '../../../pictures/upvote.svg';
 import downvote from '../../../pictures/downvote.svg';
+import Pfp from '../../../pictures/Default_pfp.jpg';
 // import Background from '../Background/Background';
 // import IndividualProfileComments from './IndividualProfileComments';
 // import Socials from '../../UiComponents/Socials'
@@ -150,7 +151,7 @@ const IndividualProfilePage = () => {
                 <div className="profiletextContainer">
                     <div className="profileContent">
                         <div className="profilePicture">
-                            <img src={UserInfo.profilePictureUrl} alt="Profile Picture" />
+                            <img src={Pfp} alt="Profile Picture" />
                         </div>
                         <div className="profileDetails">
                             <div className="profilebackgroundText">
