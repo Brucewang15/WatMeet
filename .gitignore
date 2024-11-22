@@ -7,3 +7,4 @@ users/scripts/confirmationEmail/passwords.py
 __pycache__/
 *.pyc
 .DS_Store
+ndoe_modules/
