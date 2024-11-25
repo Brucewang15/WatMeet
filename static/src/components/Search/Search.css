@@ -14,7 +14,7 @@
 
 .searchInput {
   border: none;
-  width: 100%;
+  width: calc(100% - 26px);
   border-radius: 10px;
   background: #F0F0F0;
   outline: none;
@@ -23,7 +23,7 @@
   color: black;
   font-size: 15px;
   border-radius: 5px;
-  padding: 18px 46px 18px 26px;
+  padding: 18px 0 18px 26px;
 }
 .searchInput:focus {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
