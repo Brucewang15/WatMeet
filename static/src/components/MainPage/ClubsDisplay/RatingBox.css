@@ -109,3 +109,148 @@
     width: calc(var(--rating) * 1%);
     overflow: hidden;
 }
+
+@media (max-width: 767.20px) {
+/* RatingBox.css */
+
+/* Ensure the rating box adapts to smaller screens */
+.ratingWrapperOutside {
+    max-width: 100%; /* Ensure it doesn't exceed the screen width */
+    width: auto; /* Allow dynamic sizing */
+    position: relative; /* Change position to integrate better on smaller screens */
+    top: 0; /* Adjust positioning for better responsiveness */
+    margin: 20px auto; /* Add margin for spacing */
+}
+
+.ratingWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align to top for smaller devices */
+    gap: 10px;
+    box-shadow: 0 0 1px gray;
+    background-color: white;
+    padding: 15px;
+    border: 4px solid;
+    border-image: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+    border-image-slice: 1;
+    transform: none; /* Remove translate for smaller screens */
+    position: static; /* Remove absolute positioning for better flow */
+    width: 90%; /* Adjust size for smaller screens */
+    max-width: 500px; /* Constrain maximum size */
+}
+
+.ratingTop {
+    font-size: 1.2em; /* Adjust size for smaller screens */
+    font-weight: bold;
+    text-align: center;
+}
+
+.ratingBottom {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    width: 100%;
+}
+
+.ratingLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.ratingBarWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.ratingBarNumber {
+    font-size: 0.9em;
+}
+
+.ratingBar {
+    background-color: lightgray;
+    height: 8px;
+    border-radius: 7.5px;
+    position: relative;
+    width: 100%; /* Make bar dynamic */
+}
+
+.ratingRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px; /* Space from the left section */
+}
+
+.ratingNumber {
+    font-size: 1.5em; /* Adjust size for smaller screens */
+    font-weight: bold;
+}
+
+.ratingStats {
+    color: darkgray;
+    font-size: 0.8em;
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+    .ratingWrapper {
+        padding: 10px;
+    }
+
+    .ratingTop {
+        font-size: 1em;
+    }
+
+    .ratingNumber {
+        font-size: 1.3em;
+    }
+
+    .ratingStats {
+        font-size: 0.7em;
+    }
+
+    .ratingBar {
+        height: 6px;
+    }
+
+    .ratingBarWrapper {
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ratingWrapperOutside {
+        width: 100%; /* Occupy full width on very small devices */
+    }
+
+    .ratingWrapper {
+        padding: 8px;
+    }
+
+    .ratingTop {
+        font-size: 0.9em;
+    }
+
+    .ratingNumber {
+        font-size: 1em;
+    }
+
+    .ratingStats {
+        font-size: 0.6em;
+    }
+
+    .ratingBar {
+        height: 5px;
+    }
+
+    .ratingBarWrapper {
+        gap: 4px;
+    }
+}
+
+}

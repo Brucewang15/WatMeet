@@ -11,6 +11,7 @@
             "Wushu - Wednesdays 5:30-7 pm PAC Studio 4",
             "Sanda - Fridays 3:30-5 pm, Saturdays 1-3:30 pm and Sundays 2-3:30 pm CIF Studio"],
         "join_now_link": "https://warrior.uwaterloo.ca/membership/getmembershipsummary?membershipproductid=9106e677-c521-4b20-8214-a2337131271a",
+        "constitution_link": null,
         "contact": {
             "email": "mailto:uwchinesemartialarts@gmail.com",
             "instagram": "https://www.instagram.com/wloochinesemartialarts",
@@ -49,6 +50,7 @@
             "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=13e65642-d900-496a-b2be-65b601fb4a20",
             "https://warrior.uwaterloo.ca/membership/GetMembershipSummary?membershipProductId=33d9b5a2-b8a3-440a-8ee0-134a42f72262"
         ],
+        "constitution_link": null,
         "contact": {
             "email": "mailto:fencing@uwaterloo.ca",
             "instagram": "https://www.instagram.com/wloofencing/",
@@ -67,26 +69,25 @@
     {
         "club": "Judo",
         "description": "Judo is a modern Japanese martial art and practised all over the world (Olympic sport since 1960). In Judo, we use the opponents strength against them in throwing or ground techniques instead of kicks or punches. It is great to improve self-defence, confidence, endurance and concentration. All levels are welcome.",
-        "try_it_sessions": "SCHEDULE",
+        "try_it_sessions": "Try classes for free on September 17th, 19th, 24th, and 26th. ",
         "fee": "$45.00 + HST / term",
         "membership_link": "https://warrior.uwaterloo.ca/membership/getmembershipsummary?membershipproductid=2fcf0f2a-d012-4966-9826-ff0d6c74e468",
+        "schedule_link": "All practices take place in CIF Studio. The first practice of the term takes place on Tuesday September 17th.\nTuesday: 5:00-7:00pm\nThursdays: 5:00-7:00pm\nSundays: 4:00-6:00pm",
         "join_now_link": "https://warrior.uwaterloo.ca/membership/getmembershipsummary?membershipproductid=2fcf0f2a-d012-4966-9826-ff0d6c74e468",
+        "constitution_link": null,
         "contact": {
             "email": "mailto:judo.uwaterloo@gmail.com",
             "instagram": "https://www.instagram.com/wloojudo/",
-            "facebook": "https://athletics.uwaterloo.ca/common/controls/adhandler.aspx?ad_id=23&target=https://www.facebook.com/waterloowarriors",
+            "facebook": null,
             "discord": null,
-            "website": "https://athletics.uwaterloo.ca/common/controls/adhandler.aspx?ad_id=1&target=https://athletics.uwaterloo.ca/sports/2010/7/7/Ticket_Information.aspx"
+            "website": null
         },
         "executive_team": [
             "Executive member: Cameron Sjaarda",
             "Executive member: Eric Sun",
             "Executive member: Kayden Chan",
             "Executive member: Jessica Yu",
-            "Executive member: Emma Lo",
-            "Tuesday: 5:00-7:00pm",
-            "Thursdays: 5:00-7:00pm",
-            "Sundays: 4:00-6:00pm"
+            "Executive member: Emma Lo"
         ]
     },
     {
