@@ -3,7 +3,7 @@ import random
 from collections import deque
 import pickle
 import os 
-from organizations.info import tags
+#from organizations.info import tags
 
 os.chdir(r'C:\Users\jonat\Documents\Code\WatMeet\organizations\info')
 
