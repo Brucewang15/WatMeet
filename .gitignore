@@ -3,8 +3,8 @@ venv/
 env/
 ENV/
 users/scripts/confirmationEmail/passwords.py
+node_modules/
 
 __pycache__/
 *.pyc
 .DS_Store
-ndoe_modules/
